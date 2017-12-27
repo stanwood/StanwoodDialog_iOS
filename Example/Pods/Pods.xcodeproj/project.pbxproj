@@ -10,10 +10,7 @@
 		027319CB6214DAE67A3026399A8980D9 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD25A3F629C4A6157684FD91E6F35B7 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		68EFE680354AE608F13C66147617D7F1 /* Stanwood_Dialog_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F858636A00DC414D40651F8944D98358 /* Stanwood_Dialog_iOS-dummy.m */; };
 		7137DB95598D75FB32FDC1A4B2A858F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		9CC99F7E1FC73D4700B59902 /* AdManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC99F791FC73D4600B59902 /* AdManager.h */; };
-		9CC99F7F1FC73D4700B59902 /* AdManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC99F7B1FC73D4600B59902 /* AdManager.m */; };
-		9CC99F801FC73D4700B59902 /* RateOverlayAd.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CC99F7C1FC73D4700B59902 /* RateOverlayAd.h */; };
-		9CC99F811FC73D4700B59902 /* RateOverlayAd.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CC99F7D1FC73D4700B59902 /* RateOverlayAd.m */; };
+		9C815EB41FF3AF65003485AB /* RateOverlayAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */; };
 		9E59594AAC73966B45A68F0D0C4A3D7A /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86D293A9E7F12A712BC7513FEA0C55 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */; };
 		E1250E57AFEAB888694E35B590019B11 /* Stanwood_Dialog_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F014F1F161812EC8E809C24FAF6E1695 /* Stanwood_Dialog_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F2B24A158377CC65B9C4B63B4A851378 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -40,11 +37,8 @@
 		6EE4EDFCD754E40540CF6AED25B3DE39 /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		990B47F36AADE1E6173ECC011F20FE2E /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9CC99F791FC73D4600B59902 /* AdManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AdManager.h; path = Stanwood_Dialog_iOS/Classes/AdManager.h; sourceTree = "<group>"; };
+		9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateOverlayAd.swift; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.swift; sourceTree = "<group>"; };
 		9CC99F7A1FC73D4600B59902 /* RateOverlayAd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RateOverlayAd.xib; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.xib; sourceTree = "<group>"; };
-		9CC99F7B1FC73D4600B59902 /* AdManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AdManager.m; path = Stanwood_Dialog_iOS/Classes/AdManager.m; sourceTree = "<group>"; };
-		9CC99F7C1FC73D4700B59902 /* RateOverlayAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RateOverlayAd.h; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.h; sourceTree = "<group>"; };
-		9CC99F7D1FC73D4700B59902 /* RateOverlayAd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RateOverlayAd.m; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.m; sourceTree = "<group>"; };
 		A3CE4AA5DADC2892AEA6B3E41FF623A6 /* Stanwood_Dialog_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Stanwood_Dialog_iOS.xcconfig; sourceTree = "<group>"; };
 		AE95D7BF554F9A9FF3C810469C35EB85 /* Stanwood_Dialog_iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Stanwood_Dialog_iOS.modulemap; sourceTree = "<group>"; };
 		C2A0C29E8A0D598CC2D5A81F579F06FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,10 +74,7 @@
 		33E6D65314B36666AA403ABA5FDE7045 /* Stanwood_Dialog_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				9CC99F791FC73D4600B59902 /* AdManager.h */,
-				9CC99F7B1FC73D4600B59902 /* AdManager.m */,
-				9CC99F7C1FC73D4700B59902 /* RateOverlayAd.h */,
-				9CC99F7D1FC73D4700B59902 /* RateOverlayAd.m */,
+				9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */,
 				9CC99F7A1FC73D4600B59902 /* RateOverlayAd.xib */,
 				9AAB25614719F0517B198750FD44855A /* Support Files */,
 			);
@@ -191,8 +182,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				027319CB6214DAE67A3026399A8980D9 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h in Headers */,
-				9CC99F7E1FC73D4700B59902 /* AdManager.h in Headers */,
-				9CC99F801FC73D4700B59902 /* RateOverlayAd.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +231,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					9FCF93AC6688D6B9B526D3CB022168EA = {
+						LastSwiftMigration = 0920;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -266,9 +260,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9CC99F7F1FC73D4700B59902 /* AdManager.m in Sources */,
+				9C815EB41FF3AF65003485AB /* RateOverlayAd.swift in Sources */,
 				9E59594AAC73966B45A68F0D0C4A3D7A /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m in Sources */,
-				9CC99F811FC73D4700B59902 /* RateOverlayAd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +463,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 990B47F36AADE1E6173ECC011F20FE2E /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -492,6 +486,7 @@
 				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -503,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6489180317027C193014E0F456BB26E7 /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -525,6 +521,8 @@
 				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Tests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
