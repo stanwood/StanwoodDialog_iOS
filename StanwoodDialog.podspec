@@ -7,9 +7,9 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'Stanwood_Dialog_iOS'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of Stanwood_Dialog_iOS.'
+  s.name             = 'StanwoodDialog'
+  s.version          = '0.1.2'
+  s.summary          = 'Library to show a rate me prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,12 +18,12 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Library to show a rate me prompt like the one used in On Air.
                        DESC
 
   s.homepage         = 'https://github.com/epeschard/Stanwood_Dialog_iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'private', :file => 'LICENSE' }
   s.author           = { 'epeschard' => 'e@peschard.me' }
   s.source           = { :git => 'https://github.com/epeschard/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
