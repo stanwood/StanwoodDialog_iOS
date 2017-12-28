@@ -8,6 +8,7 @@
 
 import UIKit
 
+@objc
 public class RateOverlayAd: UIView {
     
     @IBOutlet weak var devsBannerUI: UIImageView!
@@ -41,6 +42,7 @@ public class RateOverlayAd: UIView {
         }
     }
     
+    @objc
     public func buildOverlayAd(onLaunch nth: Int,
                                with rateMeText: String,
                                from devProfile: UIImage,
