@@ -44,9 +44,10 @@ public class RateOverlayAd: UIView {
     
     @objc
     public func buildOverlayAd(onLaunch nth: Int,
-                               with rateMeText: String,
+                               text rateMeText: String,
                                from devProfile: UIImage,
-                               over background: UIImage,
+                               with background: UIImage,
+                               over parent: UIViewController,
                                tint color: UIColor) {
         if UserDefaults.standard.integer(forKey: RateOverlayAd.kNumberOfAppStartsKey) == nth  {
             
@@ -60,8 +61,8 @@ public class RateOverlayAd: UIView {
             //ADD BLACK SCREEN
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                           y: 0.0,
-                                                          width: parent!.view.frame.size.width,
-                                                          height: parent!.view.frame.size.height))
+                                                          width: parent.view.frame.size.width,
+                                                          height: parent.view.frame.size.height))
             overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
             guard let overlaySize = overlayBannerContainer?.frame.size else {
                 return
@@ -72,7 +73,7 @@ public class RateOverlayAd: UIView {
             overlayBannerContainer?.alpha = CGFloat(0.0)
             transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))
             
-            parent?.view.addSubview(overlayBannerContainer!)
+            parent.view.addSubview(overlayBannerContainer!)
             UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
                 self.overlayBannerContainer?.alpha = CGFloat(1.0)
                 self.transform = CGAffineTransform(scaleX: CGFloat(1.0), y: CGFloat(1.0))
