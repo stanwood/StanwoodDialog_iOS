@@ -1,6 +1,0 @@
-framework module Pods_Stanwood_Dialog_iOS_Tests {
-  umbrella header "Pods-Stanwood_Dialog_iOS_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

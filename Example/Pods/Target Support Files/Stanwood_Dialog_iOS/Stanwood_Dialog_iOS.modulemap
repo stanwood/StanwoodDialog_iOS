@@ -1,6 +1,0 @@
-framework module Stanwood_Dialog_iOS {
-  umbrella header "Stanwood_Dialog_iOS-umbrella.h"
-
-  export *
-  module * { export * }
-}
