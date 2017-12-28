@@ -1,16 +1,16 @@
 PODS:
-  - Stanwood_Dialog_iOS (0.1.0)
+  - StanwoodDialog (0.1.3)
 
 DEPENDENCIES:
-  - Stanwood_Dialog_iOS (from `../`)
+  - StanwoodDialog (from `../`)
 
 EXTERNAL SOURCES:
-  Stanwood_Dialog_iOS:
+  StanwoodDialog:
     :path: ../
 
 SPEC CHECKSUMS:
-  Stanwood_Dialog_iOS: 23823a6b53911b5b097fa5087536ce50a7282ae7
+  StanwoodDialog: 7885bc526fda7404fc80c762d8330f059ada7a27
 
-PODFILE CHECKSUM: 3de745f962f5c53f928ce489eed199daa8d29053
+PODFILE CHECKSUM: 27372fdbb1a77d79b79905c9be7a2de7072e81e2
 
 COCOAPODS: 1.3.1

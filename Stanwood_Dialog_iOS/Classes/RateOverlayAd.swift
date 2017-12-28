@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RateOverlayAd: UIView {
+public class RateOverlayAd: UIView {
     
     @IBOutlet weak var devsBannerUI: UIImageView!
     @IBOutlet weak var devProfileUI: UIImageView!
@@ -19,7 +19,7 @@ class RateOverlayAd: UIView {
     
     var overlayBannerContainer: UIView?
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         frame = CGRect(x: 0, y: 0, width: 300, height: 450)
@@ -41,7 +41,7 @@ class RateOverlayAd: UIView {
         }
     }
     
-    func buildOverlayAd(onLaunch nth: Int,
+    public func buildOverlayAd(onLaunch nth: Int,
                                with rateMeText: String,
                                from devProfile: UIImage,
                                over background: UIImage,

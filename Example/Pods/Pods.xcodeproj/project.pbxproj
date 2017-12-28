@@ -7,130 +7,122 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		027319CB6214DAE67A3026399A8980D9 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 6AD25A3F629C4A6157684FD91E6F35B7 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		68EFE680354AE608F13C66147617D7F1 /* Stanwood_Dialog_iOS-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F858636A00DC414D40651F8944D98358 /* Stanwood_Dialog_iOS-dummy.m */; };
-		7137DB95598D75FB32FDC1A4B2A858F9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		9C815EB41FF3AF65003485AB /* RateOverlayAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */; };
-		9E59594AAC73966B45A68F0D0C4A3D7A /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E86D293A9E7F12A712BC7513FEA0C55 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */; };
-		E1250E57AFEAB888694E35B590019B11 /* Stanwood_Dialog_iOS-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F014F1F161812EC8E809C24FAF6E1695 /* Stanwood_Dialog_iOS-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F2B24A158377CC65B9C4B63B4A851378 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		02C22F5954338DAED0FBA872236910A1 /* Pods-StanwoodDialogExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F1F633681F131310331B76D8053559 /* Pods-StanwoodDialogExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		200414097F0E7E37A7AFC47D716E5419 /* StanwoodDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3D74D5BB88800FAC5B153F39EC4B3 /* StanwoodDialog-dummy.m */; };
+		454F83BB7797A082EF28C3C43192A9C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateOverlayAd.xib in Sources */ = {isa = PBXBuildFile; fileRef = E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */; };
+		9DA2BF897FA77ACCB0C8DEFA144C1D5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		A2088847FEEF77E667E1643EACD236B5 /* StanwoodDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BACB4021C304FBCFC5F94BF1868ED5 /* StanwoodDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B0928546AA89BF368E466ED6E170CFE6 /* RateOverlayAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */; };
+		FD833F767F7AD6C5DA6B0CC391C8553E /* Pods-StanwoodDialogExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211A11E5FBD9DB5BB93F8B7CF5A5257 /* Pods-StanwoodDialogExample-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		5F5E42A0A7467D0B62CC9DF54C76F00C /* PBXContainerItemProxy */ = {
+		7CEA139022B2F925194BEB08E74290A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DE4250B10ABC8C1F3D650DD5597EF5F7;
-			remoteInfo = Stanwood_Dialog_iOS;
+			remoteGlobalIDString = B61C0E3DF03719A24F7042A7E9297D67;
+			remoteInfo = StanwoodDialog;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		24316AE5433816DE30836F640B0A0455 /* Pods-Stanwood_Dialog_iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stanwood_Dialog_iOS_Tests.modulemap"; sourceTree = "<group>"; };
-		3093EA6DAC99B01995FAA9488BF8395E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3D444FFD76ABFB9480AC72D8FEC42085 /* Pods_Stanwood_Dialog_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stanwood_Dialog_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3E86D293A9E7F12A712BC7513FEA0C55 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stanwood_Dialog_iOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		6489180317027C193014E0F456BB26E7 /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		08A0DD4B9D1D43903D9335BDF3B4687E /* StanwoodDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StanwoodDialog.framework; path = StanwoodDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0F63E035F7862639003256AD627D1B0E /* Pods-StanwoodDialogExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StanwoodDialogExample-resources.sh"; sourceTree = "<group>"; };
+		1029378ED5A3A81E9ACF1BB413747E36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		15C8ED0459246B72D5618A3AB413980F /* Pods-StanwoodDialogExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StanwoodDialogExample-acknowledgements.plist"; sourceTree = "<group>"; };
+		1EF9E60BA24691EE31A268BAFDA77C43 /* StanwoodDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = StanwoodDialog.modulemap; sourceTree = "<group>"; };
+		2F382B8C946C9556DFA3A833D9E8C57D /* Pods_StanwoodDialogExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StanwoodDialogExample.framework; path = "Pods-StanwoodDialogExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RateOverlayAd.swift; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.swift; sourceTree = "<group>"; };
+		63A3D74D5BB88800FAC5B153F39EC4B3 /* StanwoodDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StanwoodDialog-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6AD25A3F629C4A6157684FD91E6F35B7 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stanwood_Dialog_iOS_Tests-umbrella.h"; sourceTree = "<group>"; };
-		6EE4EDFCD754E40540CF6AED25B3DE39 /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		990B47F36AADE1E6173ECC011F20FE2E /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RateOverlayAd.swift; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.swift; sourceTree = "<group>"; };
-		9CC99F7A1FC73D4600B59902 /* RateOverlayAd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = RateOverlayAd.xib; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.xib; sourceTree = "<group>"; };
-		A3CE4AA5DADC2892AEA6B3E41FF623A6 /* Stanwood_Dialog_iOS.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Stanwood_Dialog_iOS.xcconfig; sourceTree = "<group>"; };
-		AE95D7BF554F9A9FF3C810469C35EB85 /* Stanwood_Dialog_iOS.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Stanwood_Dialog_iOS.modulemap; sourceTree = "<group>"; };
-		C2A0C29E8A0D598CC2D5A81F579F06FF /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C75A4544CF45FD8EED3868BEC7311A8A /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		D6656282F5B653564295D421309FF756 /* Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		E36CE1AA10736356C599C47E3CDAF2AC /* Stanwood_Dialog_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Stanwood_Dialog_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F014F1F161812EC8E809C24FAF6E1695 /* Stanwood_Dialog_iOS-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stanwood_Dialog_iOS-umbrella.h"; sourceTree = "<group>"; };
-		F15F94C0DFC9218CBD7AD36DA47A38E4 /* Pods-Stanwood_Dialog_iOS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Tests-resources.sh"; sourceTree = "<group>"; };
-		F171E0BEF2E6AE784BBE104EC3094E26 /* Stanwood_Dialog_iOS-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Stanwood_Dialog_iOS-prefix.pch"; sourceTree = "<group>"; };
-		F858636A00DC414D40651F8944D98358 /* Stanwood_Dialog_iOS-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Stanwood_Dialog_iOS-dummy.m"; sourceTree = "<group>"; };
+		6CFA41FEC059D9693F83AD221881D73F /* Pods-StanwoodDialogExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StanwoodDialogExample.debug.xcconfig"; sourceTree = "<group>"; };
+		77A70DFF33B7D8AE71441A8E891CA078 /* Pods-StanwoodDialogExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StanwoodDialogExample-acknowledgements.markdown"; sourceTree = "<group>"; };
+		9211A11E5FBD9DB5BB93F8B7CF5A5257 /* Pods-StanwoodDialogExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StanwoodDialogExample-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A78AA8086336F7828244D7E67802D1F0 /* Pods-StanwoodDialogExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-StanwoodDialogExample.modulemap"; sourceTree = "<group>"; };
+		A827E402DB79B32A4A9DC02FE330C569 /* StanwoodDialog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StanwoodDialog.xcconfig; sourceTree = "<group>"; };
+		C77EECE79C9415A9D184F94DA2FA4316 /* Pods-StanwoodDialogExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StanwoodDialogExample.release.xcconfig"; sourceTree = "<group>"; };
+		DDC0AB8F4D8072F3C40A7C8B0E8733F7 /* StanwoodDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-prefix.pch"; sourceTree = "<group>"; };
+		E5F1F633681F131310331B76D8053559 /* Pods-StanwoodDialogExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StanwoodDialogExample-umbrella.h"; sourceTree = "<group>"; };
+		E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RateOverlayAd.xib; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.xib; sourceTree = "<group>"; };
+		E9BACB4021C304FBCFC5F94BF1868ED5 /* StanwoodDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-umbrella.h"; sourceTree = "<group>"; };
+		EA2C705A6178F52129D531C4451AE40B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FEBC551F53725A09EA7B4FB6A137FB4E /* Pods-StanwoodDialogExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StanwoodDialogExample-frameworks.sh"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8DAE47860866D228F222F8C7CA6246DD /* Frameworks */ = {
+		43CC5FB0B96FEE3F5165C7DFCB5C1731 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F2B24A158377CC65B9C4B63B4A851378 /* Foundation.framework in Frameworks */,
+				9DA2BF897FA77ACCB0C8DEFA144C1D5A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EC4CA63E3762FC1DDEE563DF274F6A0B /* Frameworks */ = {
+		D6BA4E8DA21ACC9F970C8540B0BF13E5 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7137DB95598D75FB32FDC1A4B2A858F9 /* Foundation.framework in Frameworks */,
+				454F83BB7797A082EF28C3C43192A9C5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33E6D65314B36666AA403ABA5FDE7045 /* Stanwood_Dialog_iOS */ = {
+		04108BBEE0AB8EBCC1BA37200CF732F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9C815EB31FF3AF65003485AB /* RateOverlayAd.swift */,
-				9CC99F7A1FC73D4600B59902 /* RateOverlayAd.xib */,
-				9AAB25614719F0517B198750FD44855A /* Support Files */,
+				2F382B8C946C9556DFA3A833D9E8C57D /* Pods_StanwoodDialogExample.framework */,
+				08A0DD4B9D1D43903D9335BDF3B4687E /* StanwoodDialog.framework */,
 			);
-			name = Stanwood_Dialog_iOS;
-			path = ../..;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		6BA3F4FEDF75CD969DE0F32A6BA5C7BC /* Development Pods */ = {
+		318992F4BFEE3F6BAA1A753246226841 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				33E6D65314B36666AA403ABA5FDE7045 /* Stanwood_Dialog_iOS */,
+				EA2C705A6178F52129D531C4451AE40B /* Info.plist */,
+				1EF9E60BA24691EE31A268BAFDA77C43 /* StanwoodDialog.modulemap */,
+				A827E402DB79B32A4A9DC02FE330C569 /* StanwoodDialog.xcconfig */,
+				63A3D74D5BB88800FAC5B153F39EC4B3 /* StanwoodDialog-dummy.m */,
+				DDC0AB8F4D8072F3C40A7C8B0E8733F7 /* StanwoodDialog-prefix.pch */,
+				E9BACB4021C304FBCFC5F94BF1868ED5 /* StanwoodDialog-umbrella.h */,
 			);
-			name = "Development Pods";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/StanwoodDialog";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				6BA3F4FEDF75CD969DE0F32A6BA5C7BC /* Development Pods */,
+				E5D253EAE5DBD824D92A39F92C6C3B55 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				E575F2AF411EDE141A33C838298ECD0C /* Products */,
-				FFE94A8327D47F39B38D23F27FEAF396 /* Targets Support Files */,
+				04108BBEE0AB8EBCC1BA37200CF732F9 /* Products */,
+				B32712F5624CB5866D176C9D0DE34C8A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		9783ECBD6D90C05753AA15AF56A15109 /* Pods-Stanwood_Dialog_iOS_Tests */ = {
+		93D74E40F8BD6AD38FA2CD527F30AF11 /* StanwoodDialog */ = {
 			isa = PBXGroup;
 			children = (
-				3093EA6DAC99B01995FAA9488BF8395E /* Info.plist */,
-				24316AE5433816DE30836F640B0A0455 /* Pods-Stanwood_Dialog_iOS_Tests.modulemap */,
-				6EE4EDFCD754E40540CF6AED25B3DE39 /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown */,
-				C75A4544CF45FD8EED3868BEC7311A8A /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.plist */,
-				3E86D293A9E7F12A712BC7513FEA0C55 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */,
-				D6656282F5B653564295D421309FF756 /* Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh */,
-				F15F94C0DFC9218CBD7AD36DA47A38E4 /* Pods-Stanwood_Dialog_iOS_Tests-resources.sh */,
-				6AD25A3F629C4A6157684FD91E6F35B7 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */,
-				6489180317027C193014E0F456BB26E7 /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */,
-				990B47F36AADE1E6173ECC011F20FE2E /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */,
+				34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */,
+				E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */,
+				318992F4BFEE3F6BAA1A753246226841 /* Support Files */,
 			);
-			name = "Pods-Stanwood_Dialog_iOS_Tests";
-			path = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests";
+			name = StanwoodDialog;
+			path = ../..;
 			sourceTree = "<group>";
 		};
-		9AAB25614719F0517B198750FD44855A /* Support Files */ = {
+		B32712F5624CB5866D176C9D0DE34C8A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				C2A0C29E8A0D598CC2D5A81F579F06FF /* Info.plist */,
-				AE95D7BF554F9A9FF3C810469C35EB85 /* Stanwood_Dialog_iOS.modulemap */,
-				A3CE4AA5DADC2892AEA6B3E41FF623A6 /* Stanwood_Dialog_iOS.xcconfig */,
-				F858636A00DC414D40651F8944D98358 /* Stanwood_Dialog_iOS-dummy.m */,
-				F171E0BEF2E6AE784BBE104EC3094E26 /* Stanwood_Dialog_iOS-prefix.pch */,
-				F014F1F161812EC8E809C24FAF6E1695 /* Stanwood_Dialog_iOS-umbrella.h */,
+				C4FB736C953E072505F5CC27A10DD8FF /* Pods-StanwoodDialogExample */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/Stanwood_Dialog_iOS";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
@@ -141,6 +133,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C4FB736C953E072505F5CC27A10DD8FF /* Pods-StanwoodDialogExample */ = {
+			isa = PBXGroup;
+			children = (
+				1029378ED5A3A81E9ACF1BB413747E36 /* Info.plist */,
+				A78AA8086336F7828244D7E67802D1F0 /* Pods-StanwoodDialogExample.modulemap */,
+				77A70DFF33B7D8AE71441A8E891CA078 /* Pods-StanwoodDialogExample-acknowledgements.markdown */,
+				15C8ED0459246B72D5618A3AB413980F /* Pods-StanwoodDialogExample-acknowledgements.plist */,
+				9211A11E5FBD9DB5BB93F8B7CF5A5257 /* Pods-StanwoodDialogExample-dummy.m */,
+				FEBC551F53725A09EA7B4FB6A137FB4E /* Pods-StanwoodDialogExample-frameworks.sh */,
+				0F63E035F7862639003256AD627D1B0E /* Pods-StanwoodDialogExample-resources.sh */,
+				E5F1F633681F131310331B76D8053559 /* Pods-StanwoodDialogExample-umbrella.h */,
+				6CFA41FEC059D9693F83AD221881D73F /* Pods-StanwoodDialogExample.debug.xcconfig */,
+				C77EECE79C9415A9D184F94DA2FA4316 /* Pods-StanwoodDialogExample.release.xcconfig */,
+			);
+			name = "Pods-StanwoodDialogExample";
+			path = "Target Support Files/Pods-StanwoodDialogExample";
+			sourceTree = "<group>";
+		};
 		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,78 +159,69 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		E575F2AF411EDE141A33C838298ECD0C /* Products */ = {
+		E5D253EAE5DBD824D92A39F92C6C3B55 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3D444FFD76ABFB9480AC72D8FEC42085 /* Pods_Stanwood_Dialog_iOS_Tests.framework */,
-				E36CE1AA10736356C599C47E3CDAF2AC /* Stanwood_Dialog_iOS.framework */,
+				93D74E40F8BD6AD38FA2CD527F30AF11 /* StanwoodDialog */,
 			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		FFE94A8327D47F39B38D23F27FEAF396 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9783ECBD6D90C05753AA15AF56A15109 /* Pods-Stanwood_Dialog_iOS_Tests */,
-			);
-			name = "Targets Support Files";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		296D6AB67D04CB8D2273B4D2F242F0AC /* Headers */ = {
+		03F10CACBA302AFE06FA8988FEF8C38A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1250E57AFEAB888694E35B590019B11 /* Stanwood_Dialog_iOS-umbrella.h in Headers */,
+				02C22F5954338DAED0FBA872236910A1 /* Pods-StanwoodDialogExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F1998583B574D758AA2680EDBC2F5BF4 /* Headers */ = {
+		CEE873A855F3F09D19AB35A91398A8C6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027319CB6214DAE67A3026399A8980D9 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h in Headers */,
+				A2088847FEEF77E667E1643EACD236B5 /* StanwoodDialog-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		9FCF93AC6688D6B9B526D3CB022168EA /* Pods-Stanwood_Dialog_iOS_Tests */ = {
+		4F9CE6B568F187A6952DAF4A187D1AAB /* Pods-StanwoodDialogExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 512B27C2C695BC9BCB02553434C98620 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Tests" */;
+			buildConfigurationList = D915E8170E991D11EBD4932CB11578DA /* Build configuration list for PBXNativeTarget "Pods-StanwoodDialogExample" */;
 			buildPhases = (
-				C60F07025BA6E7F010EC7CEFA04FC6FD /* Sources */,
-				EC4CA63E3762FC1DDEE563DF274F6A0B /* Frameworks */,
-				F1998583B574D758AA2680EDBC2F5BF4 /* Headers */,
+				A8248204A6220D14290D2E6D48970DD6 /* Sources */,
+				D6BA4E8DA21ACC9F970C8540B0BF13E5 /* Frameworks */,
+				03F10CACBA302AFE06FA8988FEF8C38A /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6EB0FAA6CFCE4F8D16F45FCB8412D253 /* PBXTargetDependency */,
+				B2EA2539719B9E9106FFE4694886FB5B /* PBXTargetDependency */,
 			);
-			name = "Pods-Stanwood_Dialog_iOS_Tests";
-			productName = "Pods-Stanwood_Dialog_iOS_Tests";
-			productReference = 3D444FFD76ABFB9480AC72D8FEC42085 /* Pods_Stanwood_Dialog_iOS_Tests.framework */;
+			name = "Pods-StanwoodDialogExample";
+			productName = "Pods-StanwoodDialogExample";
+			productReference = 2F382B8C946C9556DFA3A833D9E8C57D /* Pods_StanwoodDialogExample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DE4250B10ABC8C1F3D650DD5597EF5F7 /* Stanwood_Dialog_iOS */ = {
+		B61C0E3DF03719A24F7042A7E9297D67 /* StanwoodDialog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 11A2E397B27756BB8D12D52932880907 /* Build configuration list for PBXNativeTarget "Stanwood_Dialog_iOS" */;
+			buildConfigurationList = 62A8B2C7B3B38DAE38FBD3756CF7EB78 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */;
 			buildPhases = (
-				C6BDC92EA780D19705E0241D7706CDC6 /* Sources */,
-				8DAE47860866D228F222F8C7CA6246DD /* Frameworks */,
-				296D6AB67D04CB8D2273B4D2F242F0AC /* Headers */,
+				093DCEFEDFB78056F49DE3CB347C80F8 /* Sources */,
+				43CC5FB0B96FEE3F5165C7DFCB5C1731 /* Frameworks */,
+				CEE873A855F3F09D19AB35A91398A8C6 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Stanwood_Dialog_iOS;
-			productName = Stanwood_Dialog_iOS;
-			productReference = E36CE1AA10736356C599C47E3CDAF2AC /* Stanwood_Dialog_iOS.framework */;
+			name = StanwoodDialog;
+			productName = StanwoodDialog;
+			productReference = 08A0DD4B9D1D43903D9335BDF3B4687E /* StanwoodDialog.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -231,11 +232,6 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
-				TargetAttributes = {
-					9FCF93AC6688D6B9B526D3CB022168EA = {
-						LastSwiftMigration = 0920;
-					};
-				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -245,49 +241,50 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = E575F2AF411EDE141A33C838298ECD0C /* Products */;
+			productRefGroup = 04108BBEE0AB8EBCC1BA37200CF732F9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9FCF93AC6688D6B9B526D3CB022168EA /* Pods-Stanwood_Dialog_iOS_Tests */,
-				DE4250B10ABC8C1F3D650DD5597EF5F7 /* Stanwood_Dialog_iOS */,
+				4F9CE6B568F187A6952DAF4A187D1AAB /* Pods-StanwoodDialogExample */,
+				B61C0E3DF03719A24F7042A7E9297D67 /* StanwoodDialog */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		C60F07025BA6E7F010EC7CEFA04FC6FD /* Sources */ = {
+		093DCEFEDFB78056F49DE3CB347C80F8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C815EB41FF3AF65003485AB /* RateOverlayAd.swift in Sources */,
-				9E59594AAC73966B45A68F0D0C4A3D7A /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m in Sources */,
+				B0928546AA89BF368E466ED6E170CFE6 /* RateOverlayAd.swift in Sources */,
+				51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateOverlayAd.xib in Sources */,
+				200414097F0E7E37A7AFC47D716E5419 /* StanwoodDialog-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6BDC92EA780D19705E0241D7706CDC6 /* Sources */ = {
+		A8248204A6220D14290D2E6D48970DD6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68EFE680354AE608F13C66147617D7F1 /* Stanwood_Dialog_iOS-dummy.m in Sources */,
+				FD833F767F7AD6C5DA6B0CC391C8553E /* Pods-StanwoodDialogExample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		6EB0FAA6CFCE4F8D16F45FCB8412D253 /* PBXTargetDependency */ = {
+		B2EA2539719B9E9106FFE4694886FB5B /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			name = Stanwood_Dialog_iOS;
-			target = DE4250B10ABC8C1F3D650DD5597EF5F7 /* Stanwood_Dialog_iOS */;
-			targetProxy = 5F5E42A0A7467D0B62CC9DF54C76F00C /* PBXContainerItemProxy */;
+			name = StanwoodDialog;
+			target = B61C0E3DF03719A24F7042A7E9297D67 /* StanwoodDialog */;
+			targetProxy = 7CEA139022B2F925194BEB08E74290A3 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0CC5C11A25444332D6402AAE7EBA7E22 /* Debug */ = {
+		2F87E42004C47A633BADD9DD5E2445F4 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3CE4AA5DADC2892AEA6B3E41FF623A6 /* Stanwood_Dialog_iOS.xcconfig */;
+			baseConfigurationReference = A827E402DB79B32A4A9DC02FE330C569 /* StanwoodDialog.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -298,23 +295,26 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Stanwood_Dialog_iOS/Stanwood_Dialog_iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Stanwood_Dialog_iOS/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/StanwoodDialog/StanwoodDialog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Stanwood_Dialog_iOS/Stanwood_Dialog_iOS.modulemap";
-				PRODUCT_NAME = Stanwood_Dialog_iOS;
+				MODULEMAP_FILE = "Target Support Files/StanwoodDialog/StanwoodDialog.modulemap";
+				PRODUCT_NAME = StanwoodDialog;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */ = {
+		39C5BC78A31CDE101068C530CAC7FA0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -363,7 +363,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -374,37 +374,7 @@
 			};
 			name = Debug;
 		};
-		5B095549D18D22C9B04E2377B4DA2E51 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = A3CE4AA5DADC2892AEA6B3E41FF623A6 /* Stanwood_Dialog_iOS.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/Stanwood_Dialog_iOS/Stanwood_Dialog_iOS-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/Stanwood_Dialog_iOS/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/Stanwood_Dialog_iOS/Stanwood_Dialog_iOS.modulemap";
-				PRODUCT_NAME = Stanwood_Dialog_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		731DC216E1A58545B559F6E0A2418060 /* Release */ = {
+		89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -450,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
@@ -459,11 +429,10 @@
 			};
 			name = Release;
 		};
-		E0C2C1E1216665396B8442161DFF9FB6 /* Release */ = {
+		9164F837B55C234A8076742B30BEF32D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 990B47F36AADE1E6173ECC011F20FE2E /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */;
+			baseConfigurationReference = C77EECE79C9415A9D184F94DA2FA4316 /* Pods-StanwoodDialogExample.release.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -473,20 +442,20 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-StanwoodDialogExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-StanwoodDialogExample/Pods-StanwoodDialogExample.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Tests;
+				PRODUCT_NAME = Pods_StanwoodDialogExample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -494,11 +463,10 @@
 			};
 			name = Release;
 		};
-		F255ECD0AFD37ECD8C5431834D2D869A /* Debug */ = {
+		AC573FDBDA1B59A85B8FD9E55DFFD2DD /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6489180317027C193014E0F456BB26E7 /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */;
+			baseConfigurationReference = 6CFA41FEC059D9693F83AD221881D73F /* Pods-StanwoodDialogExample.debug.xcconfig */;
 			buildSettings = {
-				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -508,21 +476,52 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-StanwoodDialogExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-StanwoodDialogExample/Pods-StanwoodDialogExample.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Tests;
+				PRODUCT_NAME = Pods_StanwoodDialogExample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		E52B0D2CEDFB56FB67334C270CA418A8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A827E402DB79B32A4A9DC02FE330C569 /* StanwoodDialog.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/StanwoodDialog/StanwoodDialog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/StanwoodDialog/StanwoodDialog.modulemap";
+				PRODUCT_NAME = StanwoodDialog;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -532,29 +531,29 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		11A2E397B27756BB8D12D52932880907 /* Build configuration list for PBXNativeTarget "Stanwood_Dialog_iOS" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0CC5C11A25444332D6402AAE7EBA7E22 /* Debug */,
-				5B095549D18D22C9B04E2377B4DA2E51 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				33DA7F43A1D2FA3C74A8C8FC246E1FA6 /* Debug */,
-				731DC216E1A58545B559F6E0A2418060 /* Release */,
+				39C5BC78A31CDE101068C530CAC7FA0F /* Debug */,
+				89C8BB24E37B25BAEEB8FBA01EE05DAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		512B27C2C695BC9BCB02553434C98620 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Tests" */ = {
+		62A8B2C7B3B38DAE38FBD3756CF7EB78 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F255ECD0AFD37ECD8C5431834D2D869A /* Debug */,
-				E0C2C1E1216665396B8442161DFF9FB6 /* Release */,
+				E52B0D2CEDFB56FB67334C270CA418A8 /* Debug */,
+				2F87E42004C47A633BADD9DD5E2445F4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D915E8170E991D11EBD4932CB11578DA /* Build configuration list for PBXNativeTarget "Pods-StanwoodDialogExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC573FDBDA1B59A85B8FD9E55DFFD2DD /* Debug */,
+				9164F837B55C234A8076742B30BEF32D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
