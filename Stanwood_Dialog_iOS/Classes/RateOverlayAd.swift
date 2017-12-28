@@ -58,14 +58,14 @@ public class RateOverlayAd: UIView {
             //accentTint.color = color
             
             //ADD BLACK SCREEN
-            guard let overlaySize = overlayBannerContainer?.frame.size else {
-                return
-            }
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                           y: 0.0,
                                                           width: parent!.view.frame.size.width,
                                                           height: parent!.view.frame.size.height))
             overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
+            guard let overlaySize = overlayBannerContainer?.frame.size else {
+                return
+            }
             frame.origin.x = (overlaySize.width - frame.size.width) / 2
             frame.origin.y = (overlaySize.height - frame.size.height) / 2
             overlayBannerContainer?.addSubview(self)
