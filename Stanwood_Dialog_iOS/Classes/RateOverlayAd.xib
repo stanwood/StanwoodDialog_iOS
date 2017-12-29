@@ -93,8 +93,10 @@ Sternchen reichen - dauert nur 1 Minute.</string>
                 <constraint firstItem="Kdh-HX-Qlo" firstAttribute="width" secondItem="rSw-uN-Cl6" secondAttribute="width" id="wdW-ZR-uPn"/>
             </constraints>
             <connections>
+                <outlet property="close" destination="rSw-uN-Cl6" id="th8-SB-iFq"/>
                 <outlet property="devProfileUI" destination="aIc-PW-JRL" id="bKe-Ce-Tc2"/>
                 <outlet property="devsBannerUI" destination="RhZ-Wq-WE0" id="JcZ-0a-vkb"/>
+                <outlet property="open" destination="Kdh-HX-Qlo" id="4AM-is-kYz"/>
                 <outlet property="rateMeTextUI" destination="d4z-Aa-6xr" id="zZJ-uv-24T"/>
             </connections>
             <point key="canvasLocation" x="33.5" y="53.5"/>

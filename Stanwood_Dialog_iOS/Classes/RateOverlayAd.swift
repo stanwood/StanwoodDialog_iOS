@@ -9,14 +9,17 @@
 import UIKit
 
 @objc
-public class RateOverlayAd: UIView {
+public class RateMeAd: UIView {
     
     @IBOutlet weak var devsBannerUI: UIImageView!
     @IBOutlet weak var devProfileUI: UIImageView!
     @IBOutlet weak var rateMeTextUI: UILabel!
+    @IBOutlet weak var open: UIButton!
+    @IBOutlet weak var close: UIButton!
+    
     
 //    weak var accentTint: UIColor?
-    static let kNumberOfAppStartsKey = "numberOfAppStarts"
+    static let appStartCount = "numberOfAppStarts"
     
     var overlayBannerContainer: UIView?
     
@@ -43,20 +46,20 @@ public class RateOverlayAd: UIView {
     }
     
     @objc
-    public func buildOverlayAd(onLaunch nth: Int,
-                               text rateMeText: String,
-                               from devProfile: UIImage,
-                               with background: UIImage,
-                               over parent: UIViewController,
-                               tint color: UIColor) {
-        if UserDefaults.standard.integer(forKey: RateOverlayAd.kNumberOfAppStartsKey) == nth  {
+    public func showAd(on launch: Int,
+        over parent: UIViewController,
+        with rateMeText: String,
+        from devProfile: UIImage,
+        over background: UIImage,
+        tint accentTint: UIColor) {
+        if UserDefaults.standard.integer(forKey: RateMeAd.appStartCount) == launch  {
             
             devsBannerUI.image = background
             devProfileUI.image = devProfile
             rateMeTextUI.text = rateMeText
             
-            //rateMe = URL(string: )
-            //accentTint.color = color
+            open.backgroundColor = accentTint
+            close.tintColor = accentTint
             
             //ADD BLACK SCREEN
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
