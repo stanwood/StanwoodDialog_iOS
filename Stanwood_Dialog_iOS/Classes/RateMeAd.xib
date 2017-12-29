@@ -22,7 +22,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Aa-6xr">
-                    <rect key="frame" x="20" y="165" width="335" height="184"/>
+                    <rect key="frame" x="56" y="165" width="263.5" height="184"/>
                     <string key="text">Hi, 
 ich bin Hannes, der Entwickler 
 von ON AIR.
@@ -83,12 +83,12 @@ Sternchen reichen - dauert nur 1 Minute.</string>
                 <constraint firstItem="RhZ-Wq-WE0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="99x-CT-4R7"/>
                 <constraint firstItem="aIc-PW-JRL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E7i-OU-PCQ"/>
                 <constraint firstItem="RhZ-Wq-WE0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KGF-la-17W"/>
-                <constraint firstAttribute="trailing" secondItem="d4z-Aa-6xr" secondAttribute="trailing" constant="20" symbolic="YES" id="KhA-5e-0ci"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="d4z-Aa-6xr" secondAttribute="trailing" constant="20" symbolic="YES" id="KhA-5e-0ci"/>
                 <constraint firstAttribute="bottom" secondItem="Kdh-HX-Qlo" secondAttribute="bottom" id="NCF-t6-wej"/>
                 <constraint firstAttribute="trailing" secondItem="RhZ-Wq-WE0" secondAttribute="trailing" id="Nu3-dS-Sig"/>
                 <constraint firstItem="d4z-Aa-6xr" firstAttribute="top" secondItem="aIc-PW-JRL" secondAttribute="bottom" constant="15" id="SgP-1y-p3M"/>
                 <constraint firstItem="aIc-PW-JRL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="V1N-XG-Fol"/>
-                <constraint firstItem="d4z-Aa-6xr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="lzQ-5A-rfh"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="lzQ-5A-rfh"/>
                 <constraint firstItem="Kdh-HX-Qlo" firstAttribute="top" relation="greaterThanOrEqual" secondItem="d4z-Aa-6xr" secondAttribute="bottom" constant="8" symbolic="YES" id="mZP-kc-heA"/>
                 <constraint firstItem="rSw-uN-Cl6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oqD-6g-jU4"/>
                 <constraint firstItem="Kdh-HX-Qlo" firstAttribute="leading" secondItem="rSw-uN-Cl6" secondAttribute="trailing" id="tIr-zG-Iv7"/>

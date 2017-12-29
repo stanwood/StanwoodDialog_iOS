@@ -57,6 +57,9 @@ public class RateMeAd: UIView {
             devsBannerUI.image = background
             devProfileUI.image = devProfile
             rateMeTextUI.text = rateMeText
+            rateMeTextUI.sizeToFit()
+            rateMeTextUI.numberOfLines = 0
+            
             
             open.backgroundColor = accentTint
             close.tintColor = accentTint
