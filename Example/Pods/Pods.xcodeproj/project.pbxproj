@@ -10,10 +10,10 @@
 		02C22F5954338DAED0FBA872236910A1 /* Pods-StanwoodDialogExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5F1F633681F131310331B76D8053559 /* Pods-StanwoodDialogExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		200414097F0E7E37A7AFC47D716E5419 /* StanwoodDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 63A3D74D5BB88800FAC5B153F39EC4B3 /* StanwoodDialog-dummy.m */; };
 		454F83BB7797A082EF28C3C43192A9C5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateOverlayAd.xib in Sources */ = {isa = PBXBuildFile; fileRef = E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */; };
+		51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateMeAd.xib in Sources */ = {isa = PBXBuildFile; fileRef = E837D0FC0766D37B4D2B2C72138A1F7E /* RateMeAd.xib */; };
 		9DA2BF897FA77ACCB0C8DEFA144C1D5A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 		A2088847FEEF77E667E1643EACD236B5 /* StanwoodDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E9BACB4021C304FBCFC5F94BF1868ED5 /* StanwoodDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B0928546AA89BF368E466ED6E170CFE6 /* RateOverlayAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */; };
+		B0928546AA89BF368E466ED6E170CFE6 /* RateMeAd.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34EFD3322C2E841802CE701A44257C4A /* RateMeAd.swift */; };
 		FD833F767F7AD6C5DA6B0CC391C8553E /* Pods-StanwoodDialogExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9211A11E5FBD9DB5BB93F8B7CF5A5257 /* Pods-StanwoodDialogExample-dummy.m */; };
 /* End PBXBuildFile section */
 
@@ -28,25 +28,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		08A0DD4B9D1D43903D9335BDF3B4687E /* StanwoodDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StanwoodDialog.framework; path = StanwoodDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08A0DD4B9D1D43903D9335BDF3B4687E /* StanwoodDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StanwoodDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F63E035F7862639003256AD627D1B0E /* Pods-StanwoodDialogExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StanwoodDialogExample-resources.sh"; sourceTree = "<group>"; };
 		1029378ED5A3A81E9ACF1BB413747E36 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		15C8ED0459246B72D5618A3AB413980F /* Pods-StanwoodDialogExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StanwoodDialogExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		1EF9E60BA24691EE31A268BAFDA77C43 /* StanwoodDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = StanwoodDialog.modulemap; sourceTree = "<group>"; };
-		2F382B8C946C9556DFA3A833D9E8C57D /* Pods_StanwoodDialogExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_StanwoodDialogExample.framework; path = "Pods-StanwoodDialogExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RateOverlayAd.swift; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.swift; sourceTree = "<group>"; };
+		1EF9E60BA24691EE31A268BAFDA77C43 /* StanwoodDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = StanwoodDialog.modulemap; sourceTree = "<group>"; };
+		2F382B8C946C9556DFA3A833D9E8C57D /* Pods_StanwoodDialogExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StanwoodDialogExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34EFD3322C2E841802CE701A44257C4A /* RateMeAd.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RateMeAd.swift; path = Stanwood_Dialog_iOS/Classes/RateMeAd.swift; sourceTree = "<group>"; };
 		63A3D74D5BB88800FAC5B153F39EC4B3 /* StanwoodDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StanwoodDialog-dummy.m"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6CFA41FEC059D9693F83AD221881D73F /* Pods-StanwoodDialogExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StanwoodDialogExample.debug.xcconfig"; sourceTree = "<group>"; };
 		77A70DFF33B7D8AE71441A8E891CA078 /* Pods-StanwoodDialogExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StanwoodDialogExample-acknowledgements.markdown"; sourceTree = "<group>"; };
 		9211A11E5FBD9DB5BB93F8B7CF5A5257 /* Pods-StanwoodDialogExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StanwoodDialogExample-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		A78AA8086336F7828244D7E67802D1F0 /* Pods-StanwoodDialogExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-StanwoodDialogExample.modulemap"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A78AA8086336F7828244D7E67802D1F0 /* Pods-StanwoodDialogExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-StanwoodDialogExample.modulemap"; sourceTree = "<group>"; };
 		A827E402DB79B32A4A9DC02FE330C569 /* StanwoodDialog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StanwoodDialog.xcconfig; sourceTree = "<group>"; };
 		C77EECE79C9415A9D184F94DA2FA4316 /* Pods-StanwoodDialogExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StanwoodDialogExample.release.xcconfig"; sourceTree = "<group>"; };
 		DDC0AB8F4D8072F3C40A7C8B0E8733F7 /* StanwoodDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-prefix.pch"; sourceTree = "<group>"; };
 		E5F1F633681F131310331B76D8053559 /* Pods-StanwoodDialogExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StanwoodDialogExample-umbrella.h"; sourceTree = "<group>"; };
-		E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RateOverlayAd.xib; path = Stanwood_Dialog_iOS/Classes/RateOverlayAd.xib; sourceTree = "<group>"; };
+		E837D0FC0766D37B4D2B2C72138A1F7E /* RateMeAd.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RateMeAd.xib; path = Stanwood_Dialog_iOS/Classes/RateMeAd.xib; sourceTree = "<group>"; };
 		E9BACB4021C304FBCFC5F94BF1868ED5 /* StanwoodDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-umbrella.h"; sourceTree = "<group>"; };
 		EA2C705A6178F52129D531C4451AE40B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FEBC551F53725A09EA7B4FB6A137FB4E /* Pods-StanwoodDialogExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StanwoodDialogExample-frameworks.sh"; sourceTree = "<group>"; };
@@ -109,8 +109,8 @@
 		93D74E40F8BD6AD38FA2CD527F30AF11 /* StanwoodDialog */ = {
 			isa = PBXGroup;
 			children = (
-				34EFD3322C2E841802CE701A44257C4A /* RateOverlayAd.swift */,
-				E837D0FC0766D37B4D2B2C72138A1F7E /* RateOverlayAd.xib */,
+				34EFD3322C2E841802CE701A44257C4A /* RateMeAd.swift */,
+				E837D0FC0766D37B4D2B2C72138A1F7E /* RateMeAd.xib */,
 				318992F4BFEE3F6BAA1A753246226841 /* Support Files */,
 			);
 			name = StanwoodDialog;
@@ -256,8 +256,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0928546AA89BF368E466ED6E170CFE6 /* RateOverlayAd.swift in Sources */,
-				51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateOverlayAd.xib in Sources */,
+				B0928546AA89BF368E466ED6E170CFE6 /* RateMeAd.swift in Sources */,
+				51C7AAF292A5AE8BDE4E86DCBAF71710 /* RateMeAd.xib in Sources */,
 				200414097F0E7E37A7AFC47D716E5419 /* StanwoodDialog-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
