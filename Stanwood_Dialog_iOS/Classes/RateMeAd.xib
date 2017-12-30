@@ -23,9 +23,12 @@
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Aa-6xr">
                     <rect key="frame" x="56" y="165" width="263.5" height="184"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
                     <string key="text">Hi, 
 ich bin Hannes, der Entwickler 
-von ${PRODUCT_NAME}.
+von \(${PRODUCT_NAME}).
 
 Kleine App-Entwickler wie wir leben von 
 guten Bewertungen im App-Store. 
