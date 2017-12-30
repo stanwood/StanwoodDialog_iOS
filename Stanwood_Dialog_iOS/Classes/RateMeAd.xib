@@ -25,7 +25,7 @@
                     <rect key="frame" x="56" y="165" width="263.5" height="184"/>
                     <string key="text">Hi, 
 ich bin Hannes, der Entwickler 
-von ON AIR.
+von ${PRODUCT_NAME}.
 
 Kleine App-Entwickler wie wir leben von 
 guten Bewertungen im App-Store. 

@@ -48,7 +48,7 @@ public class RateMeAd: UIView {
     @objc
     public func showAd(on launch: Int,
         over parent: UIViewController,
-        with rateMeText: String,
+        with rateMeText: String?,
         from devProfile: UIImage,
         over background: UIImage,
         tint accentTint: UIColor) {
@@ -56,7 +56,9 @@ public class RateMeAd: UIView {
             
             devsBannerUI.image = background
             devProfileUI.image = devProfile
-            rateMeTextUI.text = rateMeText
+            if let dialog = rateMeText {
+                rateMeTextUI.text = dialog
+            }
             rateMeTextUI.sizeToFit()
             rateMeTextUI.numberOfLines = 0
             
