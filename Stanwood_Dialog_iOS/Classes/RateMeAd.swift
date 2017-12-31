@@ -58,7 +58,8 @@ public class RateMeAd: UIView {
             devsBannerUI.image = background
             devProfileUI.image = devProfile
             if let dialog = rateMeText {
-                rateMeTextUI.text = dialog
+                let rateInvite = dialog.replacingOccurrences(of: "\\n", with: "\n")
+                rateMeTextUI.text = rateInvite
             }
             rateMeTextUI.sizeToFit()
             rateMeTextUI.numberOfLines = 0
