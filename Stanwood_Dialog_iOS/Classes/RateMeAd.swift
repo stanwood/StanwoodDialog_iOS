@@ -20,7 +20,7 @@ public class RateMeAd: UIView {
     
 //    weak var accentTint: UIColor?
     static let appStartCount = "numberOfAppStarts"
-    
+    var appStoreURL: URL?
     var overlayBannerContainer: UIView?
     
     public required init?(coder aDecoder: NSCoder) {
@@ -51,6 +51,7 @@ public class RateMeAd: UIView {
         with rateMeText: String?,
         from devProfile: UIImage,
         over background: UIImage,
+        link rateMeLink: URL,
         tint accentTint: UIColor) {
         if UserDefaults.standard.integer(forKey: RateMeAd.appStartCount) == launch  {
             
@@ -62,7 +63,7 @@ public class RateMeAd: UIView {
             rateMeTextUI.sizeToFit()
             rateMeTextUI.numberOfLines = 0
             
-            
+            appStoreURL = rateMeLink
             open.backgroundColor = accentTint
             close.tintColor = accentTint
             
@@ -100,8 +101,9 @@ public class RateMeAd: UIView {
     }
     
     @IBAction func rateApp(_ sender: Any) {
-        if let rating = URL(string: "rate_me_url") {
-            UIApplication.shared.openURL(rating)
+        
+        if let storeURL = appStoreURL {
+            UIApplication.shared.openURL(storeURL)
         }
         closeOverlayAd(self)
     }
