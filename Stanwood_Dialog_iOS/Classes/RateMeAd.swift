@@ -45,6 +45,28 @@ public class RateMeAd: UIView {
         }
     }
     
+    public class func showAd(on launch: Int,
+                             over parent: UIViewController,
+                             with rateMeText: String?,
+                             from devProfile: UIImage,
+                             over background: UIImage,
+                             link rateMeLink: URL,
+                             tint accentTint: UIColor) {
+        let bundle = Bundle(for: RateMeAd.self)
+        let overlay = bundle.loadNibNamed("RateMeAd",
+                                          owner: self,
+                                          options: nil)
+        if let rateMeAd = overlay?.first as? RateMeAd {
+            rateMeAd.showAd(on: launch,
+                            over: parent,
+                            with: rateMeText,
+                            from: devProfile,
+                            over: background,
+                            link: rateMeLink,
+                            tint: accentTint)
+        }
+    }
+    
     @objc
     public func showAd(on launch: Int,
         over parent: UIViewController,
