@@ -45,6 +45,34 @@ public class RateMeAd: UIView {
         }
     }
     
+    /**
+     It adds a popup asking the user to rate the app on the app store
+     
+     - parameter launch: the count of app launches until the overlay ad is shown
+     - parameter parent: the `UIViewController` hosting the ad overlay
+     - parameter rateMeText: the text displayed in the ad overlay's body
+     - parameter devProfile: the developer's profile image displayed in a circle
+     - parameter background: a background image displayed behind `devProfile`
+     - parameter rateMeLink: the link to the appStore for rating
+     - parameter accentTint: a `UIColor` for the buttons accent over white
+     
+     - version: 0.3.3
+     
+     ## Usage Example ##
+     ````
+     var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
+     var profileImage = UIImage(named: "RateMeProfile")
+     var bannerImage = UIImage(named: "RateMeBackground")
+     var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
+     
+     RateMeAd.show(on: 2,
+                   over: parent,
+                   with: rateMessage,
+                   from: profileImage,
+                   over: bannerImage,
+                   tint: accentColor)
+     ````
+    */
     public class func showAd(on launch: Int,
                              over parent: UIViewController,
                              with rateMeText: String?,
@@ -67,6 +95,38 @@ public class RateMeAd: UIView {
         }
     }
     
+    /**
+     Given an instance of RateMeAd, it adds a popup asking the user to rate the app on the app store
+     
+     - parameter launch: the count of app launches until the overlay ad is shown
+     - parameter parent: the `UIViewController` hosting the ad overlay
+     - parameter rateMeText: the text displayed in the ad overlay's body
+     - parameter devProfile: the developer's profile image displayed in a circle
+     - parameter background: a background image displayed behind `devProfile`
+     - parameter rateMeLink: the link to the appStore for rating
+     - parameter accentTint: a `UIColor` for the buttons accent over white
+     
+     - version: 0.3.3
+     
+     ## Usage Example ##
+     ````
+     var bundle = Bundle(for: RateMeAd.self)
+     var overlay = bundle.loadNibNamed("RateMeAd", owner: self, options: nil)
+     var rateMeAd: RateMeAd? = overlay?.first
+     
+     var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
+     var profileImage = UIImage(named: "RateMeProfile")
+     var bannerImage = UIImage(named: "RateMeBackground")
+     var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
+     
+     RateMeAd.show(on: 2,
+                   over: parent,
+                   with: rateMessage,
+                   from: profileImage,
+                   over: bannerImage,
+                   tint: accentColor)
+     ````
+     */
     @objc
     public func showAd(on launch: Int,
         over parent: UIViewController,

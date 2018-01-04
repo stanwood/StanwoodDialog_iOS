@@ -1,6 +1,11 @@
 use_frameworks!
-target 'StanwoodDialogExample' do
-  pod 'StanwoodDialog', :path => '../'
-  
-  
+
+target 'Stanwood_Dialog_iOS_Example' do
+  pod 'Stanwood_Dialog_iOS', :path => '../'
+
+  target 'Stanwood_Dialog_iOS_Tests' do
+    inherit! :search_paths
+
+    
+  end
 end

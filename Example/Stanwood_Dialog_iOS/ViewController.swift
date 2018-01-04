@@ -1,13 +1,12 @@
 //
 //  ViewController.swift
-//  StanwoodDialog
+//  Stanwood_Dialog_iOS
 //
-//  Created by Eugène Peschard on 28/12/2017.
-//  Copyright © 2017 epeschard. All rights reserved.
+//  Created by epeschard on 01/03/2018.
+//  Copyright (c) 2018 epeschard. All rights reserved.
 //
 
 import UIKit
-import StanwoodDialog
 
 class ViewController: UIViewController {
 
@@ -20,7 +19,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
 
 }
 

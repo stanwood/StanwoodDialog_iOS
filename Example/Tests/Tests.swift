@@ -1,13 +1,6 @@
-//
-//  Tests.swift
-//  Stanwood_Dialog_iOS_Tests
-//
-//  Created by Eugène Peschard on 28/12/2017.
-//  Copyright © 2017 epeschard. All rights reserved.
-//
-
+import UIKit
 import XCTest
-import StanwoodDialog
+import Stanwood_Dialog_iOS
 
 class Tests: XCTestCase {
     
@@ -23,12 +16,12 @@ class Tests: XCTestCase {
     
     func testExample() {
         // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        XCTAssert(true, "Pass")
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
+        self.measure() {
             // Put the code you want to measure the time of here.
         }
     }

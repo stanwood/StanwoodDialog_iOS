@@ -1,4 +1,4 @@
-# Stanwood_Dialog_iOS
+# StanwoodDialog
 
 [![CI Status](http://img.shields.io/travis/epeschard/Stanwood_Dialog_iOS.svg?style=flat)](https://travis-ci.org/epeschard/Stanwood_Dialog_iOS)
 [![Version](https://img.shields.io/cocoapods/v/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
@@ -17,7 +17,7 @@ Stanwood_Dialog_iOS is available through [CocoaPods](http://cocoapods.org). To i
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'Stanwood_Dialog_iOS'
+pod 'StanwoodDialog'
 ```
 
 ## Author
