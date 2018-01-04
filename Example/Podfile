@@ -1,7 +1,10 @@
+source 'https://github.com/stanwood/Cocoa_Pods_Specs.git'
+
+platform :ios, '9.0'
 use_frameworks!
 
 target 'Stanwood_Dialog_iOS_Example' do
-  pod 'Stanwood_Dialog_iOS', :path => '../'
+  pod 'StanwoodDialog'
 
   target 'Stanwood_Dialog_iOS_Tests' do
     inherit! :search_paths

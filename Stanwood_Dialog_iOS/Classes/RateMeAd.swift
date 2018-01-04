@@ -56,7 +56,7 @@ public class RateMeAd: UIView {
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
      
-     - version: 0.3.3
+     - version: 0.4.0
      
      ## Usage Example ##
      ````
@@ -106,7 +106,7 @@ public class RateMeAd: UIView {
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
      
-     - version: 0.3.3
+     - version: 0.4.0
      
      ## Usage Example ##
      ````

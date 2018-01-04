@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import StanwoodDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let rootViewController = self.window!.rootViewController!
+//        var rateMessage = "ConfigManager.shared().string(forKey: kKeyRateMeDialog)"
+        let rateMessage = "Please overwhelm me with stars on the app store!"
+        let appStoreURL = URL(string: "http:link.to.appstore")!
+        RateMeAd.showAd(on: 2,
+                        over: rootViewController,
+                        with: rateMessage,
+                        from: UIImage(named: "RateMeProfile")!,
+                        over: UIImage(named: "RateMeBackground")!,
+                        link: appStoreURL,
+                        tint: UIColor.blue)
+        
         return true
     }
 
