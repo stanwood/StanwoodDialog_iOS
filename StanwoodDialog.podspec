@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '0.4.0'
-  s.summary          = 'Library to show a rate me prompt like the one used in On Air.'
+  s.version          = '0.5.0'
+  s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Library to show a rate me prompt like the one used in On Air.
+This library allows to show a rating dialog prompt like the one used in On Air.
                        DESC
 
   s.homepage         = 'https://github.com/stanwood/Stanwood_Dialog_iOS'
@@ -26,7 +26,7 @@ Library to show a rate me prompt like the one used in On Air.
   s.license          = { :type => 'private', :file => 'LICENSE' }
   s.author           = { 'epeschard' => 'e@peschard.me' }
   s.source           = { :git => 'https://github.com/stanwood/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.social_media_url = 'https://twitter.com/EugenePeschard'
 
   s.ios.deployment_target = '8.0'
 

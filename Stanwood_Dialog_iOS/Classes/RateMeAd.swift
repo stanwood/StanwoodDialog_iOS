@@ -1,5 +1,5 @@
 //
-//  RateOverlayAd.swift
+//  RatingDialog.swift
 //  Stanwood_Dialog_iOS
 //
 //  Created by Eugène Peschard on 28/11/2017.
@@ -9,7 +9,7 @@
 import UIKit
 
 @objc
-public class RateMeAd: UIView {
+public class RatingDialog: UIView {
     
     @IBOutlet weak var devsBannerUI: UIImageView!
     @IBOutlet weak var devProfileUI: UIImageView!
@@ -63,14 +63,16 @@ public class RateMeAd: UIView {
      var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
      var profileImage = UIImage(named: "RateMeProfile")
      var bannerImage = UIImage(named: "RateMeBackground")
+     let appStoreURL = URL(string: "https://app.store.url")
      var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
      
-     RateMeAd.show(on: 2,
-                   over: parent,
-                   with: rateMessage,
-                   from: profileImage,
-                   over: bannerImage,
-                   tint: accentColor)
+     RatingDialog.showAd(on: 2,
+                         over: parent,
+                         with: rateMessage,
+                         from: profileImage,
+                         over: bannerImage,
+                         link: appStoreURL,
+                         tint: accentColor)
      ````
     */
     public class func showAd(on launch: Int,
@@ -96,7 +98,7 @@ public class RateMeAd: UIView {
     }
     
     /**
-     Given an instance of RateMeAd, it adds a popup asking the user to rate the app on the app store
+     Given an instance of RatingDialog, it adds a popup asking the user to rate the app on the app store
      
      - parameter launch: the count of app launches until the overlay ad is shown
      - parameter parent: the `UIViewController` hosting the ad overlay
@@ -119,12 +121,12 @@ public class RateMeAd: UIView {
      var bannerImage = UIImage(named: "RateMeBackground")
      var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
      
-     RateMeAd.show(on: 2,
-                   over: parent,
-                   with: rateMessage,
-                   from: profileImage,
-                   over: bannerImage,
-                   tint: accentColor)
+     RatingDialog.showAd(on: 2,
+                         over: parent,
+                         with: rateMessage,
+                         from: profileImage,
+                         over: bannerImage,
+                         tint: accentColor)
      ````
      */
     @objc
