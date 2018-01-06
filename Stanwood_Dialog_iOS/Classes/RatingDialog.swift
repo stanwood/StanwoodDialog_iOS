@@ -18,7 +18,7 @@ public class RatingDialog: UIView {
     
     
     //    weak var accentTint: UIColor?
-    static let appStarts = "numberOfAppStarts"
+    let appStarts = "numberOfAppStarts"
     var appStoreURL: URL?
     var overlayBannerContainer: UIView?
     
@@ -194,7 +194,7 @@ public class RatingDialog: UIView {
                        tint accentTint: UIColor,
                        cancel cancelText: String?,
                        accept acceptText: String?) {
-        if UserDefaults.standard.integer(forKey: RateMeAd.appStartCount) == launch  {
+        if UserDefaults.standard.integer(forKey: appStarts) == launch  {
             
             devsBannerUI.image = background
             devProfileUI.image = devProfile
@@ -207,9 +207,9 @@ public class RatingDialog: UIView {
             
             appStoreURL = rateMeLink
             acceptButton.backgroundColor = accentTint
-            acceptButton.label.text = acceptText
+            acceptButton.setTitle(acceptText, forState: .Normal)
             cancelButton.tintColor = accentTint
-            cancelButton.label.text = cancelText
+            cancelButton.setTitle(cancelText, forState: .Normal)
             
             //ADD BLACK SCREEN
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
