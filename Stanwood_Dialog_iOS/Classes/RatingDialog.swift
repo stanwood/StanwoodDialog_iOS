@@ -18,7 +18,8 @@ public class RatingDialog: UIView {
     
     
     //    weak var accentTint: UIColor?
-    let appStarts = "numberOfAppStarts"
+    private let appStarts = "numberOfAppStarts"
+
     var appStoreURL: URL?
     var overlayBannerContainer: UIView?
     
@@ -35,9 +36,6 @@ public class RatingDialog: UIView {
     /// View controller presenting the Rating Dialog overlay
     weak var presenter: UIViewController!
     
-    /// Count of app launches
-    public var appLaunchesCount = 0
-    
     /**
      It adds a popup asking the user to rate the app on the app store
      
@@ -51,7 +49,7 @@ public class RatingDialog: UIView {
      - parameter cancelText: a text for the cancel buton on the left
      - parameter acceptText: a text for the accept buton on the right
      
-     -version: 0.5.1
+     -version: 0.5.3
      
      ## Usage Example ##
      ````
@@ -81,7 +79,11 @@ public class RatingDialog: UIView {
         let overlay = bundle.loadNibNamed("RatingDialog",
                                           owner: self,
                                           options: nil)
-        increaseAppLaunchCount()
+        let appStarts = "numberOfAppStarts"
+        
+        let appLaunches = UserDefaults.standard.integer(forKey: appStarts) + 1
+        UserDefaults.standard.set(appLaunches, forKey: appStarts)
+
         if let ratingDialog = overlay?.first as? RatingDialog {
             ratingDialog.showAd(on: launch,
                                 over: presenter,
@@ -95,11 +97,6 @@ public class RatingDialog: UIView {
         }
     }
     
-    public func increaseAppLaunchCount() {
-        appLaunchesCount = UserDefaults.standard.integer(forKey: appStarts) + 1
-        UserDefaults.standard.set(appLaunchesCount, forKey: appStarts)
-    }
-    
 //    /**
 //     It adds a popup asking the user to rate the app on the app store
 //     
@@ -110,6 +107,8 @@ public class RatingDialog: UIView {
 //     - parameter background: banner image URL displayed behind `devProfile`
 //     - parameter rateMeLink: the link to the appStore for rating
 //     - parameter accentTint: a `UIColor` for the buttons accent over white
+    
+//     - Version: 0.5.3
 //     
 //     ## Usage Example ##
 //     ````
@@ -162,6 +161,8 @@ public class RatingDialog: UIView {
      - parameter background: a background image displayed behind `devProfile`
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
+     
+     -version: 0.5.3
           
      ## Usage Example ##
      ````
