@@ -18,7 +18,7 @@ public class RatingDialog: UIView {
     
     
     //    weak var accentTint: UIColor?
-    static let appStartCount = "numberOfAppStarts"
+    static let appStarts = "numberOfAppStarts"
     var appStoreURL: URL?
     var overlayBannerContainer: UIView?
     
@@ -35,6 +35,9 @@ public class RatingDialog: UIView {
     /// View controller presenting the Rating Dialog overlay
     weak var presenter: UIViewController!
     
+    /// Count of app launches
+    public var appLaunchesCount = 0
+    
     /**
      It adds a popup asking the user to rate the app on the app store
      
@@ -47,8 +50,8 @@ public class RatingDialog: UIView {
      - parameter accentTint: a `UIColor` for the buttons accent over white
      - parameter cancelText: a text for the cancel buton on the left
      - parameter acceptText: a text for the accept buton on the right
-
-     - version: 0.5.0
+     
+     -version: 0.5.1
      
      ## Usage Example ##
      ````
@@ -78,6 +81,7 @@ public class RatingDialog: UIView {
         let overlay = bundle.loadNibNamed("RatingDialog",
                                           owner: self,
                                           options: nil)
+        increaseAppLaunchCount()
         if let ratingDialog = overlay?.first as? RatingDialog {
             ratingDialog.showAd(on: launch,
                                 over: presenter,
@@ -85,63 +89,68 @@ public class RatingDialog: UIView {
                                 from: devProfile,
                                 over: background,
                                 link: rateMeLink,
-                                tint: accentTint)
+                                tint: accentTint,
+                                cancel: cancelText,
+                                accept: acceptText)
         }
     }
     
-    /**
-     It adds a popup asking the user to rate the app on the app store
-     
-     - parameter launch: the count of app launches until the overlay ad is shown
-     - parameter presenter: the `UIViewController` hosting the ad overlay
-     - parameter rateMeText: the text displayed in the ad overlay's body
-     - parameter devProfile: developer's profile image URL, displayed in a circle
-     - parameter background: banner image URL displayed behind `devProfile`
-     - parameter rateMeLink: the link to the appStore for rating
-     - parameter accentTint: a `UIColor` for the buttons accent over white
-     
-     - version: 0.5.0
-     
-     ## Usage Example ##
-     ````
-     var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
-     var profileImage = UIImage(named: "RateMeProfile")
-     var bannerImage = UIImage(named: "RateMeBackground")
-     var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
-     
-     RateMeAd.show(on: 2,
-     over: presenter,
-     with: rateMessage,
-     from: profileImage,
-     over: bannerImage,
-     tint: accentColor)
-     ````
-     */
-    public class func showAd(on launch: Int,
-                             over presenter: UIViewController,
-                             with rateMeText: String?,
-                             from devProfile: URL,
-                             over background: URL,
-                             link rateMeLink: URL,
-                             tint accentTint: UIColor,
-                             cancel cancelText: String?,
-                             accept acceptText: String?) {
-        let bundle = Bundle(for: RatingDialog.self)
-        let overlay = bundle.loadNibNamed("RatingDialog",
-                                          owner: self,
-                                          options: nil)
-        if let ratingDialog = overlay?.first as? RatingDialog {
-            ratingDialog.showAd(on: launch,
-                                over: presenter,
-                                with: rateMeText,
-                                from: devProfile,
-                                over: background,
-                                link: rateMeLink,
-                                tint: accentTint)
-            ratingDialog.cancelButton.label.text = cancelText
-            ratingDialog.acceptButton.label.text = acceptText
-        }
+    public func increaseAppLaunchCount() {
+        appLaunchesCount = UserDefaults.standard.integer(forKey: appStarts) + 1
+        UserDefaults.standard.set(appLaunchesCount, forKey: appStarts)
     }
+    
+//    /**
+//     It adds a popup asking the user to rate the app on the app store
+//     
+//     - parameter launch: the count of app launches until the overlay ad is shown
+//     - parameter presenter: the `UIViewController` hosting the ad overlay
+//     - parameter rateMeText: the text displayed in the ad overlay's body
+//     - parameter devProfile: developer's profile image URL, displayed in a circle
+//     - parameter background: banner image URL displayed behind `devProfile`
+//     - parameter rateMeLink: the link to the appStore for rating
+//     - parameter accentTint: a `UIColor` for the buttons accent over white
+//     
+//     ## Usage Example ##
+//     ````
+//     var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
+//     var profileImage = UIImage(named: "RateMeProfile")
+//     var bannerImage = UIImage(named: "RateMeBackground")
+//     var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
+//     
+//     RateMeAd.show(on: 2,
+//     over: presenter,
+//     with: rateMessage,
+//     from: profileImage,
+//     over: bannerImage,
+//     tint: accentColor)
+//     ````
+//     */
+//    public class func showAd(on launch: Int,
+//                             over presenter: UIViewController,
+//                             with rateMeText: String?,
+//                             from devProfile: URL,
+//                             over background: URL,
+//                             link rateMeLink: URL,
+//                             tint accentTint: UIColor,
+//                             cancel cancelText: String?,
+//                             accept acceptText: String?) {
+//        let bundle = Bundle(for: RatingDialog.self)
+//        let overlay = bundle.loadNibNamed("RatingDialog",
+//                                          owner: self,
+//                                          options: nil)
+//        if let ratingDialog = overlay?.first as? RatingDialog {
+//            ratingDialog.showAd(on: launch,
+//                                over: presenter,
+//                                with: rateMeText,
+//                                from: devProfile,
+//                                over: background,
+//                                link: rateMeLink,
+//                                tint: accentTint)
+//            ratingDialog.cancelButton.label.text = cancelText
+//            ratingDialog.acceptButton.label.text = acceptText
+//        }
+//    }
     
     /**
      Given an instance of RatingDialog, it adds a popup asking the user to rate the app on the app store
@@ -153,9 +162,7 @@ public class RatingDialog: UIView {
      - parameter background: a background image displayed behind `devProfile`
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
-     
-     - version: 0.5.0
-     
+          
      ## Usage Example ##
      ````
      let bundle = Bundle(for: RatingDialog.self)
@@ -184,7 +191,9 @@ public class RatingDialog: UIView {
                        from devProfile: UIImage,
                        over background: UIImage,
                        link rateMeLink: URL,
-                       tint accentTint: UIColor) {
+                       tint accentTint: UIColor,
+                       cancel cancelText: String?,
+                       accept acceptText: String?) {
         if UserDefaults.standard.integer(forKey: RateMeAd.appStartCount) == launch  {
             
             devsBannerUI.image = background
@@ -197,8 +206,10 @@ public class RatingDialog: UIView {
             rateMeTextUI.numberOfLines = 0
             
             appStoreURL = rateMeLink
-            open.backgroundColor = accentTint
-            close.tintColor = accentTint
+            acceptButton.backgroundColor = accentTint
+            acceptButton.label.text = acceptText
+            cancelButton.tintColor = accentTint
+            cancelButton.label.text = cancelText
             
             //ADD BLACK SCREEN
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,

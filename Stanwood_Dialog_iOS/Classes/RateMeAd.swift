@@ -56,8 +56,6 @@ public class RatingDialog: UIView {
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
      
-     - version: 0.4.0
-     
      ## Usage Example ##
      ````
      var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
@@ -107,9 +105,7 @@ public class RatingDialog: UIView {
      - parameter background: a background image displayed behind `devProfile`
      - parameter rateMeLink: the link to the appStore for rating
      - parameter accentTint: a `UIColor` for the buttons accent over white
-     
-     - version: 0.4.0
-     
+          
      ## Usage Example ##
      ````
      var bundle = Bundle(for: RateMeAd.self)
