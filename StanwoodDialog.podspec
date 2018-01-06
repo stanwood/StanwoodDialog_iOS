@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '0.5.1'
+  s.version          = '0.5.2'
   s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
