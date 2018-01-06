@@ -207,9 +207,9 @@ public class RatingDialog: UIView {
             
             appStoreURL = rateMeLink
             acceptButton.backgroundColor = accentTint
-            acceptButton.setTitle(acceptText, forState: .Normal)
+            acceptButton.setTitle(acceptText, for: .normal)
             cancelButton.tintColor = accentTint
-            cancelButton.setTitle(cancelText, forState: .Normal)
+            cancelButton.setTitle(cancelText, for: .normal)
             
             //ADD BLACK SCREEN
             overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
