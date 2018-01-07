@@ -27,7 +27,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                             from: UIImage(named: "RateMeProfile")!,
                             over: UIImage(named: "RateMeBackground")!,
                             link: appStoreURL,
-                            tint: UIColor.blue)
+                            tint: UIColor.blue,
+                            cancel: "Cancel",
+                            accept: "Accept")
         
         return true
     }

@@ -1,11 +1,11 @@
 PODS:
-  - StanwoodDialog (0.4.0)
+  - StanwoodDialog (0.5.3)
 
 DEPENDENCIES:
   - StanwoodDialog
 
 SPEC CHECKSUMS:
-  StanwoodDialog: 0b88d585010159ff1a105ee76b83fc7eb88487d4
+  StanwoodDialog: d2484d58b0cbae562b7665922700b84e65c89ded
 
 PODFILE CHECKSUM: a06f0e46bedaf85a29ea907600079dd52f23454a
 
