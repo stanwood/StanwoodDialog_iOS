@@ -20,9 +20,7 @@ public class RatingDialogView: UIView {
     @IBOutlet weak var accept: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
-    var appStoreURL: URL
-    var tintColor: UIColor
-    
+    /// Container view to present the Rating Dialog overlay
     var overlayBannerContainer: UIView?
     
     public required init?(coder aDecoder: NSCoder) {
@@ -48,7 +46,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.0
+     -version: 0.5.7
      */
     public func buildAd(over presenter: UIViewController,
                         with paragraph1: String?,
@@ -81,6 +79,13 @@ public class RatingDialogView: UIView {
         buildOverlayAd(with: presenter.view.frame.size)
     }
     
+    /**
+     It builds the container view of a specified `size`
+     
+     - parameter size: the size of the overlay containing the ad
+    
+     -version: 0.5.7
+     */
     func buildOverlayAd(with size: CGSize) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                       y: 0.0,

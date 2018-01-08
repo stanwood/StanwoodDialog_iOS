@@ -9,11 +9,14 @@ import UIKit
 
 open class RatingDialog {
     
-    //    weak var accentTint: UIColor?
+    /// key for storing the launches count on `UserDefaults`
     private let appStarts = "numberOfAppStarts"
+    /// counts the number of launches
     private var appLaunches = 0
 
+    /// the URL for rating this app on the appStore
     var appStoreURL: URL?
+    /// A container for the rating dialog
     var overlayBannerContainer: UIView?
     
     open static func builder() -> Builder {
@@ -25,23 +28,34 @@ open class RatingDialog {
     }
     
     open class Builder {
-        
+        /// key for storing the launches count on `UserDefaults`
         private let appStarts = "numberOfAppStarts"
+        /// counts the number of launches
         private var appLaunches = 0
         
+        /// The text for the 1st paragraph in the ads body
         var text1 = "Hi,\nich bin Hannes, der Entwicker\nvon ON AIR."
+        /// The text for the 2nd paragraph in the ads body
         var text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        /// The text for the 3rd paragraph in the ads body
         var text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        /// The text for the 4th paragraph in the ads body
         var text4 = "Sternchen reichen - dauert nur 1 Minute."
         
+        /// The text for the cancel button label
         var cancel = "Schließen"
+        /// The text for the accept button label
         var accept = "App bewerten"
         
+        /// The URL for the image to be displayed profile image in a circle
         var faceURL = URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
+        /// The URL for the image to be displayed as banner behind the profile image
         var bannerURL = URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
         
+        /// The URL for rating the app on the appStore
         var appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
         
+        /// The tint color for the Accept and Cancel `UIButton`s
         var tintColor = UIColor.blue
         
         /**
