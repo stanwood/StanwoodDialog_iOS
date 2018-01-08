@@ -5,6 +5,7 @@ use_frameworks!
 
 target 'Stanwood_Dialog_iOS_Example' do
   pod 'StanwoodDialog'
+  pod 'Kingfisher', :git => 'https://github.com/onevcat/Kingfisher'  
 
   target 'Stanwood_Dialog_iOS_Tests' do
     inherit! :search_paths

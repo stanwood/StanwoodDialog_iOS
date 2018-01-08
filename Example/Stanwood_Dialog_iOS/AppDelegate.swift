@@ -17,19 +17,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        let presenter = self.window!.rootViewController!
-//        var rateMessage = "ConfigManager.shared().string(forKey: kKeyRateMeDialog)"
-        let rateMessage = "Please overwhelm me with stars on the app store!"
-        let appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
-        RatingDialog.showAd(on: 5,
-                            over: presenter,
-                            with: rateMessage,
-                            from: UIImage(named: "RateMeProfile")!,
-                            over: UIImage(named: "RateMeBackground")!,
-                            link: appStoreURL,
-                            tint: UIColor.blue,
-                            cancel: "Cancel",
-                            accept: "Accept")
+//        let presenter = self.window!.rootViewController!
+////        var rateMessage = "ConfigManager.shared().string(forKey: kKeyRateMeDialog)"
+//        let rateMessage = "Please overwhelm me with stars on the app store!"
+//        let appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
+//        RatingDialog.showAd(on: 5,
+//                            over: presenter,
+//                            with: rateMessage,
+//                            from: UIImage(named: "RateMeProfile")!,
+//                            over: UIImage(named: "RateMeBackground")!,
+//                            link: appStoreURL,
+//                            tint: UIColor.blue,
+//                            cancel: "Cancel",
+//                            accept: "Accept")
         
         return true
     }
@@ -49,6 +49,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        Rating
         
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }

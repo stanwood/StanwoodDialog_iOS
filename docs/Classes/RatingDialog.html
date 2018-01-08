@@ -56,6 +56,12 @@
               <li class="nav-group-task">
                 <a class="nav-group-task-link" href="../Classes/RatingDialog.html">RatingDialog</a>
               </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RatingDialog/Builder.html">– Builder</a>
+              </li>
+              <li class="nav-group-task">
+                <a class="nav-group-task-link" href="../Classes/RatingDialogView.html">RatingDialogView</a>
+              </li>
             </ul>
           </li>
         </ul>
@@ -67,7 +73,7 @@
             <h1>RatingDialog</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">RatingDialog</span><span class="p">:</span> <span class="kt">UIView</span></code></pre>
+                  <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">RatingDialog</span></code></pre>
 
                 </div>
               </div>
@@ -82,9 +88,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@StanwoodDialog@objc(cs)RatingDialog(im)initWithCoder:"></a>
-                    <a name="//apple_ref/swift/Method/init(coder:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@StanwoodDialog@objc(cs)RatingDialog(im)initWithCoder:">init(coder:)</a>
+                    <a name="/s:14StanwoodDialog06RatingB0C7builderAC7BuilderCyFZ"></a>
+                    <a name="//apple_ref/swift/Method/builder()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14StanwoodDialog06RatingB0C7builderAC7BuilderCyFZ">builder()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -98,7 +104,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">required</span> <span class="nf">init</span><span class="p">?(</span><span class="n">coder</span> <span class="nv">aDecoder</span><span class="p">:</span> <span class="kt">NSCoder</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">builder</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="kt"><a href="../Classes/RatingDialog/Builder.html">Builder</a></span></code></pre>
 
                         </div>
                       </div>
@@ -108,9 +114,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:14StanwoodDialog06RatingB0C6showAdySi2on_So16UIViewControllerC4overSSSg4withSo7UIImageC4fromAlH10Foundation3URLV4linkSo7UIColorC4tintAI6cancelAI6accepttFZ"></a>
-                    <a name="//apple_ref/swift/Method/showAd(on:over:with:from:over:link:tint:cancel:accept:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:14StanwoodDialog06RatingB0C6showAdySi2on_So16UIViewControllerC4overSSSg4withSo7UIImageC4fromAlH10Foundation3URLV4linkSo7UIColorC4tintAI6cancelAI6accepttFZ">showAd(on:over:with:from:over:link:tint:cancel:accept:)</a>
+                    <a name="/s:14StanwoodDialog06RatingB0CA2C7BuilderC7builder_tcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(builder:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14StanwoodDialog06RatingB0CA2C7BuilderC7builder_tcfc">init(builder:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -118,154 +124,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>It adds a popup asking the user to rate the app on the app store</p>
-
-<p>-version: 0.5.3</p>
-<h2 id='usage-example' class='heading'>Usage Example</h2>
-<pre class="highlight plaintext"><code>var rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
-var profileImage = UIImage(named: "RateMeProfile")
-var bannerImage = UIImage(named: "RateMeBackground")
-var accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
-
-RateMeAd.show(on: 2,
-over: presenter,
-with: rateMessage,
-from: profileImage,
-over: bannerImage,
-tint: accentColor)
-</code></pre>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kd">func</span> <span class="nf">showAd</span><span class="p">(</span><span class="n">on</span> <span class="nv">launch</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-                         <span class="n">over</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
-                         <span class="n">with</span> <span class="nv">rateMeText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-                         <span class="n">from</span> <span class="nv">devProfile</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span>
-                         <span class="n">over</span> <span class="nv">background</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span>
-                         <span class="n">link</span> <span class="nv">rateMeLink</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
-                         <span class="n">tint</span> <span class="nv">accentTint</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span>
-                         <span class="n">cancel</span> <span class="nv">cancelText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-                         <span class="n">accept</span> <span class="nv">acceptText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">builder</span><span class="p">:</span> <span class="kt"><a href="../Classes/RatingDialog/Builder.html">Builder</a></span><span class="p">)</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>launch</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the count of app launches until the overlay ad is shown</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>presenter</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the <code>UIViewController</code> hosting the ad overlay</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rateMeText</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the text displayed in the ad overlay&rsquo;s body</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>devProfile</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the developer&rsquo;s profile image displayed in a circle</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>background</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a background image displayed behind <code>devProfile</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rateMeLink</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the link to the appStore for rating</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>accentTint</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a <code>UIColor</code> for the buttons accent over white</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>cancelText</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a text for the cancel buton on the left</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>acceptText</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a text for the accept buton on the right</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
@@ -273,9 +140,9 @@ tint: accentColor)
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@M@StanwoodDialog@objc(cs)RatingDialog(im)showAdOn:over:with:from:over:link:tint:cancel:accept:"></a>
-                    <a name="//apple_ref/swift/Method/showAd(on:over:with:from:over:link:tint:cancel:accept:)" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@M@StanwoodDialog@objc(cs)RatingDialog(im)showAdOn:over:with:from:over:link:tint:cancel:accept:">showAd(on:over:with:from:over:link:tint:cancel:accept:)</a>
+                    <a name="/s:14StanwoodDialog06RatingB0C7BuilderC"></a>
+                    <a name="//apple_ref/swift/Class/Builder" class="dashAnchor"></a>
+                    <a class="token" href="#/s:14StanwoodDialog06RatingB0C7BuilderC">Builder</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -283,136 +150,16 @@ tint: accentColor)
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Given an instance of RatingDialog, it adds a popup asking the user to rate the app on the app store</p>
-
-<p>-version: 0.5.3</p>
-<h2 id='usage-example' class='heading'>Usage Example</h2>
-<pre class="highlight plaintext"><code>let bundle = Bundle(for: RatingDialog.self)
-let overlay = bundle.loadNibNamed("RatingDialog", owner: self, options: nil)
-let ratingDialog: RatingDialog? = overlay?.first
-
-let rateMessage: String? = ConfigManager.shared().string(forKey: kKeyRateMeDialog)
-let profileImage = UIImage(named: "RateMeProfile")
-let bannerImage = UIImage(named: "RateMeBackground")
-let appStoreURL = URL(string: "")
-let accentColor: UIColor? = UIColor(red: 0.08, green: 0.49, blue: 0.98, alpha: 1.00)
-
-RatingDialog.show(on: 2,
-                  over: presenter,
-                  with: rateMessage,
-                  from: profileImage,
-                  over: bannerImage,
-                  link: appStoreURL,
-                  tint: accentColor)
-</code></pre>
-
+                        
+                        <a href="../Classes/RatingDialog/Builder.html" class="slightly-smaller">See more</a>
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">showAd</span><span class="p">(</span><span class="n">on</span> <span class="nv">launch</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span>
-                   <span class="n">over</span> <span class="nv">presenter</span><span class="p">:</span> <span class="kt">UIViewController</span><span class="p">,</span>
-                   <span class="n">with</span> <span class="nv">rateMeText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-                   <span class="n">from</span> <span class="nv">devProfile</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span>
-                   <span class="n">over</span> <span class="nv">background</span><span class="p">:</span> <span class="kt">UIImage</span><span class="p">,</span>
-                   <span class="n">link</span> <span class="nv">rateMeLink</span><span class="p">:</span> <span class="kt">URL</span><span class="p">,</span>
-                   <span class="n">tint</span> <span class="nv">accentTint</span><span class="p">:</span> <span class="kt">UIColor</span><span class="p">,</span>
-                   <span class="n">cancel</span> <span class="nv">cancelText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?,</span>
-                   <span class="n">accept</span> <span class="nv">acceptText</span><span class="p">:</span> <span class="kt">String</span><span class="p">?)</span></code></pre>
+                          <pre class="highlight"><code><span class="n">open</span> <span class="kd">class</span> <span class="kt">Builder</span></code></pre>
 
                         </div>
-                      </div>
-                      <div>
-                        <h4>Parameters</h4>
-                        <table class="graybox">
-                          <tbody>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>launch</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the count of app launches until the overlay ad is shown</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>presenter</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the <code>UIViewController</code> hosting the ad overlay</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rateMeText</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the text displayed in the ad overlay&rsquo;s body</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>devProfile</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the developer&rsquo;s profile image displayed in a circle</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>background</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a background image displayed behind <code>devProfile</code></p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>rateMeLink</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>the link to the appStore for rating</p>
-                                </div>
-                              </td>
-                            </tr>
-                            <tr>
-                              <td>
-                                <code>
-                                <em>accentTint</em>
-                                </code>
-                              </td>
-                              <td>
-                                <div>
-                                  <p>a <code>UIColor</code> for the buttons accent over white</p>
-                                </div>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
                       </div>
                     </section>
                   </div>
