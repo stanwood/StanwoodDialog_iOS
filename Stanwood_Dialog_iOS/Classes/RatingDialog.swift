@@ -58,6 +58,13 @@ open class RatingDialog {
         /// The tint color for the Accept and Cancel `UIButton`s
         var tintColor = UIColor.blue
         
+        /// The `UIViewController` where the overlay ad view will be added as a subview
+        var presenter = UIViewController() {
+            didSet {
+                tintColor = presenter.view.tintColor
+            }
+        }
+        
         /**
          Starter method to start chaining commands
          */
@@ -220,7 +227,8 @@ open class RatingDialog {
             
             if appLaunches == count,
                 let ratingDialogView = overlay?.first as? RatingDialogView {
-                ratingDialogView.buildAd(over: presenter,
+                
+                ratingDialogView.buildAd(over: presenter.view.frame.size,
                                          with: text1, text2, text3, text4,
                                          from: faceURL,
                                          over: bannerURL,

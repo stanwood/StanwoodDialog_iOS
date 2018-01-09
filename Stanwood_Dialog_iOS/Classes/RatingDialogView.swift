@@ -84,14 +84,13 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     -version: 0.5.7
+     -version: 0.5.8
      */
-    func buildOverlayAd(with size: CGSize) {
+    func buildOverlayAd(with presenter: UIViewController) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                       y: 0.0,
                                                       width: size.width,
                                                       height: size.height))
-        presenter.view.frame.size
         overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
         guard let overlaySize = overlayBannerContainer?.frame.size else {
             return
