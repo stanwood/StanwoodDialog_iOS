@@ -86,6 +86,8 @@ open class RatingDialog {
          Sets the text for the second paragraph
          
          - parameter body: text for the second paragraph (may include `\n`)
+         
+         - version: 0.5.9
          */
         public func setText2(body: String) -> Builder {
             text2 = body
@@ -96,6 +98,8 @@ open class RatingDialog {
          Sets the text for the third paragraph
          
          - parameter body: text for the third paragraph (may include `\n`)
+         
+         - version: 0.5.9
          */
         public func setText3(body: String) -> Builder {
             text3 = body
@@ -106,6 +110,8 @@ open class RatingDialog {
          Sets the text for the fourth paragraph
          
          - parameter body: text for the fourth paragraph (may include `\n`)
+         
+         - version: 0.5.9
          */
         public func setText4(body: String) -> Builder {
             text4 = body
@@ -116,6 +122,8 @@ open class RatingDialog {
          Sets the text for the Cancel button
          
          - parameter text: text for Cancel button's label
+         
+         - version: 0.5.9
          */
         public func setCancelText(text: String) -> Builder {
             cancel = text
@@ -126,6 +134,8 @@ open class RatingDialog {
          Sets the text for the Accept button
          
          - parameter text: text for Accept button's label
+         
+         - version: 0.5.9
          */
         public func setOkText(text: String) -> Builder {
             accept = text
@@ -136,6 +146,8 @@ open class RatingDialog {
          Sets the URL for the Developer's face UIImage
          
          - parameter text: string to build the URL providing the image
+         
+         - version: 0.5.9
          */
         public func setFaceUrl(text: String) -> Builder {
             if let builtURL = URL(string: text) {
@@ -148,6 +160,8 @@ open class RatingDialog {
          Sets the URL for the Banner UIImage
          
          - parameter text: string to build the URL providing the image
+         
+         - version: 0.5.9
          */
         public func setBannerUrl(text: String) -> Builder {
             if let builtURL = URL(string: text) {
@@ -160,6 +174,8 @@ open class RatingDialog {
          Sets the URL for the App Store rating
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
+         
+         - version: 0.5.9
          */
         public func buildAppStoreUrl(with appID: String) -> Builder {
             if let builtURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)") {
@@ -172,6 +188,8 @@ open class RatingDialog {
          Sets the URL for the App Store rating
          
          - parameter text: string to build the URL wher user can rate the app
+         
+         - version: 0.5.9
          */
         public func setAppStoreUrl(text: String) -> Builder {
             if let builtURL = URL(string: text) {
@@ -184,6 +202,8 @@ open class RatingDialog {
          Sets the tint color used for the cancel button's text and accept button's background color.
          
          - parameter color: used for the accept and cancel buttons
+         
+         - version: 0.5.9
          */
         public func setTintColor(color: UIColor?) -> Builder {
             if let color = color {
@@ -192,28 +212,19 @@ open class RatingDialog {
             return self
         }
         
-        /**
-         Returns the initialized view with all the properties set
-         */
-        public func build() -> RatingDialog {
-            //
-            let bundle = Bundle(for: RatingDialogView.self)
-            let overlay = bundle.loadNibNamed("RatingDialogView",
-                                              owner: self,
-                                              options: nil)
-            let appStarts = "numberOfAppStarts"
-            
-            let appLaunches = UserDefaults.standard.integer(forKey: appStarts) + 1
-            UserDefaults.standard.set(appLaunches, forKey: appStarts)
-            //
-            
-            return RatingDialog(builder: self)
-        }
+//        /**
+//         Returns the initialized view with all the properties set
+//         */
+//        public func build() -> RatingDialog {
+//            return RatingDialog(builder: self)
+//        }
         
         /**
          Initializes and presents the ad overlay on the nth launch
          
          - parameter launch: the count of app launches until the overlay ad is shown
+         
+         - version: 0.5.9
          */
         public func showOn(launch count: Int) -> RatingDialog? {
             
@@ -228,7 +239,7 @@ open class RatingDialog {
             if appLaunches == count,
                 let ratingDialogView = overlay?.first as? RatingDialogView {
                 
-                ratingDialogView.buildAd(over: presenter.view.frame.size,
+                ratingDialogView.buildAd(over: presenter,
                                          with: text1, text2, text3, text4,
                                          from: faceURL,
                                          over: bannerURL,

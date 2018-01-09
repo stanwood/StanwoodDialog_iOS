@@ -22,6 +22,8 @@ public class RatingDialogView: UIView {
     
     /// Container view to present the Rating Dialog overlay
     var overlayBannerContainer: UIView?
+    /// The URL for rating the app on the appStore
+    var appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -46,7 +48,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.5.7
+     -version: 0.5.9
      */
     public func buildAd(over presenter: UIViewController,
                         with paragraph1: String?,
@@ -69,14 +71,13 @@ public class RatingDialogView: UIView {
         banner.kf.setImage(with: background)
         
         appStoreURL = rateMeLink
-        tintColor = accentTint
         
         accept.backgroundColor = accentTint
         accept.setTitle(acceptText, for: .normal)
         cancel.tintColor = accentTint
         cancel.setTitle(cancelText, for: .normal)
         
-        buildOverlayAd(with: presenter.view.frame.size)
+        buildOverlayAd(with: presenter)
     }
     
     /**
@@ -84,13 +85,13 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     -version: 0.5.8
+     - version: 0.5.9
      */
     func buildOverlayAd(with presenter: UIViewController) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                       y: 0.0,
-                                                      width: size.width,
-                                                      height: size.height))
+                                                      width: presenter.view.frame.size.width,
+                                                      height: presenter.view.frame.size.height))
         overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
         guard let overlaySize = overlayBannerContainer?.frame.size else {
             return
@@ -120,9 +121,7 @@ public class RatingDialogView: UIView {
     
     @IBAction func rateApp(_ sender: Any) {
         
-        if let storeURL = appStoreURL {
-            UIApplication.shared.openURL(storeURL)
-        }
+        UIApplication.shared.openURL(appStoreURL)
         closeOverlayAd(self)
     }
 }
