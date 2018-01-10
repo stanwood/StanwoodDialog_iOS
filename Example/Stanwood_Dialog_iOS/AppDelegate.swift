@@ -51,31 +51,36 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func buildRatingDialog() {
-        let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon ON AIR."
-        let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
-        let text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
-        let text4 = "Sternchen reichen - dauert nur 1 Minute."
+        if RatingDialog.shouldShow(onLaunch: 5) {
+            let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
+            let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+            let text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+            let text4 = "Sternchen reichen - dauert nur 1 Minute."
+            
+            let cancel = "Schließen"
+            let accept = "App bewerten"
+            
+            let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
+            let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+            let appID = "1316369720"
         
-        let cancel = "Schließen"
-        let accept = "App bewerten"
-        
-        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
-        let appID = "1316369720"
-        
-        RatingDialog.builder()
-            .set(paragraph1: text1)
-            .set(paragraph2: text2)
-            .set(paragraph3: text3)
-            .set(paragraph4: text4)
-            .set(cancelText: cancel)
-            .set(okText: accept)
-            .set(faceUrl: faceUrlString)
-            .set(bannerUrl: bannerUrlString)
-            .buildAppStoreUrl(with: appID)
-            .set(presenter: window?.rootViewController)
-            .set(launchCount: 5)
-            .build()
+            do {
+                try RatingDialog.builder()
+                    .set(paragraph1: text1)
+                    .set(paragraph2: text2)
+                    .set(paragraph3: text3)
+                    .set(paragraph4: text4)
+                    .set(cancelText: cancel)
+                    .set(okText: accept)
+                    .set(faceUrl: faceUrlString)
+                    .set(bannerUrl: bannerUrlString)
+                    .buildAppStoreUrl(with: appID)
+                    .set(presenter: window?.rootViewController)
+                    .build()
+            } catch {
+                print(error)
+            }
+        }
     }
 }
 

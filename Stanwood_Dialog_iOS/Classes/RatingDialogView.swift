@@ -8,7 +8,6 @@
 import UIKit
 import Kingfisher
 
-//@objc
 public class RatingDialogView: UIView {
     
     @IBOutlet weak var banner: UIImageView!
@@ -29,12 +28,6 @@ public class RatingDialogView: UIView {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
-//    public override func awakeAfter(using aDecoder: NSCoder) -> Any? {
-//        super.awakeAfter(using: aDecoder)
-//        commonInit()
-//        return nil
-//    }
     
     func commonInit() {
         frame = CGRect(x: 0, y: 0, width: 300, height: 450)
@@ -57,7 +50,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.0
+     -version: 0.6.1
      */
     @objc
     dynamic func buildAd(over presenter: UIViewController,
@@ -95,7 +88,7 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     - version: 0.5.9
+     - version: 0.6.1
      */
     func buildOverlayAd(with presenter: UIViewController) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,

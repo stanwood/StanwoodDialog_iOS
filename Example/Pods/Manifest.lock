@@ -1,6 +1,6 @@
 PODS:
   - Kingfisher (4.6.1)
-  - StanwoodDialog (0.6.0):
+  - StanwoodDialog (0.6.1):
     - Kingfisher (~> 4.0)
 
 DEPENDENCIES:
@@ -12,7 +12,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  StanwoodDialog: d04b2622c3cada506f26211f74337317c5164cc0
+  StanwoodDialog: f33b64adc1c3220bec267befd39fd42501cb781a
 
 PODFILE CHECKSUM: a7f1b5a7264178b4460a30bdda0b297c960eb093
 
