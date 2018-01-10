@@ -7,7 +7,7 @@
 //
 
 import UIKit
-//import StanwoodDialog
+import StanwoodDialog
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,19 +17,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-//        let presenter = self.window!.rootViewController!
-////        var rateMessage = "ConfigManager.shared().string(forKey: kKeyRateMeDialog)"
-//        let rateMessage = "Please overwhelm me with stars on the app store!"
-//        let appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
-//        RatingDialog.showAd(on: 5,
-//                            over: presenter,
-//                            with: rateMessage,
-//                            from: UIImage(named: "RateMeProfile")!,
-//                            over: UIImage(named: "RateMeBackground")!,
-//                            link: appStoreURL,
-//                            tint: UIColor.blue,
-//                            cancel: "Cancel",
-//                            accept: "Accept")
         
         return true
     }
@@ -52,6 +39,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         buildRatingDialog()
         
+        if let vc = window?.rootViewController as? ViewController {
+            vc.updateUI()
+        }
+        
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
@@ -60,8 +51,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func buildRatingDialog() {
-        let size = self.window!.rootViewController?.view.frame.size
+        let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon ON AIR."
+        let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        let text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        let text4 = "Sternchen reichen - dauert nur 1 Minute."
         
+        let cancel = "Schließen"
+        let accept = "App bewerten"
+        
+        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
+        let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+        let appID = "1316369720"
+        
+        RatingDialog.builder()
+            .set(paragraph1: text1)
+            .set(paragraph2: text2)
+            .set(paragraph3: text3)
+            .set(paragraph4: text4)
+            .set(cancelText: cancel)
+            .set(okText: accept)
+            .set(faceUrl: faceUrlString)
+            .set(bannerUrl: bannerUrlString)
+            .buildAppStoreUrl(with: appID)
+            .set(presenter: window?.rootViewController)
+            .set(launchCount: 5)
+            .build()
     }
 }
 

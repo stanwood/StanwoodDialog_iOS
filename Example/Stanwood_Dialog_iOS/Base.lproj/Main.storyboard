@@ -20,8 +20,23 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Launches count" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="max-zy-1dq">
+                                <rect key="frame" x="126" y="323" width="122.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="max-zy-1dq" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="9M7-PN-Vho"/>
+                            <constraint firstItem="max-zy-1dq" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="mfg-cf-Wzb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="launchesCount" destination="max-zy-1dq" id="8AE-oa-EXL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

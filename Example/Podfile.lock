@@ -1,24 +1,19 @@
 PODS:
   - Kingfisher (4.6.1)
-  - StanwoodDialog (0.5.4)
+  - StanwoodDialog (0.6.0):
+    - Kingfisher (~> 4.0)
 
 DEPENDENCIES:
-  - Kingfisher (from `https://github.com/onevcat/Kingfisher`)
-  - StanwoodDialog
+  - StanwoodDialog (from `../`)
 
 EXTERNAL SOURCES:
-  Kingfisher:
-    :git: https://github.com/onevcat/Kingfisher
-
-CHECKOUT OPTIONS:
-  Kingfisher:
-    :commit: 43ec2d2c4dbbefb776c798b69c8c28b75e2badb9
-    :git: https://github.com/onevcat/Kingfisher
+  StanwoodDialog:
+    :path: ../
 
 SPEC CHECKSUMS:
-  Kingfisher: e38354c5b06a47d8dad6fd384d2ccbe40d315422
-  StanwoodDialog: d3759501cedface15f4263ef40e6fa3eeace749e
+  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  StanwoodDialog: d04b2622c3cada506f26211f74337317c5164cc0
 
-PODFILE CHECKSUM: 33df684199756c5fa097bd863e565bf507827a9d
+PODFILE CHECKSUM: a7f1b5a7264178b4460a30bdda0b297c960eb093
 
 COCOAPODS: 1.3.1

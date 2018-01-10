@@ -8,15 +8,15 @@
 import UIKit
 import Kingfisher
 
-@objc
+//@objc
 public class RatingDialogView: UIView {
     
     @IBOutlet weak var banner: UIImageView!
     @IBOutlet weak var devFace: UIImageView!
-    @IBOutlet weak var text1: UILabel!
-    @IBOutlet weak var text2: UILabel!
-    @IBOutlet weak var text3: UILabel!
-    @IBOutlet weak var text4: UILabel!
+    @IBOutlet weak var paragraph1: UILabel!
+    @IBOutlet weak var paragraph2: UILabel!
+    @IBOutlet weak var paragraph3: UILabel!
+    @IBOutlet weak var paragraph4: UILabel!
     @IBOutlet weak var accept: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
@@ -27,7 +27,16 @@ public class RatingDialogView: UIView {
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
+        commonInit()
+    }
+    
+//    public override func awakeAfter(using aDecoder: NSCoder) -> Any? {
+//        super.awakeAfter(using: aDecoder)
+//        commonInit()
+//        return nil
+//    }
+    
+    func commonInit() {
         frame = CGRect(x: 0, y: 0, width: 300, height: 450)
         layer.cornerRadius = 8.0
         layer.masksToBounds = true
@@ -37,10 +46,10 @@ public class RatingDialogView: UIView {
      It adds a popup asking the user to rate the app on the app store
      
      - parameter presenter: the `UIViewController` hosting the ad overlay
-     - parameter paragraph1: the text displayed in the ad overlay's 1st paragraph
-     - parameter paragraph2: the text displayed in the ad overlay's 2nd paragraph
-     - parameter paragraph3: the text displayed in the ad overlay's 3rd paragraph
-     - parameter paragraph4: the text displayed in the ad overlay's 4th paragraph
+     - parameter body1: the text displayed in the ad overlay's 1st paragraph
+     - parameter body2: the text displayed in the ad overlay's 2nd paragraph
+     - parameter body3: the text displayed in the ad overlay's 3rd paragraph
+     - parameter body4: the text displayed in the ad overlay's 4th paragraph
      - parameter devProfile: the URL for the developer's profile image
      - parameter background: the URL for a banner image displayed behind `devProfile`
      - parameter rateMeLink: the link to the appStore for rating
@@ -48,13 +57,14 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.5.9
+     -version: 0.6.0
      */
-    public func buildAd(over presenter: UIViewController,
-                        with paragraph1: String?,
-                        _ paragraph2: String?,
-                        _ paragraph3: String?,
-                        _ paragraph4: String?,
+    @objc
+    dynamic func buildAd(over presenter: UIViewController,
+                        with body1: String?,
+                        _ body2: String?,
+                        _ body3: String?,
+                        _ body4: String?,
                         from devProfile: URL,
                         over background: URL,
                         link rateMeLink: URL,
@@ -62,10 +72,10 @@ public class RatingDialogView: UIView {
                         cancel cancelText: String?,
                         accept acceptText: String?) {
 
-        text1.text = paragraph1 ?? ""
-        text2.text = paragraph2 ?? ""
-        text3.text = paragraph3 ?? ""
-        text4.text = paragraph4 ?? ""
+        paragraph1.text = body1 ?? ""
+        paragraph2.text = body2 ?? ""
+        paragraph3.text = body3 ?? ""
+        paragraph4.text = body4 ?? ""
         
         devFace.kf.setImage(with: devProfile)
         banner.kf.setImage(with: background)

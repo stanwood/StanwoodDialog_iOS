@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '0.5.9'
+  s.version          = '0.6.0'
   s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
@@ -30,11 +30,11 @@ This library allows to show a rating dialog prompt like the one used in On Air.
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*'
+  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
-  # s.resource_bundles = {
-  #   'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
