@@ -7,7 +7,25 @@
 
 import UIKit
 
-open class RatingDialog {
+public protocol RatingDialogPresenting {
+    func acceptButtonAction()
+    func cancelButtonAction()
+    func timeout()
+}
+
+open class RatingDialog: RatingDialogPresenting {
+    public var text1: String?
+    public var text2: String?
+    public var text3: String?
+    public var text4: String?
+    public var faceURL: URL?
+    public var bannerURL: URL?
+    public var appStoreURL: URL?
+    public var accentTint: UIColor?
+    public var cancelButtonText: String?
+    public var acceptButtonText: String?
+    public var rootView: UIView!
+    public var analytics: RatingDialogTracking?
     
     enum RatingDialogError: Error {
         case dialogError(String)
@@ -30,32 +48,46 @@ open class RatingDialog {
         return Builder()
     }
     
-    static func display() throws {
+    private func overlayView() -> RatingDialogView {
         let podBundle = Bundle(for: RatingDialog.self)
         let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
-        let overlay = bundle.loadNibNamed("RatingDialogView",
-                                          owner: RatingDialog.builder().host,
-                                          options: nil)
-        guard let host = RatingDialog.builder().host else {
-            throw RatingDialogError.dialogError("Missing presenter UIViewController to add the Rating Dialog as subView")
-        }
-        guard let appStoreURL = RatingDialog.builder().appStoreURL else {
-            throw RatingDialogError.dialogError("Missing appStore URL where user should rate the app")
-        }
-        if let view = overlay?.first as? RatingDialogView {
-            view.buildAd(over: host,
-                         with: RatingDialog.builder().text1,
-                         RatingDialog.builder().text2,
-                         RatingDialog.builder().text3,
-                         RatingDialog.builder().text4,
-                         from: RatingDialog.builder().faceURL,
-                         over: RatingDialog.builder().bannerURL,
-                         link: appStoreURL,
-                         tint: RatingDialog.builder().accentTint,
-                         cancel: RatingDialog.builder().cancel,
-                         accept: RatingDialog.builder().accept)
-        }
+        return bundle.loadNibNamed("RatingDialogView",
+                                          owner: rootView,
+                                          options: nil)!.first as! RatingDialogView
+    }
+    
+    func display() {
+        
+        analytics?.track(event: .showDialog)
+        
+        let overlay = overlayView()
+        overlay.presenter = self as RatingDialogPresenting
+        
+        overlay.buildAd(over: rootView!,
+                     with: text1,
+                     text2,
+                     text3,
+                     text4,
+                     from: faceURL!,
+                     over: bannerURL!,
+                     tint: accentTint!,
+                     cancel: cancelButtonText,
+                     accept: acceptButtonText)
+        
+    }
+    
+    public func cancelButtonAction() {
+        analytics?.track(event: .cancelAction)
+    }
+    
+    public func acceptButtonAction() {
+        analytics?.track(event: .acceptAction)
+        UIApplication.shared.openURL(appStoreURL!)
+    }
+    
+    public func timeout() {
+        analytics?.track(event: .timeout)
     }
     
     /// Counts app launches and returns true if the count matches the provided value
@@ -64,9 +96,7 @@ open class RatingDialog {
         return appLaunches == count
     }
     
-    public struct Builder {
-        /// key for storing the launches count on `UserDefaults`
-        private let appStarts = "numberOfAppStarts"
+    open class Builder {
         /// selected launch when we should present the ad
         var adLaunch = 5
         
@@ -95,8 +125,8 @@ open class RatingDialog {
         /// The tint color for the Accept and Cancel `UIButton`s
         var accentTint = UIColor.blue
         
-        /// The `UIViewController` where the overlay ad view will be added as a subview
-        var host: UIViewController?
+        /// The `UIView` where the overlay ad view will be added as a subview
+        var rootView: UIView!
         
         /**
          Sets the text for the first paragraph
@@ -104,9 +134,8 @@ open class RatingDialog {
          - parameter paragraph1: text for the first paragraph (may include `\n`)
          */
         public func set(paragraph1: String) -> Builder {
-            var builder = self
-            builder.text1 = paragraph1
-            return builder
+            text1 = paragraph1
+            return self
         }
         
         /**
@@ -117,9 +146,8 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(paragraph2: String) -> Builder {
-            var builder = self
-            builder.text2 = paragraph2
-            return builder
+            text2 = paragraph2
+            return self
         }
         
         /**
@@ -130,9 +158,8 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(paragraph3: String) -> Builder {
-            var builder = self
-            builder.text3 = paragraph3
-            return builder
+            text3 = paragraph3
+            return self
         }
         
         /**
@@ -143,9 +170,8 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(paragraph4: String) -> Builder {
-            var builder = self
-            builder.text4 = paragraph4
-            return builder
+            text4 = paragraph4
+            return self
         }
         
         /**
@@ -156,9 +182,8 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(cancelText: String) -> Builder {
-            var builder = self
-            builder.cancel = cancelText
-            return builder
+            cancel = cancelText
+            return self
         }
         
         /**
@@ -169,9 +194,8 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(okText: String) -> Builder {
-            var builder = self
-            builder.accept = okText
-            return builder
+            accept = okText
+            return self
         }
         
         /**
@@ -182,11 +206,10 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(faceUrl: String) -> Builder {
-            var builder = self
             if let builtURL = URL(string: faceUrl) {
-                builder.faceURL = builtURL
+                faceURL = builtURL
             }
-            return builder
+            return self
         }
         
         /**
@@ -197,11 +220,10 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(bannerUrl: String) -> Builder {
-            var builder = self
             if let builtURL = URL(string: bannerUrl) {
-                builder.bannerURL = builtURL
+                bannerURL = builtURL
             }
-            return builder
+            return self
         }
         
         /**
@@ -212,11 +234,11 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func buildAppStoreUrl(with appID: String) -> Builder {
-            var builder = self
+            
             if let builtURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review") {
-                builder.appStoreURL = builtURL
+                appStoreURL = builtURL
             }
-            return builder
+            return self
         }
         
         /**
@@ -227,11 +249,10 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func set(appStoreUrl: String) -> Builder {
-            var builder = self
             if let builtURL = URL(string: appStoreUrl) {
-                builder.appStoreURL = builtURL
+                appStoreURL = builtURL
             }
-            return builder
+            return self
         }
         
         /**
@@ -241,27 +262,21 @@ open class RatingDialog {
          
          - version: 0.6.1
          */
-        public func set(tintColor: UIColor?) -> Builder {
-            var builder = self
-            if let color = tintColor {
-                builder.accentTint = color
-            }
-            return builder
+        public func set(tintColor: UIColor) -> Builder {
+            accentTint = tintColor
+            return self
         }
         
         /**
-         Sets the presenter `UIViewController` where the overlay ad will be added as a subview
+         Sets the rootView `UIView` where the overlay ad will be added as a subview
          
-         - parameter presenter: used as host to add the ad overlay as subview
+         - parameter rootView: used as host to add the ad overlay as subview
          
          - version: 0.6.1
          */
-        public func set(presenter: UIViewController?) -> Builder {
-            var builder = self
-            if let viewController = presenter {
-                builder.host = viewController
-            }
-            return builder
+        public func set(rootView: UIView) -> Builder {
+            self.rootView = rootView
+            return self
         }
         
         /**
@@ -270,11 +285,19 @@ open class RatingDialog {
          - version: 0.6.1
          */
         public func build() throws {
-            do {
-                try RatingDialog.display()
-            } catch {
-                throw error
-            }
+            let ratingDialog = RatingDialog()
+            ratingDialog.text1 = text1
+            ratingDialog.text2 = text2
+            ratingDialog.text3 = text3
+            ratingDialog.text4 = text4
+            ratingDialog.cancelButtonText = cancel
+            ratingDialog.acceptButtonText = accept
+            ratingDialog.rootView = rootView
+            ratingDialog.accentTint = accentTint
+            ratingDialog.faceURL = faceURL
+            ratingDialog.bannerURL = bannerURL
+            ratingDialog.appStoreURL = appStoreURL
+            ratingDialog.display()
         }
     }
 }

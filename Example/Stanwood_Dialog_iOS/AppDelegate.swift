@@ -75,7 +75,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     .set(faceUrl: faceUrlString)
                     .set(bannerUrl: bannerUrlString)
                     .buildAppStoreUrl(with: appID)
-                    .set(presenter: window?.rootViewController)
+                    .set(rootView: (window?.rootViewController?.view)!)
                     .build()
             } catch {
                 print(error)

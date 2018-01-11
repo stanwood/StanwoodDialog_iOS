@@ -19,6 +19,8 @@ public class RatingDialogView: UIView {
     @IBOutlet weak var accept: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
+    var presenter: RatingDialogPresenting!
+    
     /// Container view to present the Rating Dialog overlay
     var overlayBannerContainer: UIView?
     /// The URL for rating the app on the appStore
@@ -53,14 +55,13 @@ public class RatingDialogView: UIView {
      -version: 0.6.1
      */
     @objc
-    dynamic func buildAd(over presenter: UIViewController,
+    dynamic func buildAd(over rootView: UIView,
                         with body1: String?,
                         _ body2: String?,
                         _ body3: String?,
                         _ body4: String?,
                         from devProfile: URL,
                         over background: URL,
-                        link rateMeLink: URL,
                         tint accentTint: UIColor,
                         cancel cancelText: String?,
                         accept acceptText: String?) {
@@ -73,14 +74,12 @@ public class RatingDialogView: UIView {
         devFace.kf.setImage(with: devProfile)
         banner.kf.setImage(with: background)
         
-        appStoreURL = rateMeLink
-        
         accept.backgroundColor = accentTint
         accept.setTitle(acceptText, for: .normal)
         cancel.tintColor = accentTint
         cancel.setTitle(cancelText, for: .normal)
         
-        buildOverlayAd(with: presenter)
+        buildOverlayAd(with: rootView)
     }
     
     /**
@@ -90,11 +89,11 @@ public class RatingDialogView: UIView {
     
      - version: 0.6.1
      */
-    func buildOverlayAd(with presenter: UIViewController) {
+    func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
                                                       y: 0.0,
-                                                      width: presenter.view.frame.size.width,
-                                                      height: presenter.view.frame.size.height))
+                                                      width: rootView.frame.size.width,
+                                                      height: rootView.frame.size.height))
         overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
         guard let overlaySize = overlayBannerContainer?.frame.size else {
             return
@@ -105,15 +104,20 @@ public class RatingDialogView: UIView {
         overlayBannerContainer?.alpha = CGFloat(0.0)
         transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))
         
-        presenter.view.addSubview(overlayBannerContainer!)
+        rootView.addSubview(overlayBannerContainer!)
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
             self.overlayBannerContainer?.alpha = CGFloat(1.0)
             self.transform = CGAffineTransform(scaleX: CGFloat(1.0), y: CGFloat(1.0))
         }) { _ in }
-        perform(#selector(closeOverlayAd(_:)), with: nil, afterDelay: 30)
+        perform(#selector(timeoutPresenting), with: nil, afterDelay: 30)
     }
     
-    @IBAction func closeOverlayAd(_ sender: Any) {
+    @objc func timeoutPresenting() {
+        presenter.timeout()
+        dismissView()
+    }
+    
+    func dismissView() {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
             self.overlayBannerContainer?.alpha = CGFloat(0.0)
             self.transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))
@@ -122,9 +126,13 @@ public class RatingDialogView: UIView {
         })
     }
     
-    @IBAction func rateApp(_ sender: Any) {
-        
-        UIApplication.shared.openURL(appStoreURL)
-        closeOverlayAd(self)
+    @IBAction func cancelButtonAction(_ sender: Any) {
+        presenter.cancelButtonAction()
+        dismissView()
+    }
+    
+    @IBAction func acceptButtonAction(_ sender: Any) {
+        presenter.acceptButtonAction()
+        dismissView()
     }
 }
