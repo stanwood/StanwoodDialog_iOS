@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Kingfisher
+import PromiseKit
 
 public class RatingDialogView: UIView {
     
@@ -19,12 +19,11 @@ public class RatingDialogView: UIView {
     @IBOutlet weak var accept: UIButton!
     @IBOutlet weak var cancel: UIButton!
     
-    var presenter: RatingDialogPresenting!
+    /// the view controller that will be hosting the rating dialog overlay
+    var hostViewController: RatingDialogPresenting!
     
     /// Container view to present the Rating Dialog overlay
     var overlayBannerContainer: UIView?
-    /// The URL for rating the app on the appStore
-    var appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id1316369720")!
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -52,7 +51,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.1
+     -version: 0.6.2
      */
     @objc
     dynamic func buildAd(over rootView: UIView,
@@ -71,8 +70,74 @@ public class RatingDialogView: UIView {
         paragraph3.text = body3 ?? ""
         paragraph4.text = body4 ?? ""
         
-        devFace.kf.setImage(with: devProfile)
-        banner.kf.setImage(with: background)
+        when(fulfilled: [
+            fetchImage(from: devProfile),
+            fetchImage(from: background)
+            ]).then { results -> Promise<Void> in
+                guard let faceImage = results[0],
+                    let bannerImage = results[1] else { return .void }
+                
+                self.buildAd(over: rootView,
+                             with: body1, body2, body3, body4,
+                             face: faceImage,
+                             over: bannerImage,
+                             tint: accentTint,
+                             cancel: cancelText,
+                             accept: acceptText)
+                return .void
+            }.catch { error in
+                print(error.localizedDescription)
+        }
+    }
+    
+    private func fetchImage(from url: URL) -> Promise<UIImage?> {
+        return Promise { fulfill, reject in
+            let request = URLRequest(url: url)
+            let session = URLSession.shared
+            let dataPromise: URLDataPromise = session.dataTask(with: request)
+            _ = dataPromise.asImage().then { image -> Void in
+                fulfill(image)
+            }.catch(execute: reject)
+        }
+    }
+    
+    /**
+     It adds a popup asking the user to rate the app on the app store
+     
+     - parameter presenter: the `UIViewController` hosting the ad overlay
+     - parameter body1: the text displayed in the ad overlay's 1st paragraph
+     - parameter body2: the text displayed in the ad overlay's 2nd paragraph
+     - parameter body3: the text displayed in the ad overlay's 3rd paragraph
+     - parameter body4: the text displayed in the ad overlay's 4th paragraph
+     - parameter devProfile: the UIImage for the developer's profile image
+     - parameter background: the UIImage for a banner image displayed behind `devProfile`
+     - parameter rateMeLink: the link to the appStore for rating
+     - parameter accentTint: a `UIColor` for the buttons accent over white
+     - parameter cancelText: a text to be displayed in the cancel `UIButton`
+     - parameter acceptText: a text to be displayed in the accept `UIButton`
+     
+     -version: 0.6.2
+     */
+    
+    @objc
+    dynamic func buildAd(over rootView: UIView,
+                         with body1: String?,
+                         _ body2: String?,
+                         _ body3: String?,
+                         _ body4: String?,
+                         face devProfile: UIImage,
+                         over background: UIImage,
+                         tint accentTint: UIColor,
+                         cancel cancelText: String?,
+                         accept acceptText: String?) {
+        
+        paragraph1.text = body1 ?? ""
+        paragraph2.text = body2 ?? ""
+        paragraph3.text = body3 ?? ""
+        paragraph4.text = body4 ?? ""
+        
+        devFace.image = devProfile
+        banner.image = background
         
         accept.backgroundColor = accentTint
         accept.setTitle(acceptText, for: .normal)
@@ -87,7 +152,7 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     - version: 0.6.1
+     - version: 0.6.2
      */
     func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
@@ -113,7 +178,7 @@ public class RatingDialogView: UIView {
     }
     
     @objc func timeoutPresenting() {
-        presenter.timeout()
+        hostViewController.timeout()
         dismissView()
     }
     
@@ -127,12 +192,19 @@ public class RatingDialogView: UIView {
     }
     
     @IBAction func cancelButtonAction(_ sender: Any) {
-        presenter.cancelButtonAction()
+        hostViewController.cancelButtonAction()
         dismissView()
     }
     
     @IBAction func acceptButtonAction(_ sender: Any) {
-        presenter.acceptButtonAction()
+        hostViewController.acceptButtonAction()
         dismissView()
+    }
+}
+
+extension Promise {
+    
+    public static var void: Promise<Void> {
+        return Promise<Void>(value: ())
     }
 }

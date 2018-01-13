@@ -1,7 +1,17 @@
 PODS:
-  - Kingfisher (4.6.1)
-  - StanwoodDialog (0.6.1):
-    - Kingfisher (~> 4.0)
+  - PromiseKit (4.5.1):
+    - PromiseKit/Foundation (= 4.5.1)
+    - PromiseKit/QuartzCore (= 4.5.1)
+    - PromiseKit/UIKit (= 4.5.1)
+  - PromiseKit/CorePromise (4.5.1)
+  - PromiseKit/Foundation (4.5.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/QuartzCore (4.5.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (4.5.1):
+    - PromiseKit/CorePromise
+  - StanwoodDialog (0.6.2):
+    - PromiseKit
 
 DEPENDENCIES:
   - StanwoodDialog (from `../`)
@@ -11,8 +21,8 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
-  StanwoodDialog: f33b64adc1c3220bec267befd39fd42501cb781a
+  PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
+  StanwoodDialog: 0382c4ad847b40da0d6f46aad2e670cfc9e864dd
 
 PODFILE CHECKSUM: a7f1b5a7264178b4460a30bdda0b297c960eb093
 
