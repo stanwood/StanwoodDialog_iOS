@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment version="2048" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RatingDialogView" customModule="StanwoodDialog">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RhZ-Wq-WE0">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="nRK-oR-Tao"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4z-Aa-6xr">
+                    <rect key="frame" x="88.5" y="169" width="199" height="50.5"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <string key="text">Hi, 
+ich bin Hannes, der Entwickler 
+von dieser app.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Drz-uk-6Cq">
+                    <rect key="frame" x="56.5" y="238.5" width="262" height="34"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <string key="text">Kleine App-Entwickler wie wir leben von 
+guten Bewertungen im App-Store.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZK-6f-mpc">
+                    <rect key="frame" x="77" y="291.5" width="221" height="34"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <string key="text">Wenn Ihnen unsere App gefällt, 
+dann bewerten Sie uns doch bitte.</string>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSw-uN-Cl6">
+                    <rect key="frame" x="0.0" y="623" width="187.5" height="44"/>
+                    <color key="backgroundColor" red="0.88619661331176758" green="0.88632434606552124" blue="0.8861687183380127" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="2cR-Qn-rCc"/>
+                    </constraints>
+                    <state key="normal" title="Schließen"/>
+                    <connections>
+                        <action selector="cancelButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="zDb-qd-6km"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-HX-Qlo">
+                    <rect key="frame" x="187.5" y="623" width="187.5" height="44"/>
+                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="JpH-H8-5u1"/>
+                    </constraints>
+                    <state key="normal" title="App bewerten">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="acceptButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dbu-16-zec"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-PW-JRL">
+                    <rect key="frame" x="137" y="50" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="100" id="BJI-di-yre"/>
+                        <constraint firstAttribute="height" constant="100" id="Eqa-4w-BZr"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="50"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sternchen reichen - dauert nur 1 Minute." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvK-1j-Fdx">
+                    <rect key="frame" x="57" y="344.5" width="262" height="17"/>
+                    <accessibility key="accessibilityConfiguration">
+                        <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
+                    </accessibility>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.92540901899337769" green="0.92554205656051636" blue="0.92538005113601685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Kdh-HX-Qlo" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="1Z5-zh-qfn"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="6m3-s3-Pk2"/>
+                <constraint firstItem="RhZ-Wq-WE0" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="99x-CT-4R7"/>
+                <constraint firstItem="RZK-6f-mpc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="BkR-1H-B9W"/>
+                <constraint firstItem="Drz-uk-6Cq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="DmB-tu-R1L"/>
+                <constraint firstItem="aIc-PW-JRL" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="E7i-OU-PCQ"/>
+                <constraint firstItem="lvK-1j-Fdx" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="IHb-iw-85v"/>
+                <constraint firstItem="RhZ-Wq-WE0" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="KGF-la-17W"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="20" symbolic="YES" id="KhA-5e-0ci"/>
+                <constraint firstItem="Kdh-HX-Qlo" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="NCF-t6-wej"/>
+                <constraint firstItem="RhZ-Wq-WE0" firstAttribute="trailing" secondItem="iN0-l3-epB" secondAttribute="trailing" id="Nu3-dS-Sig"/>
+                <constraint firstItem="lvK-1j-Fdx" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="20" symbolic="YES" id="OiN-rL-fzX"/>
+                <constraint firstItem="RZK-6f-mpc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QFy-od-U1y"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="top" secondItem="aIc-PW-JRL" secondAttribute="bottom" constant="19" id="SgP-1y-p3M"/>
+                <constraint firstItem="lvK-1j-Fdx" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Kdh-HX-Qlo" secondAttribute="leading" constant="8" symbolic="YES" id="U6O-VE-BeX"/>
+                <constraint firstItem="aIc-PW-JRL" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="V1N-XG-Fol"/>
+                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="RZK-6f-mpc" secondAttribute="trailing" constant="20" symbolic="YES" id="VMY-C4-uPs"/>
+                <constraint firstItem="lvK-1j-Fdx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="aD0-wK-6L6"/>
+                <constraint firstItem="Drz-uk-6Cq" firstAttribute="bottom" secondItem="RZK-6f-mpc" secondAttribute="top" constant="-19" id="cb7-2R-ngj"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="bottom" secondItem="Drz-uk-6Cq" secondAttribute="top" constant="-19" id="ggQ-Bi-CLb"/>
+                <constraint firstItem="Drz-uk-6Cq" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="20" symbolic="YES" id="hhP-xL-64a"/>
+                <constraint firstItem="d4z-Aa-6xr" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="lzQ-5A-rfh"/>
+                <constraint firstItem="rSw-uN-Cl6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oqD-6g-jU4"/>
+                <constraint firstItem="RZK-6f-mpc" firstAttribute="bottom" secondItem="lvK-1j-Fdx" secondAttribute="top" constant="-19" id="sCY-gA-5jt"/>
+                <constraint firstItem="Kdh-HX-Qlo" firstAttribute="leading" secondItem="rSw-uN-Cl6" secondAttribute="trailing" id="tIr-zG-Iv7"/>
+                <constraint firstItem="rSw-uN-Cl6" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" id="vMe-np-82b"/>
+                <constraint firstItem="Kdh-HX-Qlo" firstAttribute="width" secondItem="rSw-uN-Cl6" secondAttribute="width" id="wdW-ZR-uPn"/>
+                <constraint firstItem="Drz-uk-6Cq" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xGW-jf-Xr7"/>
+            </constraints>
+            <connections>
+                <outlet property="accept" destination="Kdh-HX-Qlo" id="OYs-wv-dJm"/>
+                <outlet property="banner" destination="RhZ-Wq-WE0" id="cxF-Ye-G8X"/>
+                <outlet property="cancel" destination="rSw-uN-Cl6" id="PsG-By-79Q"/>
+                <outlet property="devFace" destination="aIc-PW-JRL" id="8ay-VR-eMS"/>
+                <outlet property="paragraph1" destination="d4z-Aa-6xr" id="ACE-4n-3QA"/>
+                <outlet property="paragraph2" destination="Drz-uk-6Cq" id="98F-eT-dVp"/>
+                <outlet property="paragraph3" destination="RZK-6f-mpc" id="0VI-Um-E3b"/>
+                <outlet property="paragraph4" destination="lvK-1j-Fdx" id="NuV-Kq-lV2"/>
+            </connections>
+            <point key="canvasLocation" x="33.5" y="53.5"/>
+        </view>
+    </objects>
+</document>

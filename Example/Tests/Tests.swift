@@ -1,6 +1,6 @@
 import UIKit
 import XCTest
-import Stanwood_Dialog_iOS
+import StanwoodDialog
 
 class Tests: XCTestCase {
     

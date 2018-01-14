@@ -8,8 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '0.1.2'
-  s.summary          = 'Library to show a rate me prompt like the one used in On Air.'
+  s.version          = '0.6.3'
+  s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +18,26 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-Library to show a rate me prompt like the one used in On Air.
+This library allows to show a rating dialog prompt like the one used in On Air.
                        DESC
 
-  s.homepage         = 'https://github.com/epeschard/Stanwood_Dialog_iOS'
+  s.homepage         = 'https://github.com/stanwood/Stanwood_Dialog_iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'private', :file => 'LICENSE' }
-  s.author           = { 'epeschard' => 'e@peschard.me' }
-  s.source           = { :git => 'https://github.com/epeschard/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Eugene' => 'eugene.peschard@stanwood.io' }
+  s.source           = { :git => 'https://github.com/stanwood/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
+  s.social_media_url = 'https://twitter.com/EugenePeschard'
 
   s.ios.deployment_target = '8.0'
 
-  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*'
+  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
-  # s.resource_bundles = {
-  #   'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
+  }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.frameworks = 'UIKit'
+  #  s.dependency 'Kingfisher', '~> 4.0'
+  s.dependency 'PromiseKit'
 end
