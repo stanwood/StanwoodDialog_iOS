@@ -63,7 +63,7 @@ dann bewerten Sie uns doch bitte.</string>
                     </constraints>
                     <state key="normal" title="Schließen"/>
                     <connections>
-                        <action selector="closeOverlayAd:" destination="iN0-l3-epB" eventType="touchUpInside" id="hJ6-xH-EmM"/>
+                        <action selector="cancelButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="zDb-qd-6km"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kdh-HX-Qlo">
@@ -76,7 +76,7 @@ dann bewerten Sie uns doch bitte.</string>
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                     <connections>
-                        <action selector="rateApp:" destination="iN0-l3-epB" eventType="touchUpInside" id="LOg-33-B25"/>
+                        <action selector="acceptButtonAction:" destination="iN0-l3-epB" eventType="touchUpInside" id="dbu-16-zec"/>
                     </connections>
                 </button>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aIc-PW-JRL">
@@ -136,7 +136,7 @@ dann bewerten Sie uns doch bitte.</string>
             <connections>
                 <outlet property="accept" destination="Kdh-HX-Qlo" id="OYs-wv-dJm"/>
                 <outlet property="banner" destination="RhZ-Wq-WE0" id="cxF-Ye-G8X"/>
-                <outlet property="cancel" destination="rSw-uN-Cl6" id="m4j-O8-5WY"/>
+                <outlet property="cancel" destination="rSw-uN-Cl6" id="PsG-By-79Q"/>
                 <outlet property="devFace" destination="aIc-PW-JRL" id="8ay-VR-eMS"/>
                 <outlet property="paragraph1" destination="d4z-Aa-6xr" id="ACE-4n-3QA"/>
                 <outlet property="paragraph2" destination="Drz-uk-6Cq" id="98F-eT-dVp"/>
