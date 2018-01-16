@@ -1,4 +1,7 @@
 PODS:
+  - BugfenderSDK (1.5.0):
+    - BugfenderSDK/Swift (= 1.5.0)
+  - BugfenderSDK/Swift (1.5.0)
   - PromiseKit (4.5.1):
     - PromiseKit/Foundation (= 4.5.1)
     - PromiseKit/QuartzCore (= 4.5.1)
@@ -10,10 +13,13 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.1):
     - PromiseKit/CorePromise
-  - StanwoodDialog (0.6.2):
+  - StanwoodAnalytics (0.1.14):
+    - BugfenderSDK (~> 1.4)
+  - StanwoodDialog (0.6.4):
     - PromiseKit
 
 DEPENDENCIES:
+  - StanwoodAnalytics
   - StanwoodDialog (from `../`)
 
 EXTERNAL SOURCES:
@@ -21,9 +27,11 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
+  BugfenderSDK: 80a1569a5801c352e62e440f2f9ada44affb1a40
   PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
-  StanwoodDialog: 0382c4ad847b40da0d6f46aad2e670cfc9e864dd
+  StanwoodAnalytics: 7fe33d1875903546e650e5aec4b51dbdd00efd98
+  StanwoodDialog: 3be5512df5af6391201bc2f7dddc3a1926b2d12a
 
-PODFILE CHECKSUM: a7f1b5a7264178b4460a30bdda0b297c960eb093
+PODFILE CHECKSUM: 8f3837eeda87b067280e846f3f5adb5efe3c2241
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.4.0.rc.1

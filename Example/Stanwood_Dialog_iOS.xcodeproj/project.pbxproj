@@ -16,6 +16,7 @@
 		9C23AEB31FFE38D4004CD74B /* StanwoodDialog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9C23AEB21FFE38D4004CD74B /* StanwoodDialog.podspec */; };
 		9C26AF20E5A4AECB1DE9F04C /* Pods_Stanwood_Dialog_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC44407A8BB1D6EF3A5A16D /* Pods_Stanwood_Dialog_iOS_Example.framework */; };
 		9CA036271FFE3B05000EC948 /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 9CA036261FFE3B05000EC948 /* .jazzy.yaml */; };
+		AFEB2C4A200E1587009AE5C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AFEB2C49200E1587009AE5C7 /* GoogleService-Info.plist */; };
 		C810E6605F215BC03735CB2F /* Pods_Stanwood_Dialog_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7EE2A31C00BBE774509D3C /* Pods_Stanwood_Dialog_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +47,7 @@
 		9C23AEB21FFE38D4004CD74B /* StanwoodDialog.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StanwoodDialog.podspec; path = ../StanwoodDialog.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9CA036261FFE3B05000EC948 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .jazzy.yaml; path = ../.jazzy.yaml; sourceTree = "<group>"; };
 		A32D90CDCFB597664F4A01BD /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		AFEB2C49200E1587009AE5C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C704FEE5D3BA33833B05B8F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CCAF23229DF4FE60808C7310 /* Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		D4F804684D3148AA14D68F6C /* Pods-Stanwood_Dialog_iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanwood_Dialog_iOS_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AFEB2C49200E1587009AE5C7 /* GoogleService-Info.plist */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -258,6 +261,7 @@
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 				9CA036271FFE3B05000EC948 /* .jazzy.yaml in Resources */,
+				AFEB2C4A200E1587009AE5C7 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,12 +297,16 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BugfenderSDK/BugfenderSDK.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/StanwoodAnalytics/StanwoodAnalytics.framework",
 				"${BUILT_PRODUCTS_DIR}/StanwoodDialog/StanwoodDialog.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BugfenderSDK.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodAnalytics.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodDialog.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

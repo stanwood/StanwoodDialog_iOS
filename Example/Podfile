@@ -5,6 +5,7 @@ platform :ios, '9.0'
 use_frameworks!
 
 target 'Stanwood_Dialog_iOS_Example' do
+    pod 'StanwoodAnalytics'
   pod 'StanwoodDialog', :path => '../'
 
   target 'Stanwood_Dialog_iOS_Tests' do
