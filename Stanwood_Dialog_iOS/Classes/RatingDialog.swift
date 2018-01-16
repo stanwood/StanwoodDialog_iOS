@@ -26,7 +26,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var cancelButtonText: String?
     private var acceptButtonText: String?
     private var rootView: UIView!
-    public var analytics: RatingDialogTracking?
+    private var analytics: RatingDialogTracking?
     
     enum RatingDialogError: Error {
         case dialogError(String)
@@ -54,8 +54,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
         return bundle.loadNibNamed("RatingDialogView",
-                                          owner: rootView,
-                                          options: nil)!.first as! RatingDialogView
+                                   owner: rootView,
+                                   options: nil)!.first as! RatingDialogView
     }
     
     func display() {
@@ -66,15 +66,15 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         overlay.hostViewController = self as RatingDialogPresenting
         
         overlay.buildAd(over: rootView!,
-                     with: text1,
-                     text2,
-                     text3,
-                     text4,
-                     from: faceURL!,
-                     over: bannerURL!,
-                     tint: accentTint!,
-                     cancel: cancelButtonText,
-                     accept: acceptButtonText)
+                        with: text1,
+                        text2,
+                        text3,
+                        text4,
+                        from: faceURL!,
+                        over: bannerURL!,
+                        tint: accentTint!,
+                        cancel: cancelButtonText,
+                        accept: acceptButtonText)
         
     }
     
@@ -128,6 +128,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView!
+        
+        /// The analytics class
+        var analytics: RatingDialogTracking?
         
         /**
          Sets the text for the first paragraph
@@ -281,6 +284,19 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
+         Set the analytics object for tracking actions.
+         
+         - parameter analytics: An object that conforms to the RatingDialogTracking protocol
+         
+         - version: 0.6.5
+         */
+        
+        public func set(analytics: RatingDialogTracking) -> Builder {
+            self.analytics = analytics
+            return self
+        }
+        
+        /**
          Returns the finalized RatingDialog object after setting all its properties
          
          - version: 0.6.4
@@ -298,6 +314,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
             ratingDialog.faceURL = faceURL
             ratingDialog.bannerURL = bannerURL
             ratingDialog.appStoreURL = appStoreURL
+            ratingDialog.analytics = analytics
             ratingDialog.display()
         }
     }

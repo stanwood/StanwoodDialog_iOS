@@ -179,6 +179,7 @@
 				607FACCE1AFB9204008FA782 /* Resources */,
 				86468A35635D6F2AB2190728 /* [CP] Embed Pods Frameworks */,
 				A6C1B628AACFCACB31A02AC4 /* [CP] Copy Pods Resources */,
+				AFEB2C4D200E3C77009AE5C7 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -343,6 +344,19 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		AFEB2C4D200E3C77009AE5C7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/StanwoodAnalytics/Frameworks/Fabric.framework/run\"  4522f719c7ceecac5149a4bb8a130ff7ca33179c 9692003b2e8e4f0558316d230e8722210371fd1e1e6f5b2d575b8f3b475a6b6b";
 		};
 		DA4A1BB105D466E4BA69E0E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

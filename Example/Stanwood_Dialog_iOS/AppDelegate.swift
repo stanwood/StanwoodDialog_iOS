@@ -10,11 +10,29 @@ import UIKit
 import StanwoodDialog
 import StanwoodAnalytics
 
+extension StanwoodAnalytics: RatingDialogTracking {
+    public func track(event: RatingDialogEvent) {
+        let trackingParams = TrackingParams(eventName: "RatingDialog", contentType: "info", lineNumber: nil, method: nil, file: nil, tag: nil)
+        
+        switch event {
+        case .showDialog:
+            track(event: TrackingEvent.showDialog, trackingParams: trackingParams)
+        case .acceptAction:
+            track(event: TrackingEvent.acceptAction, trackingParams: trackingParams)
+        case .cancelAction:
+            track(event: TrackingEvent.cancelAction, trackingParams: trackingParams)
+        case .timeout:
+            track(event: TrackingEvent.timeout, trackingParams: trackingParams)
+        }
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     var analytics: StanwoodAnalytics?
+    var dialogAnalytics: RatingDialogTracking?
     
     let bugFenderKey = "5Svt9b117yMmJDumCYZFgpSVnmoTSkD8"
 
@@ -34,7 +52,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .add(tracker: firebaseTracker)
         
         analytics = analyticsBuilder.build()
-        
         return true
     }
 
@@ -79,7 +96,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func buildRatingDialog() {
-        if RatingDialog.shouldShow(onLaunch: 5) {
+        if RatingDialog.shouldShow(onLaunch: 24) {
             let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
             let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
             let text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
@@ -103,6 +120,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     .set(faceUrl: faceUrlString)
                     .set(bannerUrl: bannerUrlString)
                     .buildAppStoreUrl(with: appID)
+                    .set(analytics: analytics!)
                     .set(rootView: (window?.rootViewController?.view)!)
                     .build()
             } catch {

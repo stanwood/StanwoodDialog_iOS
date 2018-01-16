@@ -13,7 +13,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.1):
     - PromiseKit/CorePromise
-  - StanwoodAnalytics (0.1.14):
+  - StanwoodAnalytics (0.2.2):
     - BugfenderSDK (~> 1.4)
   - StanwoodDialog (0.6.4):
     - PromiseKit
@@ -29,7 +29,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   BugfenderSDK: 80a1569a5801c352e62e440f2f9ada44affb1a40
   PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
-  StanwoodAnalytics: 7fe33d1875903546e650e5aec4b51dbdd00efd98
+  StanwoodAnalytics: e788f830a36bd8a2904c936f8c74d9838d79c5a6
   StanwoodDialog: 3be5512df5af6391201bc2f7dddc3a1926b2d12a
 
 PODFILE CHECKSUM: 8f3837eeda87b067280e846f3f5adb5efe3c2241
