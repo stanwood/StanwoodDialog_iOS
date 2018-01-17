@@ -93,6 +93,7 @@ public class RatingDialogView: UIView {
                              accept: acceptText)
                 return .void
             }.catch { error in
+                RatingDialog.decreaseLaunchCount()
                 print(error.localizedDescription)
             }
     }

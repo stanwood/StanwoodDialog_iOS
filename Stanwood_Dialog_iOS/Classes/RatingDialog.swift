@@ -304,28 +304,19 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          - version: 0.6.5
          */
         public func build() {
-//            do {
-                let ratingDialog = RatingDialog()
-                ratingDialog.text1 = text1
-                ratingDialog.text2 = text2
-                ratingDialog.text3 = text3
-                ratingDialog.text4 = text4
-                ratingDialog.cancelButtonText = cancel
-                ratingDialog.acceptButtonText = accept
-                ratingDialog.rootView = rootView
-                ratingDialog.accentTint = accentTint
-                ratingDialog.faceURL = faceURL
-                ratingDialog.bannerURL = bannerURL
-                ratingDialog.appStoreURL = appStoreURL
-                ratingDialog.display()
-//            } catch {
-//                decreaseLaunchCount()
-//                if let ratingDialog = error as? RatingDialogError {
-//                    analytics?.log(error: ratingDialog )
-//                } else {
-//                    print(error)
-//                }
-//            }
+            let ratingDialog = RatingDialog()
+            ratingDialog.text1 = text1
+            ratingDialog.text2 = text2
+            ratingDialog.text3 = text3
+            ratingDialog.text4 = text4
+            ratingDialog.cancelButtonText = cancel
+            ratingDialog.acceptButtonText = accept
+            ratingDialog.rootView = rootView
+            ratingDialog.accentTint = accentTint
+            ratingDialog.faceURL = faceURL
+            ratingDialog.bannerURL = bannerURL
+            ratingDialog.appStoreURL = appStoreURL
+            ratingDialog.display()
         }
     }
 }
