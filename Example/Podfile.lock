@@ -10,7 +10,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (4.5.1):
     - PromiseKit/CorePromise
-  - StanwoodDialog (0.6.2):
+  - StanwoodDialog (0.6.5):
     - PromiseKit
 
 DEPENDENCIES:
@@ -22,7 +22,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
-  StanwoodDialog: 0382c4ad847b40da0d6f46aad2e670cfc9e864dd
+  StanwoodDialog: a884845921ca9a295d8dc9c46b73feb600e23152
 
 PODFILE CHECKSUM: a7f1b5a7264178b4460a30bdda0b297c960eb093
 

@@ -14,6 +14,11 @@ public enum RatingDialogEvent: String {
     case timeout = "timeout"
 }
 
+public enum RatingDialogError: Error {
+    case dialogError(String)
+}
+
 public protocol RatingDialogTracking {
     func track(event: RatingDialogEvent)
+    func log(error: RatingDialogError)
 }
