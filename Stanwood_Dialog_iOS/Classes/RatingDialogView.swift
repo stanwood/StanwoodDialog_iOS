@@ -86,7 +86,6 @@ public class RatingDialogView: UIView {
                              accept: acceptText)
                 return .void
             }.catch { error in
-                
                 print(error.localizedDescription)
         }
     }
