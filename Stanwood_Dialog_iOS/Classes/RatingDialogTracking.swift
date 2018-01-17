@@ -16,4 +16,5 @@ public enum RatingDialogEvent: String {
 
 public protocol RatingDialogTracking {
     func track(event: RatingDialogEvent)
+    func log(error: RatingDialogError)
 }
