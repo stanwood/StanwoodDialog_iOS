@@ -25,12 +25,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var accentTint: UIColor?
     private var cancelButtonText: String?
     private var acceptButtonText: String?
-    private var rootView: UIView!
+    private var rootView: UIView?
     public var analytics: RatingDialogTracking?
-    
-    enum RatingDialogError: Error {
-        case dialogError(String)
-    }
     
     /// key for storing the launches count on `UserDefaults`
     private static let appStarts = "numberOfAppStarts"
@@ -58,23 +54,33 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
                                           options: nil)!.first as! RatingDialogView
     }
     
-    private func display() throws {
+    private func display() {
         
         analytics?.track(event: .showDialog)
         
         let overlay = overlayView()
         overlay.hostViewController = self as RatingDialogPresenting
         
-        overlay.buildAd(over: rootView!,
-                     with: text1,
-                     text2,
-                     text3,
-                     text4,
-                     from: faceURL!,
-                     over: bannerURL!,
-                     tint: accentTint!,
-                     cancel: cancelButtonText,
-                     accept: acceptButtonText)
+        do {
+            try overlay.buildAd(over: rootView,
+                                with: text1,
+                                text2,
+                                text3,
+                                text4,
+                                from: faceURL,
+                                over: bannerURL,
+                                tint: accentTint,
+                                link: appStoreURL,
+                                cancel: cancelButtonText,
+                                accept: acceptButtonText)
+        } catch {
+            RatingDialog.decreaseLaunchCount()
+            if let ratingDialog = error as? RatingDialogError {
+                analytics?.log(error: ratingDialog)
+            } else {
+                print(error)
+            }
+        }
     }
     
     /// Called when the cancel (left side) button on the dialog view is tapped
@@ -298,7 +304,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          - version: 0.6.5
          */
         public func build() {
-            do {
+//            do {
                 let ratingDialog = RatingDialog()
                 ratingDialog.text1 = text1
                 ratingDialog.text2 = text2
@@ -311,12 +317,15 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
                 ratingDialog.faceURL = faceURL
                 ratingDialog.bannerURL = bannerURL
                 ratingDialog.appStoreURL = appStoreURL
-                try ratingDialog.display()
-            } catch {
-                decreaseLaunchCount()
-                analytics?.log(error: error)
-                print(error)
-            }
+                ratingDialog.display()
+//            } catch {
+//                decreaseLaunchCount()
+//                if let ratingDialog = error as? RatingDialogError {
+//                    analytics?.log(error: ratingDialog )
+//                } else {
+//                    print(error)
+//                }
+//            }
         }
     }
 }

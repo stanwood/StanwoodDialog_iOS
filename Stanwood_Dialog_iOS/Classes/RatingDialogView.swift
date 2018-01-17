@@ -51,43 +51,50 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.4
+     -version: 0.6.5
      */
     @objc
-    dynamic func buildAd(over rootView: UIView,
+    dynamic func buildAd(over rootView: UIView?,
                         with body1: String?,
                         _ body2: String?,
                         _ body3: String?,
                         _ body4: String?,
-                        from devProfile: URL,
-                        over background: URL,
-                        tint accentTint: UIColor,
+                        from devProfile: URL?,
+                        over background: URL?,
+                        tint accentTint: UIColor?,
+                        link appStoreURL: URL?,
                         cancel cancelText: String?,
-                        accept acceptText: String?) {
+                        accept acceptText: String?) throws {
+        
+        guard let host = rootView else {
+            throw RatingDialogError.dialogError("Missing rootView UIViewController to add the RatingDialog to as subView")
+        }
+        guard let ratingLink = appStoreURL else {
+            throw RatingDialogError.dialogError("Missing appStore URL to register the rating")
+        }
 
-        paragraph1.text = body1 ?? ""
-        paragraph2.text = body2 ?? ""
-        paragraph3.text = body3 ?? ""
-        paragraph4.text = body4 ?? ""
+        let faceImageURL = devProfile ?? URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
+        let bannerImageURL = background ?? URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
         
         when(fulfilled: [
-            fetchImage(from: devProfile),
-            fetchImage(from: background)
+            fetchImage(from: faceImageURL),
+            fetchImage(from: bannerImageURL)
             ]).then { results -> Promise<Void> in
                 guard let faceImage = results[0],
                     let bannerImage = results[1] else { return .void }
                 
-                self.buildAd(over: rootView,
+                self.buildAd(over: host,
                              with: body1, body2, body3, body4,
                              face: faceImage,
                              over: bannerImage,
                              tint: accentTint,
+                             link: ratingLink,
                              cancel: cancelText,
                              accept: acceptText)
                 return .void
             }.catch { error in
                 print(error.localizedDescription)
-        }
+            }
     }
     
     private func fetchImage(from url: URL) -> Promise<UIImage?> {
@@ -116,7 +123,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.4
+     -version: 0.6.5
      */
     
     @objc
@@ -127,21 +134,22 @@ public class RatingDialogView: UIView {
                          _ body4: String?,
                          face devProfile: UIImage,
                          over background: UIImage,
-                         tint accentTint: UIColor,
+                         tint accentTint: UIColor?,
+                         link appStoreURL: URL,
                          cancel cancelText: String?,
                          accept acceptText: String?) {
         
-        paragraph1.text = body1 ?? ""
-        paragraph2.text = body2 ?? ""
-        paragraph3.text = body3 ?? ""
-        paragraph4.text = body4 ?? ""
+        paragraph1.text = body1 ?? "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
+        paragraph2.text = body2 ?? "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        paragraph3.text = body3 ?? "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        paragraph4.text = body4 ?? "Sternchen reichen - dauert nur 1 Minute."
         
         devFace.image = devProfile
         banner.image = background
         
-        accept.backgroundColor = accentTint
+        accept.backgroundColor = accentTint ?? rootView.tintColor
         accept.setTitle(acceptText, for: .normal)
-        cancel.tintColor = accentTint
+        cancel.tintColor = accentTint ?? rootView.tintColor
         cancel.setTitle(cancelText, for: .normal)
         
         buildOverlayAd(with: rootView)
@@ -152,7 +160,7 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     - version: 0.6.4
+     - version: 0.6.5
      */
     func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
@@ -182,7 +190,7 @@ public class RatingDialogView: UIView {
         dismissView()
     }
     
-    func dismissView() {
+    private func dismissView() {
         UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
             self.overlayBannerContainer?.alpha = CGFloat(0.0)
             self.transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))

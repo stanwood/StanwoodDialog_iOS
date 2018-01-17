@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .set(faceUrl: faceUrlString)
                 .set(bannerUrl: bannerUrlString)
                 .buildAppStoreUrl(with: appID)
-                .set(rootView: (window?.rootViewController?.view)!)
+//                .set(rootView: (window?.rootViewController?.view)!)
                 .build()
             
             RatingDialog.clearLaunchCount()
