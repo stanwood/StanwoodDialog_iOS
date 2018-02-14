@@ -51,7 +51,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.6
+     -version: 0.6.7
      */
     @objc
     dynamic func buildAd(over rootView: UIView?,
@@ -124,7 +124,7 @@ public class RatingDialogView: UIView {
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
      
-     -version: 0.6.6
+     -version: 0.6.7
      */
     
     @objc
@@ -161,7 +161,7 @@ public class RatingDialogView: UIView {
      
      - parameter size: the size of the overlay containing the ad
     
-     - version: 0.6.6
+     - version: 0.6.7
      */
     func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
