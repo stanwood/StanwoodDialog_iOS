@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '0.6.6'
+  s.version          = '0.6.7'
   s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
 # This description is used to generate tags and improve search results.
@@ -38,6 +38,5 @@ This library allows to show a rating dialog prompt like the one used in On Air.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  #  s.dependency 'Kingfisher', '~> 4.0'
-  s.dependency 'PromiseKit'
+  s.dependency 'PromiseKit', '~> 5.1'
 end
