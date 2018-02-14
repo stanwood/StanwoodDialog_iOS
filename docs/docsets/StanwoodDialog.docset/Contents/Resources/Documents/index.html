@@ -75,14 +75,6 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a class="nav-group-name-link" href="Extensions.html">Extensions</a>
-            <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a class="nav-group-task-link" href="Extensions/Promise.html">Promise</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-group-name">
             <a class="nav-group-name-link" href="Protocols.html">Protocols</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
@@ -116,6 +108,11 @@
 it, simply add the following line to your Podfile:</p>
 <pre class="highlight ruby"><code><span class="n">pod</span> <span class="s1">'StanwoodDialog'</span>
 </code></pre>
+
+<p>Also, make sure you include these 2 lines at the top of your Podfile:</p>
+<pre class="highlight ruby"><code><span class="n">source</span> <span class="s1">'git@github.com:CocoaPods/Specs.git'</span>
+<span class="n">source</span> <span class="s1">'git@github.com:stanwood/Cocoa_Pods_Specs.git'</span>
+</code></pre>
 <h2 id='usage' class='heading'>Usage</h2>
 
 <p>Add <code>import StanwoodDialog</code> to your <code>AppDelegate</code> and add this call to <code>applicationDidBecomeAvailable</code>:</p>
@@ -130,7 +127,7 @@ it, simply add the following line to your Podfile:</p>
         let accept = "App bewerten"
 
         let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+        let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
         let appID = "1316369720"
 
         do {
@@ -153,7 +150,7 @@ it, simply add the following line to your Podfile:</p>
 }
 </code></pre>
 
-<p>Normally you would be fetching the each one of these parameters remotely. For instance from Firebase RemoteConfig to do some A/B testing and from a service like lokalise.co to provide internationalization.</p>
+<p>Normally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.</p>
 <h2 id='author' class='heading'>Author</h2>
 
 <p>epeschard, <a href="mailto:e@peschard.me">e@peschard.me</a></p>
