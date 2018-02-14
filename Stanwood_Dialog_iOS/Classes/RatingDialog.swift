@@ -101,7 +101,11 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     
     /// Counts app launches and returns true if the count matches the provided value
     public static func shouldShow(onLaunch count: Int) -> Bool {
-        appLaunches += 1
+        if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
+            lastAppStart > 1800.0 {
+            appLaunches += 1
+        }
+        UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
         return appLaunches == count
     }
     
