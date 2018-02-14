@@ -45,8 +45,6 @@
 		991054CD0D234CF02565C81DEC40A96A /* PMKUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 95632F4C8D15D6CF8EE867952FA69262 /* PMKUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		995E43CB095867D4D9FF67839E4D3580 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F070D46E18C81CA7D5C3DD3BE89D1BD8 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9B57C141E26DB3309F0A328B986950EE /* RatingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1E8E82BD3ED1A8F247F71AFDDC159 /* RatingDialog.swift */; };
-		9CC5149C20336284007CEE2D /* PhotoRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5149B20336284007CEE2D /* PhotoRecord.swift */; };
-		9CC5149E203363BB007CEE2D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC5149D203363BB007CEE2D /* ImageDownloader.swift */; };
 		9D120F4B2EC376476477295FF63C4708 /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2DDC09A2F5FF7FC82E8881A3996B /* URLDataPromise.swift */; };
 		9FF7ED7319D0EB0E37C23B567995D1D1 /* StanwoodDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 650D3D0DAED22ADDFF2B41D791C04D74 /* StanwoodDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A181D4DD8F9DECE319DA005D624DD2BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */; };
@@ -167,8 +165,6 @@
 		97A9B7857BB154507F020FDFC1EBB31C /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
 		985FC3805AFD744083221F67D0D58A4E /* Pods-Stanwood_Dialog_iOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stanwood_Dialog_iOS_Example-dummy.m"; sourceTree = "<group>"; };
 		9AA1E8E82BD3ED1A8F247F71AFDDC159 /* RatingDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialog.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialog.swift; sourceTree = "<group>"; };
-		9CC5149B20336284007CEE2D /* PhotoRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoRecord.swift; path = Stanwood_Dialog_iOS/Classes/PhotoRecord.swift; sourceTree = "<group>"; };
-		9CC5149D203363BB007CEE2D /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ImageDownloader.swift; path = Stanwood_Dialog_iOS/Classes/ImageDownloader.swift; sourceTree = "<group>"; };
 		9D009A35EE64D77102391EC364147766 /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
 		A5F989913A4F6EB983D421AE18B9302D /* RatingDialogTracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialogTracking.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialogTracking.swift; sourceTree = "<group>"; };
 		A5FB53913AF83994AF4E04500FCCEA80 /* Pods-Stanwood_Dialog_iOS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -468,8 +464,6 @@
 				E3A826DFB2AF8FDD28DEEFC3FB13A9DA /* RatingDialogView.swift */,
 				AA32CC1C6285A9502E3C208A4F8AC005 /* Resources */,
 				26BF7678049D09817700D183FC4E32B3 /* Support Files */,
-				9CC5149B20336284007CEE2D /* PhotoRecord.swift */,
-				9CC5149D203363BB007CEE2D /* ImageDownloader.swift */,
 			);
 			name = StanwoodDialog;
 			path = ../..;
@@ -768,8 +762,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E640A9A5DF6F4009F8FC33A9673FAC94 /* Pods-Stanwood_Dialog_iOS_Example-dummy.m in Sources */,
-				9CC5149C20336284007CEE2D /* PhotoRecord.swift in Sources */,
-				9CC5149E203363BB007CEE2D /* ImageDownloader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

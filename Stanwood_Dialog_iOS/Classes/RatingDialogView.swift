@@ -29,6 +29,10 @@ public class RatingDialogView: UIView {
         commonInit()
     }
     
+    private let defaultSession = URLSession(configuration: .default)
+    private var dataTask: URLSessionDataTask?
+    var errorMessage = ""
+    
     func commonInit() {
         frame = CGRect(x: 0, y: 0, width: 300, height: 450)
         layer.cornerRadius = 8.0
@@ -76,14 +80,14 @@ public class RatingDialogView: UIView {
         let bannerImageURL = background ?? URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
         fetchImage(from: faceImageURL) {
-            image, response, error in
+            image, errorMessage in
             guard let faceImage = image else {
                 RatingDialog.decreaseLaunchCount()
                 return
             }
             
             self.fetchImage(from: bannerImageURL) {
-                image, response, error in
+                image, errorMessage in
                 guard let bannerImage = image else {
                     RatingDialog.decreaseLaunchCount()
                     return
@@ -102,20 +106,26 @@ public class RatingDialogView: UIView {
         }
     }
     
-    private func fetchImage(from dataSourceURL: URL, completion: @escaping (UIImage?, URLResponse?, Error?) -> Void ) {
+    private func fetchImage(from dataSourceURL: URL, completion: @escaping (UIImage?, String?) -> Void ) {
+        dataTask?.cancel()
         let request = URLRequest(url: dataSourceURL)
-        let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler: {
-            data, response, error -> Void in
-            if let imageData = data,
-                let image = UIImage(data: imageData) {
-                completion(image, response, nil)
-            } else {
-                print(error?.localizedDescription ?? "No error")
-                completion(nil, response, error)
+        dataTask = defaultSession.dataTask(with: request, completionHandler: {
+            data, response, error in
+            
+            defer { self.dataTask = nil }
+            
+            if let error = error {
+                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+            } else if let imageData = data,
+                let image = UIImage(data: imageData),
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                DispatchQueue.main.async {
+                    completion(image, self.errorMessage)
+                }
             }
         })
-        task.resume()
+        dataTask?.resume()
     }
     
     /**

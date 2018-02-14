@@ -9,8 +9,6 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
-
 ## Installation
 
 Stanwood_Dialog_iOS is available through [CocoaPods](http://cocoapods.org). To install
@@ -66,7 +64,7 @@ Normally you would be fetching each one of these parameters remotely. For instan
 
 ## Author
 
-epeschard, e@peschard.me
+Eugène Peschard, eugene.peschard@stanwood.io
 
 ## License
 
