@@ -38,5 +38,5 @@ This library allows to show a rating dialog prompt like the one used in On Air.
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit'
-  s.dependency 'PromiseKit', '~> 5.1'
+  s.dependency 'PromiseKit', '~> 4.5.1'
 end
