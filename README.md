@@ -19,6 +19,11 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod 'StanwoodDialog'
 ```
+Also, make sure you include these 2 lines at the top of your Podfile:
+```ruby
+source 'git@github.com:CocoaPods/Specs.git'
+source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
+```
 
 ## Usage
 
@@ -35,7 +40,7 @@ func buildRatingDialog() {
         let accept = "App bewerten"
 
         let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+        let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
         let appID = "1316369720"
 
         do {
@@ -57,7 +62,7 @@ func buildRatingDialog() {
     }
 }
 ```
-Normally you would be fetching the each one of these parameters remotely. For instance from Firebase RemoteConfig to do some A/B testing and from a service like lokalise.co to provide internationalization.
+Normally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
 
 ## Author
 

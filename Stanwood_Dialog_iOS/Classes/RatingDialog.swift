@@ -162,7 +162,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter paragraph2: text for the second paragraph (may include `\n`)
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(paragraph2: String) -> Builder {
             text2 = paragraph2
@@ -174,7 +174,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter paragraph3: text for the third paragraph (may include `\n`)
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(paragraph3: String) -> Builder {
             text3 = paragraph3
@@ -186,7 +186,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter paragraph4: text for the fourth paragraph (may include `\n`)
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(paragraph4: String) -> Builder {
             text4 = paragraph4
@@ -198,7 +198,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter cancelText: text for Cancel button's label
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(cancelText: String) -> Builder {
             cancel = cancelText
@@ -210,7 +210,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter okText: text for Accept button's label
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(okText: String) -> Builder {
             accept = okText
@@ -222,7 +222,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter faceUrl: string to build the URL providing the image
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(faceUrl: String) -> Builder {
             if let builtURL = URL(string: faceUrl) {
@@ -236,7 +236,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter bannerUrl: string to build the URL providing the image
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(bannerUrl: String) -> Builder {
             if let builtURL = URL(string: bannerUrl) {
@@ -250,7 +250,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func buildAppStoreUrl(with appID: String) -> Builder {
             
@@ -265,7 +265,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter appStoreUrl: string to build the URL wher user can rate the app
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(appStoreUrl: String) -> Builder {
             if let builtURL = URL(string: appStoreUrl) {
@@ -279,7 +279,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter tintColor: used for the accept and cancel buttons
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(tintColor: UIColor) -> Builder {
             accentTint = tintColor
@@ -291,7 +291,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter rootView: used as host to add the ad overlay as subview
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func set(rootView: UIView) -> Builder {
             self.rootView = rootView
@@ -301,7 +301,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         /**
          Returns the finalized RatingDialog object after setting all its properties
          
-         - version: 0.6.7
+         - version: 0.6.8
          */
         public func build() {
             let ratingDialog = RatingDialog()

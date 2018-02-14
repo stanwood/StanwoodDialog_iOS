@@ -61,7 +61,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let accept = "App bewerten"
             
             let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-            let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+            let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
             let appID = "1316369720"
         
             RatingDialog.builder()
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .set(faceUrl: faceUrlString)
                 .set(bannerUrl: bannerUrlString)
                 .buildAppStoreUrl(with: appID)
-//                .set(rootView: (window?.rootViewController?.view)!)
+                .set(rootView: (window?.rootViewController?.view)!)
                 .build()
             
             RatingDialog.clearLaunchCount()
