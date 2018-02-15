@@ -53,8 +53,6 @@ public class RatingDialogView: UIView {
      - parameter accentTint: a `UIColor` for the buttons accent over white
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
-     
-     -version: 0.6.8
      */
     @objc
     dynamic func buildAd(over rootView: UIView?,
@@ -142,8 +140,6 @@ public class RatingDialogView: UIView {
      - parameter accentTint: a `UIColor` for the buttons accent over white
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
-     
-     -version: 0.6.8
      */
     
     @objc
@@ -178,9 +174,7 @@ public class RatingDialogView: UIView {
     /**
      It builds the container view of a specified `size`
      
-     - parameter size: the size of the overlay containing the ad
-    
-     - version: 0.6.8
+     - parameter size: the size of the overlay containing the ad    
      */
     func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
