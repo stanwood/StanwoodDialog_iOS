@@ -68,4 +68,4 @@ Eugène Peschard, eugene.peschard@stanwood.io
 
 ## License
 
-Stanwood_Dialog_iOS is available under the MIT license. See the LICENSE file for more info.
+StanwoodCore is a private library. See the [LICENSE](https://github.com/stanwood/Stanwood_Core/blob/master/LICENSE "Copyright © 2018 stanwood GmbH") file for more info.
