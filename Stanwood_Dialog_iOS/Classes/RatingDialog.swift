@@ -101,7 +101,11 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     
     /// Counts app launches and returns true if the count matches the provided value
     public static func shouldShow(onLaunch count: Int) -> Bool {
-        appLaunches += 1
+        if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
+            lastAppStart > 1800.0 {
+            appLaunches += 1
+        }
+        UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
         return appLaunches == count
     }
     
@@ -161,8 +165,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the second paragraph
          
          - parameter paragraph2: text for the second paragraph (may include `\n`)
-         
-         - version: 0.6.7
          */
         public func set(paragraph2: String) -> Builder {
             text2 = paragraph2
@@ -173,8 +175,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the third paragraph
          
          - parameter paragraph3: text for the third paragraph (may include `\n`)
-         
-         - version: 0.6.7
          */
         public func set(paragraph3: String) -> Builder {
             text3 = paragraph3
@@ -185,8 +185,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the fourth paragraph
          
          - parameter paragraph4: text for the fourth paragraph (may include `\n`)
-         
-         - version: 0.6.7
          */
         public func set(paragraph4: String) -> Builder {
             text4 = paragraph4
@@ -197,8 +195,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the Cancel button
          
          - parameter cancelText: text for Cancel button's label
-         
-         - version: 0.6.7
          */
         public func set(cancelText: String) -> Builder {
             cancel = cancelText
@@ -209,8 +205,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the Accept button
          
          - parameter okText: text for Accept button's label
-         
-         - version: 0.6.7
          */
         public func set(okText: String) -> Builder {
             accept = okText
@@ -221,8 +215,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the Developer's face UIImage
          
          - parameter faceUrl: string to build the URL providing the image
-         
-         - version: 0.6.7
          */
         public func set(faceUrl: String) -> Builder {
             if let builtURL = URL(string: faceUrl) {
@@ -235,8 +227,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the Banner UIImage
          
          - parameter bannerUrl: string to build the URL providing the image
-         
-         - version: 0.6.7
          */
         public func set(bannerUrl: String) -> Builder {
             if let builtURL = URL(string: bannerUrl) {
@@ -249,8 +239,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the App Store rating
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
-         
-         - version: 0.6.7
          */
         public func buildAppStoreUrl(with appID: String) -> Builder {
             
@@ -264,8 +252,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the App Store rating
          
          - parameter appStoreUrl: string to build the URL wher user can rate the app
-         
-         - version: 0.6.7
          */
         public func set(appStoreUrl: String) -> Builder {
             if let builtURL = URL(string: appStoreUrl) {
@@ -278,8 +264,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the tint color used for the cancel button's text and accept button's background color.
          
          - parameter tintColor: used for the accept and cancel buttons
-         
-         - version: 0.6.7
          */
         public func set(tintColor: UIColor) -> Builder {
             accentTint = tintColor
@@ -290,8 +274,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the rootView `UIView` where the overlay ad will be added as a subview
          
          - parameter rootView: used as host to add the ad overlay as subview
-         
-         - version: 0.6.7
          */
         public func set(rootView: UIView) -> Builder {
             self.rootView = rootView
@@ -299,9 +281,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
-         Returns the finalized RatingDialog object after setting all its properties
-         
-         - version: 0.6.7
+         Returns the finalized RatingDialog object after setting all its properties         
          */
         public func build() {
             let ratingDialog = RatingDialog()

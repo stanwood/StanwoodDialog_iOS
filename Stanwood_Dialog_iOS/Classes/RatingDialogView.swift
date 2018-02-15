@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import PromiseKit
 
 public class RatingDialogView: UIView {
     
@@ -30,6 +29,10 @@ public class RatingDialogView: UIView {
         commonInit()
     }
     
+    private let defaultSession = URLSession(configuration: .default)
+    private var dataTask: URLSessionDataTask?
+    var errorMessage = ""
+    
     func commonInit() {
         frame = CGRect(x: 0, y: 0, width: 300, height: 450)
         layer.cornerRadius = 8.0
@@ -50,8 +53,6 @@ public class RatingDialogView: UIView {
      - parameter accentTint: a `UIColor` for the buttons accent over white
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
-     
-     -version: 0.6.7
      */
     @objc
     dynamic func buildAd(over rootView: UIView?,
@@ -74,39 +75,55 @@ public class RatingDialogView: UIView {
         }
 
         let faceImageURL = devProfile ?? URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
-        let bannerImageURL = background ?? URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
+        let bannerImageURL = background ?? URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
-        when(fulfilled: [
-            fetchImage(from: faceImageURL),
-            fetchImage(from: bannerImageURL)
-            ]).then { results -> Promise<Void> in
-                guard let faceImage = results[0],
-                    let bannerImage = results[1] else { return .void }
-                
-                self.buildAd(over: host,
-                             with: body1, body2, body3, body4,
-                             face: faceImage,
-                             over: bannerImage,
-                             tint: accentTint,
-                             link: ratingLink,
-                             cancel: cancelText,
-                             accept: acceptText)
-                return .void
-            }.catch { error in
+        fetchImage(from: faceImageURL) {
+            image, errorMessage in
+            guard let faceImage = image else {
                 RatingDialog.decreaseLaunchCount()
-                print(error.localizedDescription)
+                return
             }
+            
+            self.fetchImage(from: bannerImageURL) {
+                image, errorMessage in
+                guard let bannerImage = image else {
+                    RatingDialog.decreaseLaunchCount()
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.buildAd(over: host,
+                                 with: body1, body2, body3, body4,
+                                 face: faceImage,
+                                 over: bannerImage,
+                                 tint: accentTint,
+                                 link: ratingLink,
+                                 cancel: cancelText,
+                                 accept: acceptText)
+                }
+            }
+        }
     }
     
-    private func fetchImage(from url: URL) -> Promise<UIImage?> {
-        return Promise { fulfill, reject in
-            let request = URLRequest(url: url)
-            let session = URLSession.shared
-            let dataPromise: URLDataPromise = session.dataTask(with: request)
-            _ = dataPromise.asImage().then { image -> Void in
-                fulfill(image)
-            }.catch(execute: reject)
-        }
+    private func fetchImage(from dataSourceURL: URL, completion: @escaping (UIImage?, String?) -> Void ) {
+        dataTask?.cancel()
+        let request = URLRequest(url: dataSourceURL)
+        dataTask = defaultSession.dataTask(with: request, completionHandler: {
+            data, response, error in
+            
+            defer { self.dataTask = nil }
+            
+            if let error = error {
+                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
+            } else if let imageData = data,
+                let image = UIImage(data: imageData),
+                let response = response as? HTTPURLResponse,
+                response.statusCode == 200 {
+                DispatchQueue.main.async {
+                    completion(image, self.errorMessage)
+                }
+            }
+        })
+        dataTask?.resume()
     }
     
     /**
@@ -123,8 +140,6 @@ public class RatingDialogView: UIView {
      - parameter accentTint: a `UIColor` for the buttons accent over white
      - parameter cancelText: a text to be displayed in the cancel `UIButton`
      - parameter acceptText: a text to be displayed in the accept `UIButton`
-     
-     -version: 0.6.7
      */
     
     @objc
@@ -159,9 +174,7 @@ public class RatingDialogView: UIView {
     /**
      It builds the container view of a specified `size`
      
-     - parameter size: the size of the overlay containing the ad
-    
-     - version: 0.6.7
+     - parameter size: the size of the overlay containing the ad    
      */
     func buildOverlayAd(with rootView: UIView) {
         overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
@@ -208,12 +221,5 @@ public class RatingDialogView: UIView {
     @IBAction func acceptButtonAction(_ sender: Any) {
         hostViewController.acceptButtonAction()
         dismissView()
-    }
-}
-
-extension Promise {
-    
-    public static var void: Promise<Void> {
-        return Promise<Void>(value: ())
     }
 }

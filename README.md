@@ -1,15 +1,12 @@
 # StanwoodDialog
 
-[![CI Status](http://img.shields.io/travis/epeschard/Stanwood_Dialog_iOS.svg?style=flat)](https://travis-ci.org/epeschard/Stanwood_Dialog_iOS)
-[![Version](https://img.shields.io/cocoapods/v/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
-[![License](https://img.shields.io/cocoapods/l/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
-[![Platform](https://img.shields.io/cocoapods/p/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
+[![CI Status](https://www.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master?style=flat)](https://www.bitrise.io/app/200a49178c1c4df4#/builds)
+[![Swift Version](https://img.shields.io/badge/Swift-4.0.x-orange.svg)]()
+[![iOS 8+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
 
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
-## Requirements
 
 ## Installation
 
@@ -18,6 +15,11 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'StanwoodDialog'
+```
+Also, make sure you include these 2 lines at the top of your Podfile:
+```ruby
+source 'git@github.com:CocoaPods/Specs.git'
+source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 ```
 
 ## Usage
@@ -35,7 +37,7 @@ func buildRatingDialog() {
         let accept = "App bewerten"
 
         let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048"
+        let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
         let appID = "1316369720"
 
         do {
@@ -57,12 +59,12 @@ func buildRatingDialog() {
     }
 }
 ```
-Normally you would be fetching the each one of these parameters remotely. For instance from Firebase RemoteConfig to do some A/B testing and from a service like lokalise.co to provide internationalization.
+Normally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
 
 ## Author
 
-epeschard, e@peschard.me
+Eugène Peschard, eugene.peschard@stanwood.io
 
 ## License
 
-Stanwood_Dialog_iOS is available under the MIT license. See the LICENSE file for more info.
+StanwoodCore is a private library. See the [LICENSE](https://github.com/stanwood/Stanwood_Dialog_iOS/blob/master/LICENSE "Copyright © 2018 stanwood GmbH") file for more info.
