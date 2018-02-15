@@ -1,4 +1,4 @@
-source 'https://github.com/CocoaPods/Specs.git'
+source 'git@github.com:CocoaPods/Specs.git'
 source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 
 platform :ios, '9.0'
