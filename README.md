@@ -1,9 +1,8 @@
 # StanwoodDialog
 
-[![CI Status](http://img.shields.io/travis/epeschard/Stanwood_Dialog_iOS.svg?style=flat)](https://travis-ci.org/epeschard/Stanwood_Dialog_iOS)
-[![Version](https://img.shields.io/cocoapods/v/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
-[![License](https://img.shields.io/cocoapods/l/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
-[![Platform](https://img.shields.io/cocoapods/p/Stanwood_Dialog_iOS.svg?style=flat)](http://cocoapods.org/pods/Stanwood_Dialog_iOS)
+[![CI Status](https://www.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master?style=flat)](https://www.bitrise.io/app/200a49178c1c4df4#/builds)
+[![Swift Version](https://img.shields.io/badge/Swift-4.0.x-orange.svg)]()
+[![iOS 8+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
 
 ## Example
 
