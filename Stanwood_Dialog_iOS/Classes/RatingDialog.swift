@@ -15,6 +15,8 @@ public protocol RatingDialogPresenting {
 
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
+    let minTimeBetweenLaunches: TimeInterval = 60*30
+    
     private var text1: String?
     private var text2: String?
     private var text3: String?
@@ -99,12 +101,22 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         analytics?.track(event: .timeout)
     }
     
-    /// Counts app launches and returns true if the count matches the provided value
+    /**
+     Counts app launches and returns true if the count matches the provided value
+     When not in DEBUG, appLaunches need to be 30 min appart for counter to increase
+     
+     - onLaunch count: Int for the launch count on which we should present the Rating Dialog
+     */
     public static func shouldShow(onLaunch count: Int) -> Bool {
-        if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
-            lastAppStart > 1800.0 {
+        #if DEBUG
             appLaunches += 1
-        }
+        #else
+            if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
+                lastAppStart > minTimeBetweenLaunches {
+                appLaunches += 1
+            }
+        #endif
+            
         UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
         return appLaunches == count
     }
