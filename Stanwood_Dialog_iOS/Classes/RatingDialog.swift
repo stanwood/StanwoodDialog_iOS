@@ -109,12 +109,12 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      */
     public static func shouldShow(onLaunch count: Int) -> Bool {
         #if DEBUG
+            appLaunches += 1
+        #else
             if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
                 lastAppStart > minTimeBetweenLaunches {
                 appLaunches += 1
             }
-        #else
-            appLaunches += 1
         #endif
             
         UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
