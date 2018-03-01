@@ -15,7 +15,6 @@ public protocol RatingDialogPresenting {
 
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
-    let minTimeBetweenLaunches: TimeInterval = 60*30
     
     private var text1: String?
     private var text2: String?
@@ -32,6 +31,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     
     /// key for storing the launches count on `UserDefaults`
     private static let appStarts = "numberOfAppStarts"
+    /// minutes between launches when consecutive launches will be ignored
+    private static let minTimeBetweenLaunches: TimeInterval = 60*30
+    
     /// counts the number of launches
     static var appLaunches: Int {
         get {
