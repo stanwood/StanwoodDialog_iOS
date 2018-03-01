@@ -15,6 +15,8 @@ public protocol RatingDialogPresenting {
 
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
+    let minTimeBetweenLaunches: TimeInterval = 60*30
+    
     private var text1: String?
     private var text2: String?
     private var text3: String?
@@ -108,7 +110,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     public static func shouldShow(onLaunch count: Int) -> Bool {
         #if DEBUG
             if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
-                lastAppStart > 1800.0 {
+                lastAppStart > minTimeBetweenLaunches {
                 appLaunches += 1
             }
         #else
