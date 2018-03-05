@@ -163,13 +163,17 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView!
         
+        private func unescapeNewLines(in string: String) -> String {
+            return string.replacingOccurrences(of: "\\n", with: "\n")
+        }
+        
         /**
          Sets the text for the first paragraph
          
          - parameter paragraph1: text for the first paragraph (may include `\n`)
          */
         public func set(paragraph1: String) -> Builder {
-            text1 = paragraph1
+            text1 = unescapeNewLines(in: paragraph1)
             return self
         }
         
@@ -179,7 +183,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          - parameter paragraph2: text for the second paragraph (may include `\n`)
          */
         public func set(paragraph2: String) -> Builder {
-            text2 = paragraph2
+            text2 = unescapeNewLines(in: paragraph2)
             return self
         }
         
@@ -189,7 +193,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          - parameter paragraph3: text for the third paragraph (may include `\n`)
          */
         public func set(paragraph3: String) -> Builder {
-            text3 = paragraph3
+            text3 = unescapeNewLines(in: paragraph3)
             return self
         }
         
@@ -199,7 +203,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          - parameter paragraph4: text for the fourth paragraph (may include `\n`)
          */
         public func set(paragraph4: String) -> Builder {
-            text4 = paragraph4
+            text4 = unescapeNewLines(in: paragraph4)
             return self
         }
         
