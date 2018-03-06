@@ -228,6 +228,7 @@
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = ZC4L7BE562;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -579,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A32D90CDCFB597664F4A01BD /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZC4L7BE562;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -600,6 +602,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D88B9623FABB0E35780D5A27 /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = ZC4L7BE562;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

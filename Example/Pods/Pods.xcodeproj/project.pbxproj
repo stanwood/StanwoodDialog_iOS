@@ -7,377 +7,230 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01959552E9115F7FE3ED7DC3B452DE57 /* RatingDialogTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = E803FA88AFA8C947F20782F3759DEF30 /* RatingDialogTracking.swift */; };
-		11FFEA25DC3C07902256CD9F0C6588A9 /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72E5A3330FBC945EF865E67BCE438EA8 /* afterlife.swift */; };
-		1208B53255D90D168065184A66DAC548 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58FB5DCFDD4FA6523730BDF03130D56D /* Promise+Properties.swift */; };
-		1209DB342BD3F33E53D323EFB0A395B1 /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = E079CD051149D4279A4BC988D1911DB3 /* GlobalState.m */; };
-		17AC183B57651FE164DDC858B930F860 /* RatingDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 01C0A66C7B6EA99606B4BA8C8774B748 /* RatingDialogView.xib */; };
-		19E359D705B3FF8372A56A704725525F /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98BA0651BED9E8909E2B7040465CAA1A /* UIView+Promise.swift */; };
-		1B615D7035C07FE71D123333F417A922 /* Pods-Stanwood_Dialog_iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FC3805AFD744083221F67D0D58A4E /* Pods-Stanwood_Dialog_iOS_Example-dummy.m */; };
+		08E6AE9AA2292AD2A42CE595817A85B0 /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = D9B468F428AC55896FEC0D8C3A1181AC /* NSURLSession+AnyPromise.m */; };
+		09213530CD9DF27E97010C526B50A280 /* Promise+Properties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6179271256B847F0ECC0222967A3CAA1 /* Promise+Properties.swift */; };
+		13A4789BF3F4AD763A68469729FF28D5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */; };
+		14ADF7E629DC3D65FBB5F87E0F1AC0FC /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 765DEE6E8D8C524E9695A1C7726AB582 /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		16EC14DDE7FB66CAC493542FAE7C69A1 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F845E54F1F99FA83765AE21DEBBED993 /* DispatchQueue+Promise.swift */; };
+		191B5DB32459469E81FCD7A0D5FBBB88 /* PromiseKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 41BE05D1B6D9DB09085F5D597DF8FCF4 /* PromiseKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1CD012928CB2684ACCC8B8AC14F72EA7 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2F1E017E27342F0AC36C1F045C5B8496 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FE7D67AABB8B1C798ACF6E7D6682561 /* Stanwood_Dialog_iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 7857A5F046F8EBA43C0B462C45D7FAE4 /* Stanwood_Dialog_iOS.bundle */; };
-		2340F3FE51FFE14F0B9ACCB52E00E6D1 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247CD76F2EE14153AFE96B65DF076B69 /* Security.framework */; };
-		24320EDC0540B2BE6B07D33F478E269F /* StanwoodAnalytics-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D06D38070C6FB18823CC525627EF946A /* StanwoodAnalytics-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		249B74C12F7602B3FE62D4E3CB94F108 /* CALayer+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E79E7A1681D5C7DBFBAB08FB1A577D86 /* CALayer+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2522CE3A1B8959F4A7C0CB6060E12DD6 /* BugfenderTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9495F663CA4129D1FD9D3C6DBB38878 /* BugfenderTracker.swift */; };
-		2D5957D9BD6D4FF26890DED01842E38A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34D466A0020552D275308C50F3F96987 /* AdSupport.framework */; };
-		2EC6AADF06FAABB3842F9131E6C27757 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5ADB947BCC08CCA628C755FD279F80 /* UIKit.framework */; };
-		3001125F9D310F8AF47893434C03AF7A /* StanwoodAnalytics-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 92EA1DFBAAE16D1FEF6C5DF0C9E360FF /* StanwoodAnalytics-dummy.m */; };
-		31E7432DCC138F3F438609881A89A71C /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = E2372E32F5FFCD8E69E00C666853793E /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		33D3F15D7303E39373CE672060EBF00C /* PMKUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 38FC95AD7AAD649589ADEF08889AD853 /* PMKUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		351A6645B548B3F23B1EAC48D6E46971 /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = 768F002C96AF43C3740E8992D2AA55E1 /* join.swift */; };
-		35591CF51939FBBF78EDCE25E6140155 /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F9ED7183D11A7A945652308F63D3C4 /* wrap.swift */; };
-		360B451860F302565E15E847D916D307 /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D20B1DF71D6ED4082E90902960D83 /* AnyPromise.swift */; };
-		36ED0400F131629E05181CCCA79EA873 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		38B5374A7944E5347764998BD3C75E2E /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = F81A38AF812B0F9EADA7905E72506277 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3AD20B9D21049ED8A226BB2D921B0DA0 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = 859AB04ECAC0F23038C2A1FC4A0F8D39 /* after.m */; };
-		3BC8E70588C55718C409151291AA521E /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7D45D5B37A0CD10D042BA16FF55750A3 /* NSNotificationCenter+AnyPromise.m */; };
-		3C41F7E985148AE1013071706CE73C7C /* BugfenderSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 33862D5D959B7983E462ADBC39C11C23 /* BugfenderSDK.framework */; };
-		4536179B45785E7A542EEAC9F3FA0C75 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 766508E9E8CCC92D203DF5158B6D78D1 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4A8594EEB700B012FBEC69675EB570FB /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2466D5208541F45B0A29CA9EA672B59D /* StoreKit.framework */; };
-		5078384F425CD32CBBFC2733489BED4D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3C9B926418250E09B1A0C844B520E /* SystemConfiguration.framework */; };
-		54352D2F28D827E34D6966A715CDE024 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DF1444BED67EC1F3CB619797CE94CD /* State.swift */; };
-		57A51894EF53BF0A08998A954BF9A6F1 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F070D46E18C81CA7D5C3DD3BE89D1BD8 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B5739D94CD0BFF2FA67540964AFA493 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 30253F75E7AF1FCD4BA5E076AABF4CA6 /* MobileCoreServices.framework */; };
-		606D5C87E61C44D2E9D32BD1A03C058D /* NSURLSession+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = BB906BA19A39E08C94F7026407161AC1 /* NSURLSession+AnyPromise.m */; };
-		63332D5014F397A14046F01BC6ED9E84 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B3A3C9B926418250E09B1A0C844B520E /* SystemConfiguration.framework */; };
-		6504F8185AA78C8699227C992DCB7C39 /* BugfenderSDK-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D4A87C05C3EB858DE27C466CC4D5680 /* BugfenderSDK-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		662F404A13EB8F05B5D7DF18EAA423EA /* FirebaseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53622FDB9E1138C91D334FABF9ECD89B /* FirebaseTracker.swift */; };
-		68166B838F277F261F0664240FE71814 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 41F9F0964C676D30A11771E1E96E71E4 /* hang.m */; };
-		6A8D8407DD45CDD0C0E4F1E8FDD81DE5 /* UIViewController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DEF8A484787BC94BFCEC435CB8EB553 /* UIViewController+Promise.swift */; };
-		6A9D2014D5E615B7712A7AA31E474F5B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		6CF5F17AD1DD69EB6838C74B2E9C0B79 /* UIView+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = F93C9EC10FFC582758E291512CB94418 /* UIView+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6E2CCFCB581416C08E44DF0BEB491884 /* PromiseKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 7497BEA86D30941668BBE9237E546E02 /* PromiseKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6EF2BF418B5688EC05C49CFF03D7145B /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD8D7E9EE075C06B5F7A5A2704C00C4 /* NSObject+Promise.swift */; };
-		73DF3343E4B316C26287750ED7A9FCA5 /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F80994C2305FD6072228186632A01 /* Promise.swift */; };
-		7A4C7C7EF7CB7E2FF67BBF9BF3F36506 /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0AF7FB09A63E0A65980C7751D13BC4 /* when.swift */; };
-		7A6723C85DAD1F9ACF5F6F880F436793 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		7AD82EBFF7A4EA48D7CFCE2B2F13419D /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00AC1F717BC1EC74C47279BE4EA614CA /* SafariServices.framework */; };
-		7D9C6E07A765AE4E5EC780C0D540E3CC /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4C0B7C7FDAAC92F3EA403519A7E988C /* NSNotificationCenter+Promise.swift */; };
-		841B801F1542903FD9BB4A1C395C5B67 /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = E53371F7AA641DCF32CFF5D5CA093936 /* after.swift */; };
-		8C8A2B14B9AC241AE118AF6C7033D717 /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 2BD79CF753298F9C69E8FA4CF6B396BE /* UIView+AnyPromise.m */; };
-		8CACE7FB4837F00315BD0B0A5C209FBD /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B31FA22BE3932C651D257F2F95C7BA9 /* NSTask+AnyPromise.m */; };
-		965B3C6045A6423649CD6FE24F2C6571 /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = AC781745ADE7D85B9AB3AD4383407E7A /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9B4041ED7955C2872A16BB1016963B82 /* fwd.h in Headers */ = {isa = PBXBuildFile; fileRef = F56FF06B340054644DFF3846FD1626EE /* fwd.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9F910E49BBB0A648AAF31E42B4899C80 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE9AA2FF9A5BB19B47703DED1677AE0 /* race.swift */; };
-		9FFAD2F4D528A3041B4A50A07B3FB6FD /* UIViewController+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 2E7449120CD368A1F22DE0067A89A3BA /* UIViewController+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A0A3BA84153D515F3E8FC16103B92065 /* RatingDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8866628139C37E3101CD6981F193A60 /* RatingDialogView.swift */; };
-		A6F3A911A0FDB60A24EC67D824DC255C /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 05FBA596D18E767CC9BB356AB938E5C5 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B155A1D23EBDA470FF1A40754FFA3588 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		B157018086AA867C5F21C8E6FD1EFB42 /* PMKQuartzCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 35613C4B8EE9292182D8633788414F11 /* PMKQuartzCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B269CC5587D7A8B5B4AD57276BE580CD /* BugfenderSDK-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 20C53C6EC66D0A7C9A43D1932BBA61E3 /* BugfenderSDK-dummy.m */; };
-		B41F6159B4DF879702E1B9C8C04CC775 /* StanwoodDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F38E8BB3A7D8678F7F7813B4A1DFD5C /* StanwoodDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BBA2D9F13E5C3BCF3148FB9B22B85DA5 /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 46CDDE4EC279840830DA616CC483EBF4 /* when.m */; };
-		BBE153C67E78A511F52181E9AB26EEF4 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8EFFCBB0D6B6FB9236B44D1D269D49CA /* AddressBook.framework */; };
-		C01318C40D4767525D44AC9046B07D61 /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD0898DEFADA41BB643FCC74DD50B61 /* NSURLSession+Promise.swift */; };
-		C19556086352CDCB345648E947212E26 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32C9A734E983695AEA434F98EB94C43C /* QuartzCore.framework */; };
-		C37A8FBD8F9A7B4E8E837EA43CD9F7BE /* StanwoodDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BF6C9161A992B374EF0067CA48F3CC89 /* StanwoodDialog-dummy.m */; };
-		C4C7666C49411A2D581835723B3F273F /* Bugfender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3E5E3847869FB7AD43E3536F0B026E /* Bugfender.swift */; };
-		C6BF441720560139C316938A8690AEFC /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F970ADE927D236AB8F8C8D537A60C4CB /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA98D856B95C3D7AD5ED904092B923BA /* RatingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4750DB55EBAA986BBF4E5F9D7FA247E /* RatingDialog.swift */; };
-		CAA850409BDDD98F45492083B0DC1A29 /* StanwoodAnalytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5344C8E4F19E7F59E378ED052EDB2001 /* StanwoodAnalytics.swift */; };
-		CC05BB22EB95E45EA99E6C085EB24E59 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 247CD76F2EE14153AFE96B65DF076B69 /* Security.framework */; };
+		1EAE9478E910FCE9901D9B2242A0C18C /* when.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D38D8F361C611EFCFF57DC13B115F3A /* when.m */; };
+		21B1E56966FE084C658B9814D2108DBC /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95739ECC732A6332E68750FE3F7489A4 /* Promise+AnyPromise.swift */; };
+		235F0BA6FD26AC47E3A8AB05B536436F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F82E67A30841B8EA38FFE9317D477D /* UIKit.framework */; };
+		239357372927BD99358B3EBA1DA1E573 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */; };
+		2574529974A08BF31F3D136472047E6D /* AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 01FE4B605FCF6F5D282413F2C6FEDFD4 /* AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28A4BE265D13FA326FB7A62E31B5C577 /* NSNotificationCenter+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 638FC877C26AE2698B03F57C63A5C636 /* NSNotificationCenter+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		29EDEE13BC0F41C99F365AAA7CDAEDF9 /* NSNotificationCenter+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = CB5F4A276E2678B6049F2F139147EC12 /* NSNotificationCenter+AnyPromise.m */; };
+		2F42EC501E6E6515831264A74D4E8BC5 /* NSURLSession+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 9696FB863D0DE618F5B3684606228A4A /* NSURLSession+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		31F4D0112F876EBE8650B89452FE6E5F /* when.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D29D2F64D48281095C8274FEE6DACD0 /* when.swift */; };
+		33FC4545DAB1F00ADAC3148ED050FBB3 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = F3AF2875741DFD0921E7E1FF67859289 /* dispatch_promise.m */; };
+		37B67BE4BEAC1579AC21AAE8DE3D1776 /* State.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE9A7EF9C115E41D052ADAEF5E87EFD1 /* State.swift */; };
+		39959EDE50642EDFA548C267B2C53942 /* afterlife.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF52D452D72EF81C1A4A1B4DBDFC452A /* afterlife.swift */; };
+		3CC0060183899E18FE8DF65B9F833176 /* PMKQuartzCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 67E1D36DCB7BF8A7DEB230733B158119 /* PMKQuartzCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		47594C53E757B0083ACB0656AC6E8D16 /* CALayer+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 37D86DBB6A7B7F77D79F889CEBC3755E /* CALayer+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		482036F0EAE1D9EA649C086CD8E49D12 /* after.m in Sources */ = {isa = PBXBuildFile; fileRef = C54315DA3A1A39E54691EB5C6921A90C /* after.m */; };
+		4C767961ACA4642178762B25DB453DBE /* PMKAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFA858C2DB288BB308A48DC5193E6F1 /* PMKAlertController.swift */; };
+		4E3DC298439435A876F06070D11D4C2A /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7CCDD0F4DEC7B45ED67BDA259AA0495C /* AnyPromise.m */; };
+		562D681EC262D1F5B46B5ED1D340CAE4 /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DDD911A7C16FAA09302EE0DF2F0B0DA9 /* PromiseKit-dummy.m */; };
+		693A85DADD444CAE13DB2C0B9999214A /* GlobalState.m in Sources */ = {isa = PBXBuildFile; fileRef = 1DBBCF038A033FBF591B05C0FA593946 /* GlobalState.m */; };
+		6AD1114ECCECB3D8BC84EF68C405202E /* Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B7B97DBEF2B7618554E6D9AB143DFAA /* Promise.swift */; };
+		6B2DE74BA3E79D15EAD12FF3727C0A4E /* UIViewController+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B1EC75F3F631688BE467D62877D90CD /* UIViewController+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6B6A2982C40FC26B66BCE1FAB46DED17 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 111CB544691468816DDF3F8D46424552 /* QuartzCore.framework */; };
+		705CFA6CE061386A34FE631C85534B27 /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = 97A9B7857BB154507F020FDFC1EBB31C /* join.m */; };
+		74A3D7A609BFA366C7B43CA835AE1E5D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4212FBE5112A86EA090A636CE6EA59B6 /* Error.swift */; };
+		7B23D6CC699638EEFC6CBCC241100B14 /* UIViewController+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAE3B541056E3495362EF0C5DDB405B /* UIViewController+Promise.swift */; };
+		7F80F9D1E11F20454FCDDAB9FAFD7A61 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E0B0795D4CC1B35FA39436D5052DCFB /* Zalgo.swift */; };
+		900BA3EB946AD5A846F0C2F385C64953 /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = E7480BAB29A5573D40EBF6E02381C1E2 /* UIViewController+AnyPromise.m */; };
+		9833DB76EEC526473B63BF18F32DC039 /* fwd.h in Headers */ = {isa = PBXBuildFile; fileRef = F6300B2B83011D43128DA44649586D4A /* fwd.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		991054CD0D234CF02565C81DEC40A96A /* PMKUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 95632F4C8D15D6CF8EE867952FA69262 /* PMKUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		995E43CB095867D4D9FF67839E4D3580 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F070D46E18C81CA7D5C3DD3BE89D1BD8 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9B57C141E26DB3309F0A328B986950EE /* RatingDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA1E8E82BD3ED1A8F247F71AFDDC159 /* RatingDialog.swift */; };
+		9D120F4B2EC376476477295FF63C4708 /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8C2DDC09A2F5FF7FC82E8881A3996B /* URLDataPromise.swift */; };
+		9FF7ED7319D0EB0E37C23B567995D1D1 /* StanwoodDialog-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 650D3D0DAED22ADDFF2B41D791C04D74 /* StanwoodDialog-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A181D4DD8F9DECE319DA005D624DD2BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */; };
+		A2B8D608C0CD05F72C7F0026A9890B2B /* NSObject+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8EEC210981A388DDF8ECCEF8433904 /* NSObject+Promise.swift */; };
+		A497BE0A692112BD86FEFB0E04353952 /* NSTask+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E33654BE09E7109A0FEEE76E49BF8E0 /* NSTask+AnyPromise.m */; };
+		A4EB682E8652A84C0ACD5DB9B47CD90B /* AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD987AB706C5E3C09C4B93C7F9F25E23 /* AnyPromise.swift */; };
+		A6F027E881EA94C69AABCA1302E6ABD3 /* UIView+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7307E7A48A7523AE477711BA4DF908C9 /* UIView+Promise.swift */; };
+		A84B96C1799370B2E84018CF9C010BF0 /* wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6823BF3BB1566E1F8C86FABE5F23DA /* wrap.swift */; };
+		ABA8F385CB6AADB327A374CBE1C5F3F0 /* CALayer+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 6F48B3970DAE9346AD3FA54A3A613328 /* CALayer+AnyPromise.m */; };
+		C6FCB0F7D09C6D62ADD10408C30A708D /* Stanwood_Dialog_iOS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CF976982402884561C00AC9FA66E4D48 /* Stanwood_Dialog_iOS.bundle */; };
+		C7BE71E9986148BB7EAD47B77E9ADDE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9F82E67A30841B8EA38FFE9317D477D /* UIKit.framework */; };
+		CEB6DCC495369DE7BE58697C869E6FA2 /* race.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DEEF09AD31315EC2776080269E92B7 /* race.swift */; };
 		CF0805999218B9D19BD90DABE8F5880E /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB09F04D4A6F75EDF5F540638F14193 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */; };
-		D19B9E6EB93FD926EFD42FD25B496A43 /* BugfenderSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 7A70CA71965D520EA5930FFA988BA199 /* BugfenderSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D3627D5EE0AC434C173F18964FCBDEE3 /* join.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FC826669192906C601180F61AE3C690 /* join.m */; };
-		D626A7F459169F5BD07A7B3430471A91 /* UIViewController+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 32768DAA6A05D5684F4E7E270FEE2F81 /* UIViewController+AnyPromise.m */; };
-		D66AA470B88952504DFDA9C9C2C166C8 /* PMKAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48A4498F7F92575EAD4B415FD1CCD7B9 /* PMKAlertController.swift */; };
-		E1946FDD31D5F58C8377FEE8F76FDE90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		E46009F4F2217258DEA38F20F3155F34 /* Zalgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329515BFFBBCED55B251266537F5A2A6 /* Zalgo.swift */; };
-		E4D8218165F68D5402D31D3CBBF3CB2C /* Promise+AnyPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F22A337D2C901BAF8443E13235B94D34 /* Promise+AnyPromise.swift */; };
-		EF21945307583E03CD52BC88B738923C /* CrashlyticsTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D69319283D59A6C347490C87C3DC903D /* CrashlyticsTracker.swift */; };
-		F03D5F77D5C8DC0AD67F4C3B48FCC845 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */; };
-		F0B26EC01E27030EAD837F7B3C4C2C25 /* DispatchQueue+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD83E8504F45B30962F504B8A5E55F3 /* DispatchQueue+Promise.swift */; };
-		F0CC13670C0DE672C1EDBEEDC81F2205 /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9490C7A5F566F80820CA1D40376C84E /* Process+Promise.swift */; };
-		F1C9D8B24AB281084BD4620C8D785E80 /* CALayer+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893F10C73866DE42F5AFBC864CCC63E /* CALayer+AnyPromise.m */; };
-		F2243B8AB085AACFF42D4BC01D423442 /* dispatch_promise.m in Sources */ = {isa = PBXBuildFile; fileRef = BBCA1F1E00E6F3A970882B42E10759A9 /* dispatch_promise.m */; };
-		F45B3BF0E9F2FA9D1A48FEACEB269B3D /* PromiseKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 15637843198B6E74239ADFCF69003A56 /* PromiseKit-dummy.m */; };
-		F6D6475C3E9855A4C7CB560712CDB71F /* URLDataPromise.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FED105A70C56DD9636622738107575 /* URLDataPromise.swift */; };
-		F9FA920D81053EDED47D23C3756EB717 /* AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7214536F0C68C0ECDB0595DAF74FDB24 /* AnyPromise.m */; };
-		FA3469E6BECE56703130CAEC254E85E1 /* Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5BFBBCD13A0D8701CBD74BD703730DE /* Tracker.swift */; };
-		FB590748A564046DB8ECAF58637783D8 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C23D00D128C3C3151CC4D789007A1C57 /* PromiseKit.framework */; };
-		FB69C6E6F8FDEAA7FB900BE2BA6B83EA /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268223EE73F626B1F6B1F9CF9352D756 /* Error.swift */; };
-		FF334809A220727B486C0B3B059525F3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD5ADB947BCC08CCA628C755FD279F80 /* UIKit.framework */; };
+		D27A9C6BA187BB0B2DCBE585F73F8343 /* RatingDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3A826DFB2AF8FDD28DEEFC3FB13A9DA /* RatingDialogView.swift */; };
+		D4CD07A59C38FDCC2B004A5B1AB8DC93 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8F25817235857AE113B60CE73F1492 /* PromiseKit.framework */; };
+		D83EF458C2FC017E82FF920495C200C4 /* PMKFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D009A35EE64D77102391EC364147766 /* PMKFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DA43C595E6F2E7B28F7B6964A49BD847 /* hang.m in Sources */ = {isa = PBXBuildFile; fileRef = 647132F3F2E8752B2E96A1DC7747B992 /* hang.m */; };
+		E1946FDD31D5F58C8377FEE8F76FDE90 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */; };
+		E26788F8C96FE5C9BFA3ACE0394B9B54 /* NSURLSession+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 337F0663F2253CE5F69CA018CA7C90D8 /* NSURLSession+Promise.swift */; };
+		E4BB41A130108C735185A210041AADD1 /* PromiseKit.h in Headers */ = {isa = PBXBuildFile; fileRef = DE1F16648A7B55D15BED16EC48C06644 /* PromiseKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4F44C3E1FC37577977CF25BA446741D /* Process+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E43CFF6D7A6E68F617343E7F43D0A70 /* Process+Promise.swift */; };
+		E503F1EEE94A97BC5330D65B3AA259DC /* RatingDialogView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B03D69A67CFC87455B4E075BC94B279 /* RatingDialogView.xib */; };
+		E640A9A5DF6F4009F8FC33A9673FAC94 /* Pods-Stanwood_Dialog_iOS_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 985FC3805AFD744083221F67D0D58A4E /* Pods-Stanwood_Dialog_iOS_Example-dummy.m */; };
+		EB98BB091F1B14E66E9F3CA38F89B076 /* UIView+AnyPromise.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A2B3D19404B7C7A8014B95D5977B946 /* UIView+AnyPromise.m */; };
+		EE5FD82EDCA919C8899DFF1F0465EDED /* NSNotificationCenter+Promise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 294026AB8B28C610FC57DF2A26EB7FC9 /* NSNotificationCenter+Promise.swift */; };
+		F09CB0D73882ED548826F8CBC71180E9 /* join.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A5586A6499C102D0BCC9DC96EF7F49 /* join.swift */; };
+		F1279927D3875D3DFC88B78B4975910A /* after.swift in Sources */ = {isa = PBXBuildFile; fileRef = B660E1F4E80FD3F4BF33455CD40AA754 /* after.swift */; };
+		F793AE1DC5FE5014E8E2ABC56F9558FC /* StanwoodDialog-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 430DBDAE1DC6B8B97404494CBFF1ABC6 /* StanwoodDialog-dummy.m */; };
+		F843D24513A0453569DFB8246DB6F833 /* RatingDialogTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5F989913A4F6EB983D421AE18B9302D /* RatingDialogTracking.swift */; };
+		F87B4246A0C6E8CFBE7C3D8305DD1DB2 /* NSTask+AnyPromise.h in Headers */ = {isa = PBXBuildFile; fileRef = A781E6C7BA06DD8A0A80B0494DA26A4E /* NSTask+AnyPromise.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0251613B81B0F6E99A17021FF9EB5B5F /* PBXContainerItemProxy */ = {
+		0B378B33634A86F618F4B081251900FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 4EF942060266D22941B1861ACEC69CB6;
-			remoteInfo = PromiseKit;
-		};
-		3B976635476A8D55673CCE818751681E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 3C11305FF24E01AE1173490FA8B5EA67;
-			remoteInfo = "StanwoodDialog-Stanwood_Dialog_iOS";
-		};
-		66CF7FEB593B5BFAE28CB752A490A282 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD704FAC627B9B2935B033E67090D71F;
-			remoteInfo = BugfenderSDK;
-		};
-		8AA616FB8B9B3B509022E2EE32E9BE90 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4EF942060266D22941B1861ACEC69CB6;
-			remoteInfo = PromiseKit;
-		};
-		9620DDA2475A8042ADFB355957F200B8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 32722DCBF57D542C99DF64158059C4F5;
-			remoteInfo = StanwoodAnalytics;
-		};
-		A0AC28C00BFC45B7CF6710D7DD3F7F7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CD704FAC627B9B2935B033E67090D71F;
-			remoteInfo = BugfenderSDK;
-		};
-		A355830B5B9A6B1A65C21455A6C456E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = ED633E7281F12CAC361A5F4F18080EC2;
+			remoteGlobalIDString = 943B13398EE379982F9ED646DAF3B9D5;
 			remoteInfo = StanwoodDialog;
+		};
+		36758EB813B759C6FA57C979BB3166D1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC8BF14AF19F3FC9E6CF91E4EFA9C6;
+			remoteInfo = PromiseKit;
+		};
+		77671AAA55F0308EBD98601E258D94F0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 42EC8BF14AF19F3FC9E6CF91E4EFA9C6;
+			remoteInfo = PromiseKit;
+		};
+		BE49508CEBFD9FF5C25FB031A4092392 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B2C6F6A04EC352A6C31063BA5057A263;
+			remoteInfo = "StanwoodDialog-Stanwood_Dialog_iOS";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00AC1F717BC1EC74C47279BE4EA614CA /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SafariServices.framework; sourceTree = DEVELOPER_DIR; };
-		01C0A66C7B6EA99606B4BA8C8774B748 /* RatingDialogView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RatingDialogView.xib; path = Stanwood_Dialog_iOS/Classes/RatingDialogView.xib; sourceTree = "<group>"; };
-		05FBA596D18E767CC9BB356AB938E5C5 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
-		06C1AD11B801E73A750C1DD760A2F221 /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/js/jazzy.js; sourceTree = "<group>"; };
-		09A9DC3C7E8C9809EBAD9DB344068F77 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/css/jazzy.css; sourceTree = "<group>"; };
+		01FE4B605FCF6F5D282413F2C6FEDFD4 /* AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AnyPromise.h; path = Sources/AnyPromise.h; sourceTree = "<group>"; };
+		0B03D69A67CFC87455B4E075BC94B279 /* RatingDialogView.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = RatingDialogView.xib; path = Stanwood_Dialog_iOS/Classes/RatingDialogView.xib; sourceTree = "<group>"; };
+		0D38D8F361C611EFCFF57DC13B115F3A /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
+		0D8F25817235857AE113B60CE73F1492 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DECD29E47B4D53DF60339D7B3FE936B /* Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		103A7E6F6AD4A61DEA72C986032CC12F /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/search.json; sourceTree = "<group>"; };
-		1287E66401FFAACB51C215C135E3BA6A /* Builder.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Builder.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Classes/RatingDialog/Builder.html; sourceTree = "<group>"; };
-		12C37D39C0C4C3F7DADB968A9A45FD2B /* RatingDialogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogEvent.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Enums/RatingDialogEvent.html; sourceTree = "<group>"; };
-		14E7B83ED2D61E4D2BA863D7DB09D7B2 /* StanwoodAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StanwoodAnalytics.framework; path = StanwoodAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		15182F52EDACF211BAC465575CF88C8F /* BugfenderSDK.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = BugfenderSDK.modulemap; sourceTree = "<group>"; };
-		15637843198B6E74239ADFCF69003A56 /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
+		111CB544691468816DDF3F8D46424552 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
 		163C354D628EE375945E8E1EA7280862 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		179A3AB5398E2400551CA907C2277B71 /* StanwoodDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-prefix.pch"; sourceTree = "<group>"; };
 		17F77EB4F0D8FE5960E59D402A043898 /* Pods-Stanwood_Dialog_iOS_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Example-resources.sh"; sourceTree = "<group>"; };
-		1AD3CF945A874BE7C1B986BA006879AC /* RatingDialogPresenting.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogPresenting.html; path = docs/Protocols/RatingDialogPresenting.html; sourceTree = "<group>"; };
-		1AE30D0C6AAF56CCEBA6267E104E35C1 /* badge.svg */ = {isa = PBXFileReference; includeInIndex = 1; name = badge.svg; path = docs/badge.svg; sourceTree = "<group>"; };
-		1C5D8F26689D466412E68A929E8D20E4 /* spinner.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = spinner.gif; path = docs/img/spinner.gif; sourceTree = "<group>"; };
-		1D4A87C05C3EB858DE27C466CC4D5680 /* BugfenderSDK-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BugfenderSDK-umbrella.h"; sourceTree = "<group>"; };
-		1DB4AC78FA7A747AA73C94C7BD177BB2 /* ResourceBundle-Stanwood_Dialog_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Stanwood_Dialog_iOS-Info.plist"; sourceTree = "<group>"; };
-		1F4043E049BECDC28AAA6443C6A9C32A /* Pods_Stanwood_Dialog_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Stanwood_Dialog_iOS_Tests.framework; path = "Pods-Stanwood_Dialog_iOS_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		20C53C6EC66D0A7C9A43D1932BBA61E3 /* BugfenderSDK-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BugfenderSDK-dummy.m"; sourceTree = "<group>"; };
-		223B649F5B201258DEDCD40572947B7F /* StanwoodAnalytics.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StanwoodAnalytics.xcconfig; sourceTree = "<group>"; };
-		2466D5208541F45B0A29CA9EA672B59D /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/StoreKit.framework; sourceTree = DEVELOPER_DIR; };
-		247CD76F2EE14153AFE96B65DF076B69 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
-		268223EE73F626B1F6B1F9CF9352D756 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
-		2B3F9F68C3FD74C660B975AF26390220 /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = lunr.min.js; path = docs/js/lunr.min.js; sourceTree = "<group>"; };
-		2BAC8D5182C3AC8B6611425BDC54531D /* StanwoodDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = StanwoodDialog.modulemap; sourceTree = "<group>"; };
-		2BD79CF753298F9C69E8FA4CF6B396BE /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
-		2BD83E8504F45B30962F504B8A5E55F3 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Promise.swift"; path = "Sources/DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
-		2DEF8A484787BC94BFCEC435CB8EB553 /* UIViewController+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Promise.swift"; path = "Extensions/UIKit/Sources/UIViewController+Promise.swift"; sourceTree = "<group>"; };
-		2E7449120CD368A1F22DE0067A89A3BA /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
+		1DBBCF038A033FBF591B05C0FA593946 /* GlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GlobalState.m; path = Sources/GlobalState.m; sourceTree = "<group>"; };
+		1E33654BE09E7109A0FEEE76E49BF8E0 /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
+		1F7D3D49C88C5DA06267521569A9162E /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		294026AB8B28C610FC57DF2A26EB7FC9 /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
+		2C6823BF3BB1566E1F8C86FABE5F23DA /* wrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrap.swift; path = Sources/wrap.swift; sourceTree = "<group>"; };
 		2F1E017E27342F0AC36C1F045C5B8496 /* Pods-Stanwood_Dialog_iOS_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stanwood_Dialog_iOS_Tests-umbrella.h"; sourceTree = "<group>"; };
-		30253F75E7AF1FCD4BA5E076AABF4CA6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
-		32768DAA6A05D5684F4E7E270FEE2F81 /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
-		329515BFFBBCED55B251266537F5A2A6 /* Zalgo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zalgo.swift; path = Sources/Zalgo.swift; sourceTree = "<group>"; };
-		32C9A734E983695AEA434F98EB94C43C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
-		33862D5D959B7983E462ADBC39C11C23 /* BugfenderSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BugfenderSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		34D466A0020552D275308C50F3F96987 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AdSupport.framework; sourceTree = DEVELOPER_DIR; };
-		35613C4B8EE9292182D8633788414F11 /* PMKQuartzCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKQuartzCore.h; path = Extensions/QuartzCore/Sources/PMKQuartzCore.h; sourceTree = "<group>"; };
-		38CA542EA036D208E8BFBC4ABF296785 /* undocumented.json */ = {isa = PBXFileReference; includeInIndex = 1; name = undocumented.json; path = docs/undocumented.json; sourceTree = "<group>"; };
-		38FC95AD7AAD649589ADEF08889AD853 /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
-		39DF3BB703C9BB20C285049F31588BFB /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/Protocols.html; sourceTree = "<group>"; };
-		3B31FA22BE3932C651D257F2F95C7BA9 /* NSTask+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSTask+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.m"; sourceTree = "<group>"; };
-		3C640F72F99A9E7AA406EC3DE41D1D61 /* StanwoodDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = StanwoodDialog.framework; path = StanwoodDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F04B47F41A1EE02F22D8C13961B087F /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PromiseKit.framework; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3F38E8BB3A7D8678F7F7813B4A1DFD5C /* StanwoodDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-umbrella.h"; sourceTree = "<group>"; };
-		3FE4306BF5512ADF0530A6C228486705 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; name = Info.plist; path = docs/docsets/StanwoodDialog.docset/Contents/Info.plist; sourceTree = "<group>"; };
-		4127706E991A8101B0878F13534AEE23 /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/index.html; sourceTree = "<group>"; };
-		41F9F0964C676D30A11771E1E96E71E4 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
-		420F49F92282CBD24476743F59E81B8E /* Promise.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Promise.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Extensions/Promise.html; sourceTree = "<group>"; };
-		43EE3DA1DC0047192B52086B8FD16A94 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Fabric.framework; path = Frameworks/Fabric.framework; sourceTree = "<group>"; };
-		44CC4AF8E4D03450C7DFEA1BFB4B6772 /* FirebaseNanoPB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseNanoPB.framework; path = Frameworks/FirebaseNanoPB.framework; sourceTree = "<group>"; };
-		45F96250E7839D0850EBEF0CC7752102 /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
-		46CDDE4EC279840830DA616CC483EBF4 /* when.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = when.m; path = Sources/when.m; sourceTree = "<group>"; };
-		48A4498F7F92575EAD4B415FD1CCD7B9 /* PMKAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PMKAlertController.swift; path = Extensions/UIKit/Sources/PMKAlertController.swift; sourceTree = "<group>"; };
-		49E8ECDF67A2B3DD3F9430366A996398 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
+		2FEA4E9C6775E2DC6C05AB256B5086C6 /* StanwoodDialog.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = StanwoodDialog.modulemap; sourceTree = "<group>"; };
+		31C9882B4B0F17C3DB1A8E53D78A6141 /* Pods_Stanwood_Dialog_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stanwood_Dialog_iOS_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		337F0663F2253CE5F69CA018CA7C90D8 /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
+		37D86DBB6A7B7F77D79F889CEBC3755E /* CALayer+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+AnyPromise.h"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.h"; sourceTree = "<group>"; };
+		3D8C2DDC09A2F5FF7FC82E8881A3996B /* URLDataPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLDataPromise.swift; path = Extensions/Foundation/Sources/URLDataPromise.swift; sourceTree = "<group>"; };
+		41BE05D1B6D9DB09085F5D597DF8FCF4 /* PromiseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-umbrella.h"; sourceTree = "<group>"; };
+		4212FBE5112A86EA090A636CE6EA59B6 /* Error.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Error.swift; path = Sources/Error.swift; sourceTree = "<group>"; };
+		430DBDAE1DC6B8B97404494CBFF1ABC6 /* StanwoodDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StanwoodDialog-dummy.m"; sourceTree = "<group>"; };
 		4B9359BE145667CE793C7CC9DD6DC453 /* Pods-Stanwood_Dialog_iOS_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Example.release.xcconfig"; sourceTree = "<group>"; };
-		4D6E7D67AA0A06A093FC1EC3808F49E7 /* RatingDialogView.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogView.html; path = docs/Classes/RatingDialogView.html; sourceTree = "<group>"; };
-		4F5F80994C2305FD6072228186632A01 /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
-		51014D5044C774A18DA39D6A21E3E1A6 /* RatingDialogView.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogView.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Classes/RatingDialogView.html; sourceTree = "<group>"; };
-		5344C8E4F19E7F59E378ED052EDB2001 /* StanwoodAnalytics.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StanwoodAnalytics.swift; path = StanwoodAnalytics/Classes/StanwoodAnalytics.swift; sourceTree = "<group>"; };
-		534CD81126D3BFC18A479D9F6999D389 /* Pods_Stanwood_Dialog_iOS_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Stanwood_Dialog_iOS_Example.framework; path = "Pods-Stanwood_Dialog_iOS_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		53622FDB9E1138C91D334FABF9ECD89B /* FirebaseTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FirebaseTracker.swift; path = StanwoodAnalytics/Classes/FirebaseTracker.swift; sourceTree = "<group>"; };
-		55259FCF0FA5A5688A26572E13A9A2EC /* lunr.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = lunr.min.js; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/js/lunr.min.js; sourceTree = "<group>"; };
+		4E0B0795D4CC1B35FA39436D5052DCFB /* Zalgo.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Zalgo.swift; path = Sources/Zalgo.swift; sourceTree = "<group>"; };
 		5603EA5B58F5E9C79EF118917A543315 /* Pods-Stanwood_Dialog_iOS_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Stanwood_Dialog_iOS_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		58FB5DCFDD4FA6523730BDF03130D56D /* Promise+Properties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Properties.swift"; path = "Sources/Promise+Properties.swift"; sourceTree = "<group>"; };
-		5953A11C33F08BCC80C5BCFD378A1393 /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Classes.html; sourceTree = "<group>"; };
-		5D3E5E3847869FB7AD43E3536F0B026E /* Bugfender.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Bugfender.swift; path = swift/Bugfender.swift; sourceTree = "<group>"; };
-		5FC826669192906C601180F61AE3C690 /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
-		61ED25448F2143583EB4F031555F5491 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/Enums.html; sourceTree = "<group>"; };
-		6207EECD73982B5609768D18C8F94ECF /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/Extensions.html; sourceTree = "<group>"; };
-		65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StanwoodDialog.xcconfig; sourceTree = "<group>"; };
-		679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		67D086561B32BD2416BA11BF6B47A409 /* Promise.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Promise.html; path = docs/Extensions/Promise.html; sourceTree = "<group>"; };
-		68380970B7064A36B80C66B2EC8F2ABA /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/js/jquery.min.js; sourceTree = "<group>"; };
-		6C0AF7FB09A63E0A65980C7751D13BC4 /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
-		6EBF72DF4960F7FA09BD354114D4E84E /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; name = typeahead.jquery.js; path = docs/js/typeahead.jquery.js; sourceTree = "<group>"; };
-		6FB277F63894C3FCA5AB73A09DB24B78 /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.search.js; path = docs/js/jazzy.search.js; sourceTree = "<group>"; };
-		7060E25639E11B9E2EB656CD7D584596 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		7214536F0C68C0ECDB0595DAF74FDB24 /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
-		72E5A3330FBC945EF865E67BCE438EA8 /* afterlife.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = afterlife.swift; path = Extensions/Foundation/Sources/afterlife.swift; sourceTree = "<group>"; };
+		5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6179271256B847F0ECC0222967A3CAA1 /* Promise+Properties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+Properties.swift"; path = "Sources/Promise+Properties.swift"; sourceTree = "<group>"; };
+		633F0B04323882A67E03C84384FC9203 /* PromiseKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PromiseKit.xcconfig; sourceTree = "<group>"; };
+		638FC877C26AE2698B03F57C63A5C636 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
+		647132F3F2E8752B2E96A1DC7747B992 /* hang.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = hang.m; path = Sources/hang.m; sourceTree = "<group>"; };
+		650D3D0DAED22ADDFF2B41D791C04D74 /* StanwoodDialog-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-umbrella.h"; sourceTree = "<group>"; };
+		67E1D36DCB7BF8A7DEB230733B158119 /* PMKQuartzCore.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKQuartzCore.h; path = Extensions/QuartzCore/Sources/PMKQuartzCore.h; sourceTree = "<group>"; };
+		6B7B97DBEF2B7618554E6D9AB143DFAA /* Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Promise.swift; path = Sources/Promise.swift; sourceTree = "<group>"; };
+		6F48B3970DAE9346AD3FA54A3A613328 /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
+		7307E7A48A7523AE477711BA4DF908C9 /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
 		733BAD7BF8789795B4DE5F482E6A36D8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7497BEA86D30941668BBE9237E546E02 /* PromiseKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-umbrella.h"; sourceTree = "<group>"; };
-		74EEFF2C664EAB0FC7A75613250CEF55 /* Extensions.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Extensions.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Extensions.html; sourceTree = "<group>"; };
-		7540A23846D446AF252949C747B5F8AB /* StanwoodAnalytics-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodAnalytics-prefix.pch"; sourceTree = "<group>"; };
-		766508E9E8CCC92D203DF5158B6D78D1 /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
-		768F002C96AF43C3740E8992D2AA55E1 /* join.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = join.swift; path = Sources/join.swift; sourceTree = "<group>"; };
-		77DF1444BED67EC1F3CB619797CE94CD /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
-		7857A5F046F8EBA43C0B462C45D7FAE4 /* Stanwood_Dialog_iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Stanwood_Dialog_iOS.bundle; path = "StanwoodDialog-Stanwood_Dialog_iOS.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7893F10C73866DE42F5AFBC864CCC63E /* CALayer+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "CALayer+AnyPromise.m"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.m"; sourceTree = "<group>"; };
-		7A70CA71965D520EA5930FFA988BA199 /* BugfenderSDK.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = BugfenderSDK.h; sourceTree = "<group>"; };
-		7D104C3EF0F839622D0A3EEB7F1F698E /* BugfenderSDK.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = BugfenderSDK.xcconfig; sourceTree = "<group>"; };
-		7D45D5B37A0CD10D042BA16FF55750A3 /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
-		7EB037450A08075B1A4549ED1912E374 /* gh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gh.png; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/img/gh.png; sourceTree = "<group>"; };
-		7F637C753085ECE95D561FD4BEA821A5 /* RatingDialog.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialog.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Classes/RatingDialog.html; sourceTree = "<group>"; };
-		801E4ACE1648F6F1E549BF24515E7AD4 /* BugfenderSDK-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "BugfenderSDK-prefix.pch"; sourceTree = "<group>"; };
-		803DAB5B61E949A79E407007760AB9AD /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/img/dash.png; sourceTree = "<group>"; };
-		859AB04ECAC0F23038C2A1FC4A0F8D39 /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
-		88663C1B59F173117A553C09ADFA2AA1 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		89CFB870E474D901D59B4971AD44F6B0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		765DEE6E8D8C524E9695A1C7726AB582 /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.h"; sourceTree = "<group>"; };
+		7A2B3D19404B7C7A8014B95D5977B946 /* UIView+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.m"; sourceTree = "<group>"; };
+		7B1EC75F3F631688BE467D62877D90CD /* UIViewController+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.h"; sourceTree = "<group>"; };
+		7CCDD0F4DEC7B45ED67BDA259AA0495C /* AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AnyPromise.m; path = Sources/AnyPromise.m; sourceTree = "<group>"; };
+		7D29D2F64D48281095C8274FEE6DACD0 /* when.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = when.swift; path = Sources/when.swift; sourceTree = "<group>"; };
+		7E43CFF6D7A6E68F617343E7F43D0A70 /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
+		7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = StanwoodDialog.xcconfig; sourceTree = "<group>"; };
+		7FAE3B541056E3495362EF0C5DDB405B /* UIViewController+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+Promise.swift"; path = "Extensions/UIKit/Sources/UIViewController+Promise.swift"; sourceTree = "<group>"; };
+		857A68D3C8BAAF3940037B7BE27A72F4 /* StanwoodDialog.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = StanwoodDialog.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A8C6468A90D0708EE569EA25768C9A6 /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		8CB09F04D4A6F75EDF5F540638F14193 /* Pods-Stanwood_Dialog_iOS_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stanwood_Dialog_iOS_Tests-dummy.m"; sourceTree = "<group>"; };
-		8CD0898DEFADA41BB643FCC74DD50B61 /* NSURLSession+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSURLSession+Promise.swift"; path = "Extensions/Foundation/Sources/NSURLSession+Promise.swift"; sourceTree = "<group>"; };
 		8DBBFF6A05E22DA6E08AAF2E0372236C /* Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		8EFFCBB0D6B6FB9236B44D1D269D49CA /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
-		8FB6769E858B22213053DF82FF562BE1 /* RatingDialogTracking.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogTracking.html; path = docs/Protocols/RatingDialogTracking.html; sourceTree = "<group>"; };
-		9235F9640EA29D1D6A3B02FE97702B8F /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		92EA1DFBAAE16D1FEF6C5DF0C9E360FF /* StanwoodAnalytics-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StanwoodAnalytics-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		950D85E41C1A7D13B0C2B719D569A27E /* RatingDialogEvent.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogEvent.html; path = docs/Enums/RatingDialogEvent.html; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		95632F4C8D15D6CF8EE867952FA69262 /* PMKUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKUIKit.h; path = Extensions/UIKit/Sources/PMKUIKit.h; sourceTree = "<group>"; };
+		95739ECC732A6332E68750FE3F7489A4 /* Promise+AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+AnyPromise.swift"; path = "Sources/Promise+AnyPromise.swift"; sourceTree = "<group>"; };
+		95DEEF09AD31315EC2776080269E92B7 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
+		9696FB863D0DE618F5B3684606228A4A /* NSURLSession+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.h"; sourceTree = "<group>"; };
+		97A9B7857BB154507F020FDFC1EBB31C /* join.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = join.m; path = Sources/join.m; sourceTree = "<group>"; };
 		985FC3805AFD744083221F67D0D58A4E /* Pods-Stanwood_Dialog_iOS_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Stanwood_Dialog_iOS_Example-dummy.m"; sourceTree = "<group>"; };
-		986C737A63A9808E7C9E298FA3B11F68 /* spinner.gif */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.gif; name = spinner.gif; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/img/spinner.gif; sourceTree = "<group>"; };
-		98BA0651BED9E8909E2B7040465CAA1A /* UIView+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Promise.swift"; path = "Extensions/UIKit/Sources/UIView+Promise.swift"; sourceTree = "<group>"; };
-		9B1B9F6624373F9161D298765095F432 /* typeahead.jquery.js */ = {isa = PBXFileReference; includeInIndex = 1; name = typeahead.jquery.js; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/js/typeahead.jquery.js; sourceTree = "<group>"; };
-		9C9A98504EF22740B12D31FEC83FD0AC /* RatingDialogPresenting.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogPresenting.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Protocols/RatingDialogPresenting.html; sourceTree = "<group>"; };
-		9EDCA3B99C03FB1C9BCAC6FBD5BAF012 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PromiseKit.modulemap; sourceTree = "<group>"; };
-		A16820490DE591271B59CFC4FBC88158 /* search.json */ = {isa = PBXFileReference; includeInIndex = 1; name = search.json; path = docs/search.json; sourceTree = "<group>"; };
-		A48460AF5E10B47E7855A2CBFD0253AE /* Classes.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Classes.html; path = docs/Classes.html; sourceTree = "<group>"; };
-		A4C0B7C7FDAAC92F3EA403519A7E988C /* NSNotificationCenter+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSNotificationCenter+Promise.swift"; path = "Extensions/Foundation/Sources/NSNotificationCenter+Promise.swift"; sourceTree = "<group>"; };
+		9AA1E8E82BD3ED1A8F247F71AFDDC159 /* RatingDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialog.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialog.swift; sourceTree = "<group>"; };
+		9D009A35EE64D77102391EC364147766 /* PMKFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PMKFoundation.h; path = Extensions/Foundation/Sources/PMKFoundation.h; sourceTree = "<group>"; };
+		A5F989913A4F6EB983D421AE18B9302D /* RatingDialogTracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialogTracking.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialogTracking.swift; sourceTree = "<group>"; };
 		A5FB53913AF83994AF4E04500FCCEA80 /* Pods-Stanwood_Dialog_iOS_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Tests-resources.sh"; sourceTree = "<group>"; };
+		A632A182B40D215229AFF24C0E566F29 /* Pods_Stanwood_Dialog_iOS_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Stanwood_Dialog_iOS_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6D3759604AB1CCEFDE136F57B691666 /* Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		A877F016520C10F3236F8B2890A63A63 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		A8866628139C37E3101CD6981F193A60 /* RatingDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialogView.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialogView.swift; sourceTree = "<group>"; };
-		A9495F663CA4129D1FD9D3C6DBB38878 /* BugfenderTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = BugfenderTracker.swift; path = StanwoodAnalytics/Classes/BugfenderTracker.swift; sourceTree = "<group>"; };
-		ABD8D7E9EE075C06B5F7A5A2704C00C4 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
-		AC781745ADE7D85B9AB3AD4383407E7A /* NSURLSession+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSURLSession+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.h"; sourceTree = "<group>"; };
-		AF2A3293214973C8FE96EC29B94AE832 /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/css/highlight.css; sourceTree = "<group>"; };
-		B2190CEEA97B261B4ABF58065E3101DE /* StanwoodDialog.tgz */ = {isa = PBXFileReference; includeInIndex = 1; name = StanwoodDialog.tgz; path = docs/docsets/StanwoodDialog.tgz; sourceTree = "<group>"; };
-		B3A3C9B926418250E09B1A0C844B520E /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
-		B4750DB55EBAA986BBF4E5F9D7FA247E /* RatingDialog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialog.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialog.swift; sourceTree = "<group>"; };
-		B4F21CA6B9C96D685AA3DED4FAFA986F /* BugfenderSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = BugfenderSDK.framework; path = BugfenderSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B88A6EAE857C4F32FBE69FF66C9746DE /* highlight.css */ = {isa = PBXFileReference; includeInIndex = 1; name = highlight.css; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/css/highlight.css; sourceTree = "<group>"; };
-		B9AEE035ACE7925326E2BF10C5065CB5 /* jazzy.search.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.search.js; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/js/jazzy.search.js; sourceTree = "<group>"; };
-		BABDCC6D9D2EC51E3557AD4706562F20 /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
-		BB906BA19A39E08C94F7026407161AC1 /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
-		BBCA1F1E00E6F3A970882B42E10759A9 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
-		BCA4E07CCBFD37DBFB9964AE34B74291 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		BD830DBDDAFE7F77285937A6CA3BB4E8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF6C9161A992B374EF0067CA48F3CC89 /* StanwoodDialog-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "StanwoodDialog-dummy.m"; sourceTree = "<group>"; };
-		BFE9AA2FF9A5BB19B47703DED1677AE0 /* race.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = race.swift; path = Sources/race.swift; sourceTree = "<group>"; };
-		C0F9ED7183D11A7A945652308F63D3C4 /* wrap.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = wrap.swift; path = Sources/wrap.swift; sourceTree = "<group>"; };
-		C1B1C41211C76563489B938018F6C3A7 /* Enums.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Enums.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Enums.html; sourceTree = "<group>"; };
-		C23D00D128C3C3151CC4D789007A1C57 /* PromiseKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PromiseKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		C379D654AC12B77F47219A61BBE61FD0 /* jazzy.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.js; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/js/jazzy.js; sourceTree = "<group>"; };
-		C57A7B9BBEEA806D578000C7184AF2A7 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Crashlytics.framework; path = Frameworks/Crashlytics.framework; sourceTree = "<group>"; };
-		C7396A0F91575FBC908A65CC4FDBF56C /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCoreDiagnostics.framework; path = Frameworks/FirebaseCoreDiagnostics.framework; sourceTree = "<group>"; };
-		C8154F3C5A54D202D5BCCE2615306823 /* dash.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = dash.png; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/img/dash.png; sourceTree = "<group>"; };
+		A781E6C7BA06DD8A0A80B0494DA26A4E /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
+		A9EB2EEFDDE9163ACBF3D9C106CEA312 /* ResourceBundle-Stanwood_Dialog_iOS-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Stanwood_Dialog_iOS-Info.plist"; sourceTree = "<group>"; };
+		A9F82E67A30841B8EA38FFE9317D477D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		B660E1F4E80FD3F4BF33455CD40AA754 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
+		BD8EEC210981A388DDF8ECCEF8433904 /* NSObject+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSObject+Promise.swift"; path = "Extensions/Foundation/Sources/NSObject+Promise.swift"; sourceTree = "<group>"; };
+		BFFA858C2DB288BB308A48DC5193E6F1 /* PMKAlertController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PMKAlertController.swift; path = Extensions/UIKit/Sources/PMKAlertController.swift; sourceTree = "<group>"; };
+		C54315DA3A1A39E54691EB5C6921A90C /* after.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = after.m; path = Sources/after.m; sourceTree = "<group>"; };
+		C75F5106CF2E74A67689DE4BE2044812 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C887034447C108734A71C2B7F193DCFA /* Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Stanwood_Dialog_iOS_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		C93CE041C7992BA6EBD105F27A573B51 /* Pods-Stanwood_Dialog_iOS_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Stanwood_Dialog_iOS_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		C958676169AE3445DC2F1BD68B3CDA9A /* index.html */ = {isa = PBXFileReference; includeInIndex = 1; name = index.html; path = docs/index.html; sourceTree = "<group>"; };
-		C9FED105A70C56DD9636622738107575 /* URLDataPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = URLDataPromise.swift; path = Extensions/Foundation/Sources/URLDataPromise.swift; sourceTree = "<group>"; };
+		CB5F4A276E2678B6049F2F139147EC12 /* NSNotificationCenter+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNotificationCenter+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.m"; sourceTree = "<group>"; };
 		CD302D224833CE50202FF1626E7B1E0E /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		CD5ADB947BCC08CCA628C755FD279F80 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		CDBEB90395D13EC284445280E3264588 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CFC4D5B6601F924AFF7AA5F2688B1323 /* jazzy.css */ = {isa = PBXFileReference; includeInIndex = 1; name = jazzy.css; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/css/jazzy.css; sourceTree = "<group>"; };
-		D06D38070C6FB18823CC525627EF946A /* StanwoodAnalytics-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodAnalytics-umbrella.h"; sourceTree = "<group>"; };
-		D11A3D03C280AA40DC1B60136ED1ABA3 /* GoogleToolboxForMac.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleToolboxForMac.framework; path = Frameworks/GoogleToolboxForMac.framework; sourceTree = "<group>"; };
-		D16C645980EA719D10B703DAA0D77B0B /* gh.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = gh.png; path = docs/img/gh.png; sourceTree = "<group>"; };
-		D21974DDFF06978E410AF0C45EA8EC25 /* Protocols.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Protocols.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Protocols.html; sourceTree = "<group>"; };
-		D69319283D59A6C347490C87C3DC903D /* CrashlyticsTracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CrashlyticsTracker.swift; path = StanwoodAnalytics/Classes/CrashlyticsTracker.swift; sourceTree = "<group>"; };
-		D70D20B1DF71D6ED4082E90902960D83 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
-		D73AB431833D581D021ED23AF072838A /* carat.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = carat.png; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/img/carat.png; sourceTree = "<group>"; };
-		D902C22BEFF33166594628C8C20FB48B /* Builder.html */ = {isa = PBXFileReference; includeInIndex = 1; name = Builder.html; path = docs/Classes/RatingDialog/Builder.html; sourceTree = "<group>"; };
-		DE411B5756FC05DE102E1871AAA349B2 /* RatingDialogTracking.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialogTracking.html; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/Documents/Protocols/RatingDialogTracking.html; sourceTree = "<group>"; };
-		E079CD051149D4279A4BC988D1911DB3 /* GlobalState.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GlobalState.m; path = Sources/GlobalState.m; sourceTree = "<group>"; };
-		E08E6906086486364AC17D97317BFD64 /* carat.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; name = carat.png; path = docs/img/carat.png; sourceTree = "<group>"; };
-		E0990A38D8C0E9D588DB7C514AB6F581 /* Pods-Stanwood_Dialog_iOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Stanwood_Dialog_iOS_Example.modulemap"; sourceTree = "<group>"; };
-		E2372E32F5FFCD8E69E00C666853793E /* NSTask+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSTask+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSTask+AnyPromise.h"; sourceTree = "<group>"; };
-		E53371F7AA641DCF32CFF5D5CA093936 /* after.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = after.swift; path = Sources/after.swift; sourceTree = "<group>"; };
+		CF976982402884561C00AC9FA66E4D48 /* Stanwood_Dialog_iOS.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Stanwood_Dialog_iOS.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9B468F428AC55896FEC0D8C3A1181AC /* NSURLSession+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSURLSession+AnyPromise.m"; path = "Extensions/Foundation/Sources/NSURLSession+AnyPromise.m"; sourceTree = "<group>"; };
+		DB6F691A801D32620ED501B0C3559FA9 /* PromiseKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = PromiseKit.modulemap; sourceTree = "<group>"; };
+		DB712DDD8C47AF4BF7B61F5C5FD37585 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DDD911A7C16FAA09302EE0DF2F0B0DA9 /* PromiseKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PromiseKit-dummy.m"; sourceTree = "<group>"; };
+		DE1F16648A7B55D15BED16EC48C06644 /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
+		DF52D452D72EF81C1A4A1B4DBDFC452A /* afterlife.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = afterlife.swift; path = Extensions/Foundation/Sources/afterlife.swift; sourceTree = "<group>"; };
+		E0990A38D8C0E9D588DB7C514AB6F581 /* Pods-Stanwood_Dialog_iOS_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stanwood_Dialog_iOS_Example.modulemap"; sourceTree = "<group>"; };
+		E3A826DFB2AF8FDD28DEEFC3FB13A9DA /* RatingDialogView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialogView.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialogView.swift; sourceTree = "<group>"; };
 		E53B4705371DE72D4FB6F95D681F625F /* Pods-Stanwood_Dialog_iOS_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Stanwood_Dialog_iOS_Example-frameworks.sh"; sourceTree = "<group>"; };
-		E5BFBBCD13A0D8701CBD74BD703730DE /* Tracker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Tracker.swift; path = StanwoodAnalytics/Classes/Tracker.swift; sourceTree = "<group>"; };
-		E79E7A1681D5C7DBFBAB08FB1A577D86 /* CALayer+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CALayer+AnyPromise.h"; path = "Extensions/QuartzCore/Sources/CALayer+AnyPromise.h"; sourceTree = "<group>"; };
-		E7DE106820E81E5883427E6B4B2148FA /* RatingDialog.html */ = {isa = PBXFileReference; includeInIndex = 1; name = RatingDialog.html; path = docs/Classes/RatingDialog.html; sourceTree = "<group>"; };
-		E803FA88AFA8C947F20782F3759DEF30 /* RatingDialogTracking.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = RatingDialogTracking.swift; path = Stanwood_Dialog_iOS/Classes/RatingDialogTracking.swift; sourceTree = "<group>"; };
-		E8B9105A1140C058DC9F51277779DA82 /* libBugfenderSDKstatic.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; path = libBugfenderSDKstatic.a; sourceTree = "<group>"; };
-		EAF2374E930BB89DAF5574C590104ECE /* Pods-Stanwood_Dialog_iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-Stanwood_Dialog_iOS_Tests.modulemap"; sourceTree = "<group>"; };
-		EEC7F2AD0C7A5E7B432B6319ED0E5E4A /* jquery.min.js */ = {isa = PBXFileReference; includeInIndex = 1; name = jquery.min.js; path = docs/js/jquery.min.js; sourceTree = "<group>"; };
+		E7480BAB29A5573D40EBF6E02381C1E2 /* UIViewController+AnyPromise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AnyPromise.m"; path = "Extensions/UIKit/Sources/UIViewController+AnyPromise.m"; sourceTree = "<group>"; };
+		E9A5586A6499C102D0BCC9DC96EF7F49 /* join.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = join.swift; path = Sources/join.swift; sourceTree = "<group>"; };
+		EAF2374E930BB89DAF5574C590104ECE /* Pods-Stanwood_Dialog_iOS_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Stanwood_Dialog_iOS_Tests.modulemap"; sourceTree = "<group>"; };
+		EE9A7EF9C115E41D052ADAEF5E87EFD1 /* State.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = State.swift; path = Sources/State.swift; sourceTree = "<group>"; };
 		F070D46E18C81CA7D5C3DD3BE89D1BD8 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Stanwood_Dialog_iOS_Example-umbrella.h"; sourceTree = "<group>"; };
-		F22A337D2C901BAF8443E13235B94D34 /* Promise+AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Promise+AnyPromise.swift"; path = "Sources/Promise+AnyPromise.swift"; sourceTree = "<group>"; };
-		F3B3D9AA8C01FC48A7AACA977E564E7F /* StanwoodAnalytics.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = StanwoodAnalytics.modulemap; sourceTree = "<group>"; };
-		F56FF06B340054644DFF3846FD1626EE /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
-		F58EE722F35381823C86FC8C08C48BDC /* docSet.dsidx */ = {isa = PBXFileReference; includeInIndex = 1; name = docSet.dsidx; path = docs/docsets/StanwoodDialog.docset/Contents/Resources/docSet.dsidx; sourceTree = "<group>"; };
-		F77DC3B3B3A38CB7113080AA873055F0 /* nanopb.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = nanopb.framework; path = Frameworks/nanopb.framework; sourceTree = "<group>"; };
-		F7E91E29587AF12A6F6282B90775A573 /* StanwoodDialog.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = StanwoodDialog.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		F81A38AF812B0F9EADA7905E72506277 /* NSNotificationCenter+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNotificationCenter+AnyPromise.h"; path = "Extensions/Foundation/Sources/NSNotificationCenter+AnyPromise.h"; sourceTree = "<group>"; };
-		F93C9EC10FFC582758E291512CB94418 /* UIView+AnyPromise.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AnyPromise.h"; path = "Extensions/UIKit/Sources/UIView+AnyPromise.h"; sourceTree = "<group>"; };
-		F9490C7A5F566F80820CA1D40376C84E /* Process+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Process+Promise.swift"; path = "Extensions/Foundation/Sources/Process+Promise.swift"; sourceTree = "<group>"; };
-		F970ADE927D236AB8F8C8D537A60C4CB /* PromiseKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PromiseKit.h; path = Sources/PromiseKit.h; sourceTree = "<group>"; };
+		F3AF2875741DFD0921E7E1FF67859289 /* dispatch_promise.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = dispatch_promise.m; path = Sources/dispatch_promise.m; sourceTree = "<group>"; };
+		F6300B2B83011D43128DA44649586D4A /* fwd.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = fwd.h; path = Sources/fwd.h; sourceTree = "<group>"; };
+		F6E7FC5CF9147EF41D7D1E86FC528054 /* StanwoodDialog-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "StanwoodDialog-prefix.pch"; sourceTree = "<group>"; };
+		F845E54F1F99FA83765AE21DEBBED993 /* DispatchQueue+Promise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DispatchQueue+Promise.swift"; path = "Sources/DispatchQueue+Promise.swift"; sourceTree = "<group>"; };
+		FB5E85CCDC82593A54E6A9AA5AD8482E /* PromiseKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PromiseKit-prefix.pch"; sourceTree = "<group>"; };
+		FD987AB706C5E3C09C4B93C7F9F25E23 /* AnyPromise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = AnyPromise.swift; path = Sources/AnyPromise.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		332AA0AFDF188886D5884EC6B45F4FDE /* Frameworks */ = {
+		2CB7D9592B7CD19089FE5D0D7FA9A649 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				13A4789BF3F4AD763A68469729FF28D5 /* Foundation.framework in Frameworks */,
+				D4CD07A59C38FDCC2B004A5B1AB8DC93 /* PromiseKit.framework in Frameworks */,
+				235F0BA6FD26AC47E3A8AB05B536436F /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		5F903D566200B42A9F180F9AEE326EC7 /* Frameworks */ = {
+		422237922555EE320C4A93AB55F273DD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A6723C85DAD1F9ACF5F6F880F436793 /* Foundation.framework in Frameworks */,
+				A181D4DD8F9DECE319DA005D624DD2BF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		78B614D14896899CF94211586021CBF4 /* Frameworks */ = {
+		9D208F36D5A2940A8115A6D6AC802569 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				36ED0400F131629E05181CCCA79EA873 /* Foundation.framework in Frameworks */,
-				C19556086352CDCB345648E947212E26 /* QuartzCore.framework in Frameworks */,
-				FF334809A220727B486C0B3B059525F3 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8402F4B36B85086151859EABCBC8BD37 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B155A1D23EBDA470FF1A40754FFA3588 /* Foundation.framework in Frameworks */,
-				5B5739D94CD0BFF2FA67540964AFA493 /* MobileCoreServices.framework in Frameworks */,
-				2340F3FE51FFE14F0B9ACCB52E00E6D1 /* Security.framework in Frameworks */,
-				63332D5014F397A14046F01BC6ED9E84 /* SystemConfiguration.framework in Frameworks */,
+				239357372927BD99358B3EBA1DA1E573 /* Foundation.framework in Frameworks */,
+				6B6A2982C40FC26B66BCE1FAB46DED17 /* QuartzCore.framework in Frameworks */,
+				C7BE71E9986148BB7EAD47B77E9ADDE9 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,240 +242,100 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C16FBD00118879717AB62FB339B85D9B /* Frameworks */ = {
+		E6914A14FE993FA7CB7E672FCC56D1AF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBE153C67E78A511F52181E9AB26EEF4 /* AddressBook.framework in Frameworks */,
-				2D5957D9BD6D4FF26890DED01842E38A /* AdSupport.framework in Frameworks */,
-				3C41F7E985148AE1013071706CE73C7C /* BugfenderSDK.framework in Frameworks */,
-				F03D5F77D5C8DC0AD67F4C3B48FCC845 /* Foundation.framework in Frameworks */,
-				7AD82EBFF7A4EA48D7CFCE2B2F13419D /* SafariServices.framework in Frameworks */,
-				CC05BB22EB95E45EA99E6C085EB24E59 /* Security.framework in Frameworks */,
-				4A8594EEB700B012FBEC69675EB570FB /* StoreKit.framework in Frameworks */,
-				5078384F425CD32CBBFC2733489BED4D /* SystemConfiguration.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		D93FAFA3E6E9FE0E78F860B56C746FFE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6A9D2014D5E615B7712A7AA31E474F5B /* Foundation.framework in Frameworks */,
-				FB590748A564046DB8ECAF58637783D8 /* PromiseKit.framework in Frameworks */,
-				2EC6AADF06FAABB3842F9131E6C27757 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07644822C51738D25C76FA7DB686A8F9 /* StanwoodDialog */ = {
+		10E262B15AC33592FEB4B4FA822A285B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B4750DB55EBAA986BBF4E5F9D7FA247E /* RatingDialog.swift */,
-				E803FA88AFA8C947F20782F3759DEF30 /* RatingDialogTracking.swift */,
-				A8866628139C37E3101CD6981F193A60 /* RatingDialogView.swift */,
-				77D0C84B9C802BB7E0CC9484E9E7A50C /* Pod */,
-				9CFF4F84E1FBC93DFBFF37CB748B9339 /* Resources */,
-				4F2C7E34CD32C978BC2F2C2C74FA2BC1 /* Support Files */,
+				E6BCDA7035DD90EC891A4601EE7BC115 /* StanwoodDialog */,
 			);
-			name = StanwoodDialog;
-			path = ../..;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		1B6858D1C47547FD6B8E4DEF50C6CECC /* PromiseKit */ = {
+		26BF7678049D09817700D183FC4E32B3 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D60567C45A5B8E903EDA90B7746862D2 /* CorePromise */,
-				933270B169835886E67B34493491BF56 /* Foundation */,
-				C76171C60401FD030B010EE7055CE1EE /* QuartzCore */,
-				DFC40A624E4111973CE8E037555217FD /* Support Files */,
-				55D2DD869D9AECF2CEE8FFF10541B525 /* UIKit */,
-			);
-			name = PromiseKit;
-			path = PromiseKit;
-			sourceTree = "<group>";
-		};
-		223072FA91A7514D8A96A209CAB0E9FB /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				4121FF8F5383F2635B8E1DB5ADA9B338 /* BugfenderSDK */,
-				1B6858D1C47547FD6B8E4DEF50C6CECC /* PromiseKit */,
-				E0AB695DD96D52B02E7FB9BEEBC87104 /* StanwoodAnalytics */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		275B89045CC0C3DCE60AFE77B2D3134C /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E8B9105A1140C058DC9F51277779DA82 /* libBugfenderSDKstatic.a */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		3BB9623AAC70F600B0F5C3DFE8B808C9 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				33862D5D959B7983E462ADBC39C11C23 /* BugfenderSDK.framework */,
-				C23D00D128C3C3151CC4D789007A1C57 /* PromiseKit.framework */,
-				A276F973DCE6D291AE65420FA1D7E9AC /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4121FF8F5383F2635B8E1DB5ADA9B338 /* BugfenderSDK */ = {
-			isa = PBXGroup;
-			children = (
-				E4CC6D180F9608BC187898E10F6EF662 /* Support Files */,
-				733E38817F8FBF01948D65AECB9FBD6C /* Swift */,
-			);
-			name = BugfenderSDK;
-			path = BugfenderSDK;
-			sourceTree = "<group>";
-		};
-		4F2C7E34CD32C978BC2F2C2C74FA2BC1 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BD830DBDDAFE7F77285937A6CA3BB4E8 /* Info.plist */,
-				1DB4AC78FA7A747AA73C94C7BD177BB2 /* ResourceBundle-Stanwood_Dialog_iOS-Info.plist */,
-				2BAC8D5182C3AC8B6611425BDC54531D /* StanwoodDialog.modulemap */,
-				65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */,
-				BF6C9161A992B374EF0067CA48F3CC89 /* StanwoodDialog-dummy.m */,
-				179A3AB5398E2400551CA907C2277B71 /* StanwoodDialog-prefix.pch */,
-				3F38E8BB3A7D8678F7F7813B4A1DFD5C /* StanwoodDialog-umbrella.h */,
+				DB712DDD8C47AF4BF7B61F5C5FD37585 /* Info.plist */,
+				A9EB2EEFDDE9163ACBF3D9C106CEA312 /* ResourceBundle-Stanwood_Dialog_iOS-Info.plist */,
+				2FEA4E9C6775E2DC6C05AB256B5086C6 /* StanwoodDialog.modulemap */,
+				7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */,
+				430DBDAE1DC6B8B97404494CBFF1ABC6 /* StanwoodDialog-dummy.m */,
+				F6E7FC5CF9147EF41D7D1E86FC528054 /* StanwoodDialog-prefix.pch */,
+				650D3D0DAED22ADDFF2B41D791C04D74 /* StanwoodDialog-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/StanwoodDialog";
 			sourceTree = "<group>";
 		};
-		55D2DD869D9AECF2CEE8FFF10541B525 /* UIKit */ = {
+		38908CA03A120B329909CCDB1910CD05 /* PromiseKit */ = {
 			isa = PBXGroup;
 			children = (
-				48A4498F7F92575EAD4B415FD1CCD7B9 /* PMKAlertController.swift */,
-				38FC95AD7AAD649589ADEF08889AD853 /* PMKUIKit.h */,
-				F93C9EC10FFC582758E291512CB94418 /* UIView+AnyPromise.h */,
-				2BD79CF753298F9C69E8FA4CF6B396BE /* UIView+AnyPromise.m */,
-				98BA0651BED9E8909E2B7040465CAA1A /* UIView+Promise.swift */,
-				2E7449120CD368A1F22DE0067A89A3BA /* UIViewController+AnyPromise.h */,
-				32768DAA6A05D5684F4E7E270FEE2F81 /* UIViewController+AnyPromise.m */,
-				2DEF8A484787BC94BFCEC435CB8EB553 /* UIViewController+Promise.swift */,
+				BEC810B523A4354244D3ECE1495125F2 /* CorePromise */,
+				6D148CD65D2A2774D613EDC0E3F45F27 /* Foundation */,
+				D731C6A1D43A1A4020D48CE568AB19B9 /* QuartzCore */,
+				BC3601AD5BED07DF695ECC52C0E11BB1 /* Support Files */,
+				F9C1C38E536FD710388B234B7D8FA163 /* UIKit */,
 			);
-			name = UIKit;
+			path = PromiseKit;
 			sourceTree = "<group>";
 		};
-		5C42DFD7A7449F33BF975CB3A7545283 /* Support Files */ = {
+		6D148CD65D2A2774D613EDC0E3F45F27 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				89CFB870E474D901D59B4971AD44F6B0 /* Info.plist */,
-				F3B3D9AA8C01FC48A7AACA977E564E7F /* StanwoodAnalytics.modulemap */,
-				223B649F5B201258DEDCD40572947B7F /* StanwoodAnalytics.xcconfig */,
-				92EA1DFBAAE16D1FEF6C5DF0C9E360FF /* StanwoodAnalytics-dummy.m */,
-				7540A23846D446AF252949C747B5F8AB /* StanwoodAnalytics-prefix.pch */,
-				D06D38070C6FB18823CC525627EF946A /* StanwoodAnalytics-umbrella.h */,
+				DF52D452D72EF81C1A4A1B4DBDFC452A /* afterlife.swift */,
+				638FC877C26AE2698B03F57C63A5C636 /* NSNotificationCenter+AnyPromise.h */,
+				CB5F4A276E2678B6049F2F139147EC12 /* NSNotificationCenter+AnyPromise.m */,
+				294026AB8B28C610FC57DF2A26EB7FC9 /* NSNotificationCenter+Promise.swift */,
+				BD8EEC210981A388DDF8ECCEF8433904 /* NSObject+Promise.swift */,
+				A781E6C7BA06DD8A0A80B0494DA26A4E /* NSTask+AnyPromise.h */,
+				1E33654BE09E7109A0FEEE76E49BF8E0 /* NSTask+AnyPromise.m */,
+				9696FB863D0DE618F5B3684606228A4A /* NSURLSession+AnyPromise.h */,
+				D9B468F428AC55896FEC0D8C3A1181AC /* NSURLSession+AnyPromise.m */,
+				337F0663F2253CE5F69CA018CA7C90D8 /* NSURLSession+Promise.swift */,
+				9D009A35EE64D77102391EC364147766 /* PMKFoundation.h */,
+				7E43CFF6D7A6E68F617343E7F43D0A70 /* Process+Promise.swift */,
+				3D8C2DDC09A2F5FF7FC82E8881A3996B /* URLDataPromise.swift */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/StanwoodAnalytics";
-			sourceTree = "<group>";
-		};
-		733E38817F8FBF01948D65AECB9FBD6C /* Swift */ = {
-			isa = PBXGroup;
-			children = (
-				5D3E5E3847869FB7AD43E3536F0B026E /* Bugfender.swift */,
-				7A70CA71965D520EA5930FFA988BA199 /* BugfenderSDK.h */,
-				275B89045CC0C3DCE60AFE77B2D3134C /* Frameworks */,
-			);
-			name = Swift;
-			sourceTree = "<group>";
-		};
-		77D0C84B9C802BB7E0CC9484E9E7A50C /* Pod */ = {
-			isa = PBXGroup;
-			children = (
-				1AE30D0C6AAF56CCEBA6267E104E35C1 /* badge.svg */,
-				1287E66401FFAACB51C215C135E3BA6A /* Builder.html */,
-				D902C22BEFF33166594628C8C20FB48B /* Builder.html */,
-				E08E6906086486364AC17D97317BFD64 /* carat.png */,
-				D73AB431833D581D021ED23AF072838A /* carat.png */,
-				5953A11C33F08BCC80C5BCFD378A1393 /* Classes.html */,
-				A48460AF5E10B47E7855A2CBFD0253AE /* Classes.html */,
-				C8154F3C5A54D202D5BCCE2615306823 /* dash.png */,
-				803DAB5B61E949A79E407007760AB9AD /* dash.png */,
-				F58EE722F35381823C86FC8C08C48BDC /* docSet.dsidx */,
-				61ED25448F2143583EB4F031555F5491 /* Enums.html */,
-				C1B1C41211C76563489B938018F6C3A7 /* Enums.html */,
-				74EEFF2C664EAB0FC7A75613250CEF55 /* Extensions.html */,
-				6207EECD73982B5609768D18C8F94ECF /* Extensions.html */,
-				7EB037450A08075B1A4549ED1912E374 /* gh.png */,
-				D16C645980EA719D10B703DAA0D77B0B /* gh.png */,
-				B88A6EAE857C4F32FBE69FF66C9746DE /* highlight.css */,
-				AF2A3293214973C8FE96EC29B94AE832 /* highlight.css */,
-				4127706E991A8101B0878F13534AEE23 /* index.html */,
-				C958676169AE3445DC2F1BD68B3CDA9A /* index.html */,
-				3FE4306BF5512ADF0530A6C228486705 /* Info.plist */,
-				CFC4D5B6601F924AFF7AA5F2688B1323 /* jazzy.css */,
-				09A9DC3C7E8C9809EBAD9DB344068F77 /* jazzy.css */,
-				C379D654AC12B77F47219A61BBE61FD0 /* jazzy.js */,
-				06C1AD11B801E73A750C1DD760A2F221 /* jazzy.js */,
-				6FB277F63894C3FCA5AB73A09DB24B78 /* jazzy.search.js */,
-				B9AEE035ACE7925326E2BF10C5065CB5 /* jazzy.search.js */,
-				68380970B7064A36B80C66B2EC8F2ABA /* jquery.min.js */,
-				EEC7F2AD0C7A5E7B432B6319ED0E5E4A /* jquery.min.js */,
-				9235F9640EA29D1D6A3B02FE97702B8F /* LICENSE */,
-				2B3F9F68C3FD74C660B975AF26390220 /* lunr.min.js */,
-				55259FCF0FA5A5688A26572E13A9A2EC /* lunr.min.js */,
-				67D086561B32BD2416BA11BF6B47A409 /* Promise.html */,
-				420F49F92282CBD24476743F59E81B8E /* Promise.html */,
-				39DF3BB703C9BB20C285049F31588BFB /* Protocols.html */,
-				D21974DDFF06978E410AF0C45EA8EC25 /* Protocols.html */,
-				E7DE106820E81E5883427E6B4B2148FA /* RatingDialog.html */,
-				7F637C753085ECE95D561FD4BEA821A5 /* RatingDialog.html */,
-				950D85E41C1A7D13B0C2B719D569A27E /* RatingDialogEvent.html */,
-				12C37D39C0C4C3F7DADB968A9A45FD2B /* RatingDialogEvent.html */,
-				1AD3CF945A874BE7C1B986BA006879AC /* RatingDialogPresenting.html */,
-				9C9A98504EF22740B12D31FEC83FD0AC /* RatingDialogPresenting.html */,
-				8FB6769E858B22213053DF82FF562BE1 /* RatingDialogTracking.html */,
-				DE411B5756FC05DE102E1871AAA349B2 /* RatingDialogTracking.html */,
-				4D6E7D67AA0A06A093FC1EC3808F49E7 /* RatingDialogView.html */,
-				51014D5044C774A18DA39D6A21E3E1A6 /* RatingDialogView.html */,
-				7060E25639E11B9E2EB656CD7D584596 /* README.md */,
-				103A7E6F6AD4A61DEA72C986032CC12F /* search.json */,
-				A16820490DE591271B59CFC4FBC88158 /* search.json */,
-				1C5D8F26689D466412E68A929E8D20E4 /* spinner.gif */,
-				986C737A63A9808E7C9E298FA3B11F68 /* spinner.gif */,
-				F7E91E29587AF12A6F6282B90775A573 /* StanwoodDialog.podspec */,
-				B2190CEEA97B261B4ABF58065E3101DE /* StanwoodDialog.tgz */,
-				6EBF72DF4960F7FA09BD354114D4E84E /* typeahead.jquery.js */,
-				9B1B9F6624373F9161D298765095F432 /* typeahead.jquery.js */,
-				38CA542EA036D208E8BFBC4ABF296785 /* undocumented.json */,
-			);
-			name = Pod;
+			name = Foundation;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				E7CC16B0E77070205E9470BE51BC0A73 /* Development Pods */,
-				3BB9623AAC70F600B0F5C3DFE8B808C9 /* Frameworks */,
-				223072FA91A7514D8A96A209CAB0E9FB /* Pods */,
-				7F6D0FBB5F29308CC4CE596C30962CFE /* Products */,
+				10E262B15AC33592FEB4B4FA822A285B /* Development Pods */,
+				88C6DB8A0F66453A47EC75CAF7D03594 /* Frameworks */,
+				9BC2F6B1CCEF88766C020D4B57771407 /* Pods */,
+				CBAAF8C15AD61CFE7E071CC30B9F0924 /* Products */,
 				F1CCC69D077930AD1894FC48E3D0CC6A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		7F6D0FBB5F29308CC4CE596C30962CFE /* Products */ = {
+		83D059F352DAB3399DB4BFAC983FB109 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				B4F21CA6B9C96D685AA3DED4FAFA986F /* BugfenderSDK.framework */,
-				534CD81126D3BFC18A479D9F6999D389 /* Pods_Stanwood_Dialog_iOS_Example.framework */,
-				1F4043E049BECDC28AAA6443C6A9C32A /* Pods_Stanwood_Dialog_iOS_Tests.framework */,
-				3F04B47F41A1EE02F22D8C13961B087F /* PromiseKit.framework */,
-				7857A5F046F8EBA43C0B462C45D7FAE4 /* Stanwood_Dialog_iOS.bundle */,
-				14E7B83ED2D61E4D2BA863D7DB09D7B2 /* StanwoodAnalytics.framework */,
-				3C640F72F99A9E7AA406EC3DE41D1D61 /* StanwoodDialog.framework */,
+				5FD841937CDE1B47BE56B0B77A73AD71 /* Foundation.framework */,
+				111CB544691468816DDF3F8D46424552 /* QuartzCore.framework */,
+				A9F82E67A30841B8EA38FFE9317D477D /* UIKit.framework */,
 			);
-			name = Products;
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		88C6DB8A0F66453A47EC75CAF7D03594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0D8F25817235857AE113B60CE73F1492 /* PromiseKit.framework */,
+				83D059F352DAB3399DB4BFAC983FB109 /* iOS */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		8BF9C6CD3FE9B7613EB78C26D6B0F5F4 /* Pods-Stanwood_Dialog_iOS_Example */ = {
@@ -643,65 +356,12 @@
 			path = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example";
 			sourceTree = "<group>";
 		};
-		933270B169835886E67B34493491BF56 /* Foundation */ = {
+		9BC2F6B1CCEF88766C020D4B57771407 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				72E5A3330FBC945EF865E67BCE438EA8 /* afterlife.swift */,
-				F81A38AF812B0F9EADA7905E72506277 /* NSNotificationCenter+AnyPromise.h */,
-				7D45D5B37A0CD10D042BA16FF55750A3 /* NSNotificationCenter+AnyPromise.m */,
-				A4C0B7C7FDAAC92F3EA403519A7E988C /* NSNotificationCenter+Promise.swift */,
-				ABD8D7E9EE075C06B5F7A5A2704C00C4 /* NSObject+Promise.swift */,
-				E2372E32F5FFCD8E69E00C666853793E /* NSTask+AnyPromise.h */,
-				3B31FA22BE3932C651D257F2F95C7BA9 /* NSTask+AnyPromise.m */,
-				AC781745ADE7D85B9AB3AD4383407E7A /* NSURLSession+AnyPromise.h */,
-				BB906BA19A39E08C94F7026407161AC1 /* NSURLSession+AnyPromise.m */,
-				8CD0898DEFADA41BB643FCC74DD50B61 /* NSURLSession+Promise.swift */,
-				766508E9E8CCC92D203DF5158B6D78D1 /* PMKFoundation.h */,
-				F9490C7A5F566F80820CA1D40376C84E /* Process+Promise.swift */,
-				C9FED105A70C56DD9636622738107575 /* URLDataPromise.swift */,
+				38908CA03A120B329909CCDB1910CD05 /* PromiseKit */,
 			);
-			name = Foundation;
-			sourceTree = "<group>";
-		};
-		9AC58E64D7406C4B0CD9D1E5FC7E28C5 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				C57A7B9BBEEA806D578000C7184AF2A7 /* Crashlytics.framework */,
-				43EE3DA1DC0047192B52086B8FD16A94 /* Fabric.framework */,
-				49E8ECDF67A2B3DD3F9430366A996398 /* FirebaseAnalytics.framework */,
-				A877F016520C10F3236F8B2890A63A63 /* FirebaseCore.framework */,
-				C7396A0F91575FBC908A65CC4FDBF56C /* FirebaseCoreDiagnostics.framework */,
-				BCA4E07CCBFD37DBFB9964AE34B74291 /* FirebaseInstanceID.framework */,
-				44CC4AF8E4D03450C7DFEA1BFB4B6772 /* FirebaseNanoPB.framework */,
-				D11A3D03C280AA40DC1B60136ED1ABA3 /* GoogleToolboxForMac.framework */,
-				F77DC3B3B3A38CB7113080AA873055F0 /* nanopb.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9CFF4F84E1FBC93DFBFF37CB748B9339 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				01C0A66C7B6EA99606B4BA8C8774B748 /* RatingDialogView.xib */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		A276F973DCE6D291AE65420FA1D7E9AC /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				8EFFCBB0D6B6FB9236B44D1D269D49CA /* AddressBook.framework */,
-				34D466A0020552D275308C50F3F96987 /* AdSupport.framework */,
-				679E53468670A5EE120D4C2C69889A2A /* Foundation.framework */,
-				30253F75E7AF1FCD4BA5E076AABF4CA6 /* MobileCoreServices.framework */,
-				32C9A734E983695AEA434F98EB94C43C /* QuartzCore.framework */,
-				00AC1F717BC1EC74C47279BE4EA614CA /* SafariServices.framework */,
-				247CD76F2EE14153AFE96B65DF076B69 /* Security.framework */,
-				2466D5208541F45B0A29CA9EA672B59D /* StoreKit.framework */,
-				B3A3C9B926418250E09B1A0C844B520E /* SystemConfiguration.framework */,
-				CD5ADB947BCC08CCA628C755FD279F80 /* UIKit.framework */,
-			);
-			name = iOS;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		A6C8DBCBA1CB014372C20EBD2AFB1587 /* Pods-Stanwood_Dialog_iOS_Tests */ = {
@@ -722,95 +382,91 @@
 			path = "Target Support Files/Pods-Stanwood_Dialog_iOS_Tests";
 			sourceTree = "<group>";
 		};
-		C76171C60401FD030B010EE7055CE1EE /* QuartzCore */ = {
+		AA32CC1C6285A9502E3C208A4F8AC005 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				E79E7A1681D5C7DBFBAB08FB1A577D86 /* CALayer+AnyPromise.h */,
-				7893F10C73866DE42F5AFBC864CCC63E /* CALayer+AnyPromise.m */,
-				35613C4B8EE9292182D8633788414F11 /* PMKQuartzCore.h */,
+				0B03D69A67CFC87455B4E075BC94B279 /* RatingDialogView.xib */,
 			);
-			name = QuartzCore;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		D60567C45A5B8E903EDA90B7746862D2 /* CorePromise */ = {
+		BC3601AD5BED07DF695ECC52C0E11BB1 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				859AB04ECAC0F23038C2A1FC4A0F8D39 /* after.m */,
-				E53371F7AA641DCF32CFF5D5CA093936 /* after.swift */,
-				05FBA596D18E767CC9BB356AB938E5C5 /* AnyPromise.h */,
-				7214536F0C68C0ECDB0595DAF74FDB24 /* AnyPromise.m */,
-				D70D20B1DF71D6ED4082E90902960D83 /* AnyPromise.swift */,
-				BBCA1F1E00E6F3A970882B42E10759A9 /* dispatch_promise.m */,
-				2BD83E8504F45B30962F504B8A5E55F3 /* DispatchQueue+Promise.swift */,
-				268223EE73F626B1F6B1F9CF9352D756 /* Error.swift */,
-				F56FF06B340054644DFF3846FD1626EE /* fwd.h */,
-				E079CD051149D4279A4BC988D1911DB3 /* GlobalState.m */,
-				41F9F0964C676D30A11771E1E96E71E4 /* hang.m */,
-				5FC826669192906C601180F61AE3C690 /* join.m */,
-				768F002C96AF43C3740E8992D2AA55E1 /* join.swift */,
-				4F5F80994C2305FD6072228186632A01 /* Promise.swift */,
-				F22A337D2C901BAF8443E13235B94D34 /* Promise+AnyPromise.swift */,
-				58FB5DCFDD4FA6523730BDF03130D56D /* Promise+Properties.swift */,
-				F970ADE927D236AB8F8C8D537A60C4CB /* PromiseKit.h */,
-				BFE9AA2FF9A5BB19B47703DED1677AE0 /* race.swift */,
-				77DF1444BED67EC1F3CB619797CE94CD /* State.swift */,
-				46CDDE4EC279840830DA616CC483EBF4 /* when.m */,
-				6C0AF7FB09A63E0A65980C7751D13BC4 /* when.swift */,
-				C0F9ED7183D11A7A945652308F63D3C4 /* wrap.swift */,
-				329515BFFBBCED55B251266537F5A2A6 /* Zalgo.swift */,
-			);
-			name = CorePromise;
-			sourceTree = "<group>";
-		};
-		DFC40A624E4111973CE8E037555217FD /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				88663C1B59F173117A553C09ADFA2AA1 /* Info.plist */,
-				9EDCA3B99C03FB1C9BCAC6FBD5BAF012 /* PromiseKit.modulemap */,
-				45F96250E7839D0850EBEF0CC7752102 /* PromiseKit.xcconfig */,
-				15637843198B6E74239ADFCF69003A56 /* PromiseKit-dummy.m */,
-				BABDCC6D9D2EC51E3557AD4706562F20 /* PromiseKit-prefix.pch */,
-				7497BEA86D30941668BBE9237E546E02 /* PromiseKit-umbrella.h */,
+				C75F5106CF2E74A67689DE4BE2044812 /* Info.plist */,
+				DB6F691A801D32620ED501B0C3559FA9 /* PromiseKit.modulemap */,
+				633F0B04323882A67E03C84384FC9203 /* PromiseKit.xcconfig */,
+				DDD911A7C16FAA09302EE0DF2F0B0DA9 /* PromiseKit-dummy.m */,
+				FB5E85CCDC82593A54E6A9AA5AD8482E /* PromiseKit-prefix.pch */,
+				41BE05D1B6D9DB09085F5D597DF8FCF4 /* PromiseKit-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/PromiseKit";
 			sourceTree = "<group>";
 		};
-		E0AB695DD96D52B02E7FB9BEEBC87104 /* StanwoodAnalytics */ = {
+		BEC810B523A4354244D3ECE1495125F2 /* CorePromise */ = {
 			isa = PBXGroup;
 			children = (
-				A9495F663CA4129D1FD9D3C6DBB38878 /* BugfenderTracker.swift */,
-				D69319283D59A6C347490C87C3DC903D /* CrashlyticsTracker.swift */,
-				53622FDB9E1138C91D334FABF9ECD89B /* FirebaseTracker.swift */,
-				5344C8E4F19E7F59E378ED052EDB2001 /* StanwoodAnalytics.swift */,
-				E5BFBBCD13A0D8701CBD74BD703730DE /* Tracker.swift */,
-				9AC58E64D7406C4B0CD9D1E5FC7E28C5 /* Frameworks */,
-				5C42DFD7A7449F33BF975CB3A7545283 /* Support Files */,
+				C54315DA3A1A39E54691EB5C6921A90C /* after.m */,
+				B660E1F4E80FD3F4BF33455CD40AA754 /* after.swift */,
+				01FE4B605FCF6F5D282413F2C6FEDFD4 /* AnyPromise.h */,
+				7CCDD0F4DEC7B45ED67BDA259AA0495C /* AnyPromise.m */,
+				FD987AB706C5E3C09C4B93C7F9F25E23 /* AnyPromise.swift */,
+				F3AF2875741DFD0921E7E1FF67859289 /* dispatch_promise.m */,
+				F845E54F1F99FA83765AE21DEBBED993 /* DispatchQueue+Promise.swift */,
+				4212FBE5112A86EA090A636CE6EA59B6 /* Error.swift */,
+				F6300B2B83011D43128DA44649586D4A /* fwd.h */,
+				1DBBCF038A033FBF591B05C0FA593946 /* GlobalState.m */,
+				647132F3F2E8752B2E96A1DC7747B992 /* hang.m */,
+				97A9B7857BB154507F020FDFC1EBB31C /* join.m */,
+				E9A5586A6499C102D0BCC9DC96EF7F49 /* join.swift */,
+				6B7B97DBEF2B7618554E6D9AB143DFAA /* Promise.swift */,
+				95739ECC732A6332E68750FE3F7489A4 /* Promise+AnyPromise.swift */,
+				6179271256B847F0ECC0222967A3CAA1 /* Promise+Properties.swift */,
+				DE1F16648A7B55D15BED16EC48C06644 /* PromiseKit.h */,
+				95DEEF09AD31315EC2776080269E92B7 /* race.swift */,
+				EE9A7EF9C115E41D052ADAEF5E87EFD1 /* State.swift */,
+				0D38D8F361C611EFCFF57DC13B115F3A /* when.m */,
+				7D29D2F64D48281095C8274FEE6DACD0 /* when.swift */,
+				2C6823BF3BB1566E1F8C86FABE5F23DA /* wrap.swift */,
+				4E0B0795D4CC1B35FA39436D5052DCFB /* Zalgo.swift */,
 			);
-			name = StanwoodAnalytics;
-			path = StanwoodAnalytics;
+			name = CorePromise;
 			sourceTree = "<group>";
 		};
-		E4CC6D180F9608BC187898E10F6EF662 /* Support Files */ = {
+		CBAAF8C15AD61CFE7E071CC30B9F0924 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				15182F52EDACF211BAC465575CF88C8F /* BugfenderSDK.modulemap */,
-				7D104C3EF0F839622D0A3EEB7F1F698E /* BugfenderSDK.xcconfig */,
-				20C53C6EC66D0A7C9A43D1932BBA61E3 /* BugfenderSDK-dummy.m */,
-				801E4ACE1648F6F1E549BF24515E7AD4 /* BugfenderSDK-prefix.pch */,
-				1D4A87C05C3EB858DE27C466CC4D5680 /* BugfenderSDK-umbrella.h */,
-				CDBEB90395D13EC284445280E3264588 /* Info.plist */,
+				31C9882B4B0F17C3DB1A8E53D78A6141 /* Pods_Stanwood_Dialog_iOS_Example.framework */,
+				A632A182B40D215229AFF24C0E566F29 /* Pods_Stanwood_Dialog_iOS_Tests.framework */,
+				1F7D3D49C88C5DA06267521569A9162E /* PromiseKit.framework */,
+				CF976982402884561C00AC9FA66E4D48 /* Stanwood_Dialog_iOS.bundle */,
+				857A68D3C8BAAF3940037B7BE27A72F4 /* StanwoodDialog.framework */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/BugfenderSDK";
+			name = Products;
 			sourceTree = "<group>";
 		};
-		E7CC16B0E77070205E9470BE51BC0A73 /* Development Pods */ = {
+		D731C6A1D43A1A4020D48CE568AB19B9 /* QuartzCore */ = {
 			isa = PBXGroup;
 			children = (
-				07644822C51738D25C76FA7DB686A8F9 /* StanwoodDialog */,
+				37D86DBB6A7B7F77D79F889CEBC3755E /* CALayer+AnyPromise.h */,
+				6F48B3970DAE9346AD3FA54A3A613328 /* CALayer+AnyPromise.m */,
+				67E1D36DCB7BF8A7DEB230733B158119 /* PMKQuartzCore.h */,
 			);
-			name = "Development Pods";
+			name = QuartzCore;
+			sourceTree = "<group>";
+		};
+		E6BCDA7035DD90EC891A4601EE7BC115 /* StanwoodDialog */ = {
+			isa = PBXGroup;
+			children = (
+				9AA1E8E82BD3ED1A8F247F71AFDDC159 /* RatingDialog.swift */,
+				A5F989913A4F6EB983D421AE18B9302D /* RatingDialogTracking.swift */,
+				E3A826DFB2AF8FDD28DEEFC3FB13A9DA /* RatingDialogView.swift */,
+				AA32CC1C6285A9502E3C208A4F8AC005 /* Resources */,
+				26BF7678049D09817700D183FC4E32B3 /* Support Files */,
+			);
+			name = StanwoodDialog;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F1CCC69D077930AD1894FC48E3D0CC6A /* Targets Support Files */ = {
@@ -822,43 +478,41 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
+		F9C1C38E536FD710388B234B7D8FA163 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				BFFA858C2DB288BB308A48DC5193E6F1 /* PMKAlertController.swift */,
+				95632F4C8D15D6CF8EE867952FA69262 /* PMKUIKit.h */,
+				765DEE6E8D8C524E9695A1C7726AB582 /* UIView+AnyPromise.h */,
+				7A2B3D19404B7C7A8014B95D5977B946 /* UIView+AnyPromise.m */,
+				7307E7A48A7523AE477711BA4DF908C9 /* UIView+Promise.swift */,
+				7B1EC75F3F631688BE467D62877D90CD /* UIViewController+AnyPromise.h */,
+				E7480BAB29A5573D40EBF6E02381C1E2 /* UIViewController+AnyPromise.m */,
+				7FAE3B541056E3495362EF0C5DDB405B /* UIViewController+Promise.swift */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3AECB4E30578A9E8614188FDC96842BB /* Headers */ = {
+		4F238C1F0B9B86FDAD37BBE292C59E45 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6504F8185AA78C8699227C992DCB7C39 /* BugfenderSDK-umbrella.h in Headers */,
-				D19B9E6EB93FD926EFD42FD25B496A43 /* BugfenderSDK.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7CF53CEB4C682240E3C0762D76A9E58D /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A6F3A911A0FDB60A24EC67D824DC255C /* AnyPromise.h in Headers */,
-				249B74C12F7602B3FE62D4E3CB94F108 /* CALayer+AnyPromise.h in Headers */,
-				9B4041ED7955C2872A16BB1016963B82 /* fwd.h in Headers */,
-				38B5374A7944E5347764998BD3C75E2E /* NSNotificationCenter+AnyPromise.h in Headers */,
-				31E7432DCC138F3F438609881A89A71C /* NSTask+AnyPromise.h in Headers */,
-				965B3C6045A6423649CD6FE24F2C6571 /* NSURLSession+AnyPromise.h in Headers */,
-				4536179B45785E7A542EEAC9F3FA0C75 /* PMKFoundation.h in Headers */,
-				B157018086AA867C5F21C8E6FD1EFB42 /* PMKQuartzCore.h in Headers */,
-				33D3F15D7303E39373CE672060EBF00C /* PMKUIKit.h in Headers */,
-				6E2CCFCB581416C08E44DF0BEB491884 /* PromiseKit-umbrella.h in Headers */,
-				C6BF441720560139C316938A8690AEFC /* PromiseKit.h in Headers */,
-				6CF5F17AD1DD69EB6838C74B2E9C0B79 /* UIView+AnyPromise.h in Headers */,
-				9FFAD2F4D528A3041B4A50A07B3FB6FD /* UIViewController+AnyPromise.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BE8BA56A9674E0A839A0D1E317262817 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				57A51894EF53BF0A08998A954BF9A6F1 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h in Headers */,
+				2574529974A08BF31F3D136472047E6D /* AnyPromise.h in Headers */,
+				47594C53E757B0083ACB0656AC6E8D16 /* CALayer+AnyPromise.h in Headers */,
+				9833DB76EEC526473B63BF18F32DC039 /* fwd.h in Headers */,
+				28A4BE265D13FA326FB7A62E31B5C577 /* NSNotificationCenter+AnyPromise.h in Headers */,
+				F87B4246A0C6E8CFBE7C3D8305DD1DB2 /* NSTask+AnyPromise.h in Headers */,
+				2F42EC501E6E6515831264A74D4E8BC5 /* NSURLSession+AnyPromise.h in Headers */,
+				D83EF458C2FC017E82FF920495C200C4 /* PMKFoundation.h in Headers */,
+				3CC0060183899E18FE8DF65B9F833176 /* PMKQuartzCore.h in Headers */,
+				991054CD0D234CF02565C81DEC40A96A /* PMKUIKit.h in Headers */,
+				191B5DB32459469E81FCD7A0D5FBBB88 /* PromiseKit-umbrella.h in Headers */,
+				E4BB41A130108C735185A210041AADD1 /* PromiseKit.h in Headers */,
+				14ADF7E629DC3D65FBB5F87E0F1AC0FC /* UIView+AnyPromise.h in Headers */,
+				6B2DE74BA3E79D15EAD12FF3727C0A4E /* UIViewController+AnyPromise.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -870,88 +524,32 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E36DE7AD2C69155CA1AE0E67468FAD8B /* Headers */ = {
+		ED9D4496CB3E691456804A5EFFEEDB7A /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				24320EDC0540B2BE6B07D33F478E269F /* StanwoodAnalytics-umbrella.h in Headers */,
+				995E43CB095867D4D9FF67839E4D3580 /* Pods-Stanwood_Dialog_iOS_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E3FB0A01F2C1C687098ECAAB554401CC /* Headers */ = {
+		EE0FAA5136F3DE052767F18ADC9F9349 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B41F6159B4DF879702E1B9C8C04CC775 /* StanwoodDialog-umbrella.h in Headers */,
+				9FF7ED7319D0EB0E37C23B567995D1D1 /* StanwoodDialog-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		278C502E98DDDD2C064769DDD4EE5FE2 /* Pods-Stanwood_Dialog_iOS_Example */ = {
+		42EC8BF14AF19F3FC9E6CF91E4EFA9C6 /* PromiseKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 5F9609CA3BC24E48F370220FE87FB580 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Example" */;
+			buildConfigurationList = F24D15AFE66D4CE5BFBE228B4689095A /* Build configuration list for PBXNativeTarget "PromiseKit" */;
 			buildPhases = (
-				9CF800D3FC34703251D418EF6F19EF63 /* Sources */,
-				5F903D566200B42A9F180F9AEE326EC7 /* Frameworks */,
-				BE8BA56A9674E0A839A0D1E317262817 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				F7A3110733578FD1949D5A081944AE4F /* PBXTargetDependency */,
-				884190358841DAAE62378418F3FAAB64 /* PBXTargetDependency */,
-				85E3C7F2578D344DDAB3B46439D8F266 /* PBXTargetDependency */,
-				064874D962E1914FD7CF61021EFC9550 /* PBXTargetDependency */,
-			);
-			name = "Pods-Stanwood_Dialog_iOS_Example";
-			productName = "Pods-Stanwood_Dialog_iOS_Example";
-			productReference = 534CD81126D3BFC18A479D9F6999D389 /* Pods_Stanwood_Dialog_iOS_Example.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		32722DCBF57D542C99DF64158059C4F5 /* StanwoodAnalytics */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F39D793A8F6E5F88F52CF97212451BF /* Build configuration list for PBXNativeTarget "StanwoodAnalytics" */;
-			buildPhases = (
-				B59EE94F3A91BF8FEF746DCF48F2FF1E /* Sources */,
-				C16FBD00118879717AB62FB339B85D9B /* Frameworks */,
-				E36DE7AD2C69155CA1AE0E67468FAD8B /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				81BB9B7A60D4215522E43479889EDD51 /* PBXTargetDependency */,
-			);
-			name = StanwoodAnalytics;
-			productName = StanwoodAnalytics;
-			productReference = 14E7B83ED2D61E4D2BA863D7DB09D7B2 /* StanwoodAnalytics.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		3C11305FF24E01AE1173490FA8B5EA67 /* StanwoodDialog-Stanwood_Dialog_iOS */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B0367456F32660C3B593989446F645F9 /* Build configuration list for PBXNativeTarget "StanwoodDialog-Stanwood_Dialog_iOS" */;
-			buildPhases = (
-				39265CA46E69B60175CCF8A22C27BAF0 /* Sources */,
-				332AA0AFDF188886D5884EC6B45F4FDE /* Frameworks */,
-				181867637AD2CB9960D46BD0A3C38FCE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "StanwoodDialog-Stanwood_Dialog_iOS";
-			productName = "StanwoodDialog-Stanwood_Dialog_iOS";
-			productReference = 7857A5F046F8EBA43C0B462C45D7FAE4 /* Stanwood_Dialog_iOS.bundle */;
-			productType = "com.apple.product-type.bundle";
-		};
-		4EF942060266D22941B1861ACEC69CB6 /* PromiseKit */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B5E07C9BCF8FD7CA0DBACE16835FC47C /* Build configuration list for PBXNativeTarget "PromiseKit" */;
-			buildPhases = (
-				39C30ABCBF400A27EB6891922E06A076 /* Sources */,
-				78B614D14896899CF94211586021CBF4 /* Frameworks */,
-				7CF53CEB4C682240E3C0762D76A9E58D /* Headers */,
+				108DE49F12F96CDD87D49DBDF926EAE6 /* Sources */,
+				9D208F36D5A2940A8115A6D6AC802569 /* Frameworks */,
+				4F238C1F0B9B86FDAD37BBE292C59E45 /* Headers */,
 			);
 			buildRules = (
 			);
@@ -959,7 +557,26 @@
 			);
 			name = PromiseKit;
 			productName = PromiseKit;
-			productReference = 3F04B47F41A1EE02F22D8C13961B087F /* PromiseKit.framework */;
+			productReference = 1F7D3D49C88C5DA06267521569A9162E /* PromiseKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		5E14CC969D3EF94D64F36FD6141C4A8A /* Pods-Stanwood_Dialog_iOS_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 27FC27232410C3889E85ECD99D096522 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Example" */;
+			buildPhases = (
+				A43B616DD5CC20696F93F3798C96FBD5 /* Sources */,
+				422237922555EE320C4A93AB55F273DD /* Frameworks */,
+				ED9D4496CB3E691456804A5EFFEEDB7A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				498F1A87F2ADF69B938FA51479A9E417 /* PBXTargetDependency */,
+				D10C8E31AAE1FE13D65C5335BCB8CF20 /* PBXTargetDependency */,
+			);
+			name = "Pods-Stanwood_Dialog_iOS_Example";
+			productName = "Pods-Stanwood_Dialog_iOS_Example";
+			productReference = 31C9882B4B0F17C3DB1A8E53D78A6141 /* Pods_Stanwood_Dialog_iOS_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		93054F2C6CC8A27D40B9736E3E64AC30 /* Pods-Stanwood_Dialog_iOS_Tests */ = {
@@ -976,45 +593,45 @@
 			);
 			name = "Pods-Stanwood_Dialog_iOS_Tests";
 			productName = "Pods-Stanwood_Dialog_iOS_Tests";
-			productReference = 1F4043E049BECDC28AAA6443C6A9C32A /* Pods_Stanwood_Dialog_iOS_Tests.framework */;
+			productReference = A632A182B40D215229AFF24C0E566F29 /* Pods_Stanwood_Dialog_iOS_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		CD704FAC627B9B2935B033E67090D71F /* BugfenderSDK */ = {
+		943B13398EE379982F9ED646DAF3B9D5 /* StanwoodDialog */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27B9A104582A9C5BB3EDCBC73BBBCB45 /* Build configuration list for PBXNativeTarget "BugfenderSDK" */;
+			buildConfigurationList = EA2BDE37D7D5390320A6018341EF8FD0 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */;
 			buildPhases = (
-				1E9DBFEDAF6C8315F861D971A82D8DCD /* Sources */,
-				8402F4B36B85086151859EABCBC8BD37 /* Frameworks */,
-				3AECB4E30578A9E8614188FDC96842BB /* Headers */,
+				09C9B6A81EE008168F06B81BCD9719DC /* Sources */,
+				2CB7D9592B7CD19089FE5D0D7FA9A649 /* Frameworks */,
+				D2AEE7A46BA9E2706E1E4FE76D7F9BE7 /* Resources */,
+				EE0FAA5136F3DE052767F18ADC9F9349 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			name = BugfenderSDK;
-			productName = BugfenderSDK;
-			productReference = B4F21CA6B9C96D685AA3DED4FAFA986F /* BugfenderSDK.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		ED633E7281F12CAC361A5F4F18080EC2 /* StanwoodDialog */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 4187C21921A9075BBB0E6CC3F0A4FB44 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */;
-			buildPhases = (
-				B8AFED5422635DB694BB008682FDFD5D /* Sources */,
-				D93FAFA3E6E9FE0E78F860B56C746FFE /* Frameworks */,
-				A39804D2900DADB65503B90533E91C47 /* Resources */,
-				E3FB0A01F2C1C687098ECAAB554401CC /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6C65F3B440FAAFFB97F8CB919214C673 /* PBXTargetDependency */,
-				5255B80CF767C07CD9D57C2BA847EC3A /* PBXTargetDependency */,
+				12047CFF6A1BF7964ABACC7DF98919AA /* PBXTargetDependency */,
+				F7FB57C155B1F9497161CB71605F647C /* PBXTargetDependency */,
 			);
 			name = StanwoodDialog;
 			productName = StanwoodDialog;
-			productReference = 3C640F72F99A9E7AA406EC3DE41D1D61 /* StanwoodDialog.framework */;
+			productReference = 857A68D3C8BAAF3940037B7BE27A72F4 /* StanwoodDialog.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		B2C6F6A04EC352A6C31063BA5057A263 /* StanwoodDialog-Stanwood_Dialog_iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EEA71294FE2DF39A8E8B35CF2E1A8A42 /* Build configuration list for PBXNativeTarget "StanwoodDialog-Stanwood_Dialog_iOS" */;
+			buildPhases = (
+				00B497F863EA1DD08D52DA7A79CCB0E7 /* Sources */,
+				E6914A14FE993FA7CB7E672FCC56D1AF /* Frameworks */,
+				40F12AB00144396BE652BE196F81B322 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "StanwoodDialog-Stanwood_Dialog_iOS";
+			productName = "StanwoodDialog-Stanwood_Dialog_iOS";
+			productReference = CF976982402884561C00AC9FA66E4D48 /* Stanwood_Dialog_iOS.bundle */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
@@ -1024,6 +641,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					5E14CC969D3EF94D64F36FD6141C4A8A = {
+						LastSwiftMigration = 0920;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1033,47 +655,97 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 7F6D0FBB5F29308CC4CE596C30962CFE /* Products */;
+			productRefGroup = CBAAF8C15AD61CFE7E071CC30B9F0924 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CD704FAC627B9B2935B033E67090D71F /* BugfenderSDK */,
-				278C502E98DDDD2C064769DDD4EE5FE2 /* Pods-Stanwood_Dialog_iOS_Example */,
+				5E14CC969D3EF94D64F36FD6141C4A8A /* Pods-Stanwood_Dialog_iOS_Example */,
 				93054F2C6CC8A27D40B9736E3E64AC30 /* Pods-Stanwood_Dialog_iOS_Tests */,
-				4EF942060266D22941B1861ACEC69CB6 /* PromiseKit */,
-				32722DCBF57D542C99DF64158059C4F5 /* StanwoodAnalytics */,
-				ED633E7281F12CAC361A5F4F18080EC2 /* StanwoodDialog */,
-				3C11305FF24E01AE1173490FA8B5EA67 /* StanwoodDialog-Stanwood_Dialog_iOS */,
+				42EC8BF14AF19F3FC9E6CF91E4EFA9C6 /* PromiseKit */,
+				943B13398EE379982F9ED646DAF3B9D5 /* StanwoodDialog */,
+				B2C6F6A04EC352A6C31063BA5057A263 /* StanwoodDialog-Stanwood_Dialog_iOS */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		181867637AD2CB9960D46BD0A3C38FCE /* Resources */ = {
+		40F12AB00144396BE652BE196F81B322 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				17AC183B57651FE164DDC858B930F860 /* RatingDialogView.xib in Resources */,
+				E503F1EEE94A97BC5330D65B3AA259DC /* RatingDialogView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A39804D2900DADB65503B90533E91C47 /* Resources */ = {
+		D2AEE7A46BA9E2706E1E4FE76D7F9BE7 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1FE7D67AABB8B1C798ACF6E7D6682561 /* Stanwood_Dialog_iOS.bundle in Resources */,
+				C6FCB0F7D09C6D62ADD10408C30A708D /* Stanwood_Dialog_iOS.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1E9DBFEDAF6C8315F861D971A82D8DCD /* Sources */ = {
+		00B497F863EA1DD08D52DA7A79CCB0E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4C7666C49411A2D581835723B3F273F /* Bugfender.swift in Sources */,
-				B269CC5587D7A8B5B4AD57276BE580CD /* BugfenderSDK-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		09C9B6A81EE008168F06B81BCD9719DC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B57C141E26DB3309F0A328B986950EE /* RatingDialog.swift in Sources */,
+				F843D24513A0453569DFB8246DB6F833 /* RatingDialogTracking.swift in Sources */,
+				D27A9C6BA187BB0B2DCBE585F73F8343 /* RatingDialogView.swift in Sources */,
+				F793AE1DC5FE5014E8E2ABC56F9558FC /* StanwoodDialog-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		108DE49F12F96CDD87D49DBDF926EAE6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				482036F0EAE1D9EA649C086CD8E49D12 /* after.m in Sources */,
+				F1279927D3875D3DFC88B78B4975910A /* after.swift in Sources */,
+				39959EDE50642EDFA548C267B2C53942 /* afterlife.swift in Sources */,
+				4E3DC298439435A876F06070D11D4C2A /* AnyPromise.m in Sources */,
+				A4EB682E8652A84C0ACD5DB9B47CD90B /* AnyPromise.swift in Sources */,
+				ABA8F385CB6AADB327A374CBE1C5F3F0 /* CALayer+AnyPromise.m in Sources */,
+				33FC4545DAB1F00ADAC3148ED050FBB3 /* dispatch_promise.m in Sources */,
+				16EC14DDE7FB66CAC493542FAE7C69A1 /* DispatchQueue+Promise.swift in Sources */,
+				74A3D7A609BFA366C7B43CA835AE1E5D /* Error.swift in Sources */,
+				693A85DADD444CAE13DB2C0B9999214A /* GlobalState.m in Sources */,
+				DA43C595E6F2E7B28F7B6964A49BD847 /* hang.m in Sources */,
+				705CFA6CE061386A34FE631C85534B27 /* join.m in Sources */,
+				F09CB0D73882ED548826F8CBC71180E9 /* join.swift in Sources */,
+				29EDEE13BC0F41C99F365AAA7CDAEDF9 /* NSNotificationCenter+AnyPromise.m in Sources */,
+				EE5FD82EDCA919C8899DFF1F0465EDED /* NSNotificationCenter+Promise.swift in Sources */,
+				A2B8D608C0CD05F72C7F0026A9890B2B /* NSObject+Promise.swift in Sources */,
+				A497BE0A692112BD86FEFB0E04353952 /* NSTask+AnyPromise.m in Sources */,
+				08E6AE9AA2292AD2A42CE595817A85B0 /* NSURLSession+AnyPromise.m in Sources */,
+				E26788F8C96FE5C9BFA3ACE0394B9B54 /* NSURLSession+Promise.swift in Sources */,
+				4C767961ACA4642178762B25DB453DBE /* PMKAlertController.swift in Sources */,
+				E4F44C3E1FC37577977CF25BA446741D /* Process+Promise.swift in Sources */,
+				21B1E56966FE084C658B9814D2108DBC /* Promise+AnyPromise.swift in Sources */,
+				09213530CD9DF27E97010C526B50A280 /* Promise+Properties.swift in Sources */,
+				6AD1114ECCECB3D8BC84EF68C405202E /* Promise.swift in Sources */,
+				562D681EC262D1F5B46B5ED1D340CAE4 /* PromiseKit-dummy.m in Sources */,
+				CEB6DCC495369DE7BE58697C869E6FA2 /* race.swift in Sources */,
+				37B67BE4BEAC1579AC21AAE8DE3D1776 /* State.swift in Sources */,
+				EB98BB091F1B14E66E9F3CA38F89B076 /* UIView+AnyPromise.m in Sources */,
+				A6F027E881EA94C69AABCA1302E6ABD3 /* UIView+Promise.swift in Sources */,
+				900BA3EB946AD5A846F0C2F385C64953 /* UIViewController+AnyPromise.m in Sources */,
+				7B23D6CC699638EEFC6CBCC241100B14 /* UIViewController+Promise.swift in Sources */,
+				9D120F4B2EC376476477295FF63C4708 /* URLDataPromise.swift in Sources */,
+				1EAE9478E910FCE9901D9B2242A0C18C /* when.m in Sources */,
+				31F4D0112F876EBE8650B89452FE6E5F /* when.swift in Sources */,
+				A84B96C1799370B2E84018CF9C010BF0 /* wrap.swift in Sources */,
+				7F80F9D1E11F20454FCDDAB9FAFD7A61 /* Zalgo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1085,139 +757,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		39265CA46E69B60175CCF8A22C27BAF0 /* Sources */ = {
+		A43B616DD5CC20696F93F3798C96FBD5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		39C30ABCBF400A27EB6891922E06A076 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3AD20B9D21049ED8A226BB2D921B0DA0 /* after.m in Sources */,
-				841B801F1542903FD9BB4A1C395C5B67 /* after.swift in Sources */,
-				11FFEA25DC3C07902256CD9F0C6588A9 /* afterlife.swift in Sources */,
-				F9FA920D81053EDED47D23C3756EB717 /* AnyPromise.m in Sources */,
-				360B451860F302565E15E847D916D307 /* AnyPromise.swift in Sources */,
-				F1C9D8B24AB281084BD4620C8D785E80 /* CALayer+AnyPromise.m in Sources */,
-				F2243B8AB085AACFF42D4BC01D423442 /* dispatch_promise.m in Sources */,
-				F0B26EC01E27030EAD837F7B3C4C2C25 /* DispatchQueue+Promise.swift in Sources */,
-				FB69C6E6F8FDEAA7FB900BE2BA6B83EA /* Error.swift in Sources */,
-				1209DB342BD3F33E53D323EFB0A395B1 /* GlobalState.m in Sources */,
-				68166B838F277F261F0664240FE71814 /* hang.m in Sources */,
-				D3627D5EE0AC434C173F18964FCBDEE3 /* join.m in Sources */,
-				351A6645B548B3F23B1EAC48D6E46971 /* join.swift in Sources */,
-				3BC8E70588C55718C409151291AA521E /* NSNotificationCenter+AnyPromise.m in Sources */,
-				7D9C6E07A765AE4E5EC780C0D540E3CC /* NSNotificationCenter+Promise.swift in Sources */,
-				6EF2BF418B5688EC05C49CFF03D7145B /* NSObject+Promise.swift in Sources */,
-				8CACE7FB4837F00315BD0B0A5C209FBD /* NSTask+AnyPromise.m in Sources */,
-				606D5C87E61C44D2E9D32BD1A03C058D /* NSURLSession+AnyPromise.m in Sources */,
-				C01318C40D4767525D44AC9046B07D61 /* NSURLSession+Promise.swift in Sources */,
-				D66AA470B88952504DFDA9C9C2C166C8 /* PMKAlertController.swift in Sources */,
-				F0CC13670C0DE672C1EDBEEDC81F2205 /* Process+Promise.swift in Sources */,
-				E4D8218165F68D5402D31D3CBBF3CB2C /* Promise+AnyPromise.swift in Sources */,
-				1208B53255D90D168065184A66DAC548 /* Promise+Properties.swift in Sources */,
-				73DF3343E4B316C26287750ED7A9FCA5 /* Promise.swift in Sources */,
-				F45B3BF0E9F2FA9D1A48FEACEB269B3D /* PromiseKit-dummy.m in Sources */,
-				9F910E49BBB0A648AAF31E42B4899C80 /* race.swift in Sources */,
-				54352D2F28D827E34D6966A715CDE024 /* State.swift in Sources */,
-				8C8A2B14B9AC241AE118AF6C7033D717 /* UIView+AnyPromise.m in Sources */,
-				19E359D705B3FF8372A56A704725525F /* UIView+Promise.swift in Sources */,
-				D626A7F459169F5BD07A7B3430471A91 /* UIViewController+AnyPromise.m in Sources */,
-				6A8D8407DD45CDD0C0E4F1E8FDD81DE5 /* UIViewController+Promise.swift in Sources */,
-				F6D6475C3E9855A4C7CB560712CDB71F /* URLDataPromise.swift in Sources */,
-				BBA2D9F13E5C3BCF3148FB9B22B85DA5 /* when.m in Sources */,
-				7A4C7C7EF7CB7E2FF67BBF9BF3F36506 /* when.swift in Sources */,
-				35591CF51939FBBF78EDCE25E6140155 /* wrap.swift in Sources */,
-				E46009F4F2217258DEA38F20F3155F34 /* Zalgo.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9CF800D3FC34703251D418EF6F19EF63 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1B615D7035C07FE71D123333F417A922 /* Pods-Stanwood_Dialog_iOS_Example-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B59EE94F3A91BF8FEF746DCF48F2FF1E /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				2522CE3A1B8959F4A7C0CB6060E12DD6 /* BugfenderTracker.swift in Sources */,
-				EF21945307583E03CD52BC88B738923C /* CrashlyticsTracker.swift in Sources */,
-				662F404A13EB8F05B5D7DF18EAA423EA /* FirebaseTracker.swift in Sources */,
-				3001125F9D310F8AF47893434C03AF7A /* StanwoodAnalytics-dummy.m in Sources */,
-				CAA850409BDDD98F45492083B0DC1A29 /* StanwoodAnalytics.swift in Sources */,
-				FA3469E6BECE56703130CAEC254E85E1 /* Tracker.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8AFED5422635DB694BB008682FDFD5D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA98D856B95C3D7AD5ED904092B923BA /* RatingDialog.swift in Sources */,
-				01959552E9115F7FE3ED7DC3B452DE57 /* RatingDialogTracking.swift in Sources */,
-				A0A3BA84153D515F3E8FC16103B92065 /* RatingDialogView.swift in Sources */,
-				C37A8FBD8F9A7B4E8E837EA43CD9F7BE /* StanwoodDialog-dummy.m in Sources */,
+				E640A9A5DF6F4009F8FC33A9673FAC94 /* Pods-Stanwood_Dialog_iOS_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		064874D962E1914FD7CF61021EFC9550 /* PBXTargetDependency */ = {
+		12047CFF6A1BF7964ABACC7DF98919AA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PromiseKit;
+			target = 42EC8BF14AF19F3FC9E6CF91E4EFA9C6 /* PromiseKit */;
+			targetProxy = 36758EB813B759C6FA57C979BB3166D1 /* PBXContainerItemProxy */;
+		};
+		498F1A87F2ADF69B938FA51479A9E417 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = PromiseKit;
+			target = 42EC8BF14AF19F3FC9E6CF91E4EFA9C6 /* PromiseKit */;
+			targetProxy = 77671AAA55F0308EBD98601E258D94F0 /* PBXContainerItemProxy */;
+		};
+		D10C8E31AAE1FE13D65C5335BCB8CF20 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = StanwoodDialog;
-			target = ED633E7281F12CAC361A5F4F18080EC2 /* StanwoodDialog */;
-			targetProxy = A355830B5B9A6B1A65C21455A6C456E6 /* PBXContainerItemProxy */;
+			target = 943B13398EE379982F9ED646DAF3B9D5 /* StanwoodDialog */;
+			targetProxy = 0B378B33634A86F618F4B081251900FC /* PBXContainerItemProxy */;
 		};
-		5255B80CF767C07CD9D57C2BA847EC3A /* PBXTargetDependency */ = {
+		F7FB57C155B1F9497161CB71605F647C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "StanwoodDialog-Stanwood_Dialog_iOS";
-			target = 3C11305FF24E01AE1173490FA8B5EA67 /* StanwoodDialog-Stanwood_Dialog_iOS */;
-			targetProxy = 3B976635476A8D55673CCE818751681E /* PBXContainerItemProxy */;
-		};
-		6C65F3B440FAAFFB97F8CB919214C673 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PromiseKit;
-			target = 4EF942060266D22941B1861ACEC69CB6 /* PromiseKit */;
-			targetProxy = 0251613B81B0F6E99A17021FF9EB5B5F /* PBXContainerItemProxy */;
-		};
-		81BB9B7A60D4215522E43479889EDD51 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BugfenderSDK;
-			target = CD704FAC627B9B2935B033E67090D71F /* BugfenderSDK */;
-			targetProxy = 66CF7FEB593B5BFAE28CB752A490A282 /* PBXContainerItemProxy */;
-		};
-		85E3C7F2578D344DDAB3B46439D8F266 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = StanwoodAnalytics;
-			target = 32722DCBF57D542C99DF64158059C4F5 /* StanwoodAnalytics */;
-			targetProxy = 9620DDA2475A8042ADFB355957F200B8 /* PBXContainerItemProxy */;
-		};
-		884190358841DAAE62378418F3FAAB64 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = PromiseKit;
-			target = 4EF942060266D22941B1861ACEC69CB6 /* PromiseKit */;
-			targetProxy = 8AA616FB8B9B3B509022E2EE32E9BE90 /* PBXContainerItemProxy */;
-		};
-		F7A3110733578FD1949D5A081944AE4F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = BugfenderSDK;
-			target = CD704FAC627B9B2935B033E67090D71F /* BugfenderSDK */;
-			targetProxy = A0AC28C00BFC45B7CF6710D7DD3F7F7F /* PBXContainerItemProxy */;
+			target = B2C6F6A04EC352A6C31063BA5057A263 /* StanwoodDialog-Stanwood_Dialog_iOS */;
+			targetProxy = BE49508CEBFD9FF5C25FB031A4092392 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0F1A9BCF7E1409DBFAEFE45BC4023368 /* Release */ = {
+		21EB04D801F0B52CBDB200A45FDB0D05 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 223B649F5B201258DEDCD40572947B7F /* StanwoodAnalytics.xcconfig */;
+			baseConfigurationReference = 7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1228,13 +808,13 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StanwoodAnalytics/StanwoodAnalytics-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StanwoodAnalytics/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/StanwoodDialog/StanwoodDialog-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/StanwoodAnalytics/StanwoodAnalytics.modulemap";
-				PRODUCT_NAME = StanwoodAnalytics;
+				MODULEMAP_FILE = "Target Support Files/StanwoodDialog/StanwoodDialog.modulemap";
+				PRODUCT_NAME = StanwoodDialog;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
@@ -1279,34 +859,19 @@
 			};
 			name = Debug;
 		};
-		40CB09671BFDADD54384231767DC6D4A /* Debug */ = {
+		4AB484351889CA8B97C5449A6B736745 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45F96250E7839D0850EBEF0CC7752102 /* PromiseKit.xcconfig */;
+			baseConfigurationReference = 7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PromiseKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/StanwoodDialog";
+				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/ResourceBundle-Stanwood_Dialog_iOS-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
-				PRODUCT_NAME = PromiseKit;
+				PRODUCT_NAME = Stanwood_Dialog_iOS;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
 		};
@@ -1365,10 +930,11 @@
 			};
 			name = Release;
 		};
-		750502C27D820E7A46EAA0B3F74FDC65 /* Release */ = {
+		847BC6ED918EE397216040C01A6A3814 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D104C3EF0F839622D0A3EEB7F1F698E /* BugfenderSDK.xcconfig */;
+			baseConfigurationReference = 8DBBFF6A05E22DA6E08AAF2E0372236C /* Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1378,82 +944,22 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BugfenderSDK/BugfenderSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BugfenderSDK/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BugfenderSDK/BugfenderSDK.modulemap";
-				PRODUCT_NAME = BugfenderSDK;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Example;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7AE4E17EDBA8521CCD76EBF8319C09A7 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 45F96250E7839D0850EBEF0CC7752102 /* PromiseKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/PromiseKit/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
-				PRODUCT_NAME = PromiseKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		899A8ACAECE00793EED870190F72D588 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D104C3EF0F839622D0A3EEB7F1F698E /* BugfenderSDK.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/BugfenderSDK/BugfenderSDK-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/BugfenderSDK/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/BugfenderSDK/BugfenderSDK.modulemap";
-				PRODUCT_NAME = BugfenderSDK;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1493,9 +999,9 @@
 			};
 			name = Release;
 		};
-		9A6006F26146620C78416D71F3C74564 /* Release */ = {
+		949DBD061FFB20CBAF16B01CA4A456A5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */;
+			baseConfigurationReference = 7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/StanwoodDialog";
@@ -1509,9 +1015,9 @@
 			};
 			name = Release;
 		};
-		B0319D90D997FBF6C5AA7C690E9AF286 /* Release */ = {
+		9C6622EFDD9AE7733ACD8660FA1B7B2C /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */;
+			baseConfigurationReference = 7E66C926DD72179F54B5A336E381B538 /* StanwoodDialog.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1532,8 +1038,74 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A4FC1C5DE651E43C02DAABB0ADCA355D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 633F0B04323882A67E03C84384FC9203 /* PromiseKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PromiseKit/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
+				PRODUCT_NAME = PromiseKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B4F5C1CD4D4883F11D94350DAAB677F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B9359BE145667CE793C7CC9DD6DC453 /* Pods-Stanwood_Dialog_iOS_Example.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1601,9 +1173,9 @@
 			};
 			name = Debug;
 		};
-		BD6742733C3A9289B42D2B39BDD655AC /* Debug */ = {
+		EF125D7CD4C9E1EEFA6E24154E04BE41 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */;
+			baseConfigurationReference = 633F0B04323882A67E03C84384FC9203 /* PromiseKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1614,132 +1186,18 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StanwoodDialog/StanwoodDialog-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/PromiseKit/PromiseKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/PromiseKit/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/StanwoodDialog/StanwoodDialog.modulemap";
-				PRODUCT_NAME = StanwoodDialog;
+				MODULEMAP_FILE = "Target Support Files/PromiseKit/PromiseKit.modulemap";
+				PRODUCT_NAME = PromiseKit;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		C4342FAF0ACD905E6084E663853DADC8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 223B649F5B201258DEDCD40572947B7F /* StanwoodAnalytics.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/StanwoodAnalytics/StanwoodAnalytics-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/StanwoodAnalytics/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/StanwoodAnalytics/StanwoodAnalytics.modulemap";
-				PRODUCT_NAME = StanwoodAnalytics;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E87325751C0DCC68C86C8E3221567216 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 65E2001DF4E768246B5F5C70CE15E567 /* StanwoodDialog.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/StanwoodDialog";
-				INFOPLIST_FILE = "Target Support Files/StanwoodDialog/ResourceBundle-Stanwood_Dialog_iOS-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				PRODUCT_NAME = Stanwood_Dialog_iOS;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		EE9DB735E20AE5B1C3CBC75644A28205 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8DBBFF6A05E22DA6E08AAF2E0372236C /* Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F79D33A6A54B30AC2658DAF8C209B3FD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4B9359BE145667CE793C7CC9DD6DC453 /* Pods-Stanwood_Dialog_iOS_Example.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Stanwood_Dialog_iOS_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1750,20 +1208,11 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0F39D793A8F6E5F88F52CF97212451BF /* Build configuration list for PBXNativeTarget "StanwoodAnalytics" */ = {
+		27FC27232410C3889E85ECD99D096522 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C4342FAF0ACD905E6084E663853DADC8 /* Debug */,
-				0F1A9BCF7E1409DBFAEFE45BC4023368 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		27B9A104582A9C5BB3EDCBC73BBBCB45 /* Build configuration list for PBXNativeTarget "BugfenderSDK" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				899A8ACAECE00793EED870190F72D588 /* Debug */,
-				750502C27D820E7A46EAA0B3F74FDC65 /* Release */,
+				847BC6ED918EE397216040C01A6A3814 /* Debug */,
+				B4F5C1CD4D4883F11D94350DAAB677F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1777,24 +1226,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4187C21921A9075BBB0E6CC3F0A4FB44 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BD6742733C3A9289B42D2B39BDD655AC /* Debug */,
-				B0319D90D997FBF6C5AA7C690E9AF286 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		5F9609CA3BC24E48F370220FE87FB580 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Example" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				EE9DB735E20AE5B1C3CBC75644A28205 /* Debug */,
-				F79D33A6A54B30AC2658DAF8C209B3FD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		7F91F09386A06BF4910F41F9FF9D3609 /* Build configuration list for PBXNativeTarget "Pods-Stanwood_Dialog_iOS_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1804,20 +1235,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B0367456F32660C3B593989446F645F9 /* Build configuration list for PBXNativeTarget "StanwoodDialog-Stanwood_Dialog_iOS" */ = {
+		EA2BDE37D7D5390320A6018341EF8FD0 /* Build configuration list for PBXNativeTarget "StanwoodDialog" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				E87325751C0DCC68C86C8E3221567216 /* Debug */,
-				9A6006F26146620C78416D71F3C74564 /* Release */,
+				9C6622EFDD9AE7733ACD8660FA1B7B2C /* Debug */,
+				21EB04D801F0B52CBDB200A45FDB0D05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B5E07C9BCF8FD7CA0DBACE16835FC47C /* Build configuration list for PBXNativeTarget "PromiseKit" */ = {
+		EEA71294FE2DF39A8E8B35CF2E1A8A42 /* Build configuration list for PBXNativeTarget "StanwoodDialog-Stanwood_Dialog_iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40CB09671BFDADD54384231767DC6D4A /* Debug */,
-				7AE4E17EDBA8521CCD76EBF8319C09A7 /* Release */,
+				4AB484351889CA8B97C5449A6B736745 /* Debug */,
+				949DBD061FFB20CBAF16B01CA4A456A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F24D15AFE66D4CE5BFBE228B4689095A /* Build configuration list for PBXNativeTarget "PromiseKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A4FC1C5DE651E43C02DAABB0ADCA355D /* Debug */,
+				EF125D7CD4C9E1EEFA6E24154E04BE41 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

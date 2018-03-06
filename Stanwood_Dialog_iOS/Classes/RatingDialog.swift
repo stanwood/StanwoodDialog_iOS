@@ -15,6 +15,7 @@ public protocol RatingDialogPresenting {
 
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
+    
     private var text1: String?
     private var text2: String?
     private var text3: String?
@@ -25,15 +26,14 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var accentTint: UIColor?
     private var cancelButtonText: String?
     private var acceptButtonText: String?
-    private var rootView: UIView!
-    private var analytics: RatingDialogTracking?
-    
-    enum RatingDialogError: Error {
-        case dialogError(String)
-    }
+    private var rootView: UIView?
+    public var analytics: RatingDialogTracking?
     
     /// key for storing the launches count on `UserDefaults`
     private static let appStarts = "numberOfAppStarts"
+    /// minutes between launches when consecutive launches will be ignored
+    private static let minTimeBetweenLaunches: TimeInterval = 60*30
+    
     /// counts the number of launches
     static var appLaunches: Int {
         get {
@@ -58,43 +58,79 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
                                    options: nil)!.first as! RatingDialogView
     }
     
-    func display() {
+    private func display() {
         
         analytics?.track(event: .showDialog)
         
         let overlay = overlayView()
         overlay.hostViewController = self as RatingDialogPresenting
         
-        overlay.buildAd(over: rootView!,
-                        with: text1,
-                        text2,
-                        text3,
-                        text4,
-                        from: faceURL!,
-                        over: bannerURL!,
-                        tint: accentTint!,
-                        cancel: cancelButtonText,
-                        accept: acceptButtonText)
-        
+        do {
+            try overlay.buildAd(over: rootView,
+                                with: text1,
+                                text2,
+                                text3,
+                                text4,
+                                from: faceURL,
+                                over: bannerURL,
+                                tint: accentTint,
+                                link: appStoreURL,
+                                cancel: cancelButtonText,
+                                accept: acceptButtonText)
+        } catch {
+            RatingDialog.decreaseLaunchCount()
+            if let ratingDialog = error as? RatingDialogError {
+                analytics?.log(error: ratingDialog)
+            } else {
+                print(error)
+            }
+        }
     }
     
+    /// Called when the cancel (left side) button on the dialog view is tapped
     public func cancelButtonAction() {
         analytics?.track(event: .cancelAction)
     }
     
+    /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
         UIApplication.shared.openURL(appStoreURL!)
     }
     
+    /// Called when the timeout is reached with no tap on dialog buttons
     public func timeout() {
         analytics?.track(event: .timeout)
     }
     
-    /// Counts app launches and returns true if the count matches the provided value
+    /**
+     Counts app launches and returns true if the count matches the provided value
+     When not in DEBUG, appLaunches need to be 30 min appart for counter to increase
+     
+     - onLaunch count: Int for the launch count on which we should present the Rating Dialog
+     */
     public static func shouldShow(onLaunch count: Int) -> Bool {
-        appLaunches += 1
+        #if DEBUG
+            appLaunches += 1
+        #else
+            if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
+                lastAppStart > minTimeBetweenLaunches {
+                appLaunches += 1
+            }
+        #endif
+            
+        UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
         return appLaunches == count
+    }
+    
+    /// Resets the launch count to zero
+    public static func clearLaunchCount() {
+        appLaunches = 0
+    }
+    
+    /// Decreases the launch count by one
+    public static func decreaseLaunchCount() {
+        appLaunches -= 1
     }
     
     open class Builder {
@@ -146,8 +182,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the second paragraph
          
          - parameter paragraph2: text for the second paragraph (may include `\n`)
-         
-         - version: 0.6.4
          */
         public func set(paragraph2: String) -> Builder {
             text2 = paragraph2
@@ -158,8 +192,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the third paragraph
          
          - parameter paragraph3: text for the third paragraph (may include `\n`)
-         
-         - version: 0.6.4
          */
         public func set(paragraph3: String) -> Builder {
             text3 = paragraph3
@@ -170,8 +202,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the fourth paragraph
          
          - parameter paragraph4: text for the fourth paragraph (may include `\n`)
-         
-         - version: 0.6.4
          */
         public func set(paragraph4: String) -> Builder {
             text4 = paragraph4
@@ -182,8 +212,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the Cancel button
          
          - parameter cancelText: text for Cancel button's label
-         
-         - version: 0.6.4
          */
         public func set(cancelText: String) -> Builder {
             cancel = cancelText
@@ -194,8 +222,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the text for the Accept button
          
          - parameter okText: text for Accept button's label
-         
-         - version: 0.6.4
          */
         public func set(okText: String) -> Builder {
             accept = okText
@@ -206,8 +232,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the Developer's face UIImage
          
          - parameter faceUrl: string to build the URL providing the image
-         
-         - version: 0.6.4
          */
         public func set(faceUrl: String) -> Builder {
             if let builtURL = URL(string: faceUrl) {
@@ -220,8 +244,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the Banner UIImage
          
          - parameter bannerUrl: string to build the URL providing the image
-         
-         - version: 0.6.4
          */
         public func set(bannerUrl: String) -> Builder {
             if let builtURL = URL(string: bannerUrl) {
@@ -234,8 +256,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the App Store rating
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
-         
-         - version: 0.6.4
          */
         public func buildAppStoreUrl(with appID: String) -> Builder {
             
@@ -249,8 +269,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the URL for the App Store rating
          
          - parameter appStoreUrl: string to build the URL wher user can rate the app
-         
-         - version: 0.6.4
          */
         public func set(appStoreUrl: String) -> Builder {
             if let builtURL = URL(string: appStoreUrl) {
@@ -263,8 +281,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the tint color used for the cancel button's text and accept button's background color.
          
          - parameter tintColor: used for the accept and cancel buttons
-         
-         - version: 0.6.4
          */
         public func set(tintColor: UIColor) -> Builder {
             accentTint = tintColor
@@ -275,8 +291,6 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          Sets the rootView `UIView` where the overlay ad will be added as a subview
          
          - parameter rootView: used as host to add the ad overlay as subview
-         
-         - version: 0.6.4
          */
         public func set(rootView: UIView) -> Builder {
             self.rootView = rootView
@@ -284,24 +298,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
-         Set the analytics object for tracking actions.
-         
-         - parameter analytics: An object that conforms to the RatingDialogTracking protocol
-         
-         - version: 0.6.5
+         Returns the finalized RatingDialog object after setting all its properties         
          */
-        
-        public func set(analytics: RatingDialogTracking) -> Builder {
-            self.analytics = analytics
-            return self
-        }
-        
-        /**
-         Returns the finalized RatingDialog object after setting all its properties
-         
-         - version: 0.6.4
-         */
-        public func build() throws {
+        public func build() {
             let ratingDialog = RatingDialog()
             ratingDialog.text1 = text1
             ratingDialog.text2 = text2
