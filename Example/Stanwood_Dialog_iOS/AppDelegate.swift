@@ -11,8 +11,12 @@ import StanwoodDialog
 import StanwoodAnalytics
 
 extension StanwoodAnalytics: RatingDialogTracking {
+    public func log(error: RatingDialogError) {
+        
+    }
+    
     public func track(event: RatingDialogEvent) {
-        let trackingParams = TrackingParams(eventName: "RatingDialog", contentType: "info", lineNumber: nil, method: nil, file: nil, tag: nil)
+        let trackingParams = TrackingParams(eventName: "RatingDialog", itemId: nil, name: nil, description: nil, category: nil, contentType: "info")
         
         switch event {
         case .showDialog:
@@ -39,16 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        let bugfenderTracker = BugfenderTracker.BugfenderBuilder(context: application, key: bugFenderKey)
-            .setUIEventLogging(enable: true)
-            .build()
+        //let bugfenderTracker = BugfenderTracker.BugfenderBuilder(context: application, key: bugFenderKey)
+        //    .setUIEventLogging(enable: true)
+        //    .build()
         
-        let crashlyticsTracker = CrashlyticsTracker.CrashlyticsBuilder(context: application, key: nil).build()
-        let firebaseTracker = FirebaseTracker.FirebaseBuilder(context: application, key: nil).build()
+        let fabricTracker = FabricTracker.FabricBuilder(context: application, key: nil).build()
+        let firebaseTracker = FirebaseTracker.FirebaseBuilder(context: application).build()
         
         let analyticsBuilder = StanwoodAnalytics.builder()
-            .add(tracker: bugfenderTracker)
-            .add(tracker: crashlyticsTracker)
+            //.add(tracker: bugfenderTracker)
+            .add(tracker: fabricTracker)
             .add(tracker: firebaseTracker)
         
         analytics = analyticsBuilder.build()
@@ -82,11 +86,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                             name: nil,
                                             description: nil,
                                             category: nil,
-                                            contentType: "warning",
-                                            lineNumber: 68,
-                                            method: "didBecomeActive",
-                                            file: "AppDelegate",
-                                            tag: "App Lifecycle")
+                                            contentType: "warning")
         
         analytics?.track(event: TrackingEvent.screen, trackingParams: trackingParams)
     }
