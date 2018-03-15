@@ -30,17 +30,18 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     public var analytics: RatingDialogTracking?
     
     /// key for storing the launches count on `UserDefaults`
-    private static let appStarts = "numberOfAppStarts"
+    private static let appStartsKey = "numberOfAppStarts"
     /// minutes between launches when consecutive launches will be ignored
     private static let minTimeBetweenLaunches: TimeInterval = 60*30
     
-    /// counts the number of launches
+    
+    /// counts the number of launches starting from 1
     static var appLaunches: Int {
         get {
-            return UserDefaults.standard.value(forKey: appStarts) as? Int ?? 1
+            return UserDefaults.standard.value(forKey: appStartsKey) as? Int ?? 1
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: appStarts)
+            UserDefaults.standard.set(newValue, forKey: appStartsKey)
         }
     }
     
@@ -95,7 +96,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
-        UIApplication.shared.openURL(appStoreURL!)
+        UIApplication.shared.open(appStoreURL!, options: [:], completionHandler: nil)
     }
     
     /// Called when the timeout is reached with no tap on dialog buttons
@@ -110,6 +111,13 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      - onLaunch count: Int for the launch count on which we should present the Rating Dialog
      */
     public static func shouldShow(onLaunch count: Int) -> Bool {
+
+        if count < 0  {
+            return true
+        }
+        
+        let result = appLaunches == count
+
         #if DEBUG
             appLaunches += 1
         #else
@@ -120,7 +128,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         #endif
             
         UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
-        return appLaunches == count
+        return result
     }
     
     /// Resets the launch count to zero
@@ -298,6 +306,16 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
+         Sets the analytics class
+         
+         - parameter analytics: the analytics class
+         */
+        public func set(analytics: RatingDialogTracking) -> Builder {
+            self.analytics = analytics
+            return self
+        }
+        
+        /**
          Returns the finalized RatingDialog object after setting all its properties         
          */
         public func build() {
@@ -314,6 +332,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
             ratingDialog.bannerURL = bannerURL
             ratingDialog.appStoreURL = appStoreURL
             ratingDialog.analytics = analytics
+            
             ratingDialog.display()
         }
     }

@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>656408109982-f71cfavdggrg3eav67mquu32rdrcjner.apps.googleusercontent.com</string>
+	<string>284773559433-16erbgi7rt0shhvg7ab2vvg2gvt9uhr5.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.656408109982-f71cfavdggrg3eav67mquu32rdrcjner</string>
+	<string>com.googleusercontent.apps.284773559433-16erbgi7rt0shhvg7ab2vvg2gvt9uhr5</string>
 	<key>API_KEY</key>
-	<string>AIzaSyA94F68EBKy4Ik1ahKah0FyDoMKgQEo7ls</string>
+	<string>AIzaSyC8GNvFL3r8y7BA9Mh1EGhpBPcwC7WhkJI</string>
 	<key>GCM_SENDER_ID</key>
-	<string>656408109982</string>
+	<string>284773559433</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>org.cocoapods.demo.StanwoodAnalytics-Example</string>
+	<string>org.cocoapods.demo.Stanwood-Dialog-iOS-Example</string>
 	<key>PROJECT_ID</key>
-	<string>stanwoodanalytics</string>
+	<string>stanwood-dialog</string>
 	<key>STORAGE_BUCKET</key>
-	<string>stanwoodanalytics.appspot.com</string>
+	<string>stanwood-dialog.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:656408109982:ios:d425e47f329c55ea</string>
+	<string>1:284773559433:ios:6f0deddcc364a0c6</string>
 	<key>DATABASE_URL</key>
-	<string>https://stanwoodanalytics.firebaseio.com</string>
+	<string>https://stanwood-dialog.firebaseio.com</string>
 </dict>
 </plist>

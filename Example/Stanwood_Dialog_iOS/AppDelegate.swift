@@ -12,22 +12,15 @@ import StanwoodAnalytics
 
 extension StanwoodAnalytics: RatingDialogTracking {
     public func log(error: RatingDialogError) {
-        
+        switch error {
+        case .dialogError(let message):
+            let trackingError = NSError(domain: "StanwoodDialog", code: 0, userInfo: ["LocalizedDescription":message])
+            track(error: trackingError)
+        }
     }
     
     public func track(event: RatingDialogEvent) {
-        let trackingParams = TrackingParams(eventName: "RatingDialog", itemId: nil, name: nil, description: nil, category: nil, contentType: "info")
-        
-        switch event {
-        case .showDialog:
-            track(event: TrackingEvent.showDialog, trackingParams: trackingParams)
-        case .acceptAction:
-            track(event: TrackingEvent.acceptAction, trackingParams: trackingParams)
-        case .cancelAction:
-            track(event: TrackingEvent.cancelAction, trackingParams: trackingParams)
-        case .timeout:
-            track(event: TrackingEvent.timeout, trackingParams: trackingParams)
-        }
+        trackScreen(name: event.rawValue)
     }
 }
 
@@ -37,40 +30,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     var analytics: StanwoodAnalytics?
     var dialogAnalytics: RatingDialogTracking?
-    
-    let bugFenderKey = "5Svt9b117yMmJDumCYZFgpSVnmoTSkD8"
-
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 
-        //let bugfenderTracker = BugfenderTracker.BugfenderBuilder(context: application, key: bugFenderKey)
-        //    .setUIEventLogging(enable: true)
-        //    .build()
-        
         let fabricTracker = FabricTracker.FabricBuilder(context: application, key: nil).build()
         let firebaseTracker = FirebaseTracker.FirebaseBuilder(context: application).build()
         
         let analyticsBuilder = StanwoodAnalytics.builder()
-            //.add(tracker: bugfenderTracker)
             .add(tracker: fabricTracker)
             .add(tracker: firebaseTracker)
         
         analytics = analyticsBuilder.build()
         return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
@@ -81,14 +52,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.updateUI()
         }
         
-        let trackingParams = TrackingParams(eventName: "",
+        let trackingParameters = TrackingParameters(eventName: "",
                                             itemId: nil,
                                             name: nil,
                                             description: nil,
                                             category: nil,
                                             contentType: "warning")
         
-        analytics?.track(event: TrackingEvent.screen, trackingParams: trackingParams)
+        analytics?.track(trackingParameters: trackingParameters)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -96,7 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func buildRatingDialog() {
-        if RatingDialog.shouldShow(onLaunch: 24) {
+        if RatingDialog.shouldShow(onLaunch: 5) {
             let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
             let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
             let text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
@@ -123,7 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .set(rootView: (window?.rootViewController?.view)!)
                 .build()
             
-            RatingDialog.clearLaunchCount()
+            // RatingDialog.clearLaunchCount()
         }
     }
 }

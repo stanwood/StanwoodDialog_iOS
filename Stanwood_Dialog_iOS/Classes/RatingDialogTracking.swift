@@ -8,10 +8,10 @@
 import Foundation
 
 public enum RatingDialogEvent: String {
-    case showDialog = "show"
-    case acceptAction = "acceptAction"
-    case cancelAction = "cancelAction"
-    case timeout = "timeout"
+    case showDialog = "rating_dialog_shown"
+    case acceptAction = "rating_dialog_yes_pressed"
+    case cancelAction = "rating_dialog_no_pressed"
+    case timeout = "rating_dialog_timeout"
 }
 
 public enum RatingDialogError: Error {
