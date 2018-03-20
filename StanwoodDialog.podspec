@@ -28,7 +28,7 @@ This library allows to show a rating dialog prompt like the one used in On Air.
   s.source           = { :git => 'git@github.com:stanwood/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/EugenePeschard'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
