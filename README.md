@@ -64,11 +64,27 @@ Normally you would be fetching each one of these parameters remotely. For instan
 The image for the face profile should be 300 x 300 pixels and the banner image should be 300 x 1125 pixels. If you don't have a URL for these images already, you may add them to Firebase Storage.
 
 ### Add Images to Firebase Storage
-Go to your projects Firebase webpage and click on the UPLOAD FILE button:
+Go to the Storage tab in your project's Firebase webpage and click on the UPLOAD FILE button:
 ![Firebase Storage Upload File](/images/FB_Storage_Upload_File.png)
 Once you have the image, select it and copy its download URL:
 ![Firebase Storage Image URL](/images/FB_Storage_Image_URL.png)
 
+### Add Parameters to Firebase Remote Config
+Go to the Remote Config tab in your project's Firebase webpage and click on the ADD PARAMETER button:
+![Firebase Storage Upload File](/images/FB_RemoteConfig_Add_Parameter.png)
+Add parameters for each one of your variables:
+![Firebase Storage Image URL](/images/FB_rating_dialog_launch.png)
+ * `rating_dialog_launch`
+ * `rating_dialog_profile`
+ * `rating_dialog_banner`
+ * `rating_dialog_text1`
+ * `rating_dialog_text2`
+ * `rating_dialog_text3`
+ * `rating_dialog_text4`
+ * `rating_dialog_accept`
+ * `rating_dialog_cancel`
+
+### 
 
 ## Author
 
