@@ -61,6 +61,15 @@ func buildRatingDialog() {
 ```
 Normally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
 
+The image for the face profile should be 300 x 300 pixels and the banner image should be 300 x 1125 pixels. If you don't have a URL for these images already, you may add them to Firebase Storage.
+
+### Add Images to Firebase Storage
+Go to your projects Firebase webpage and click on the UPLOAD FILE button:
+![Firebase Storage Upload File](/images/FB_Storage_Upload_File.png)
+Once you have the image, select it and copy its download URL:
+![Firebase Storage Image URL](/images/FB_Storage_Image_URL.png)
+
+
 ## Author
 
 Eugène Peschard, eugene.peschard@stanwood.io
