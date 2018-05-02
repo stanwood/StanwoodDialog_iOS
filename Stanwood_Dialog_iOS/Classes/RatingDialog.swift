@@ -28,6 +28,8 @@ import UIKit
     private var rootView: UIView?
     public var analytics: RatingDialogTracking?
     
+    @objc public var objcAnalytics: SWDRatingDialogTracking?
+    
     /// key for storing the launches count on `UserDefaults`
     private static let appStartsKey = "numberOfAppStarts"
     /// minutes between launches when consecutive launches will be ignored
@@ -154,21 +156,21 @@ import UIKit
                      faceURL: NSURL,
                      bannerURL: NSURL,
                      appID: NSString,
-                     analytics: RatingDialogTracking
+                     analytics: SWDRatingDialogTracking
         ) {
         self.init()
         self.text1 = unescapeNewLines(in: paragraph1)
         self.text2 = unescapeNewLines(in: paragraph2)
         self.text3 = unescapeNewLines(in: paragraph3)
         self.text4 = unescapeNewLines(in: paragraph4)
-        self.cancelButtonText = cancel as! String
-        self.acceptButtonText = accept as! String
+        self.cancelButtonText = cancel as String
+        self.acceptButtonText = accept as String
         self.rootView = rootView
         self.accentTint = accentTint
-        self.faceURL = faceURL as! URL
-        self.bannerURL = bannerURL as! URL
+        self.faceURL = faceURL as URL
+        self.bannerURL = bannerURL as URL
         self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
-        self.analytics = analytics
+        self.objcAnalytics = analytics
     }
     
     private func unescapeNewLines(in string: NSString) -> String {

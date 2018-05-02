@@ -189,7 +189,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				86468A35635D6F2AB2190728 /* [CP] Embed Pods Frameworks */,
-				A6C1B628AACFCACB31A02AC4 /* [CP] Copy Pods Resources */,
 				AFEB2C4D200E3C77009AE5C7 /* ShellScript */,
 			);
 			buildRules = (
@@ -209,8 +208,6 @@
 				607FACE11AFB9204008FA782 /* Sources */,
 				607FACE21AFB9204008FA782 /* Frameworks */,
 				607FACE31AFB9204008FA782 /* Resources */,
-				379F1A681D861E28B950C1A5 /* [CP] Embed Pods Frameworks */,
-				A4E223AC533506ED5FF6979E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -288,21 +285,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		379F1A681D861E28B950C1A5 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		86468A35635D6F2AB2190728 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -325,36 +307,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A4E223AC533506ED5FF6979E /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A6C1B628AACFCACB31A02AC4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AFEB2C4D200E3C77009AE5C7 /* ShellScript */ = {
