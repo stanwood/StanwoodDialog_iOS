@@ -7,14 +7,13 @@
 
 import UIKit
 
-public protocol RatingDialogPresenting {
+@objc public protocol RatingDialogPresenting {
     func acceptButtonAction()
     func cancelButtonAction()
     func timeout()
 }
 
-@objc
-public class RatingDialog: NSObject, RatingDialogPresenting {
+@objc public class RatingDialog: NSObject, RatingDialogPresenting {
     
     private var text1: String?
     private var text2: String?
@@ -28,6 +27,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var acceptButtonText: String?
     private var rootView: UIView?
     public var analytics: RatingDialogTracking?
+    
+    @objc public var objcAnalytics: SWDRatingDialogTracking?
     
     /// key for storing the launches count on `UserDefaults`
     private static let appStartsKey = "numberOfAppStarts"
@@ -110,7 +111,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      
      - onLaunch count: Int for the launch count on which we should present the Rating Dialog
      */
-    public static func shouldShow(onLaunch count: Int) -> Bool {
+    @objc public static func shouldShow(onLaunch count: Int) -> Bool {
 
         if count < 0  {
             return true
@@ -139,6 +140,41 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Decreases the launch count by one
     public static func decreaseLaunchCount() {
         appLaunches -= 1
+    }
+    
+    /// Initializer for Objective-C since Builder pattern is not supported
+//    @available (swift, unavailable)
+    @objc
+    convenience init(paragraph1: NSString,
+                     paragraph2: NSString,
+                     paragraph3: NSString,
+                     paragraph4: NSString,
+                     cancel: NSString,
+                     accept: NSString,
+                     rootView: UIView,
+                     accentTint: UIColor,
+                     faceURL: NSURL,
+                     bannerURL: NSURL,
+                     appID: NSString,
+                     analytics: SWDRatingDialogTracking
+        ) {
+        self.init()
+        self.text1 = unescapeNewLines(in: paragraph1)
+        self.text2 = unescapeNewLines(in: paragraph2)
+        self.text3 = unescapeNewLines(in: paragraph3)
+        self.text4 = unescapeNewLines(in: paragraph4)
+        self.cancelButtonText = cancel as String
+        self.acceptButtonText = accept as String
+        self.rootView = rootView
+        self.accentTint = accentTint
+        self.faceURL = faceURL as URL
+        self.bannerURL = bannerURL as URL
+        self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
+        self.objcAnalytics = analytics
+    }
+    
+    private func unescapeNewLines(in string: NSString) -> String {
+        return string.replacingOccurrences(of: "\\n", with: "\n")
     }
     
     open class Builder {

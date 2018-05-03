@@ -40,26 +40,35 @@ func buildRatingDialog() {
         let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
         let appID = "1316369720"
 
-        do {
-            try RatingDialog.builder()
-            .set(paragraph1: text1)
-            .set(paragraph2: text2)
-            .set(paragraph3: text3)
-            .set(paragraph4: text4)
-            .set(cancelText: cancel)
-            .set(okText: accept)
-            .set(faceUrl: faceUrlString)
-            .set(bannerUrl: bannerUrlString)
-            .buildAppStoreUrl(with: appID)
-            .set(rootView: (window?.rootViewController?.view)!)
-            .build()
-        } catch {
-            print(error)
-        }
+        RatingDialog.builder()
+        .set(paragraph1: text1)
+        .set(paragraph2: text2)
+        .set(paragraph3: text3)
+        .set(paragraph4: text4)
+        .set(cancelText: cancel)
+        .set(okText: accept)
+        .set(faceUrl: faceUrlString)
+        .set(bannerUrl: bannerUrlString)
+        .set(tintColor: UIColor.blue)
+        .buildAppStoreUrl(with: appID)
+        .set(rootView: (window?.rootViewController?.view)!)
+        .build()
     }
 }
 ```
 Normally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
+
+If you don't have a URL for the profile and banner images, you may upload these to Firebase Storage (go to Store section in Firebase and click on [Upload Image]):
+ * the profile image should be 300x300 pixels (this will cover the 3 variations for 100x100 points)
+ * the banner image should be 300x1125 pixels (this will cover the 3 variations for 100x375 points)
+ 
+ 
+ ## Test
+ 
+Using a negative value in `RatingDialog.shouldShow(onLaunch: -1)` will result in the Rating Dialog being shown everytime.
+
+Also, while in `Debug`, the launch count doesn't need 30 minutes from the last launch to increase its count. 
+
 
 ## Author
 
