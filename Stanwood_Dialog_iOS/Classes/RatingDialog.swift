@@ -143,9 +143,8 @@ import UIKit
     }
     
     /// Initializer for Objective-C since Builder pattern is not supported
-//    @available (swift, unavailable)
     @objc
-    convenience init(paragraph1: NSString,
+    public convenience init(paragraph1: NSString,
                      paragraph2: NSString,
                      paragraph3: NSString,
                      paragraph4: NSString,
