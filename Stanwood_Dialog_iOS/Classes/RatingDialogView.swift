@@ -2,8 +2,8 @@
 //  RatingDialogView.swift
 //  StanwoodDialog
 //
-//  Created by Eugène Peschard on 08/01/2018.
-//
+//  Created by epeschard on 08/01/2018.
+//  Distributed under MIT licence.
 
 import UIKit
 

@@ -3,7 +3,7 @@
 //  StanwoodDialog
 //
 //  Created by Ronan on 10/01/2018.
-//
+//  Distributed under MIT licence.
 
 import Foundation
 

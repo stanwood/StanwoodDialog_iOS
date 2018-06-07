@@ -1,9 +1,9 @@
 //
 //  RatingDialog.swift
-//  Pods-Stanwood_Dialog_iOS_Example
+//  Pods-StanwoodDialog_iOS_Example
 //
-//  Created by Eugène Peschard on 05/01/2018.
-//
+//  Created by epeschard on 05/01/2018.
+//  Distributed under MIT licence.
 
 import UIKit
 
