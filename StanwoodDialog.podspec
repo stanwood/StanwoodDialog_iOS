@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint Stanwood_Dialog_iOS.podspec' to ensure this is a
+# Be sure to run `pod lib lint StanwoodDialog.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -18,21 +18,22 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-This library allows to show a rating dialog prompt like the one used in On Air.
+This library allows to show a rating dialog prompt like the one used in On Air. 
+This allows a more personal approach and dismisses automatically when no interaction.
                        DESC
 
-  s.homepage         = 'https://github.com/stanwood/Stanwood_Dialog_iOS'
+  s.homepage         = 'https://github.com/stanwood/StanwoodDialog_iOS'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Eugene Peschard' => 'eugene.peschard@stanwood.io' }
-  s.source           = { :git => 'https://github.com:stanwood/Stanwood_Dialog_iOS.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/stanwood/StanwoodDialog_iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
+  s.source_files = 'StanwoodDialog_iOS/Classes/**/*.{swift}'
   
   s.resource_bundles = {
-    'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
+    'Stanwood_Dialog_iOS' => ['StanwoodDialog_iOS/Classes/**/*.{xib,png,jpeg}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
