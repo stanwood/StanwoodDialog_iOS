@@ -30,10 +30,10 @@ This allows a more personal approach and dismisses automatically when no interac
 
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'StanwoodDialog_iOS/Classes/**/*.{swift}'
+  s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
   s.resource_bundles = {
-    'Stanwood_Dialog_iOS' => ['StanwoodDialog_iOS/Classes/**/*.{xib,png,jpeg}']
+    'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
   }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
