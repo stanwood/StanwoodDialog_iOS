@@ -13,6 +13,7 @@ public protocol RatingDialogPresenting {
     func timeout()
 }
 
+@available(iOS 10.0, *)
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
     
@@ -22,7 +23,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var text4: String?
     private var faceURL: URL?
     private var bannerURL: URL?
-    private var appStoreURL: URL?
+    private var appStoreURL: URL!
     private var accentTint: UIColor?
     private var cancelButtonText: String?
     private var acceptButtonText: String?
@@ -95,7 +96,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
-        UIApplication.shared.openURL(appStoreURL!)
+        UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
     }
     
     /// Called when the timeout is reached with no tap on dialog buttons
@@ -138,23 +139,23 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         var adLaunch = 5
         
         /// The text for the 1st paragraph in the ads body
-        var text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
+        var text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
         /// The text for the 2nd paragraph in the ads body
-        var text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        var text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
         /// The text for the 3rd paragraph in the ads body
-        var text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        var text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
         /// The text for the 4th paragraph in the ads body
-        var text4 = "Sternchen reichen - dauert nur 1 Minute."
+        var text4 = "the stars would be enough, it will only take a few seconds."
         
         /// The text for the cancel button label
-        var cancel = "Schließen"
+        var cancel = "Cancel"
         /// The text for the accept button label
-        var accept = "App bewerten"
+        var accept = "Rate the App"
         
         /// The URL for the image to be displayed profile image in a circle
         var faceURL = URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
         /// The URL for the image to be displayed as banner behind the profile image
-        var bannerURL = URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
+        var bannerURL = URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
         /// The URL for rating the app on the appStore
         var appStoreURL: URL?

@@ -25,11 +25,11 @@ source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 ## Usage
 
 Add `import StanwoodDialog` and call the method bellow from wherever you are calling `AppDelegate`'s `applicationDidBecomeAvailable`:
-```
+```swift
     if RatingDialog.shouldShow(onLaunch: 5) {
         let text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
         let text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
-        let text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating;."
+        let text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
         let text4 = "the stars would be enough, it will only take a few seconds."
 
         let cancel = "Cancel"
