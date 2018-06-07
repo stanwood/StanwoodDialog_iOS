@@ -24,11 +24,13 @@ public class RatingDialogView: UIView {
     /// Container view to present the Rating Dialog overlay
     var overlayBannerContainer: UIView?
     
+    private var timer: Timer?
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commonInit()
     }
-    
+    private let timeoutTime: TimeInterval = 30
     private let defaultSession = URLSession(configuration: .default)
     private var dataTask: URLSessionDataTask?
     var errorMessage = ""
@@ -196,12 +198,29 @@ public class RatingDialogView: UIView {
             self.overlayBannerContainer?.alpha = CGFloat(1.0)
             self.transform = CGAffineTransform(scaleX: CGFloat(1.0), y: CGFloat(1.0))
         }) { _ in }
-        perform(#selector(timeoutPresenting), with: nil, afterDelay: 30)
+        startTimer()
     }
     
-    @objc func timeoutPresenting() {
+    private func startTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+        
+        timer = Timer.scheduledTimer(timeInterval: timeoutTime, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+    }
+    
+    private func stopTimer() {
+        if timer != nil {
+            timer?.invalidate()
+            timer = nil
+        }
+    }
+    
+    @objc private func timerAction() {
         hostViewController.timeout()
         dismissView()
+        stopTimer()
     }
     
     private func dismissView() {
@@ -216,10 +235,12 @@ public class RatingDialogView: UIView {
     @IBAction func cancelButtonAction(_ sender: Any) {
         hostViewController.cancelButtonAction()
         dismissView()
+        stopTimer()
     }
     
     @IBAction func acceptButtonAction(_ sender: Any) {
         hostViewController.acceptButtonAction()
         dismissView()
+        stopTimer()
     }
 }

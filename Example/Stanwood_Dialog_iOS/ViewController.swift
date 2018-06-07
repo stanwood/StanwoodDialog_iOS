@@ -22,8 +22,11 @@ class ViewController: UIViewController {
     }
     
     func updateUI() {
-        let launchCount = UserDefaults.standard.value(forKey: "numberOfAppStarts") as? Int
-        launchesCount.text = "Launch: \(launchCount ?? 0)"
+        if let launchCount = UserDefaults.standard.value(forKey: "numberOfAppStarts") as? Int {
+            launchesCount.text = "Launch: \(launchCount - 1)"
+        } else {
+            launchesCount.text = "Launch: 1"
+        }
     }
     
     override func didReceiveMemoryWarning() {

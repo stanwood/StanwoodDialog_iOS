@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol RatingDialogPresenting {
+@objc public protocol RatingDialogPresenting {
     func acceptButtonAction()
     func cancelButtonAction()
     func timeout()
@@ -30,18 +30,21 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var rootView: UIView?
     public var analytics: RatingDialogTracking?
     
+    @objc public var objcAnalytics: SWDRatingDialogTracking?
+    
     /// key for storing the launches count on `UserDefaults`
-    private static let appStarts = "numberOfAppStarts"
+    private static let appStartsKey = "numberOfAppStarts"
     /// minutes between launches when consecutive launches will be ignored
     private static let minTimeBetweenLaunches: TimeInterval = 60*30
     
-    /// counts the number of launches
+    
+    /// counts the number of launches starting from 1
     static var appLaunches: Int {
         get {
-            return UserDefaults.standard.value(forKey: appStarts) as? Int ?? 1
+            return UserDefaults.standard.value(forKey: appStartsKey) as? Int ?? 1
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: appStarts)
+            UserDefaults.standard.set(newValue, forKey: appStartsKey)
         }
     }
     
@@ -55,8 +58,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
         return bundle.loadNibNamed("RatingDialogView",
-                                          owner: rootView,
-                                          options: nil)!.first as! RatingDialogView
+                                   owner: rootView,
+                                   options: nil)!.first as! RatingDialogView
     }
     
     private func display() {
@@ -110,7 +113,14 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      
      - onLaunch count: Int for the launch count on which we should present the Rating Dialog
      */
-    public static func shouldShow(onLaunch count: Int) -> Bool {
+    @objc public static func shouldShow(onLaunch count: Int) -> Bool {
+
+        if count < 0  {
+            return true
+        }
+        
+        let result = appLaunches == count
+
         #if DEBUG
             appLaunches += 1
         #else
@@ -121,7 +131,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         #endif
             
         UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
-        return appLaunches == count
+        return result
     }
     
     /// Resets the launch count to zero
@@ -132,6 +142,40 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Decreases the launch count by one
     public static func decreaseLaunchCount() {
         appLaunches -= 1
+    }
+    
+    /// Initializer for Objective-C since Builder pattern is not supported
+    @objc
+    public convenience init(paragraph1: NSString,
+                     paragraph2: NSString,
+                     paragraph3: NSString,
+                     paragraph4: NSString,
+                     cancel: NSString,
+                     accept: NSString,
+                     rootView: UIView,
+                     accentTint: UIColor,
+                     faceURL: NSURL,
+                     bannerURL: NSURL,
+                     appID: NSString,
+                     analytics: SWDRatingDialogTracking
+        ) {
+        self.init()
+        self.text1 = unescapeNewLines(in: paragraph1)
+        self.text2 = unescapeNewLines(in: paragraph2)
+        self.text3 = unescapeNewLines(in: paragraph3)
+        self.text4 = unescapeNewLines(in: paragraph4)
+        self.cancelButtonText = cancel as String
+        self.acceptButtonText = accept as String
+        self.rootView = rootView
+        self.accentTint = accentTint
+        self.faceURL = faceURL as URL
+        self.bannerURL = bannerURL as URL
+        self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
+        self.objcAnalytics = analytics
+    }
+    
+    private func unescapeNewLines(in string: NSString) -> String {
+        return string.replacingOccurrences(of: "\\n", with: "\n")
     }
     
     open class Builder {
@@ -166,6 +210,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView!
         
+        /// The analytics class
+        var analytics: RatingDialogTracking?
+      
         private func unescapeNewLines(in string: String) -> String {
             return string.replacingOccurrences(of: "\\n", with: "\n")
         }
@@ -300,6 +347,16 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
+         Sets the analytics class
+         
+         - parameter analytics: the analytics class
+         */
+        public func set(analytics: RatingDialogTracking) -> Builder {
+            self.analytics = analytics
+            return self
+        }
+        
+        /**
          Returns the finalized RatingDialog object after setting all its properties         
          */
         public func build() {
@@ -315,6 +372,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
             ratingDialog.faceURL = faceURL
             ratingDialog.bannerURL = bannerURL
             ratingDialog.appStoreURL = appStoreURL
+            ratingDialog.analytics = analytics
+            
             ratingDialog.display()
         }
     }
