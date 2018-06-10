@@ -23,7 +23,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var text4: String?
     private var faceURL: URL?
     private var bannerURL: URL?
-    private var appStoreURL: URL!
+    private var appStoreURL: URL?
     private var accentTint: UIColor?
     private var cancelButtonText: String?
     private var acceptButtonText: String?
@@ -99,7 +99,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
-        UIApplication.shared.open(appStoreURL, options: [:], completionHandler: nil)
+        if let urlAppStore = appStoreURL {
+            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
+        }
     }
     
     /// Called when the timeout is reached with no tap on dialog buttons

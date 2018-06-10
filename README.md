@@ -74,4 +74,4 @@ Eugène Peschard, eugene.peschard@stanwood.io
 
 ## License
 
-StanwoodCore is under MIT licence. See the [LICENSE](https://github.com/stanwood/Stanwood_Dialog_iOS/blob/master/LICENSE "Copyright © 2018 stanwood GmbH") file for more info.
+StanwoodDialog is under MIT licence. See the [LICENSE](https://github.com/stanwood/Stanwood_Dialog_iOS/blob/master/LICENSE "Copyright © 2018 stanwood GmbH") file for more info.
