@@ -1,9 +1,9 @@
 //
 //  ViewController.swift
-//  Stanwood_Dialog_iOS
+//  StanwoodDialog_iOS
 //
-//  Created by epeschard on 01/03/2018.
-//  Copyright (c) 2018 epeschard. All rights reserved.
+//  Copyright (c) 2018 stanwood GmbH
+//  Distributed under MIT licence.
 //
 
 import UIKit

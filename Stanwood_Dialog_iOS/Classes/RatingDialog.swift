@@ -1,9 +1,30 @@
 //
 //  RatingDialog.swift
-//  Pods-Stanwood_Dialog_iOS_Example
+//  StanwoodDialog_iOS
 //
-//  Created by Eugène Peschard on 05/01/2018.
+//  Copyright (c) 2018 stanwood GmbH
 //
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
@@ -13,7 +34,9 @@ import UIKit
     func timeout()
 }
 
-@objc public class RatingDialog: NSObject, RatingDialogPresenting {
+@available(iOS 10.0, *)
+@objc
+public class RatingDialog: NSObject, RatingDialogPresenting {
     
     private var text1: String?
     private var text2: String?
@@ -97,7 +120,9 @@ import UIKit
     /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
-        UIApplication.shared.open(appStoreURL!, options: [:], completionHandler: nil)
+        if let urlAppStore = appStoreURL {
+            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
+        }
     }
     
     /// Called when the timeout is reached with no tap on dialog buttons
@@ -181,23 +206,23 @@ import UIKit
         var adLaunch = 5
         
         /// The text for the 1st paragraph in the ads body
-        var text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
+        var text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
         /// The text for the 2nd paragraph in the ads body
-        var text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        var text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
         /// The text for the 3rd paragraph in the ads body
-        var text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        var text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
         /// The text for the 4th paragraph in the ads body
-        var text4 = "Sternchen reichen - dauert nur 1 Minute."
+        var text4 = "the stars would be enough, it will only take a few seconds."
         
         /// The text for the cancel button label
-        var cancel = "Schließen"
+        var cancel = "Cancel"
         /// The text for the accept button label
-        var accept = "App bewerten"
+        var accept = "Rate the App"
         
         /// The URL for the image to be displayed profile image in a circle
         var faceURL = URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
         /// The URL for the image to be displayed as banner behind the profile image
-        var bannerURL = URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
+        var bannerURL = URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
         /// The URL for rating the app on the appStore
         var appStoreURL: URL?
