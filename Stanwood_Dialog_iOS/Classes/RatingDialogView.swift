@@ -1,8 +1,8 @@
 //
 //  RatingDialogView.swift
-//  StanwoodDialog
+//  StanwoodDialog_iOS
 //
-//  Created by epeschard on 08/01/2018.
+//  Copyright (c) 2018 stanwood GmbH
 //
 //  The MIT License (MIT)
 //

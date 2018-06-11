@@ -1,8 +1,8 @@
 //
 //  RatingDialogTracking.swift
-//  StanwoodDialog
+//  StanwoodDialog_iOS
 //
-//  Created by Ronan on 10/01/2018.
+//  Copyright (c) 2018 stanwood GmbH
 //
 //  The MIT License (MIT)
 //
