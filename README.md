@@ -2,7 +2,7 @@
 
 [![CI Status](https://www.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master?style=flat)](https://www.bitrise.io/app/200a49178c1c4df4#/builds)
 [![Swift Version](https://img.shields.io/badge/Swift-4.0.x-orange.svg)]()
-[![iOS 8+](https://img.shields.io/badge/iOS-9+-EB7943.svg)]()
+[![iOS 10+](https://img.shields.io/badge/iOS-10+-EB7943.svg)]()
 
 ## Example
 
@@ -15,11 +15,6 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'StanwoodDialog'
-```
-Also, make sure you include these 2 lines at the top of your Podfile:
-```ruby
-source 'git@github.com:CocoaPods/Specs.git'
-source 'git@github.com:stanwood/Cocoa_Pods_Specs.git'
 ```
 
 ## Usage
@@ -35,9 +30,9 @@ Add `import StanwoodDialog` and call the method bellow from wherever you are cal
         let cancel = "Cancel"
         let accept = "Rate the app"
 
-        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
+        let faceUrlString = "<THUMBNAIL_URL>"
         let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
-        let appID = "1316369720"
+        let appID = "<YOUR_APPID>"
 
         RatingDialog.builder()
         .set(paragraph1: text1)
