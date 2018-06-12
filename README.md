@@ -30,7 +30,7 @@ Add `import StanwoodDialog` and call the method bellow from wherever you are cal
         let cancel = "Cancel"
         let accept = "Rate the app"
 
-        let faceUrlString = "<THUMBNAIL_URL>"
+        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
         let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
         let appID = "<YOUR_APPID>"
 
