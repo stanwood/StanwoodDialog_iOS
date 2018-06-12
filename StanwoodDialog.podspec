@@ -13,7 +13,7 @@ This allows a more personal approach and dismisses automatically when no interac
   s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
   s.source           = { :git => 'https://github.com/stanwood/StanwoodDialog_iOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '9.3'
 
   s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
