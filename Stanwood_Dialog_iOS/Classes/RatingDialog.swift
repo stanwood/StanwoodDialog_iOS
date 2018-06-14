@@ -34,7 +34,6 @@ import UIKit
     func timeout()
 }
 
-@available(iOS 10.0, *)
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
     
@@ -121,7 +120,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
         if let urlAppStore = appStoreURL {
-            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
+            UIApplication.shared.openURL(urlAppStore)
         }
     }
     

@@ -1,12 +1,13 @@
 //
 //  FirebaseTracker.swift
-//  StanwoodAnalytics_Example
+//  StanwoodDialog_iOS
 //
-//  Created by Ronan on 02/01/2018.
-//  Copyright © 2018 CocoaPods. All rights reserved.
+//  Copyright (c) 2018 stanwood GmbH
+//  Distributed under MIT licence.
 //
 
 import Foundation
+import FirebaseCore
 import FirebaseAnalytics
 import StanwoodAnalytics
 
@@ -34,6 +35,16 @@ struct FirebaseParameterMapper: ParameterMapper {
     }
 }
 
+public protocol FirebaseCoreEnabler {
+    static func configure(options: [String:String])
+}
+
+public protocol FirebaseAnalyticsEnabler {
+    static func logEvent()
+    static func setScreenName()
+}
+
+
 open class FirebaseTracker: Tracker {
     
     var parameterMapper: ParameterMapper?
@@ -47,13 +58,36 @@ open class FirebaseTracker: Tracker {
             parameterMapper = builder.parameterMapper
         }
         
+        AnalyticsConfiguration.shared().setAnalyticsCollectionEnabled(StanwoodAnalytics.trackingEnabled())
+        
         if builder.configFileName != nil {
-            let firebaseConfigFile = Bundle.main.path(forResource: builder.configFileName, ofType: "plist")
-            let firebaseOptions = FirebaseOptions(contentsOfFile: firebaseConfigFile!)
+            guard let firebaseConfigFile = Bundle.main.path(forResource: builder.configFileName, ofType: "plist") else {
+                let fileName = builder.configFileName!
+                print("StanwoodAnalytics Error: The file \(String(describing: fileName)) cannot be found.")
+                return
+            }
+            let firebaseOptions = FirebaseOptions(contentsOfFile: firebaseConfigFile)
             FirebaseApp.configure(options: firebaseOptions!)
         } else {
-            FirebaseApp.configure()
+            if hasConfigurationFile() == true {
+                FirebaseApp.configure()
+            }
         }
+    }
+    
+    private func hasConfigurationFile() -> Bool {
+        guard let _ = Bundle.main.path(forResource: "GoogleService-Info", ofType: "plist") else {
+            print("StanwoodAnalytics Error: The GoogleService-Info property list used to configure Firebase Analytics cannot be found.")
+            return false }
+        return true
+    }
+    
+    open override func start() {
+        AnalyticsConfiguration.shared().setAnalyticsCollectionEnabled(true)
+    }
+    
+    override open func setTracking(enable: Bool) {
+        AnalyticsConfiguration.shared().setAnalyticsCollectionEnabled(enable)
     }
 
     override open func track(trackingParameters: TrackingParameters) {
@@ -86,11 +120,25 @@ open class FirebaseTracker: Tracker {
             Analytics.logEvent(trackingParameters.eventName, parameters: keyValueDict)
         }
     }
+    
+    /**
+     
+     Track the error using logEvent and the UserInfo dictionary.
+     
+     */
 
     override open func track(error: NSError) {
         let parameters = error.userInfo as [String:Any]
         Analytics.logEvent("error", parameters: parameters)
     }
+    
+    /**
+     
+     Track screen name and class.
+     
+     Using the custom keys and values, use the StanwoodAnalytics.Key.screenName key
+     
+     */
 
     override open func track(trackerKeys: TrackerKeys) {
         let customKeys = trackerKeys.customKeys
@@ -99,11 +147,11 @@ open class FirebaseTracker: Tracker {
         var screenClass: String = ""
         
         for (key,value) in customKeys {
-            if key == StanwoodAnalytics.Key.screenName {
+            if key == StanwoodAnalytics.Keys.screenName {
                 screenName = value as! String
             }
             
-            if key == StanwoodAnalytics.Key.screenClass {
+            if key == StanwoodAnalytics.Keys.screenClass {
                 screenClass = value as! String
             }
         }

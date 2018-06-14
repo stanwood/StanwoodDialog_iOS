@@ -21,16 +21,16 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - StanwoodAnalytics (1.0.2):
-    - StanwoodAnalytics/Base (= 1.0.2)
-  - StanwoodAnalytics/Base (1.0.2):
+  - StanwoodAnalytics (1.0.4):
+    - StanwoodAnalytics/Base (= 1.0.4)
+  - StanwoodAnalytics/Base (1.0.4):
     - StanwoodAnalytics/Core
     - StanwoodAnalytics/Fabric
     - StanwoodAnalytics/TestFairy
-  - StanwoodAnalytics/Core (1.0.2)
-  - StanwoodAnalytics/Fabric (1.0.2):
+  - StanwoodAnalytics/Core (1.0.4)
+  - StanwoodAnalytics/Fabric (1.0.4):
     - StanwoodAnalytics/Core
-  - StanwoodAnalytics/TestFairy (1.0.2):
+  - StanwoodAnalytics/TestFairy (1.0.4):
     - StanwoodAnalytics/Core
   - StanwoodDialog (1.0.1)
 
@@ -57,7 +57,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   StanwoodAnalytics:
-    :commit: fb1711dd1888868ec409acd3538bb7631c34bca2
+    :commit: b7aa6b283e3f49098aac0f8e9929fb3842ee5a29
     :git: "git@github.com:stanwood/Stanwood_Analytics_iOS.git"
 
 SPEC CHECKSUMS:
@@ -67,9 +67,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  StanwoodAnalytics: faacf438e35f435d7ec0a10e5f2652f8084c333c
-  StanwoodDialog: 65fd544cf62b42df9e50d100c77ba3feda40054b
+  StanwoodAnalytics: c0bb71a3a03342f15b9cdd6cb6c6877987481343
+  StanwoodDialog: 1607856fa4778a158e17bb728ede5459c3bbb99f
 
-PODFILE CHECKSUM: c464ad58179962dc8b9a79bb877750cb7ecc2c5d
+PODFILE CHECKSUM: ddb0516c9059c86a838e506ed48bcc9ec72a2a5c
 
 COCOAPODS: 1.5.3
