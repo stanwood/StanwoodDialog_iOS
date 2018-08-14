@@ -195,6 +195,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         self.bannerURL = bannerURL as URL
         self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
         self.objcAnalytics = analytics
+        
+        self.display()
     }
     
     private func unescapeNewLines(in string: NSString) -> String {
