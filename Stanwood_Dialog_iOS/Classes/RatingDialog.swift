@@ -199,7 +199,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     }
     
     @available(swift, obsoleted: 0.1)
-    @objc func objcDisplay() {
+    @objc public func objcDisplay() {
         display()
     }
     
