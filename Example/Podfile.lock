@@ -21,15 +21,22 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
-  - StanwoodAnalytics (0.6.0):
-    - StanwoodAnalytics/Base (= 0.6.0)
-  - StanwoodAnalytics/Base (0.6.0):
+  - StanwoodAnalytics (1.0.7):
+    - StanwoodAnalytics/Base (= 1.0.7)
+  - StanwoodAnalytics/Base (1.0.7):
     - StanwoodAnalytics/Core
     - StanwoodAnalytics/Fabric
-  - StanwoodAnalytics/Core (0.6.0)
-  - StanwoodAnalytics/Fabric (0.6.0):
+    - StanwoodAnalytics/Firebase
+    - StanwoodAnalytics/TestFairy
+  - StanwoodAnalytics/Core (1.0.7)
+  - StanwoodAnalytics/Fabric (1.0.7):
     - StanwoodAnalytics/Core
-  - StanwoodDialog (0.6.11)
+  - StanwoodAnalytics/Firebase (1.0.7):
+    - Firebase/Analytics
+    - StanwoodAnalytics/Core
+  - StanwoodAnalytics/TestFairy (1.0.7):
+    - StanwoodAnalytics/Core
+  - StanwoodDialog (1.0.3)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -37,15 +44,14 @@ DEPENDENCIES:
   - StanwoodDialog (from `../`)
 
 SPEC REPOS:
-  "git@github.com:stanwood/Cocoa_Pods_Specs.git":
-    - StanwoodAnalytics
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
     - FirebaseInstanceID
     - GoogleToolboxForMac
     - nanopb
+    - StanwoodAnalytics
 
 EXTERNAL SOURCES:
   StanwoodDialog:
@@ -58,9 +64,9 @@ SPEC CHECKSUMS:
   FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
-  StanwoodAnalytics: 39812d817ab8663a2a541d06ac52f32e47b66ca7
-  StanwoodDialog: 34724ced1cc223bf3b021714fe6ee4e17199da0e
+  StanwoodAnalytics: eca61386a0731ab687637233f3cca5f9e68ac729
+  StanwoodDialog: d94acdc1988ccaf0ebe80e2730e874d182851fc8
 
 PODFILE CHECKSUM: 3398fd8a7cd320dfd249ea69e964393288b9626f
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

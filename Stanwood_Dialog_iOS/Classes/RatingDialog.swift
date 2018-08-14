@@ -168,6 +168,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     }
     
     /// Initializer for Objective-C since Builder pattern is not supported
+    @available(swift, obsoleted: 0.1)
     @objc
     public convenience init(paragraph1: NSString,
                      paragraph2: NSString,
@@ -194,7 +195,12 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         self.faceURL = faceURL as URL
         self.bannerURL = bannerURL as URL
         self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
-        self.objcAnalytics = analytics
+        self.objcAnalytics = analytics        
+    }
+    
+    @available(swift, obsoleted: 0.1)
+    @objc func objcDisplay() {
+        display()
     }
     
     private func unescapeNewLines(in string: NSString) -> String {
