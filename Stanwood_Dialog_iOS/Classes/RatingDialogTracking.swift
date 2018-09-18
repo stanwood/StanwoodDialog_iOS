@@ -1,17 +1,38 @@
 //
 //  RatingDialogTracking.swift
-//  StanwoodDialog
+//  StanwoodDialog_iOS
 //
-//  Created by Ronan on 10/01/2018.
+//  Copyright (c) 2018 stanwood GmbH
 //
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import Foundation
 
 public enum RatingDialogEvent: String {
-    case showDialog = "show"
-    case acceptAction = "acceptAction"
-    case cancelAction = "cancelAction"
-    case timeout = "timeout"
+    case showDialog = "rating_dialog_shown"
+    case acceptAction = "rating_dialog_yes_pressed"
+    case cancelAction = "rating_dialog_no_pressed"
+    case timeout = "rating_dialog_timeout"
 }
 
 public enum RatingDialogError: Error {
@@ -21,4 +42,14 @@ public enum RatingDialogError: Error {
 public protocol RatingDialogTracking {
     func track(event: RatingDialogEvent)
     func log(error: RatingDialogError)
+}
+
+public let kRatingDialogShown = "rating_dialog_shown"
+public let kRatingDialogAcceptAction = "rating_dialog_yes_pressed"
+public let kRatingDialogCancelAction = "rating_dialog_no_pressed"
+public let kRatingDialogTimeout = "rating_dialog_timeout"
+
+@objc public protocol SWDRatingDialogTracking {
+    func track(event: String)
+    func log(error: String)
 }

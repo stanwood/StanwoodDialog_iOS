@@ -1,29 +1,72 @@
 PODS:
-  - PromiseKit (4.5.1):
-    - PromiseKit/Foundation (= 4.5.1)
-    - PromiseKit/QuartzCore (= 4.5.1)
-    - PromiseKit/UIKit (= 4.5.1)
-  - PromiseKit/CorePromise (4.5.1)
-  - PromiseKit/Foundation (4.5.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/QuartzCore (4.5.1):
-    - PromiseKit/CorePromise
-  - PromiseKit/UIKit (4.5.1):
-    - PromiseKit/CorePromise
-  - StanwoodDialog (0.6.7):
-    - PromiseKit (~> 4.5.1)
+  - Firebase/Analytics (4.10.1):
+    - Firebase/Core
+  - Firebase/Core (4.10.1):
+    - FirebaseAnalytics (= 4.1.0)
+    - FirebaseCore (= 4.0.17)
+  - FirebaseAnalytics (4.1.0):
+    - FirebaseCore (~> 4.0)
+    - FirebaseInstanceID (~> 2.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseCore (4.0.17):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (2.0.9):
+    - FirebaseCore (~> 4.0)
+  - GoogleToolboxForMac/Defines (2.1.3)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.3)":
+    - GoogleToolboxForMac/Defines (= 2.1.3)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+  - StanwoodAnalytics (1.0.7):
+    - StanwoodAnalytics/Base (= 1.0.7)
+  - StanwoodAnalytics/Base (1.0.7):
+    - StanwoodAnalytics/Core
+    - StanwoodAnalytics/Fabric
+    - StanwoodAnalytics/Firebase
+    - StanwoodAnalytics/TestFairy
+  - StanwoodAnalytics/Core (1.0.7)
+  - StanwoodAnalytics/Fabric (1.0.7):
+    - StanwoodAnalytics/Core
+  - StanwoodAnalytics/Firebase (1.0.7):
+    - Firebase/Analytics
+    - StanwoodAnalytics/Core
+  - StanwoodAnalytics/TestFairy (1.0.7):
+    - StanwoodAnalytics/Core
+  - StanwoodDialog (1.0.3)
 
 DEPENDENCIES:
+  - Firebase/Analytics
+  - StanwoodAnalytics
   - StanwoodDialog (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleToolboxForMac
+    - nanopb
+    - StanwoodAnalytics
 
 EXTERNAL SOURCES:
   StanwoodDialog:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  PromiseKit: 445dac9b2c3c3b4b31b5f842bc325700b848a8bd
-  StanwoodDialog: 0ad7f392f2dc3aca4242ef8b32bb8958cb4467fd
+  Firebase: 92c6ba593e32db0defde464a9adc981d5cb49f97
+  FirebaseAnalytics: 3dfae28d4a5e06f86c4fae830efc2ad3fadb19bc
+  FirebaseCore: 872307b001bbefda1dfa0dbfffa50a6919023d4a
+  FirebaseInstanceID: d2058a35e9bebda1b6dd42486b84917bde552a9d
+  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  StanwoodAnalytics: eca61386a0731ab687637233f3cca5f9e68ac729
+  StanwoodDialog: d94acdc1988ccaf0ebe80e2730e874d182851fc8
 
-PODFILE CHECKSUM: 4fb1b5c4cfb00b09f069eca5d9cb130dc393fb4a
+PODFILE CHECKSUM: 3398fd8a7cd320dfd249ea69e964393288b9626f
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

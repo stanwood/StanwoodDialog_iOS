@@ -1,18 +1,40 @@
 //
 //  RatingDialog.swift
-//  Pods-Stanwood_Dialog_iOS_Example
+//  StanwoodDialog_iOS
 //
-//  Created by Eugène Peschard on 05/01/2018.
+//  Copyright (c) 2018 stanwood GmbH
 //
+//  The MIT License (MIT)
+//
+//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
+//
+//  Permission is hereby granted, free of charge, to any person obtaining a copy
+//  of this software and associated documentation files (the "Software"), to deal
+//  in the Software without restriction, including without limitation the rights
+//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+//  copies of the Software, and to permit persons to whom the Software is
+//  furnished to do so, subject to the following conditions:
+//
+//  The above copyright notice and this permission notice shall be included in
+//  all copies or substantial portions of the Software.
+//
+//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+//  THE SOFTWARE.
 
 import UIKit
 
-public protocol RatingDialogPresenting {
+@objc public protocol RatingDialogPresenting {
     func acceptButtonAction()
     func cancelButtonAction()
     func timeout()
 }
 
+@available(iOS 10.0, *)
 @objc
 public class RatingDialog: NSObject, RatingDialogPresenting {
     
@@ -29,18 +51,21 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     private var rootView: UIView?
     public var analytics: RatingDialogTracking?
     
+    @objc public var objcAnalytics: SWDRatingDialogTracking?
+    
     /// key for storing the launches count on `UserDefaults`
-    private static let appStarts = "numberOfAppStarts"
+    private static let appStartsKey = "numberOfAppStarts"
     /// minutes between launches when consecutive launches will be ignored
     private static let minTimeBetweenLaunches: TimeInterval = 60*30
     
-    /// counts the number of launches
+    
+    /// counts the number of launches starting from 1
     static var appLaunches: Int {
         get {
-            return UserDefaults.standard.value(forKey: appStarts) as? Int ?? 1
+            return UserDefaults.standard.value(forKey: appStartsKey) as? Int ?? 1
         }
         set {
-            UserDefaults.standard.set(newValue, forKey: appStarts)
+            UserDefaults.standard.set(newValue, forKey: appStartsKey)
         }
     }
     
@@ -54,8 +79,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
         let bundle = Bundle(url: bundleURL!)!
         return bundle.loadNibNamed("RatingDialogView",
-                                          owner: rootView,
-                                          options: nil)!.first as! RatingDialogView
+                                   owner: rootView,
+                                   options: nil)!.first as! RatingDialogView
     }
     
     private func display() {
@@ -95,7 +120,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     /// Called when the OK (right side) button on the dialog view is tapped
     public func acceptButtonAction() {
         analytics?.track(event: .acceptAction)
-        UIApplication.shared.openURL(appStoreURL!)
+        if let urlAppStore = appStoreURL {
+            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
+        }
     }
     
     /// Called when the timeout is reached with no tap on dialog buttons
@@ -109,7 +136,14 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      
      - onLaunch count: Int for the launch count on which we should present the Rating Dialog
      */
-    public static func shouldShow(onLaunch count: Int) -> Bool {
+    @objc public static func shouldShow(onLaunch count: Int) -> Bool {
+
+        if count < 0  {
+            return true
+        }
+        
+        let result = appLaunches == count
+
         #if DEBUG
             appLaunches += 1
         #else
@@ -120,7 +154,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         #endif
             
         UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
-        return appLaunches == count
+        return result
     }
     
     /// Resets the launch count to zero
@@ -133,28 +167,68 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         appLaunches -= 1
     }
     
+    /// Initializer for Objective-C since Builder pattern is not supported
+    @available(swift, obsoleted: 0.1)
+    @objc
+    public convenience init(paragraph1: NSString,
+                     paragraph2: NSString,
+                     paragraph3: NSString,
+                     paragraph4: NSString,
+                     cancel: NSString,
+                     accept: NSString,
+                     rootView: UIView,
+                     accentTint: UIColor,
+                     faceURL: NSURL,
+                     bannerURL: NSURL,
+                     appID: NSString,
+                     analytics: SWDRatingDialogTracking
+        ) {
+        self.init()
+        self.text1 = unescapeNewLines(in: paragraph1)
+        self.text2 = unescapeNewLines(in: paragraph2)
+        self.text3 = unescapeNewLines(in: paragraph3)
+        self.text4 = unescapeNewLines(in: paragraph4)
+        self.cancelButtonText = cancel as String
+        self.acceptButtonText = accept as String
+        self.rootView = rootView
+        self.accentTint = accentTint
+        self.faceURL = faceURL as URL
+        self.bannerURL = bannerURL as URL
+        self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
+        self.objcAnalytics = analytics        
+    }
+    
+    @available(swift, obsoleted: 0.1)
+    @objc public func objcDisplay() {
+        display()
+    }
+    
+    private func unescapeNewLines(in string: NSString) -> String {
+        return string.replacingOccurrences(of: "\\n", with: "\n")
+    }
+    
     open class Builder {
         /// selected launch when we should present the ad
         var adLaunch = 5
         
         /// The text for the 1st paragraph in the ads body
-        var text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
+        var text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
         /// The text for the 2nd paragraph in the ads body
-        var text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
+        var text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
         /// The text for the 3rd paragraph in the ads body
-        var text3 = "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
+        var text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
         /// The text for the 4th paragraph in the ads body
-        var text4 = "Sternchen reichen - dauert nur 1 Minute."
+        var text4 = "the stars would be enough, it will only take a few seconds."
         
         /// The text for the cancel button label
-        var cancel = "Schließen"
+        var cancel = "Cancel"
         /// The text for the accept button label
-        var accept = "App bewerten"
+        var accept = "Rate the App"
         
         /// The URL for the image to be displayed profile image in a circle
         var faceURL = URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
         /// The URL for the image to be displayed as banner behind the profile image
-        var bannerURL = URL(string: "https://media.istockphoto.com/photos/plitvice-lakes-picture-id500463760?s=2048x2048")!
+        var bannerURL = URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
         /// The URL for rating the app on the appStore
         var appStoreURL: URL?
@@ -165,6 +239,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView!
         
+        /// The analytics class
+        var analytics: RatingDialogTracking?
+      
         private func unescapeNewLines(in string: String) -> String {
             return string.replacingOccurrences(of: "\\n", with: "\n")
         }
@@ -299,6 +376,16 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         }
         
         /**
+         Sets the analytics class
+         
+         - parameter analytics: the analytics class
+         */
+        public func set(analytics: RatingDialogTracking) -> Builder {
+            self.analytics = analytics
+            return self
+        }
+        
+        /**
          Returns the finalized RatingDialog object after setting all its properties         
          */
         public func build() {
@@ -314,6 +401,8 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
             ratingDialog.faceURL = faceURL
             ratingDialog.bannerURL = bannerURL
             ratingDialog.appStoreURL = appStoreURL
+            ratingDialog.analytics = analytics
+            
             ratingDialog.display()
         }
     }
