@@ -14,7 +14,7 @@ This allows a more personal approach and dismisses automatically when no interac
   s.source           = { :git => 'https://github.com/stanwood/StanwoodDialog_iOS.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '10.0'
-  s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.2' }
+  s.swift_version = '4.2'
 
   s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
