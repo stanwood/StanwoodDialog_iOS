@@ -36,7 +36,7 @@ PODS:
     - StanwoodAnalytics/Core
   - StanwoodAnalytics/TestFairy (1.0.7):
     - StanwoodAnalytics/Core
-  - StanwoodDialog (1.0.3)
+  - StanwoodDialog (1.0.5)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -65,7 +65,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   StanwoodAnalytics: eca61386a0731ab687637233f3cca5f9e68ac729
-  StanwoodDialog: d94acdc1988ccaf0ebe80e2730e874d182851fc8
+  StanwoodDialog: 8d74107bde8954ce8e18676ea55031056198cb5d
 
 PODFILE CHECKSUM: 3398fd8a7cd320dfd249ea69e964393288b9626f
 
