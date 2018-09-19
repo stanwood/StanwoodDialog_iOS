@@ -1,9 +1,12 @@
 # StanwoodDialog
 
-[![Swift Version](https://img.shields.io/badge/Swift-4.0.x-orange.svg)]()
+[![Swift Version](https://img.shields.io/badge/Swift-4.2-orange.svg)]()
 [![iOS 10+](https://img.shields.io/badge/iOS-10+-EB7943.svg)]()
+[![Pod Version](https://cocoapod-badges.herokuapp.com/l/StanwoodAnalytics/badge.png)]()
 [![CodeClimate Badge](https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability)](https://codeclimate.com/github/codeclimate/codeclimate/maintainability) 
 [![Build Status](https://app.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master)](https://app.bitrise.io/app/200a49178c1c4df4)
+[![License](https://cocoapod-badges.herokuapp.com/l/StanwoodDialog/badge.svg)](http://cocoapods.org/pods/StanwoodAnalytics) 
+[![Docs](https://img.shields.io/badge/docs-%E2%9C%93-blue.svg)](https://stanwood.github.io/StanwoodDialog_iOS/)
 
 ## Example
 
