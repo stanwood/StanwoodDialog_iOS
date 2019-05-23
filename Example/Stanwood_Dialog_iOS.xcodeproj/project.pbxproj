@@ -16,7 +16,6 @@
 		9C23AEB31FFE38D4004CD74B /* StanwoodDialog.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 9C23AEB21FFE38D4004CD74B /* StanwoodDialog.podspec */; };
 		9C26AF20E5A4AECB1DE9F04C /* Pods_Stanwood_Dialog_iOS_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CC44407A8BB1D6EF3A5A16D /* Pods_Stanwood_Dialog_iOS_Example.framework */; };
 		9CA036271FFE3B05000EC948 /* .jazzy.yaml in Resources */ = {isa = PBXBuildFile; fileRef = 9CA036261FFE3B05000EC948 /* .jazzy.yaml */; };
-		AF468E7A205A7CE00045BB94 /* FirebaseTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF468E79205A7CE00045BB94 /* FirebaseTracker.swift */; };
 		AF468E7E205AAEFD0045BB94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AF468E7D205AAEFC0045BB94 /* GoogleService-Info.plist */; };
 		C810E6605F215BC03735CB2F /* Pods_Stanwood_Dialog_iOS_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A7EE2A31C00BBE774509D3C /* Pods_Stanwood_Dialog_iOS_Tests.framework */; };
 /* End PBXBuildFile section */
@@ -48,7 +47,6 @@
 		9C23AEB21FFE38D4004CD74B /* StanwoodDialog.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = StanwoodDialog.podspec; path = ../StanwoodDialog.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9CA036261FFE3B05000EC948 /* .jazzy.yaml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .jazzy.yaml; path = ../.jazzy.yaml; sourceTree = "<group>"; };
 		A32D90CDCFB597664F4A01BD /* Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Tests/Pods-Stanwood_Dialog_iOS_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		AF468E79205A7CE00045BB94 /* FirebaseTracker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseTracker.swift; sourceTree = "<group>"; };
 		AF468E7D205AAEFC0045BB94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C704FEE5D3BA33833B05B8F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		CCAF23229DF4FE60808C7310 /* Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -120,7 +118,6 @@
 		607FACD21AFB9204008FA782 /* Example for Stanwood_Dialog_iOS */ = {
 			isa = PBXGroup;
 			children = (
-				AF468E78205A7CD10045BB94 /* Firebase */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -167,14 +164,6 @@
 				55147205BFFA02F0DA69F4DD /* LICENSE */,
 			);
 			name = "Podspec Metadata";
-			sourceTree = "<group>";
-		};
-		AF468E78205A7CD10045BB94 /* Firebase */ = {
-			isa = PBXGroup;
-			children = (
-				AF468E79205A7CE00045BB94 /* FirebaseTracker.swift */,
-			);
-			name = Firebase;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,7 +371,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF468E7A205A7CE00045BB94 /* FirebaseTracker.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
