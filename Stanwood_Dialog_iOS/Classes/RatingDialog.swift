@@ -131,6 +131,17 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     }
     
     /**
+     Enabled/Disables debug mode
+     Debug mode features:
+     - dialogue will be shown on every session start
+     
+     - parameter enabled: the analytics class
+     */
+    public static func setDebugMode(enabled: Bool) {
+        UserDefaults.standard.set(enabled, forKey: "isDebugMode")
+    }
+    
+    /**
      Counts app launches and returns true if the count matches the provided value
      When not in DEBUG, appLaunches need to be 30 min appart for counter to increase
      
@@ -138,7 +149,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
      */
     @objc public static func shouldShow(onLaunch count: Int) -> Bool {
 
-        if count < 0  {
+        if UserDefaults.standard.bool(forKey: "isDebugMode") || count < 0  {
             return true
         }
         
@@ -241,6 +252,9 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         
         /// The analytics class
         var analytics: RatingDialogTracking?
+        
+        /// Debug mode flag
+        private var isDebugMode: Bool = false
       
         private func unescapeNewLines(in string: String) -> String {
             return string.replacingOccurrences(of: "\\n", with: "\n")

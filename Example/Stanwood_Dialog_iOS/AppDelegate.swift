@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var analytics: StanwoodAnalytics?
     var dialogAnalytics: RatingDialogTracking?
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
         let fabricTracker = FabricTracker.FabricBuilder(context: application, key: nil).build()
         let firebaseTracker = FirebaseTracker.FirebaseBuilder(context: application).build()
@@ -67,6 +67,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func buildRatingDialog() {
+        RatingDialog.setDebugMode(enabled: true)
         if RatingDialog.shouldShow(onLaunch: 5) {
             let text1 = "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
             let text2 = "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
