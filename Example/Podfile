@@ -5,8 +5,6 @@ platform :ios, '10.0'
 use_frameworks!
 
 target 'Stanwood_Dialog_iOS_Example' do
-  pod 'StanwoodAnalytics'
-  pod 'Firebase/Analytics'
   pod 'StanwoodDialog', :path => '../'
 end
 

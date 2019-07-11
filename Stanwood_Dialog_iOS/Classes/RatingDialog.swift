@@ -70,7 +70,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
     }
     
     /// Starts the builder before calling the setters
-    open static func builder() -> Builder {
+    public static func builder() -> Builder {
         return Builder()
     }
     

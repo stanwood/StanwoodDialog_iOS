@@ -178,8 +178,6 @@
 				607FACCD1AFB9204008FA782 /* Frameworks */,
 				607FACCE1AFB9204008FA782 /* Resources */,
 				86468A35635D6F2AB2190728 /* [CP] Embed Pods Frameworks */,
-				AFEB2C4D200E3C77009AE5C7 /* ShellScript */,
-				98D69A3021CFC04FFDB10F70 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -222,12 +220,12 @@
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = ZC4L7BE562;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = ZC4L7BE562;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
@@ -237,6 +235,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -281,52 +280,17 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/StanwoodDialog/StanwoodDialog.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StanwoodDialog.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
-		};
-		98D69A3021CFC04FFDB10F70 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-resources.sh",
-				"${PODS_ROOT}/StanwoodAnalytics/StanwoodAnalytics/Assets/StanwoodAnalytics.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/StanwoodAnalytics.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Stanwood_Dialog_iOS_Example/Pods-Stanwood_Dialog_iOS_Example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AFEB2C4D200E3C77009AE5C7 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/StanwoodAnalytics/Frameworks/Fabric.framework/run\"  4522f719c7ceecac5149a4bb8a130ff7ca33179c 9692003b2e8e4f0558316d230e8722210371fd1e1e6f5b2d575b8f3b475a6b6b";
 		};
 		DA4A1BB105D466E4BA69E0E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -525,8 +489,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -542,8 +505,7 @@
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -564,8 +526,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -582,8 +543,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
