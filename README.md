@@ -6,6 +6,7 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/f34e56f2c699c367691a/maintainability)](https://codeclimate.com/github/stanwood/StanwoodDialog_iOS/maintainability) 
 [![Build Status](https://app.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master)](https://app.bitrise.io/app/200a49178c1c4df4)
 [![License](https://cocoapod-badges.herokuapp.com/l/StanwoodDialog/badge.svg)](http://cocoapods.org/pods/StanwoodDialog) 
+[![Build Status](https://travis-ci.org/stanwood/StanwoodDialog_iOS.svg?branch=master)](https://travis-ci.org/stanwood/StanwoodDialog_iOS)
 [![Docs](https://img.shields.io/badge/docs-%E2%9C%93-blue.svg)](https://stanwood.github.io/StanwoodDialog_iOS/)
 
 ## Example

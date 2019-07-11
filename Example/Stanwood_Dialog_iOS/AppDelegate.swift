@@ -8,39 +8,14 @@
 
 import UIKit
 import StanwoodDialog
-import StanwoodAnalytics
-
-extension StanwoodAnalytics: RatingDialogTracking {
-    public func log(error: RatingDialogError) {
-        switch error {
-        case .dialogError(let message):
-            let trackingError = NSError(domain: "StanwoodDialog", code: 0, userInfo: ["LocalizedDescription":message])
-            track(error: trackingError)
-        }
-    }
-    
-    public func track(event: RatingDialogEvent) {
-        trackScreen(name: event.rawValue)
-    }
-}
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    var analytics: StanwoodAnalytics?
     var dialogAnalytics: RatingDialogTracking?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        let fabricTracker = FabricTracker.FabricBuilder(context: application, key: nil).build()
-        let firebaseTracker = FirebaseTracker.FirebaseBuilder(context: application).build()
-        
-        let analyticsBuilder = StanwoodAnalytics.builder()
-            .add(tracker: fabricTracker)
-            .add(tracker: firebaseTracker)
-        
-        analytics = analyticsBuilder.build()
         return true
     }
 
@@ -52,14 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             vc.updateUI()
         }
         
-        let trackingParameters = TrackingParameters(eventName: "",
-                                            itemId: nil,
-                                            name: nil,
-                                            description: nil,
-                                            category: nil,
-                                            contentType: "warning")
-        
-        analytics?.track(trackingParameters: trackingParameters)
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
@@ -91,7 +58,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .set(faceUrl: faceUrlString)
                 .set(bannerUrl: bannerUrlString)
                 .buildAppStoreUrl(with: appID)
-                .set(analytics: analytics!)
                 .set(rootView: (window?.rootViewController?.view)!)
                 .build()
             
