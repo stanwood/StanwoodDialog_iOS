@@ -157,3 +157,16 @@ extension UITextView {
         return sizeThatFitsTextView.height > bounds.height
     }
 }
+
+fileprivate extension UIView {
+    
+    func addConstraints(from view: UIView, top: CGFloat = 0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                topAnchor.constraint(equalTo: view.topAnchor, constant: top),
+                bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
+    }
+}

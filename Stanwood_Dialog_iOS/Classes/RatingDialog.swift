@@ -393,15 +393,4 @@ class RateMeConfigurations {
 }
 
 
-extension UIView {
-    
-    public func addConstraints(from view: UIView, top: CGFloat = 0) {
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-                topAnchor.constraint(equalTo: view.topAnchor, constant: top),
-                bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-    }
-}
+
