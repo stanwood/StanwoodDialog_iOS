@@ -1,235 +1,83 @@
 //
 //  RatingDialog.swift
-//  StanwoodDialog_iOS
+//  ePaper2_iOS
 //
-//  Copyright (c) 2018 stanwood GmbH
+//  Created by AT on 1/22/20.
+//  Copyright © 2020 stanwood GmbH. All rights reserved.
 //
-//  The MIT License (MIT)
-//
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
 
 import UIKit
+import FirebaseRemoteConfig
 
-@objc public protocol RatingDialogPresenting {
-    func acceptButtonAction()
-    func cancelButtonAction()
-    func timeout()
-}
-
-@available(iOS 10.0, *)
-@objc
-public class RatingDialog: NSObject, RatingDialogPresenting {
-    
-    private var text1: String?
-    private var text2: String?
-    private var text3: String?
-    private var text4: String?
-    private var faceURL: URL?
-    private var bannerURL: URL?
-    private var appStoreURL: URL?
-    private var accentTint: UIColor?
-    private var cancelButtonText: String?
-    private var acceptButtonText: String?
-    private var rootView: UIView?
-    public var analytics: RatingDialogTracking?
-    
-    @objc public var objcAnalytics: SWDRatingDialogTracking?
-    
-    /// key for storing the launches count on `UserDefaults`
-    private static let appStartsKey = "numberOfAppStarts"
-    /// minutes between launches when consecutive launches will be ignored
-    private static let minTimeBetweenLaunches: TimeInterval = 60*30
-    
-    
-    /// counts the number of launches starting from 1
-    static var appLaunches: Int {
-        get {
-            return UserDefaults.standard.value(forKey: appStartsKey) as? Int ?? 1
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: appStartsKey)
-        }
-    }
+public class RatingDialog: UIView {
     
     /// Starts the builder before calling the setters
+    private static var mainBuilder = Builder()
+    private static var dialog: RatingDialogView?
+    
     public static func builder() -> Builder {
-        return Builder()
+        mainBuilder.loadFromRemoteConfigIfPossible()
+        return mainBuilder
     }
     
-    private func overlayView() -> RatingDialogView {
-        let podBundle = Bundle(for: RatingDialog.self)
-        let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
-        let bundle = Bundle(url: bundleURL!)!
-        return bundle.loadNibNamed("RatingDialogView",
-                                   owner: rootView,
-                                   options: nil)!.first as! RatingDialogView
+    private struct Key {
+        static let appLaunches = "com.stanwood.io.rateMe.appLaunches"
     }
     
-    private func display() {
-        
-        analytics?.track(event: .showDialog)
-        
-        let overlay = overlayView()
-        overlay.hostViewController = self as RatingDialogPresenting
-        
-        do {
-            try overlay.buildAd(over: rootView,
-                                with: text1,
-                                text2,
-                                text3,
-                                text4,
-                                from: faceURL,
-                                over: bannerURL,
-                                tint: accentTint,
-                                link: appStoreURL,
-                                cancel: cancelButtonText,
-                                accept: acceptButtonText)
-        } catch {
-            RatingDialog.decreaseLaunchCount()
-            if let ratingDialog = error as? RatingDialogError {
-                analytics?.log(error: ratingDialog)
-            } else {
-                print(error)
-            }
+    private static var launchCount: Int {
+        get{
+            let defaults = UserDefaults.standard
+            defaults.register(defaults: [Key.appLaunches : 0])
+            return defaults.integer(forKey: Key.appLaunches)
+        }set{
+            UserDefaults.standard.set(newValue, forKey: Key.appLaunches)
         }
     }
     
-    /// Called when the cancel (left side) button on the dialog view is tapped
-    public func cancelButtonAction() {
-        analytics?.track(event: .cancelAction)
-    }
-    
-    /// Called when the OK (right side) button on the dialog view is tapped
-    public func acceptButtonAction() {
-        analytics?.track(event: .acceptAction)
-        if let urlAppStore = appStoreURL {
-            UIApplication.shared.open(urlAppStore, options: [:], completionHandler: nil)
-        }
-    }
-    
-    /// Called when the timeout is reached with no tap on dialog buttons
-    public func timeout() {
-        analytics?.track(event: .timeout)
-    }
     
     /**
-     Enabled/Disables debug mode
-     Debug mode features:
-     - dialogue will be shown on every session start
-     
-     - parameter enabled: the analytics class
+     Returns the finalized RatingDialog object after setting all its properties
      */
-    public static func setDebugMode(enabled: Bool) {
-        UserDefaults.standard.set(enabled, forKey: "isDebugMode")
-    }
-    
-    /**
-     Counts app launches and returns true if the count matches the provided value
-     When not in DEBUG, appLaunches need to be 30 min appart for counter to increase
-     
-     - onLaunch count: Int for the launch count on which we should present the Rating Dialog
-     */
-    @objc public static func shouldShow(onLaunch count: Int) -> Bool {
-
-        if UserDefaults.standard.bool(forKey: "isDebugMode") || count < 0  {
-            return true
-        }
+    static func showIfNeeded(_ ratingDialog: RatingDialogView) {
         
-        let result = appLaunches == count
-
-        #if DEBUG
-            appLaunches += 1
-        #else
-            if let lastAppStart = UserDefaults.standard.value(forKey: "lastAppStart") as? TimeInterval,
-                lastAppStart > minTimeBetweenLaunches {
-                appLaunches += 1
-            }
-        #endif
+        launchCount += 1
+        
+        print("mainBuilder.requiredLaunchCount = ", mainBuilder.requiredLaunchCount)
+        
+       // guard launchCount == mainBuilder.requiredLaunchCount else { return }
             
-        UserDefaults.standard.set(Date.timeIntervalSinceReferenceDate, forKey: "lastAppStart")
-        return result
+
+
+//        ratingDialog.rootView = builder.rootView
+//        ratingDialog.appStoreURL = builder.appStoreURL
+//        ratingDialog.analytics = builder.analytics
+        
+        let root = RatingDialog.mainBuilder.rootView ?? UIApplication.shared.keyWindow!
+        
+        dialog = ratingDialog
+        
+        ratingDialog.show(in: root)
     }
     
-    /// Resets the launch count to zero
-    public static func clearLaunchCount() {
-        appLaunches = 0
+
+    
+    private func loadAppleRateMe() {
+        
     }
     
-    /// Decreases the launch count by one
-    public static func decreaseLaunchCount() {
-        appLaunches -= 1
+    private func loadStoreFromID() {
+        
     }
-    
-    /// Initializer for Objective-C since Builder pattern is not supported
-    @available(swift, obsoleted: 0.1)
-    @objc
-    public convenience init(paragraph1: NSString,
-                     paragraph2: NSString,
-                     paragraph3: NSString,
-                     paragraph4: NSString,
-                     cancel: NSString,
-                     accept: NSString,
-                     rootView: UIView,
-                     accentTint: UIColor,
-                     faceURL: NSURL,
-                     bannerURL: NSURL,
-                     appID: NSString,
-                     analytics: SWDRatingDialogTracking
-        ) {
-        self.init()
-        self.text1 = unescapeNewLines(in: paragraph1)
-        self.text2 = unescapeNewLines(in: paragraph2)
-        self.text3 = unescapeNewLines(in: paragraph3)
-        self.text4 = unescapeNewLines(in: paragraph4)
-        self.cancelButtonText = cancel as String
-        self.acceptButtonText = accept as String
-        self.rootView = rootView
-        self.accentTint = accentTint
-        self.faceURL = faceURL as URL
-        self.bannerURL = bannerURL as URL
-        self.appStoreURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review")
-        self.objcAnalytics = analytics        
-    }
-    
-    @available(swift, obsoleted: 0.1)
-    @objc public func objcDisplay() {
-        display()
-    }
-    
-    private func unescapeNewLines(in string: NSString) -> String {
-        return string.replacingOccurrences(of: "\\n", with: "\n")
-    }
+
+}
+
+
+
+extension RatingDialog {
     
     open class Builder {
-        /// selected launch when we should present the ad
-        var adLaunch = 5
-        
-        /// The text for the 1st paragraph in the ads body
-        var text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
-        /// The text for the 2nd paragraph in the ads body
-        var text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
-        /// The text for the 3rd paragraph in the ads body
-        var text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
-        /// The text for the 4th paragraph in the ads body
-        var text4 = "the stars would be enough, it will only take a few seconds."
+        /// selected launch when we should present the rate me
+        var requiredLaunchCount = 5
         
         /// The text for the cancel button label
         var cancel = "Cancel"
@@ -245,19 +93,55 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
         var appStoreURL: URL?
         
         /// The tint color for the Accept and Cancel `UIButton`s
-        var accentTint = UIColor.blue
+        var accentTint = UIColor.darkGray.withAlphaComponent(0.7)
         
         /// The `UIView` where the overlay ad view will be added as a subview
-        var rootView: UIView!
+        var rootView: UIView?
+        
+        /// Use Apple rate me or direct straight tot he store
+        var useAppleRating = true
+        
+        var appID: String?
         
         /// The analytics class
-        var analytics: RatingDialogTracking?
+       // var analytics: RatingDialogTracking?
         
         /// Debug mode flag
         private var isDebugMode: Bool = false
+        
+        
       
         private func unescapeNewLines(in string: String) -> String {
             return string.replacingOccurrences(of: "\\n", with: "\n")
+        }
+        
+        
+        var text1: String?
+        var text2: String?
+        var text3: String?
+        var text4: String?
+        var mainText: String {
+            
+            var text = ""
+            
+            if let first = text1 {
+                text += (first)
+            }
+            
+            if let second = text2 {
+                text += ("\n\n\n" + second)
+            }
+            
+            if let third = text3 {
+                text += ("\n\n\n" + third)
+            }
+            
+            if let fourth = text4 {
+                text += ("\n\n\n" + fourth)
+            }
+            
+            
+            return text
         }
         
         /**
@@ -349,7 +233,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
          */
-        public func buildAppStoreUrl(with appID: String) -> Builder {
+        private func buildAppStoreUrl(with appID: String) -> Builder {
             
             if let builtURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review") {
                 appStoreURL = builtURL
@@ -362,7 +246,7 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
          
          - parameter appStoreUrl: string to build the URL wher user can rate the app
          */
-        public func set(appStoreUrl: String) -> Builder {
+        private func set(appStoreUrl: String) -> Builder {
             if let builtURL = URL(string: appStoreUrl) {
                 appStoreURL = builtURL
             }
@@ -389,35 +273,135 @@ public class RatingDialog: NSObject, RatingDialogPresenting {
             return self
         }
         
-        /**
-         Sets the analytics class
-         
-         - parameter analytics: the analytics class
-         */
-        public func set(analytics: RatingDialogTracking) -> Builder {
-            self.analytics = analytics
+        
+        public func set(appID: String) -> Builder {
+            self.appID = appID
             return self
         }
+//        /**
+//         Sets the analytics class
+//
+//         - parameter analytics: the analytics class
+//         */
+//        public func set(analytics: RatingDialogTracking) -> Builder {
+//            self.analytics = analytics
+//            return self
+//        }
         
-        /**
-         Returns the finalized RatingDialog object after setting all its properties         
-         */
-        public func build() {
-            let ratingDialog = RatingDialog()
-            ratingDialog.text1 = text1
-            ratingDialog.text2 = text2
-            ratingDialog.text3 = text3
-            ratingDialog.text4 = text4
+        public func buildAndShowIfNeeded(_ completion: RateSuccessBlock? = nil) {
+            
+            //let bundle = Bundle(for: RatingDialogView.self)
+            
+            let podBundle = Bundle(for: RatingDialogView.self)
+             let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
+             let bundle = Bundle(url: bundleURL!)!
+            let ratingDialog: RatingDialogView = RatingDialogView.loadFromNib(bundle: bundle)
+
+
+            ratingDialog.mainText = mainText
             ratingDialog.cancelButtonText = cancel
             ratingDialog.acceptButtonText = accept
-            ratingDialog.rootView = rootView
-            ratingDialog.accentTint = accentTint
             ratingDialog.faceURL = faceURL
             ratingDialog.bannerURL = bannerURL
-            ratingDialog.appStoreURL = appStoreURL
-            ratingDialog.analytics = analytics
+            ratingDialog.accentColour = accentTint
             
-            ratingDialog.display()
+            ratingDialog.completion = completion
+            
+            RatingDialog.showIfNeeded(ratingDialog)
         }
+        
+        fileprivate func loadFromRemoteConfigIfPossible() {
+            
+            /// TODO:- DONT FORGET
+            // Check what happens without an a firebase app init
+            appID = RateMeConfigurations.FirebaseConfig.iosAppId.value()
+            
+            text1 = RateMeConfigurations.FirebaseConfig.rateDialogText.value()
+            text2 = RateMeConfigurations.FirebaseConfig.rateDialogText2.value()
+            text3 = RateMeConfigurations.FirebaseConfig.rateDialogText3.value()
+            text4 = RateMeConfigurations.FirebaseConfig.rateDialogText4.value()
+            
+            requiredLaunchCount = RateMeConfigurations.FirebaseConfig.rateDialogLaunchCount.value() ?? 0
+            
+            if let faceURLString: String = RateMeConfigurations.FirebaseConfig.rateDialogFaceUrl.value(), let url = URL(string: faceURLString) {
+                faceURL = url
+            }
+            
+            if let bannerURLString: String = RateMeConfigurations.FirebaseConfig.rateDialogBannerUrl.value(), let url = URL(string: bannerURLString) {
+                   bannerURL = url
+            }
+            
+            cancel = RateMeConfigurations.FirebaseConfig.rateDialogCancelButton.value() ?? cancel
+            accept = RateMeConfigurations.FirebaseConfig.rateDialogOkButton.value() ?? accept
+        }
+    }
+}
+
+
+fileprivate protocol LoadFromNib { }
+
+extension UIView: LoadFromNib { }
+
+fileprivate extension LoadFromNib where Self: UIView {
+    
+    static func loadFromNib(withFrame frame:CGRect? = nil, bundle: Bundle = Bundle.main) -> Self {
+        
+        let view = bundle.loadNibNamed(nibName, owner: nil, options: nil)!.last as! Self
+        view.frame = frame ?? view.frame
+        
+        return view
+    }
+    
+    static var nibName: String {
+        return NSStringFromClass(Self.self).components(separatedBy: ".").last ?? ""
+    }
+}
+
+class RateMeConfigurations {
+    
+    enum FirebaseConfig: String {
+
+        case iosAppId = "ios_app_id"
+        case rateDialogText4 = "rate_dialog_text_4"
+        case rateDialogText3 = "rate_dialog_text_3"
+        case rateDialogText2 = "rate_dialog_text_2"
+        case rateDialogText = "rate_dialog_text"
+        case rateDialogLaunchCount = "rate_dialog_launch_count"
+        case rateDialogFaceUrl = "rate_dialog_face_url"
+        case rateDialogBannerUrl = "rate_dialog_banner_url"
+        case rateDialogCancelButton = "rate_dialog_cancel_button"
+        case rateDialogOkButton = "rate_dialog_ok_button"
+
+        static var isRemoteConfigActivated: Bool = false
+
+        static func value<T: Any>(for key: FirebaseConfig) -> T? {
+            let value = RemoteConfig.remoteConfig()[key.rawValue]
+
+            switch T.self {
+            case is String.Type: return value.stringValue as? T
+            case is Data.Type: return value.dataValue as? T
+            case is Bool.Type: return value.boolValue as? T
+            case is Int.Type: return value.numberValue?.intValue as? T
+            default: return nil
+            }
+        }
+        
+        public func value<T: Any>() -> T? {
+            return FirebaseConfig.value(for: self)
+        }
+    }
+}
+
+
+extension UIView {
+    
+    public func addConstraints(from view: UIView, top: CGFloat = 0) {
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+                topAnchor.constraint(equalTo: view.topAnchor, constant: top),
+                bottomAnchor.constraint(equalTo: view.bottomAnchor),
+                leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                trailingAnchor.constraint(equalTo: view.trailingAnchor)
+            ])
     }
 }

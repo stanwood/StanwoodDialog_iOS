@@ -1,267 +1,159 @@
 //
 //  RatingDialogView.swift
-//  StanwoodDialog_iOS
+//  ePaper2_iOS
 //
-//  Copyright (c) 2018 stanwood GmbH
+//  Created by AT on 1/22/20.
+//  Copyright © 2020 stanwood GmbH. All rights reserved.
 //
-//  The MIT License (MIT)
-//
-//  Copyright (c) 2018 Stanwood GmbH (www.stanwood.io)
-//
-//  Permission is hereby granted, free of charge, to any person obtaining a copy
-//  of this software and associated documentation files (the "Software"), to deal
-//  in the Software without restriction, including without limitation the rights
-//  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the Software is
-//  furnished to do so, subject to the following conditions:
-//
-//  The above copyright notice and this permission notice shall be included in
-//  all copies or substantial portions of the Software.
-//
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-//  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-//  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-//  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-//  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-//  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-//  THE SOFTWARE.
 
 import UIKit
+import SDWebImage
 
-public class RatingDialogView: UIView {
-    
-    @IBOutlet weak var banner: UIImageView!
-    @IBOutlet weak var devFace: UIImageView!
-    @IBOutlet weak var paragraph1: UILabel!
-    @IBOutlet weak var paragraph2: UILabel!
-    @IBOutlet weak var paragraph3: UILabel!
-    @IBOutlet weak var paragraph4: UILabel!
-    @IBOutlet weak var accept: UIButton!
-    @IBOutlet weak var cancel: UIButton!
-    
-    /// the view controller that will be hosting the rating dialog overlay
-    var hostViewController: RatingDialogPresenting!
-    
-    /// Container view to present the Rating Dialog overlay
-    var overlayBannerContainer: UIView?
-    
-    private var timer: Timer?
-    
-    public required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        commonInit()
-    }
-    private let timeoutTime: TimeInterval = 30
-    private let defaultSession = URLSession(configuration: .default)
-    private var dataTask: URLSessionDataTask?
-    var errorMessage = ""
-    
-    func commonInit() {
-        frame = CGRect(x: 0, y: 0, width: 300, height: 450)
-        layer.cornerRadius = 8.0
-        layer.masksToBounds = true
-    }
-    
-    /**
-     It adds a popup asking the user to rate the app on the app store
-     
-     - parameter presenter: the `UIViewController` hosting the ad overlay
-     - parameter body1: the text displayed in the ad overlay's 1st paragraph
-     - parameter body2: the text displayed in the ad overlay's 2nd paragraph
-     - parameter body3: the text displayed in the ad overlay's 3rd paragraph
-     - parameter body4: the text displayed in the ad overlay's 4th paragraph
-     - parameter devProfile: the URL for the developer's profile image
-     - parameter background: the URL for a banner image displayed behind `devProfile`
-     - parameter rateMeLink: the link to the appStore for rating
-     - parameter accentTint: a `UIColor` for the buttons accent over white
-     - parameter cancelText: a text to be displayed in the cancel `UIButton`
-     - parameter acceptText: a text to be displayed in the accept `UIButton`
-     */
-    @objc
-    dynamic func buildAd(over rootView: UIView?,
-                        with body1: String?,
-                        _ body2: String?,
-                        _ body3: String?,
-                        _ body4: String?,
-                        from devProfile: URL?,
-                        over background: URL?,
-                        tint accentTint: UIColor?,
-                        link appStoreURL: URL?,
-                        cancel cancelText: String?,
-                        accept acceptText: String?) throws {
-        
-        guard let host = rootView else {
-            throw RatingDialogError.dialogError("Missing rootView UIViewController to add the RatingDialog to as subView")
-        }
-        guard let ratingLink = appStoreURL else {
-            throw RatingDialogError.dialogError("Missing appStore URL to register the rating")
-        }
+public typealias RateSuccessBlock = (_ success: Bool) -> Void
+public typealias ImageSuccessBlock = (_ image: UIImage?, _ error: String?) -> Void
 
-        let faceImageURL = devProfile ?? URL(string: "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg")!
-        let bannerImageURL = background ?? URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
+/// :nodoc:
+class RatingDialogView: UIView {
+    
+    var completion: RateSuccessBlock?
+    
+    var mainText: String? {
+        didSet{
+            mainTextView.text = mainText
+        }
+    }
+    
+    var cancelButtonText: String? {
+        didSet{
+            cancelButton.setTitle(cancelButtonText, for: .normal)
+        }
+    }
+    
+    var acceptButtonText: String? {
+        didSet{
+            rateMeButton.setTitle(acceptButtonText, for: .normal)
+        }
+    }
+    
+    var faceURL: URL? {
+        didSet{
+            faceImageView.sd_setImage(with: faceURL, completed: nil)
+        }
+    }
+    
+    var bannerURL: URL? {
+        didSet{
+            bannerimageView.sd_setImage(with: bannerURL, completed: nil)
+        }
+    }
+    
+    var accentColour: UIColor? {
+        didSet{
+            rateMeButton.backgroundColor = accentColour
+            cancelButton.tintColor = accentColour
+        }
+    }
+    
+    
+    @IBOutlet private weak var mainTextView: UITextView!
+    
+    @IBOutlet private weak var cancelButton: UIButton!
+    @IBOutlet private weak var rateMeButton: UIButton!
+    
+    @IBOutlet private weak var faceImageView: UIImageView!
+    @IBOutlet private weak var bannerimageView: UIImageView!
+    
+    
+    @IBAction private func rateMeSelected(_ sender: Any) {
+        completion?(true)
+        hide()
+    }
+    
+    @IBAction private func cancelSelected(_ sender: Any) {
+        completion?(false)
+        hide()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        mainTextView.isScrollEnabled = mainTextView.textExceedBounds
+    }
+    
+    func show(in view: UIView) {
         
-        fetchImage(from: faceImageURL) {
-            image, errorMessage in
-            guard let faceImage = image else {
-                RatingDialog.decreaseLaunchCount()
-                return
-            }
+        alpha = 0
+        transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        view.addSubview(self)
+        addConstraints(from: view)
+        view.layoutIfNeeded()
+        
+        UIView.animate(withDuration: 0.5) {
             
-            self.fetchImage(from: bannerImageURL) {
-                image, errorMessage in
-                guard let bannerImage = image else {
-                    RatingDialog.decreaseLaunchCount()
-                    return
-                }
-                DispatchQueue.main.async {
-                    self.buildAd(over: host,
-                                 with: body1, body2, body3, body4,
-                                 face: faceImage,
-                                 over: bannerImage,
-                                 tint: accentTint,
-                                 link: ratingLink,
-                                 cancel: cancelText,
-                                 accept: acceptText)
-                }
-            }
+            self.alpha = 1
+            self.transform = .identity
+            self.layoutIfNeeded()
         }
     }
     
-    private func fetchImage(from dataSourceURL: URL, completion: @escaping (UIImage?, String?) -> Void ) {
-        dataTask?.cancel()
-        let request = URLRequest(url: dataSourceURL)
-        dataTask = defaultSession.dataTask(with: request, completionHandler: {
-            data, response, error in
+    func hide() {
+        
+        UIView.animate(withDuration: 0.5, animations: {
             
-            defer { self.dataTask = nil }
+            self.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+            self.alpha = 0
+            self.superview?.layoutIfNeeded()
+
+        }) { (_) in
             
-            if let error = error {
-                self.errorMessage += "DataTask error: " + error.localizedDescription + "\n"
-            } else if let imageData = data,
-                let image = UIImage(data: imageData),
-                let response = response as? HTTPURLResponse,
-                response.statusCode == 200 {
-                DispatchQueue.main.async {
-                    completion(image, self.errorMessage)
-                }
-            }
-        })
-        dataTask?.resume()
-    }
-    
-    /**
-     It adds a popup asking the user to rate the app on the app store
-     
-     - parameter presenter: the `UIViewController` hosting the ad overlay
-     - parameter body1: the text displayed in the ad overlay's 1st paragraph
-     - parameter body2: the text displayed in the ad overlay's 2nd paragraph
-     - parameter body3: the text displayed in the ad overlay's 3rd paragraph
-     - parameter body4: the text displayed in the ad overlay's 4th paragraph
-     - parameter devProfile: the UIImage for the developer's profile image
-     - parameter background: the UIImage for a banner image displayed behind `devProfile`
-     - parameter rateMeLink: the link to the appStore for rating
-     - parameter accentTint: a `UIColor` for the buttons accent over white
-     - parameter cancelText: a text to be displayed in the cancel `UIButton`
-     - parameter acceptText: a text to be displayed in the accept `UIButton`
-     */
-    
-    @objc
-    dynamic func buildAd(over rootView: UIView,
-                         with body1: String?,
-                         _ body2: String?,
-                         _ body3: String?,
-                         _ body4: String?,
-                         face devProfile: UIImage,
-                         over background: UIImage,
-                         tint accentTint: UIColor?,
-                         link appStoreURL: URL,
-                         cancel cancelText: String?,
-                         accept acceptText: String?) {
-        
-        paragraph1.text = body1 ?? "Hi,\nich bin Hannes, der Entwicker\nvon dieser app."
-        paragraph2.text = body2 ?? "Kleine App-Entwicker wie wir leben von gutten Bewertungen im App-Store."
-        paragraph3.text = body3 ?? "Wenn Ihnen unsere App gefallt dann bewertend Sie uns doch bitte."
-        paragraph4.text = body4 ?? "Sternchen reichen - dauert nur 1 Minute."
-        
-        devFace.image = devProfile
-        banner.image = background
-        
-        accept.backgroundColor = accentTint ?? rootView.tintColor
-        accept.setTitle(acceptText, for: .normal)
-        cancel.tintColor = accentTint ?? rootView.tintColor
-        cancel.setTitle(cancelText, for: .normal)
-        
-        buildOverlayAd(with: rootView)
-    }
-    
-    /**
-     It builds the container view of a specified `size`
-     
-     - parameter size: the size of the overlay containing the ad    
-     */
-    func buildOverlayAd(with rootView: UIView) {
-        overlayBannerContainer = UIView(frame: CGRect(x: 0.0,
-                                                      y: 0.0,
-                                                      width: rootView.frame.size.width,
-                                                      height: rootView.frame.size.height))
-        overlayBannerContainer?.backgroundColor = UIColor(white: 0, alpha: 0.5)
-        guard let overlaySize = overlayBannerContainer?.frame.size else {
-            return
-        }
-        frame.origin.x = (overlaySize.width - frame.size.width) / 2
-        frame.origin.y = (overlaySize.height - frame.size.height) / 2
-        overlayBannerContainer?.addSubview(self)
-        overlayBannerContainer?.alpha = CGFloat(0.0)
-        transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))
-        
-        rootView.addSubview(overlayBannerContainer!)
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
-            self.overlayBannerContainer?.alpha = CGFloat(1.0)
-            self.transform = CGAffineTransform(scaleX: CGFloat(1.0), y: CGFloat(1.0))
-        }) { _ in }
-        startTimer()
-    }
-    
-    private func startTimer() {
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
-        }
-        
-        timer = Timer.scheduledTimer(timeInterval: timeoutTime, target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
-    }
-    
-    private func stopTimer() {
-        if timer != nil {
-            timer?.invalidate()
-            timer = nil
+            self.removeFromSuperview()
         }
     }
+}
+
+
+extension UIImageView {
     
-    @objc private func timerAction() {
-        hostViewController.timeout()
-        dismissView()
-        stopTimer()
-    }
+//    func loadImage(from url: URL?,_ completion: ImageSuccessBlock? = nil) {
+//
+//        guard let imageURL = url else { return }
+//
+//        let defaultSession = URLSession(configuration: .default)
+//
+//        let request = URLRequest(url: imageURL)
+//
+//        let dataTask = defaultSession.dataTask(with: request, completionHandler: {
+//            data, response, error in
+//
+//            if let error = error {
+//
+//                let errorMessage = "DataTask error: " + error.localizedDescription + "\n"
+//                completion?(nil, errorMessage)
+//
+//            } else if let imageData = data,
+//                let image = UIImage(data: imageData),
+//                let response = response as? HTTPURLResponse,
+//                response.statusCode == 200 {
+//
+//                DispatchQueue.main.async {
+//                    self.image = image
+//                    completion?(image, nil)
+//                }
+//            }else{
+//                let errorMessage = "DataTask error: " + "Bad url response" + "\n"
+//                completion?(nil, errorMessage)
+//            }
+//        })
+//
+//        dataTask.resume()
+//    }
+}
+
+
+extension UITextView {
     
-    private func dismissView() {
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {() -> Void in
-            self.overlayBannerContainer?.alpha = CGFloat(0.0)
-            self.transform = CGAffineTransform(scaleX: CGFloat(1.2), y: CGFloat(1.2))
-        }, completion: {(_ finished: Bool) -> Void in
-            self.overlayBannerContainer?.removeFromSuperview()
-        })
-    }
-    
-    @IBAction func cancelButtonAction(_ sender: Any) {
-        hostViewController.cancelButtonAction()
-        dismissView()
-        stopTimer()
-    }
-    
-    @IBAction func acceptButtonAction(_ sender: Any) {
-        hostViewController.acceptButtonAction()
-        dismissView()
-        stopTimer()
+    var textExceedBounds: Bool {
+        
+        let sizeThatFitsTextView = sizeThatFits(CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT)))
+        return sizeThatFitsTextView.height > bounds.height
     }
 }

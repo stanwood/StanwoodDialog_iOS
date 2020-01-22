@@ -18,6 +18,11 @@ This allows a more personal approach and dismisses automatically when no interac
 
   s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
   
+  s.static_framework = true
+  s.dependency 'FirebaseRemoteConfig'
+  s.dependency 'SDWebImage'
+
+  
   s.resource_bundles = {
     'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
   }
