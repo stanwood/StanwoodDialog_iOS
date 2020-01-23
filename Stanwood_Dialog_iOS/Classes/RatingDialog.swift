@@ -78,7 +78,7 @@ public class RatingDialog: UIView {
                 default:
                     break
                 }
-                                
+                
                 completion?(state)
             }
         }
@@ -94,9 +94,9 @@ public class RatingDialog: UIView {
         
         guard
             let url = mainBuilder.appStoreURL
-        else {
-            /// TODO:- DONT FORGET - to handle error
-            return
+            else {
+                /// TODO:- DONT FORGET - to handle error
+                return
         }
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -136,7 +136,7 @@ extension RatingDialog {
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView?
         
-
+        
         /// Use Apple rate me or direct straight tot he store
         var useAppleRating = true
         
@@ -330,15 +330,6 @@ extension RatingDialog {
             self.appID = appID
             return self
         }
-        //        /**
-        //         Sets the analytics class
-        //
-        //         - parameter analytics: the analytics class
-        //         */
-        //        public func set(analytics: RatingDialogTracking) -> Builder {
-        //            self.analytics = analytics
-        //            return self
-        //        }
         
         public func buildAndShowIfNeeded(_ completion: RateMeStateBlock? = nil) {
             
@@ -356,11 +347,12 @@ extension RatingDialog {
             ratingDialog.faceURL = faceURL
             ratingDialog.bannerURL = bannerURL
             ratingDialog.accentColour = accentTint
+            ratingDialog.rateMeType = useAppleRating ? .storeController : .storeReview
             
             if !useAppleRating, appID == nil {
-                  fatalError("To root the user to the store, please ensure to `set(appID: String)` otherwise set `useAppleRating` to true, and use the Apple `SKStoreReviewController`")
-              }
-                        
+                fatalError("To root the user to the store, please ensure to `set(appID: String)` otherwise set `useAppleRating` to true, and use the Apple `SKStoreReviewController`")
+            }
+            
             RatingDialog.showIfNeeded(ratingDialog, completion: completion)
         }
         
@@ -392,59 +384,7 @@ extension RatingDialog {
 }
 
 
-fileprivate protocol LoadFromNib { }
 
-extension UIView: LoadFromNib { }
-
-fileprivate extension LoadFromNib where Self: UIView {
-    
-    static func loadFromNib(withFrame frame:CGRect? = nil, bundle: Bundle = Bundle.main) -> Self {
-        
-        let view = bundle.loadNibNamed(nibName, owner: nil, options: nil)!.last as! Self
-        view.frame = frame ?? view.frame
-        
-        return view
-    }
-    
-    static var nibName: String {
-        return NSStringFromClass(Self.self).components(separatedBy: ".").last ?? ""
-    }
-}
-
-class RateMeConfigurations {
-    
-    enum FirebaseConfig: String {
-        
-        case iosAppId = "ios_app_id"
-        case rateDialogText4 = "rate_dialog_text_4"
-        case rateDialogText3 = "rate_dialog_text_3"
-        case rateDialogText2 = "rate_dialog_text_2"
-        case rateDialogText = "rate_dialog_text"
-        case rateDialogLaunchCount = "rate_dialog_launch_count"
-        case rateDialogFaceUrl = "rate_dialog_face_url"
-        case rateDialogBannerUrl = "rate_dialog_banner_url"
-        case rateDialogCancelButton = "rate_dialog_cancel_button"
-        case rateDialogOkButton = "rate_dialog_ok_button"
-        
-        static var isRemoteConfigActivated: Bool = false
-        
-        static func value<T: Any>(for key: FirebaseConfig) -> T? {
-            let value = RemoteConfig.remoteConfig()[key.rawValue]
-            
-            switch T.self {
-            case is String.Type: return value.stringValue as? T
-            case is Data.Type: return value.dataValue as? T
-            case is Bool.Type: return value.boolValue as? T
-            case is Int.Type: return value.numberValue?.intValue as? T
-            default: return nil
-            }
-        }
-        
-        public func value<T: Any>() -> T? {
-            return FirebaseConfig.value(for: self)
-        }
-    }
-}
 
 
 

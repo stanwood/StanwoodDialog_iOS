@@ -9,17 +9,6 @@
 import UIKit
 import SDWebImage
 
-public enum RateMeState {
-    case didShowInitialRateMe, didSendToStore, didShowAppleReviewController, didCancel
-}
-
-enum RateMeType {
-    case storeController, storeReview
-}
-
-public typealias RateMeStateBlock = (_ state: RateMeState) -> Void
-public typealias ImageSuccessBlock = (_ image: UIImage?, _ error: String?) -> Void
-
 /// :nodoc:
 class RatingDialogView: UIView {
     
@@ -128,24 +117,4 @@ class RatingDialogView: UIView {
     }
 }
 
-extension UITextView {
-    
-    var textExceedBounds: Bool {
-        
-        let sizeThatFitsTextView = sizeThatFits(CGSize(width: frame.size.width, height: CGFloat(MAXFLOAT)))
-        return sizeThatFitsTextView.height > bounds.height
-    }
-}
 
-fileprivate extension UIView {
-    
-    func addConstraints(from view: UIView, top: CGFloat = 0) {
-        translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-                topAnchor.constraint(equalTo: view.topAnchor, constant: top),
-                bottomAnchor.constraint(equalTo: view.bottomAnchor),
-                leadingAnchor.constraint(equalTo: view.leadingAnchor),
-                trailingAnchor.constraint(equalTo: view.trailingAnchor)
-            ])
-    }
-}
