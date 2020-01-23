@@ -36,7 +36,7 @@ public class RatingDialog: UIView {
     }
     
     /// TODO:- DONT FORGET
-    static func resetLaunchCount() {
+    public static func resetLaunchCount() {
         launchCount = 0
     }
     
