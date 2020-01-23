@@ -7,7 +7,7 @@ module_version: 0.0.42
 xcodebuild_arguments: [clean,build,-project,_Pods.xcodeproj,-scheme,StanwoodDialog]
 source_directory: StanwoodDialog/Classes
 author: Eugene Peschard
-author_url: eugene.peschard@stanwood.io
+author_url: ios@stanwood.io
 copyright: 2018 Stanwood GmbH
 readme: README.md
 podspec: StanwoodDialog.podspec

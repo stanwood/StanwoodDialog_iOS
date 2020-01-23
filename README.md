@@ -1,7 +1,7 @@
 # StanwoodDialog
 
 [![Swift Version](https://img.shields.io/badge/Swift-5.0-orange.svg)]()
-[![iOS 10+](https://img.shields.io/badge/iOS-10+-EB7943.svg)]()
+[![iOS 10.3+](https://img.shields.io/badge/iOS-10.3+-EB7943.svg)]()
 [![Pod Version](https://cocoapod-badges.herokuapp.com/l/StanwoodDialog/badge.png)]()
 [![Maintainability](https://api.codeclimate.com/v1/badges/f34e56f2c699c367691a/maintainability)](https://codeclimate.com/github/stanwood/StanwoodDialog_iOS/maintainability) 
 [![Build Status](https://app.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master)](https://app.bitrise.io/app/200a49178c1c4df4)
