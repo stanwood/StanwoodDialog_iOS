@@ -35,6 +35,11 @@ public class RatingDialog: UIView {
         }
     }
     
+    /// TODO:- DONT FORGET
+    static func resetLaunchCount() {
+        launchCount = 0
+    }
+    
     
     /**
      Returns the finalized RatingDialog object after setting all its properties
