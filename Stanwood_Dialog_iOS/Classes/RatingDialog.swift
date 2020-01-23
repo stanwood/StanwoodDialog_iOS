@@ -356,22 +356,22 @@ extension RatingDialog {
          ### Usage Example: ###
          ````
          RatingDialog.builder()
-         .set(cancelText: "Cancel")
-         .set(paragraph1: "Some test Text at the top")
-         .set(tintColor: .yellow)
-         .set(useAppleRating: false)
-         .buildAndShowIfNeeded { (state) in
+                    .set(cancelText: "Cancel")
+                    .set(paragraph1: "Some test Text at the top")
+                    .set(tintColor: .yellow)
+                    .set(useAppleRating: false)
+                    .buildAndShowIfNeeded { (state) in
          
-         switch state {
-         case .didCancel:
-         print("didCancel")
-         case .didShowInitialRateMe:
-         print("didShowInitialRateMe")
-         case .didShowAppleReviewController:
-         print("didShowAppleReviewController")
-         case .didSendToStore:
-         print("didSendToStore")
-         }
+                         switch state {
+                            case .didCancel:
+                                print("didCancel")
+                            case .didShowInitialRateMe:
+                                print("didShowInitialRateMe")
+                            case .didShowAppleReviewController:
+                                print("didShowAppleReviewController")
+                            case .didSendToStore:
+                                print("didSendToStore")
+                         }
          
          }
          
