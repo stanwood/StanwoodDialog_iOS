@@ -9,13 +9,23 @@
 import UIKit
 import SDWebImage
 
-public typealias RateSuccessBlock = (_ success: Bool) -> Void
+public enum RateMeState {
+    case didShowInitialRateMe, didSendToStore, didShowAppleReviewController, didCancel
+}
+
+enum RateMeType {
+    case storeController, storeReview
+}
+
+public typealias RateMeStateBlock = (_ state: RateMeState) -> Void
 public typealias ImageSuccessBlock = (_ image: UIImage?, _ error: String?) -> Void
 
 /// :nodoc:
 class RatingDialogView: UIView {
     
-    var completion: RateSuccessBlock?
+    private var completion: RateMeStateBlock?
+    
+    var rateMeType: RateMeType = .storeController
     
     var mainText: String? {
         didSet{
@@ -65,13 +75,17 @@ class RatingDialogView: UIView {
     
     
     @IBAction private func rateMeSelected(_ sender: Any) {
-        completion?(true)
-        hide()
+        
+        switch rateMeType {
+        case .storeReview:
+            completion?(.didSendToStore)
+        case .storeController:
+            completion?(.didShowAppleReviewController)
+        }
     }
     
     @IBAction private func cancelSelected(_ sender: Any) {
-        completion?(false)
-        hide()
+        completion?(.didCancel)
     }
     
     override func layoutSubviews() {
@@ -79,8 +93,12 @@ class RatingDialogView: UIView {
         mainTextView.isScrollEnabled = mainTextView.textExceedBounds
     }
     
-    func show(in view: UIView) {
+    func show(in view: UIView,_ completion: RateMeStateBlock? ) {
         
+        self.completion = completion
+        
+        completion?(.didShowInitialRateMe)
+
         alpha = 0
         transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
         view.addSubview(self)
@@ -109,45 +127,6 @@ class RatingDialogView: UIView {
         }
     }
 }
-
-
-extension UIImageView {
-    
-//    func loadImage(from url: URL?,_ completion: ImageSuccessBlock? = nil) {
-//
-//        guard let imageURL = url else { return }
-//
-//        let defaultSession = URLSession(configuration: .default)
-//
-//        let request = URLRequest(url: imageURL)
-//
-//        let dataTask = defaultSession.dataTask(with: request, completionHandler: {
-//            data, response, error in
-//
-//            if let error = error {
-//
-//                let errorMessage = "DataTask error: " + error.localizedDescription + "\n"
-//                completion?(nil, errorMessage)
-//
-//            } else if let imageData = data,
-//                let image = UIImage(data: imageData),
-//                let response = response as? HTTPURLResponse,
-//                response.statusCode == 200 {
-//
-//                DispatchQueue.main.async {
-//                    self.image = image
-//                    completion?(image, nil)
-//                }
-//            }else{
-//                let errorMessage = "DataTask error: " + "Bad url response" + "\n"
-//                completion?(nil, errorMessage)
-//            }
-//        })
-//
-//        dataTask.resume()
-//    }
-}
-
 
 extension UITextView {
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseRemoteConfig
+import StoreKit
 
 public class RatingDialog: UIView {
     
@@ -38,37 +39,61 @@ public class RatingDialog: UIView {
     /**
      Returns the finalized RatingDialog object after setting all its properties
      */
-    static func showIfNeeded(_ ratingDialog: RatingDialogView) {
+    static func showIfNeeded(_ ratingDialog: RatingDialogView, completion: RateMeStateBlock?) {
         
         launchCount += 1
         
         print("mainBuilder.requiredLaunchCount = ", mainBuilder.requiredLaunchCount)
         
-       // guard launchCount == mainBuilder.requiredLaunchCount else { return }
-            
-
-
-//        ratingDialog.rootView = builder.rootView
-//        ratingDialog.appStoreURL = builder.appStoreURL
-//        ratingDialog.analytics = builder.analytics
+        guard launchCount == mainBuilder.requiredLaunchCount else { return }
+        
+        
+        
+        //        ratingDialog.rootView = builder.rootView
+        //        ratingDialog.appStoreURL = builder.appStoreURL
+        //        ratingDialog.analytics = builder.analytics
         
         let root = RatingDialog.mainBuilder.rootView ?? UIApplication.shared.keyWindow!
         
         dialog = ratingDialog
         
-        ratingDialog.show(in: root)
+        ratingDialog.show(in: root) { (state) in
+            
+            DispatchQueue.main.async {
+                
+                switch state {
+                case .didSendToStore:
+                    self.loadStoreFromID()
+                case .didShowAppleReviewController:
+                    self.loadAppleRateMe()
+                default:
+                    break
+                }
+                
+                completion?(state)
+            }
+        }
     }
     
-
     
-    private func loadAppleRateMe() {
+    
+    private static func loadAppleRateMe() {
         
+        SKStoreReviewController.requestReview()
     }
     
-    private func loadStoreFromID() {
+    private static func loadStoreFromID() {
         
+        guard
+            let url = mainBuilder.appStoreURL
+        else {
+            /// TODO:- DONT FORGET - to handle error
+            return
+        }
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
-
+    
 }
 
 
@@ -90,7 +115,12 @@ extension RatingDialog {
         var bannerURL = URL(string: "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99")!
         
         /// The URL for rating the app on the appStore
-        var appStoreURL: URL?
+        var appStoreURL: URL? {
+            
+            /// TODO:- DONT FORGET error log here
+            guard let id = appID else { return nil }
+            return buildAppStoreUrl(with: id)
+        }
         
         /// The tint color for the Accept and Cancel `UIButton`s
         var accentTint = UIColor.darkGray.withAlphaComponent(0.7)
@@ -98,19 +128,20 @@ extension RatingDialog {
         /// The `UIView` where the overlay ad view will be added as a subview
         var rootView: UIView?
         
+
         /// Use Apple rate me or direct straight tot he store
         var useAppleRating = true
         
         var appID: String?
         
         /// The analytics class
-       // var analytics: RatingDialogTracking?
+        // var analytics: RatingDialogTracking?
         
         /// Debug mode flag
         private var isDebugMode: Bool = false
         
         
-      
+        
         private func unescapeNewLines(in string: String) -> String {
             return string.replacingOccurrences(of: "\\n", with: "\n")
         }
@@ -233,25 +264,25 @@ extension RatingDialog {
          
          - parameter appID: Application's app ID, can be found in iTunes Connect
          */
-        private func buildAppStoreUrl(with appID: String) -> Builder {
+        private func buildAppStoreUrl(with appID: String) -> URL? {
             
             if let builtURL = URL(string: "itms-apps://itunes.apple.com/app/id\(appID)?action=write-review") {
-                appStoreURL = builtURL
+                return builtURL
             }
-            return self
+            return nil
         }
         
-        /**
-         Sets the URL for the App Store rating
-         
-         - parameter appStoreUrl: string to build the URL wher user can rate the app
-         */
-        private func set(appStoreUrl: String) -> Builder {
-            if let builtURL = URL(string: appStoreUrl) {
-                appStoreURL = builtURL
-            }
-            return self
-        }
+        //        /**
+        //         Sets the URL for the App Store rating
+        //
+        //         - parameter appStoreUrl: string to build the URL wher user can rate the app
+        //         */
+        //        private func set(appStoreUrl: String) -> Builder {
+        //            if let builtURL = URL(string: appStoreUrl) {
+        //                appStoreURL = builtURL
+        //            }
+        //            return self
+        //        }
         
         /**
          Sets the tint color used for the cancel button's text and accept button's background color.
@@ -273,31 +304,38 @@ extension RatingDialog {
             return self
         }
         
+        public func set(useAppleRating: Bool) -> Builder {
+            self.useAppleRating = useAppleRating
+            return self
+        }
+        
+        /// TODO:- DONT FORGET
+        
         
         public func set(appID: String) -> Builder {
             self.appID = appID
             return self
         }
-//        /**
-//         Sets the analytics class
-//
-//         - parameter analytics: the analytics class
-//         */
-//        public func set(analytics: RatingDialogTracking) -> Builder {
-//            self.analytics = analytics
-//            return self
-//        }
+        //        /**
+        //         Sets the analytics class
+        //
+        //         - parameter analytics: the analytics class
+        //         */
+        //        public func set(analytics: RatingDialogTracking) -> Builder {
+        //            self.analytics = analytics
+        //            return self
+        //        }
         
-        public func buildAndShowIfNeeded(_ completion: RateSuccessBlock? = nil) {
+        public func buildAndShowIfNeeded(_ completion: RateMeStateBlock? = nil) {
             
             //let bundle = Bundle(for: RatingDialogView.self)
             
             let podBundle = Bundle(for: RatingDialogView.self)
-             let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
-             let bundle = Bundle(url: bundleURL!)!
+            let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
+            let bundle = Bundle(url: bundleURL!)!
             let ratingDialog: RatingDialogView = RatingDialogView.loadFromNib(bundle: bundle)
-
-
+            
+            
             ratingDialog.mainText = mainText
             ratingDialog.cancelButtonText = cancel
             ratingDialog.acceptButtonText = accept
@@ -305,9 +343,11 @@ extension RatingDialog {
             ratingDialog.bannerURL = bannerURL
             ratingDialog.accentColour = accentTint
             
-            ratingDialog.completion = completion
-            
-            RatingDialog.showIfNeeded(ratingDialog)
+            if !useAppleRating, appID == nil {
+                  fatalError("To root the user to the store, please ensure to `set(appID: String)` otherwise set `useAppleRating` to true, and use the Apple `SKStoreReviewController`")
+              }
+                        
+            RatingDialog.showIfNeeded(ratingDialog, completion: completion)
         }
         
         fileprivate func loadFromRemoteConfigIfPossible() {
@@ -328,7 +368,7 @@ extension RatingDialog {
             }
             
             if let bannerURLString: String = RateMeConfigurations.FirebaseConfig.rateDialogBannerUrl.value(), let url = URL(string: bannerURLString) {
-                   bannerURL = url
+                bannerURL = url
             }
             
             cancel = RateMeConfigurations.FirebaseConfig.rateDialogCancelButton.value() ?? cancel
@@ -360,7 +400,7 @@ fileprivate extension LoadFromNib where Self: UIView {
 class RateMeConfigurations {
     
     enum FirebaseConfig: String {
-
+        
         case iosAppId = "ios_app_id"
         case rateDialogText4 = "rate_dialog_text_4"
         case rateDialogText3 = "rate_dialog_text_3"
@@ -371,12 +411,12 @@ class RateMeConfigurations {
         case rateDialogBannerUrl = "rate_dialog_banner_url"
         case rateDialogCancelButton = "rate_dialog_cancel_button"
         case rateDialogOkButton = "rate_dialog_ok_button"
-
+        
         static var isRemoteConfigActivated: Bool = false
-
+        
         static func value<T: Any>(for key: FirebaseConfig) -> T? {
             let value = RemoteConfig.remoteConfig()[key.rawValue]
-
+            
             switch T.self {
             case is String.Type: return value.stringValue as? T
             case is Data.Type: return value.dataValue as? T
