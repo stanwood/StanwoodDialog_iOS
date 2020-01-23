@@ -75,11 +75,12 @@ public class RatingDialog: UIView {
                     break
                 }
                 
+                ratingDialog.hide()
+                
                 completion?(state)
             }
         }
     }
-    
     
     
     private static func loadAppleRateMe() {
