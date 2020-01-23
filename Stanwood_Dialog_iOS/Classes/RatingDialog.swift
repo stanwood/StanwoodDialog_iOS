@@ -299,6 +299,12 @@ extension RatingDialog {
             return self
         }
         
+        /// TODO:- DONT FORGET
+        public func set(requiredLaunchCount: Int) -> Builder {
+            self.requiredLaunchCount = requiredLaunchCount
+            return self
+        }
+        
         /**
          Sets the rootView `UIView` where the overlay ad will be added as a subview
          

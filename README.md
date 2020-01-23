@@ -26,33 +26,32 @@ pod 'StanwoodDialog'
 
 Add `import StanwoodDialog` and call the method bellow from wherever you are calling `AppDelegate`'s `applicationDidBecomeAvailable`:
 ```swift
-    if RatingDialog.shouldShow(onLaunch: 5) {
-        let text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
-        let text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
-        let text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
-        let text4 = "the stars would be enough, it will only take a few seconds."
-
-        let cancel = "Cancel"
-        let accept = "Rate the app"
-
-        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
-        let appID = "<YOUR_APPID>"
-
-        RatingDialog.builder()
-        .set(paragraph1: text1)
-        .set(paragraph2: text2)
-        .set(paragraph3: text3)
-        .set(paragraph4: text4)
-        .set(cancelText: cancel)
-        .set(okText: accept)
-        .set(faceUrl: faceUrlString)
-        .set(bannerUrl: bannerUrlString)
-        .set(tintColor: UIColor.blue)
-        .buildAppStoreUrl(with: appID)
-        .set(rootView: (window?.rootViewController?.view)!)
-        .build()
-    }
+    RatingDialog.builder()
+            .set(paragraph1: "text1")
+            .set(paragraph2: "text2")
+            .set(paragraph3: "text3")
+            .set(paragraph4: "text4")
+            .set(cancelText: "cancel")
+            .set(okText: "accept")
+            .set(faceUrl: "faceUrlString")
+            .set(bannerUrl: "bannerUrlString")
+            .set(tintColor: .blue)
+            .set(appID: "9876973263")
+            .set(rootView: UIApplication.shared.keyWindow!)
+            .buildAndShowIfNeeded { (state) in
+                
+                        switch state {
+                        case .didCancel:
+                            print("didCancel")
+                        case .didShowInitialRateMe:
+                            print("didShowInitialRateMe")
+                        case .didShowAppleReviewController:
+                            print("didShowAppleReviewController")
+                        case .didSendToStore:
+                            print("didSendToStore")
+                        }
+                
+            }
 ```
 Ideally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
 
