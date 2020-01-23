@@ -58,10 +58,6 @@ Ideally you would be fetching each one of these parameters remotely. For instanc
 
 If you want to use values direct from Firebase RemoteConfig, you can use the rquired keys below to clean up your code.
 
-
-
-
-
 With completion, as little as:
 ```swift
     RatingDialog.builder().buildAndShowIfNeeded { (state) in
@@ -97,7 +93,7 @@ Required RemoteConfig keys
 "rate_dialog_cancel_button" - Cancel button title
 "rate_dialog_ok_button" - Ok button title
 ```
-
+When using the RemoteConfig keys, ensure your config is set before initialising the dialog, otherwise the vaues will be wrong
 
 If you don't have a URL for the profile and banner images, you may upload these to Firebase Storage (go to Store section in Firebase and click on [Upload Image]):
  * the profile image should be 300x300 pixels (this will cover the 3 variations for 100x100 points)

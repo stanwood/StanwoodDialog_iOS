@@ -69,14 +69,16 @@ public class RatingDialog: UIView {
                 switch state {
                 case .didSendToStore:
                     self.loadStoreFromID()
+                    ratingDialog.hide()
                 case .didShowAppleReviewController:
                     self.loadAppleRateMe()
+                    ratingDialog.hide()
+                case .didCancel:
+                    ratingDialog.hide()
                 default:
                     break
                 }
-                
-                ratingDialog.hide()
-                
+                                
                 completion?(state)
             }
         }
