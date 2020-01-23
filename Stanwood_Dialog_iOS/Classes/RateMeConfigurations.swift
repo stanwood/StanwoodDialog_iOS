@@ -25,21 +25,20 @@ import Foundation
 import FirebaseRemoteConfig
 
 
-/// TODO:- DONT FORGET
+/// State provived to `RateMeStateBlock`
 public enum RateMeState {
-    case didShowInitialRateMe, didSendToStore, didShowAppleReviewController, didCancel
+    case didShowInitialRateMe /// This dialog was shown
+    case didSendToStore /// User was routed to store to review
+    case didShowAppleReviewController ///  SKStoreReviewController was shown
+    case didCancel /// This dialog was cancelled
 }
-/// TODO:- DONT FORGET
 
 enum RateMeType {
     case storeController, storeReview
 }
-/// TODO:- DONT FORGET
 
-
+/// Callback to update state of dialog. Can be used for tracking
 public typealias RateMeStateBlock = (_ state: RateMeState) -> Void
-public typealias ImageSuccessBlock = (_ image: UIImage?, _ error: String?) -> Void
-
 
 class RateMeConfigurations {
     

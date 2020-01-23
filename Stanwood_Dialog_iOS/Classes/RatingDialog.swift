@@ -26,10 +26,10 @@ import StoreKit
 
 public class RatingDialog: UIView {
     
-    /// Starts the builder before calling the setters
     private static var mainBuilder = Builder()
     private static var dialog: RatingDialogView?
     
+    /// Starts the builder before calling the setters
     public static func builder() -> Builder {
         mainBuilder.loadFromRemoteConfigIfPossible()
         return mainBuilder
@@ -49,7 +49,7 @@ public class RatingDialog: UIView {
         }
     }
     
-    /// TODO:- DONT FORGET
+    /// For testing or to prompt user again. This will set the launch count of the app to 0
     public static func resetLaunchCount() {
         launchCount = 0
     }
@@ -61,16 +61,8 @@ public class RatingDialog: UIView {
     static func showIfNeeded(_ ratingDialog: RatingDialogView, completion: RateMeStateBlock?) {
         
         launchCount += 1
-        
-        print("mainBuilder.requiredLaunchCount = ", mainBuilder.requiredLaunchCount)
-        
+                
         guard launchCount == mainBuilder.requiredLaunchCount else { return }
-        
-        
-        
-        //        ratingDialog.rootView = builder.rootView
-        //        ratingDialog.appStoreURL = builder.appStoreURL
-        //        ratingDialog.analytics = builder.analytics
         
         let root = RatingDialog.mainBuilder.rootView ?? UIApplication.shared.keyWindow!
         
@@ -109,7 +101,11 @@ public class RatingDialog: UIView {
         guard
             let url = mainBuilder.appStoreURL
             else {
-                /// TODO:- DONT FORGET - to handle error
+                // Should never get here
+                /*
+                 if !useAppleRating, appID == nil {
+                    fatalError("To root the user to the store, please ensure to `set(appID: String)` otherwise set `useAppleRating` to true, and use the Apple `SKStoreReviewController`")
+                }*/
                 return
         }
         
@@ -139,8 +135,16 @@ extension RatingDialog {
         /// The URL for rating the app on the appStore
         var appStoreURL: URL? {
             
-            /// TODO:- DONT FORGET error log here
-            guard let id = appID else { return nil }
+            guard let id = appID else {
+                
+                // Should never get here
+                /*
+                 if !useAppleRating, appID == nil {
+                 fatalError("To root the user to the store, please ensure to `set(appID: String)` otherwise set `useAppleRating` to true, and use the Apple `SKStoreReviewController`")
+                 }*/
+                return nil
+            }
+            
             return buildAppStoreUrl(with: id)
         }
         
@@ -294,18 +298,6 @@ extension RatingDialog {
             return nil
         }
         
-        //        /**
-        //         Sets the URL for the App Store rating
-        //
-        //         - parameter appStoreUrl: string to build the URL wher user can rate the app
-        //         */
-        //        private func set(appStoreUrl: String) -> Builder {
-        //            if let builtURL = URL(string: appStoreUrl) {
-        //                appStoreURL = builtURL
-        //            }
-        //            return self
-        //        }
-        
         /**
          Sets the tint color used for the cancel button's text and accept button's background color.
          
@@ -316,7 +308,11 @@ extension RatingDialog {
             return self
         }
         
-        /// TODO:- DONT FORGET
+        /**
+         Sets the requiredLaunchCount `Int` of the dialog
+         
+         - parameter requiredLaunchCount: Number of launches required before the dialog is shown
+         */
         public func set(requiredLaunchCount: Int) -> Builder {
             self.requiredLaunchCount = requiredLaunchCount
             return self
@@ -332,22 +328,56 @@ extension RatingDialog {
             return self
         }
         
+        /**
+         Sets `Bool` to determine whether a user user routed to the store or if the native `SKStoreReviewController`
+         
+         - parameter useAppleRating: as above
+         */
         public func set(useAppleRating: Bool) -> Builder {
             self.useAppleRating = useAppleRating
             return self
         }
         
-        /// TODO:- DONT FORGET
-        
-        
+        /**
+         Sets the appID `String` of the app from the store
+         
+         - parameter appID: ID of the app in the appstore
+         */
         public func set(appID: String) -> Builder {
             self.appID = appID
             return self
         }
         
+        /**
+         Called at the end of setting all parameters. If the launch count matches the `requiredLaunchCount` then the dialog will be shown
+         - Parameters:
+         - completion : completes  a `RateMeStateBlock` that will hate current state in the form of a `RateMeState` enum value
+         
+         ### Usage Example: ###
+         ````
+         RatingDialog.builder()
+         .set(cancelText: "Cancel")
+         .set(paragraph1: "Some test Text at the top")
+         .set(tintColor: .yellow)
+         .set(useAppleRating: false)
+         .buildAndShowIfNeeded { (state) in
+         
+         switch state {
+         case .didCancel:
+         print("didCancel")
+         case .didShowInitialRateMe:
+         print("didShowInitialRateMe")
+         case .didShowAppleReviewController:
+         print("didShowAppleReviewController")
+         case .didSendToStore:
+         print("didSendToStore")
+         }
+         
+         }
+         
+         ````
+         */
         public func buildAndShowIfNeeded(_ completion: RateMeStateBlock? = nil) {
-            
-            //let bundle = Bundle(for: RatingDialogView.self)
             
             let podBundle = Bundle(for: RatingDialogView.self)
             let bundleURL = podBundle.url(forResource: "Stanwood_Dialog_iOS", withExtension: "bundle")
