@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 .set(okText: accept)
                 .set(faceUrl: faceUrlString)
                 .set(bannerUrl: bannerUrlString)
-                .set(appID: "1316369720")
+                .set(appID: "284815942")
                 .set(rootView: (window?.rootViewController?.view)!)
                 .buildAndShowIfNeeded { (didSelectRate) in
             

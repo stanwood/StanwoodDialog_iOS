@@ -37,7 +37,7 @@ If you wish to specify your string locally, you can add them here
             .set(faceUrl: "faceUrlString")
             .set(bannerUrl: "bannerUrlString")
             .set(tintColor: .blue)
-            .set(appID: "9876973263")
+            .set(appID: "284815942")
             .set(rootView: UIApplication.shared.keyWindow!)
             .buildAndShowIfNeeded { (state) in
                 
