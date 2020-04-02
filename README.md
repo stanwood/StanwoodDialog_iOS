@@ -1,7 +1,7 @@
 # StanwoodDialog
 
 [![Swift Version](https://img.shields.io/badge/Swift-5.0-orange.svg)]()
-[![iOS 10+](https://img.shields.io/badge/iOS-10+-EB7943.svg)]()
+[![iOS 10.3+](https://img.shields.io/badge/iOS-10.3+-EB7943.svg)]()
 [![Pod Version](https://cocoapod-badges.herokuapp.com/l/StanwoodDialog/badge.png)]()
 [![Maintainability](https://api.codeclimate.com/v1/badges/f34e56f2c699c367691a/maintainability)](https://codeclimate.com/github/stanwood/StanwoodDialog_iOS/maintainability) 
 [![Build Status](https://app.bitrise.io/app/200a49178c1c4df4/status.svg?token=sfQNfpyzN4c_FAGGTefmqw&branch=master)](https://app.bitrise.io/app/200a49178c1c4df4)
@@ -24,37 +24,76 @@ pod 'StanwoodDialog'
 
 ## Usage
 
-Add `import StanwoodDialog` and call the method bellow from wherever you are calling `AppDelegate`'s `applicationDidBecomeAvailable`:
+Add `import StanwoodDialog` and call the method bellow from wherever you are calling `AppDelegate`'s `applicationDidBecomeAvailable`: 
+If you wish to specify your string locally, you can add them here
 ```swift
-    if RatingDialog.shouldShow(onLaunch: 5) {
-        let text1 = "Hi there,\nmy name is John Appleseed,\nthe developer of this app."
-        let text2 = "Independent developers like me\nrely heavily on good ratings in the app store"
-        let text3 = "so that we can continue working on apps.\nIf you like this app, I'd be thrilled\nif you left a positive rating."
-        let text4 = "the stars would be enough, it will only take a few seconds."
+    RatingDialog.builder()
+            .set(paragraph1: "text1")
+            .set(paragraph2: "text2")
+            .set(paragraph3: "text3")
+            .set(paragraph4: "text4")
+            .set(cancelText: "cancel")
+            .set(okText: "accept")
+            .set(faceUrl: "faceUrlString")
+            .set(bannerUrl: "bannerUrlString")
+            .set(tintColor: .blue)
+            .set(appID: "284815942")
+            .set(rootView: UIApplication.shared.keyWindow!)
+            .buildAndShowIfNeeded { (state) in
+                
+                        switch state {
+                        case .didCancel:
+                            print("didCancel")
+                        case .didShowInitialRateMe:
+                            print("didShowInitialRateMe")
+                        case .didShowAppleReviewController:
+                            print("didShowAppleReviewController")
+                        case .didSendToStore:
+                            print("didSendToStore")
+                        }
+                
+            }
+```
+Ideally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization. 
 
-        let cancel = "Cancel"
-        let accept = "Rate the app"
+If you want to use values direct from Firebase RemoteConfig, you can use the rquired keys below to clean up your code.
 
-        let faceUrlString = "https://lh5.googleusercontent.com/-_w2wo1s6SkI/AAAAAAAAAAI/AAAAAAAAhMU/s78iSxXwVZk/photo.jpg"
-        let bannerUrlString = "https://d30x8mtr3hjnzo.cloudfront.net/creatives/41868f99932745608fafdd3a03072e99"
-        let appID = "<YOUR_APPID>"
-
-        RatingDialog.builder()
-        .set(paragraph1: text1)
-        .set(paragraph2: text2)
-        .set(paragraph3: text3)
-        .set(paragraph4: text4)
-        .set(cancelText: cancel)
-        .set(okText: accept)
-        .set(faceUrl: faceUrlString)
-        .set(bannerUrl: bannerUrlString)
-        .set(tintColor: UIColor.blue)
-        .buildAppStoreUrl(with: appID)
-        .set(rootView: (window?.rootViewController?.view)!)
-        .build()
+With completion, as little as:
+```swift
+    RatingDialog.builder().buildAndShowIfNeeded { (state) in
+        
+                switch state {
+                case .didCancel:
+                    print("didCancel")
+                case .didShowInitialRateMe:
+                    print("didShowInitialRateMe")
+                case .didShowAppleReviewController:
+                    print("didShowAppleReviewController")
+                case .didSendToStore:
+                    print("didSendToStore")
+                }
+        
     }
 ```
-Ideally you would be fetching each one of these parameters remotely. For instance, from Firebase RemoteConfig to do some A/B testing and/or from a service like lokalise.co to provide internationalization.
+Without completion:
+```swift
+    RatingDialog.builder().buildAndShowIfNeeded()
+```
+
+Required RemoteConfig keys
+```
+"ios_app_id" - ID od application in the store
+"rate_dialog_text" - First line of text
+"rate_dialog_text_2" - Second line of text
+"rate_dialog_text_3" - Third line of text
+"rate_dialog_text_4" - Fourth line of text
+"rate_dialog_launch_count" - Number of launches required until dialog is shown
+"rate_dialog_face_url" - Url string to load a face image
+"rate_dialog_banner_url" - Url string to load a banner image
+"rate_dialog_cancel_button" - Cancel button title
+"rate_dialog_ok_button" - Ok button title
+```
+When using the RemoteConfig keys, ensure your config is set before initialising the dialog, otherwise the values will be wrong
 
 If you don't have a URL for the profile and banner images, you may upload these to Firebase Storage (go to Store section in Firebase and click on [Upload Image]):
  * the profile image should be 300x300 pixels (this will cover the 3 variations for 100x100 points)

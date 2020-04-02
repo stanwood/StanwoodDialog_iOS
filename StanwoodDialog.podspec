@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'StanwoodDialog'
-  s.version          = '1.0.6'
+  s.version          = '1.0.7'
   s.summary          = 'Library to show a rating dialog prompt like the one used in On Air.'
 
   s.description      = <<-DESC
@@ -13,10 +13,15 @@ This allows a more personal approach and dismisses automatically when no interac
   s.author           = { 'stanwood' => 'ios.frameworks@stanwood.io' }
   s.source           = { :git => 'https://github.com/stanwood/StanwoodDialog_iOS.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '10.0'
+  s.ios.deployment_target = '10.3'
   s.swift_version = '5.0'
 
   s.source_files = 'Stanwood_Dialog_iOS/Classes/**/*.{swift}'
+  
+  s.static_framework = true
+  s.dependency 'FirebaseRemoteConfig'
+  s.dependency 'SDWebImage'
+
   
   s.resource_bundles = {
     'Stanwood_Dialog_iOS' => ['Stanwood_Dialog_iOS/Classes/**/*.{xib,png,jpeg}']
